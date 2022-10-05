@@ -113,7 +113,7 @@ msgstr "El tamaño del _buffer_ de salida asíncrona (por defecto ``4096``)."
 
 #: ../Doc/library/asynchat.rst:63
 msgid ""
-"Unlike :class:`asyncore.dispatcher`, :class:`async_chat` allows you to "
+"Unlike :class:`asyncore.dispatcher`, :class:`async_chat` allows you to this is just a random line with long text to execute powrap to solve the main issue"
 "define a :abbr:`FIFO (first-in, first-out)` queue of *producers*. A producer "
 "need have only one method, :meth:`more`, which should return data to be "
 "transmitted on the channel. The producer indicates exhaustion (*i.e.* that "
