@@ -10,16 +10,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-16 21:42+0200\n"
-"PO-Revision-Date: 2021-08-04 20:37+0200\n"
-"Last-Translator: Cristián Maureira-Fredes <cmaureirafredes@gmail.com>\n"
-"Language-Team: python-doc-es\n"
+"POT-Creation-Date: 2024-11-21 16:38-0300\n"
+"PO-Revision-Date: 2023-03-23 09:51-0300\n"
+"Last-Translator: Francisco Mora <fr.morac@duocuc.cl>\n"
 "Language: es\n"
+"Language-Team: python-doc-es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.16.0\n"
 
 #: ../Doc/howto/sockets.rst:5
 msgid "Socket Programming HOWTO"
@@ -33,6 +33,7 @@ msgstr "Autor"
 msgid "Gordon McMillan"
 msgstr "Gordon McMillan"
 
+#: ../Doc/howto/sockets.rst:-1
 msgid "Abstract"
 msgstr "Resumen"
 
@@ -138,6 +139,14 @@ msgstr ""
 "De manera general, cuando hiciste click en el enlace que te trajo a esta "
 "página tu navegador hizo algo como lo siguiente:"
 
+#: ../Doc/howto/sockets.rst:59
+msgid ""
+"# create an INET, STREAMing socket\n"
+"s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n"
+"# now connect to the web server on port 80 - the normal http port\n"
+"s.connect((\"www.python.org\", 80))"
+msgstr ""
+
 #: ../Doc/howto/sockets.rst:64
 msgid ""
 "When the ``connect`` completes, the socket ``s`` can be used to send in a "
@@ -158,6 +167,16 @@ msgid ""
 msgstr ""
 "Lo que sucede en el servidor web es un poco más complejo. Primero, el "
 "servidor web crea un \"socket servidor\":"
+
+#: ../Doc/howto/sockets.rst:73
+msgid ""
+"# create an INET, STREAMing socket\n"
+"serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n"
+"# bind the socket to a public host, and a well-known port\n"
+"serversocket.bind((socket.gethostname(), 80))\n"
+"# become a server socket\n"
+"serversocket.listen(5)"
+msgstr ""
 
 #: ../Doc/howto/sockets.rst:80
 msgid ""
@@ -204,6 +223,17 @@ msgid ""
 msgstr ""
 "Ahora que tenemos un socket servidor escuchando en el puerto 80 ya podemos "
 "entrar al bucle principal del servidor web:"
+
+#: ../Doc/howto/sockets.rst:98
+msgid ""
+"while True:\n"
+"    # accept connections from outside\n"
+"    (clientsocket, address) = serversocket.accept()\n"
+"    # now do something with the clientsocket\n"
+"    # in this case, we'll pretend this is a threaded server\n"
+"    ct = client_thread(clientsocket)\n"
+"    ct.run()"
+msgstr ""
 
 #: ../Doc/howto/sockets.rst:106
 msgid ""
@@ -378,6 +408,43 @@ msgstr ""
 "Asumiendo que no quieres terminar la conexión, la solución más simple es un "
 "mensaje de longitud fija:"
 
+#: ../Doc/howto/sockets.rst:183
+msgid ""
+"class MySocket:\n"
+"    \"\"\"demonstration class only\n"
+"      - coded for clarity, not efficiency\n"
+"    \"\"\"\n"
+"\n"
+"    def __init__(self, sock=None):\n"
+"        if sock is None:\n"
+"            self.sock = socket.socket(\n"
+"                            socket.AF_INET, socket.SOCK_STREAM)\n"
+"        else:\n"
+"            self.sock = sock\n"
+"\n"
+"    def connect(self, host, port):\n"
+"        self.sock.connect((host, port))\n"
+"\n"
+"    def mysend(self, msg):\n"
+"        totalsent = 0\n"
+"        while totalsent < MSGLEN:\n"
+"            sent = self.sock.send(msg[totalsent:])\n"
+"            if sent == 0:\n"
+"                raise RuntimeError(\"socket connection broken\")\n"
+"            totalsent = totalsent + sent\n"
+"\n"
+"    def myreceive(self):\n"
+"        chunks = []\n"
+"        bytes_recd = 0\n"
+"        while bytes_recd < MSGLEN:\n"
+"            chunk = self.sock.recv(min(MSGLEN - bytes_recd, 2048))\n"
+"            if chunk == b'':\n"
+"                raise RuntimeError(\"socket connection broken\")\n"
+"            chunks.append(chunk)\n"
+"            bytes_recd = bytes_recd + len(chunk)\n"
+"        return b''.join(chunks)"
+msgstr ""
+
 #: ../Doc/howto/sockets.rst:217
 msgid ""
 "The sending code here is usable for almost any messaging scheme - in Python "
@@ -390,8 +457,8 @@ msgstr ""
 "mensajería - en Python envías cadenas y usas ``len()`` para determinar su "
 "longitud (incluso si tiene caracteres ``\\0`` incrustados). Es "
 "principalmente el código receptor el que se vuelve más complejo. (Y en C no "
-"es mucho peor, excepto que no puedes usar ``strlen`` si el mensaje tiene ``"
-"\\0`` incrustados)."
+"es mucho peor, excepto que no puedes usar ``strlen`` si el mensaje tiene "
+"``\\0`` incrustados)."
 
 #: ../Doc/howto/sockets.rst:223
 msgid ""
@@ -464,46 +531,58 @@ msgstr "Datos binarios"
 msgid ""
 "It is perfectly possible to send binary data over a socket. The major "
 "problem is that not all machines use the same formats for binary data. For "
-"example, a Motorola chip will represent a 16 bit integer with the value 1 as "
-"the two hex bytes 00 01. Intel and DEC, however, are byte-reversed - that "
-"same 1 is 01 00. Socket libraries have calls for converting 16 and 32 bit "
-"integers - ``ntohl, htonl, ntohs, htons`` where \"n\" means *network* and \"h"
-"\" means *host*, \"s\" means *short* and \"l\" means *long*. Where network "
-"order is host order, these do nothing, but where the machine is byte-"
-"reversed, these swap the bytes around appropriately."
+"example, `network byte order <https://en.wikipedia.org/wiki/"
+"Endianness#Networking>`_ is big-endian, with the most significant byte "
+"first, so a 16 bit integer with the value ``1`` would be the two hex bytes "
+"``00 01``. However, most common processors (x86/AMD64, ARM, RISC-V), are "
+"little-endian, with the least significant byte first - that same ``1`` would "
+"be ``01 00``."
 msgstr ""
-"Es perfectamente posible mandar datos binarios en un socket. El mayor "
-"problema es que no todas las máquinas usan el mismo formato para datos "
-"binarios. Por ejemplo, un chip Motorola representa un entero de 16 bit con "
-"el valor 1 como los dos bytes hexadecimales 00 01. Intel y DEC, sin embargo, "
-"son de \"bytes invertidos\" - el mismo valor 1 es 01 00. Las bibliotecas de "
-"sockets tienen funciones para convertir enteros de 16 y 32 bit - ``ntohl, "
-"htonl, ntohs, htons`` donde la \"n\" significa \"network\" y \"h\" significa "
-"\"host\", \"s\" significa \"short\" y \"l\" significa \"long\". Cuando el "
-"orden de la red es el orden del servidor, estas funciones no hacen nada, "
-"pero cuando la máquina es de \"bytes invertidos\", estas cambian los bytes "
-"apropiadamente."
+"Es perfectamente posible enviar datos binarios a través de un socket. El "
+"principal problema es que no todas las máquinas utilizan los mismos formatos "
+"para datos binarios. Por ejemplo, `orden de bytes de red <https://en."
+"wikipedia.org/wiki/Endianness#Networking>`_ es big-endian, con el byte más "
+"significativo primero, por lo que es un entero de 16 bits con el valor ``1`` "
+"serían los dos bytes hexadecimales ``00 01``. Sin embargo, los procesadores "
+"más comunes (x86/AMD64, ARM, RISC-V) son little-endian, con el byte menos "
+"significativo primero; ese mismo ``1`` sería ``01 00``."
 
-#: ../Doc/howto/sockets.rst:264
+#: ../Doc/howto/sockets.rst:262
 msgid ""
-"In these days of 32 bit machines, the ascii representation of binary data is "
-"frequently smaller than the binary representation. That's because a "
-"surprising amount of the time, all those longs have the value 0, or maybe 1. "
-"The string \"0\" would be two bytes, while binary is four. Of course, this "
-"doesn't fit well with fixed-length messages. Decisions, decisions."
+"Socket libraries have calls for converting 16 and 32 bit integers - ``ntohl, "
+"htonl, ntohs, htons`` where \"n\" means *network* and \"h\" means *host*, "
+"\"s\" means *short* and \"l\" means *long*. Where network order is host "
+"order, these do nothing, but where the machine is byte-reversed, these swap "
+"the bytes around appropriately."
 msgstr ""
-"En estos días de máquinas de 32 bit, la representación ascii de los datos "
-"binarios es con frecuencia más pequeña que la representación binaria. Esto "
-"es porque una sorprendente cantidad de veces, todos esos \"longs\" tienen de "
-"valor 0, o tal vez 1. La cadena \"0\" tendría dos bytes, mientras el binario "
-"cuatro. Por supuesto, esto no funciona bien con los mensajes de longitud "
-"fija. Decisiones, decisiones."
+"Las bibliotecas de socket tienen llamadas para convertir enteros de 16 y 32 "
+"bits - ``ntohl, htonl, ntohs, htons`` donde \"n\" significa *network* (red) "
+"y \"h\" significa *host* (host), \"s\" significa *short* (corto) y \"l\" "
+"significa *long* (largo). Cuando el orden de la red es el orden del host, "
+"estos no hacen nada, pero cuando la máquina está invertida en bytes, "
+"intercambian los bytes de manera adecuada."
 
-#: ../Doc/howto/sockets.rst:272
+#: ../Doc/howto/sockets.rst:268
+msgid ""
+"In these days of 64-bit machines, the ASCII representation of binary data is "
+"frequently smaller than the binary representation. That's because a "
+"surprising amount of the time, most integers have the value 0, or maybe 1. "
+"The string ``\"0\"`` would be two bytes, while a full 64-bit integer would "
+"be 8. Of course, this doesn't fit well with fixed-length messages. "
+"Decisions, decisions."
+msgstr ""
+"En estos días de máquinas de 64 bit, la representación ASCII de los datos "
+"binarios es con frecuencia más pequeña que la representación binaria. Esto "
+"es porque una sorprendente cantidad de veces, todos esos enteros tienen el "
+"valor 0, o tal vez 1. La cadena ``\"0\"`` tendría dos bytes, mientras un "
+"entero completo de 64 bit tendría 8. Por supuesto, esto no funciona bien con "
+"los mensajes de longitud fija. Decisiones, decisiones."
+
+#: ../Doc/howto/sockets.rst:277
 msgid "Disconnecting"
 msgstr "Desconectando"
 
-#: ../Doc/howto/sockets.rst:274
+#: ../Doc/howto/sockets.rst:279
 msgid ""
 "Strictly speaking, you're supposed to use ``shutdown`` on a socket before "
 "you ``close`` it.  The ``shutdown`` is an advisory to the socket at the "
@@ -524,7 +603,7 @@ msgstr ""
 "la mayoría de las situaciones usar ``shutdown`` de manera explícita no es "
 "necesario."
 
-#: ../Doc/howto/sockets.rst:282
+#: ../Doc/howto/sockets.rst:287
 msgid ""
 "One way to use ``shutdown`` effectively is in an HTTP-like exchange. The "
 "client sends a request and then does a ``shutdown(1)``. This tells the "
@@ -541,7 +620,7 @@ msgstr ""
 "servidor envía una respuesta. Si el ``send`` termina satisfactoriamente "
 "entonces, en efecto, el cliente todavía estaba recibiendo."
 
-#: ../Doc/howto/sockets.rst:289
+#: ../Doc/howto/sockets.rst:294
 msgid ""
 "Python takes the automatic shutdown a step further, and says that when a "
 "socket is garbage collected, it will automatically do a ``close`` if it's "
@@ -557,11 +636,11 @@ msgstr ""
 "lado puede colgarse indefinidamente, pensando que solo estas siendo lento. "
 "*Por favor* cierra los sockets cuando termines."
 
-#: ../Doc/howto/sockets.rst:297
+#: ../Doc/howto/sockets.rst:302
 msgid "When Sockets Die"
 msgstr "Cuando los sockets mueren"
 
-#: ../Doc/howto/sockets.rst:299
+#: ../Doc/howto/sockets.rst:304
 msgid ""
 "Probably the worst thing about using blocking sockets is what happens when "
 "the other side comes down hard (without doing a ``close``). Your socket is "
@@ -588,12 +667,12 @@ msgstr ""
 "otras palabras, si te las arreglas para matar el hilo, es muy probable que "
 "todo el proceso termine arruinado."
 
-#: ../Doc/howto/sockets.rst:313
+#: ../Doc/howto/sockets.rst:318
 msgid "Non-blocking Sockets"
 msgstr "*Sockets* no bloqueantes"
 
 # Como traduzco inside-out?
-#: ../Doc/howto/sockets.rst:315
+#: ../Doc/howto/sockets.rst:320
 msgid ""
 "If you've understood the preceding, you already know most of what you need "
 "to know about the mechanics of using sockets. You'll still use the same "
@@ -605,7 +684,7 @@ msgstr ""
 "mismas llamadas, de la misma manera. Es solo eso, si lo haces correctamente, "
 "tu aplicación estará casi correcta."
 
-#: ../Doc/howto/sockets.rst:320
+#: ../Doc/howto/sockets.rst:325
 msgid ""
 "In Python, you use ``socket.setblocking(False)`` to make it non-blocking. In "
 "C, it's more complex, (for one thing, you'll need to choose between the BSD "
@@ -621,7 +700,7 @@ msgstr ""
 "idea. Haz esto después de crear el socket, pero antes de usarlo. (En "
 "realidad, si estás loco, puedes cambiar de un lado a otro)."
 
-#: ../Doc/howto/sockets.rst:327
+#: ../Doc/howto/sockets.rst:332
 msgid ""
 "The major mechanical difference is that ``send``, ``recv``, ``connect`` and "
 "``accept`` can return without having done anything. You have (of course) a "
@@ -637,11 +716,11 @@ msgstr ""
 "aplicación crecerá grande, con errores y consumirá todo el CPU. Así que "
 "vamos a saltarnos las soluciones descerebradas y hacerlo correctamente."
 
-#: ../Doc/howto/sockets.rst:334
+#: ../Doc/howto/sockets.rst:339
 msgid "Use ``select``."
 msgstr "Usando ``select``."
 
-#: ../Doc/howto/sockets.rst:336
+#: ../Doc/howto/sockets.rst:341
 msgid ""
 "In C, coding ``select`` is fairly complex. In Python, it's a piece of cake, "
 "but it's close enough to the C version that if you understand ``select`` in "
@@ -651,7 +730,17 @@ msgstr ""
 "lo suficientemente cercano a la versión de C que si entiendes el ``select`` "
 "en Python tendrás pocos problemas con él el C:"
 
-#: ../Doc/howto/sockets.rst:347
+#: ../Doc/howto/sockets.rst:345
+msgid ""
+"ready_to_read, ready_to_write, in_error = \\\n"
+"               select.select(\n"
+"                  potential_readers,\n"
+"                  potential_writers,\n"
+"                  potential_errs,\n"
+"                  timeout)"
+msgstr ""
+
+#: ../Doc/howto/sockets.rst:352
 msgid ""
 "You pass ``select`` three lists: the first contains all sockets that you "
 "might want to try reading; the second all the sockets you might want to try "
@@ -670,7 +759,7 @@ msgstr ""
 "dale un tiempo de espera largo (un minuto por ejemplo) a menos que tengas "
 "una buena razón para no hacerlo."
 
-#: ../Doc/howto/sockets.rst:355
+#: ../Doc/howto/sockets.rst:360
 msgid ""
 "In return, you will get three lists. They contain the sockets that are "
 "actually readable, writable and in error. Each of these lists is a subset "
@@ -680,7 +769,7 @@ msgstr ""
 "realmente legibles, escribibles y con error. Cada una de estas lista es un "
 "subconjunto (posiblemente vacío) de la lista correspondiente que pasaste."
 
-#: ../Doc/howto/sockets.rst:359
+#: ../Doc/howto/sockets.rst:364
 msgid ""
 "If a socket is in the output readable list, you can be as-close-to-certain-"
 "as-we-ever-get-in-this-business that a ``recv`` on that socket will return "
@@ -697,7 +786,7 @@ msgstr ""
 "razonablemente saludable va a retornar como escribible - eso solo significa "
 "que el espacio de salida del buffer de red está disponible)"
 
-#: ../Doc/howto/sockets.rst:366
+#: ../Doc/howto/sockets.rst:371
 msgid ""
 "If you have a \"server\" socket, put it in the potential_readers list. If it "
 "comes out in the readable list, your ``accept`` will (almost certainly) "
@@ -712,7 +801,7 @@ msgstr ""
 "retorna en la lista de escribibles, tienes una buena oportunidad de que esté "
 "conectado."
 
-#: ../Doc/howto/sockets.rst:372
+#: ../Doc/howto/sockets.rst:377
 msgid ""
 "Actually, ``select`` can be handy even with blocking sockets. It's one way "
 "of determining whether you will block - the socket returns as readable when "
@@ -726,7 +815,7 @@ msgstr ""
 "problema de determinar si el otro extremo terminó, o solo está ocupado con "
 "otra cosa."
 
-#: ../Doc/howto/sockets.rst:377
+#: ../Doc/howto/sockets.rst:382
 msgid ""
 "**Portability alert**: On Unix, ``select`` works both with the sockets and "
 "files. Don't try this on Windows. On Windows, ``select`` works with sockets "

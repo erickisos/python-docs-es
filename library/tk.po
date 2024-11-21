@@ -10,27 +10,28 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-16 21:42+0200\n"
+"POT-Creation-Date: 2024-11-21 16:38-0300\n"
 "PO-Revision-Date: 2020-07-21 13:40-0300\n"
 "Last-Translator: \n"
-"Language-Team: python-doc-es\n"
 "Language: es_AR\n"
+"Language-Team: python-doc-es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.16.0\n"
 
 #: ../Doc/library/tk.rst:5
 msgid "Graphical User Interfaces with Tk"
 msgstr "Interfaces gráficas de usuario con Tk"
 
 #: ../Doc/library/tk.rst:13
+#, fuzzy
 msgid ""
 "Tk/Tcl has long been an integral part of Python.  It provides a robust and "
 "platform independent windowing toolkit, that is available to Python "
 "programmers using the :mod:`tkinter` package, and its extension, the :mod:"
-"`tkinter.tix` and the :mod:`tkinter.ttk` modules."
+"`tkinter.ttk` module."
 msgstr ""
 "Tk/Tcl ha sido durante mucho tiempo una parte integral de Python. "
 "Proporciona un conjunto de herramientas robusto e independiente de la "
@@ -38,7 +39,7 @@ msgstr ""
 "través del paquete :mod:`tkinter` y sus extensiones, los módulos :mod:"
 "`tkinter.tix` y :mod:`tkinter.ttk`."
 
-#: ../Doc/library/tk.rst:18
+#: ../Doc/library/tk.rst:17
 msgid ""
 "The :mod:`tkinter` package is a thin object-oriented layer on top of Tcl/Tk. "
 "To use :mod:`tkinter`, you don't need to write Tcl code, but you will need "
@@ -52,7 +53,7 @@ msgstr ""
 "Tcl. :mod:`tkinter` es un conjunto de envoltorios que implementan los "
 "widgets Tk como clases de Python."
 
-#: ../Doc/library/tk.rst:24
+#: ../Doc/library/tk.rst:23
 msgid ""
 ":mod:`tkinter`'s chief virtues are that it is fast, and that it usually "
 "comes bundled with Python. Although its standard documentation is weak, good "
@@ -71,3 +72,19 @@ msgstr ""
 "hay muchas otras bibliotecas GUI en las que podría estar interesado. La wiki "
 "de Python enumera varias `GUI frameworks and tools <https://wiki.python.org/"
 "moin/GuiProgramming>`_ alternativas."
+
+#: ../Doc/library/tk.rst:7
+msgid "GUI"
+msgstr "GUI"
+
+#: ../Doc/library/tk.rst:7
+msgid "Graphical User Interface"
+msgstr "Interfaz Gráfica de Usuario"
+
+#: ../Doc/library/tk.rst:7
+msgid "Tkinter"
+msgstr "Tkinter"
+
+#: ../Doc/library/tk.rst:7
+msgid "Tk"
+msgstr "Tk"

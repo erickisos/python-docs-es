@@ -10,20 +10,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-05 12:54+0200\n"
-"PO-Revision-Date: 2020-10-17 19:47+0200\n"
-"Language-Team: python-doc-es\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2024-11-21 16:38-0300\n"
+"PO-Revision-Date: 2023-11-06 22:11+0100\n"
+"Last-Translator: Marcos Medrano <marcosmedrano0@gmail.com>\n"
 "Language: es\n"
-"X-Generator: Poedit 2.3.1\n"
+"Language-Team: python-doc-es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
 
 #: ../Doc/library/email.headerregistry.rst:2
-msgid ":mod:`email.headerregistry`: Custom Header Objects"
+#, fuzzy
+msgid ":mod:`!email.headerregistry`: Custom Header Objects"
 msgstr ":mod:`email.headerregistry`: Objetos de encabezado personalizados"
 
 #: ../Doc/library/email.headerregistry.rst:10
@@ -166,8 +166,8 @@ msgid ""
 msgstr ""
 "Retorna una cadena que contenga :attr:`~email.policy.Policy.linesep` "
 "caracteres según sea necesario para doblar correctamente el encabezado de "
-"acuerdo con *policy*. Un atributo :attr:`~email.policy.Policy.cte_type` de` "
-"`8bit`` se tratará como si fuera``7bit``, ya que los encabezados no pueden "
+"acuerdo con *policy*. Un atributo :attr:`~email.policy.Policy.cte_type` de "
+"``8bit`` se tratará como si fuera ``7bit``, ya que los encabezados no pueden "
 "contener datos binarios arbitrarios. Si :attr:`~email.policy.EmailPolicy."
 "utf8` es ``False``, los datos no ASCII estarán codificados :rfc:`2047`."
 
@@ -185,6 +185,10 @@ msgstr ""
 "``BaseHeader`` requiere que la clase especializada proporcione un :func:"
 "`classmethod` llamado ``parse``. Este método se llama de la siguiente manera:"
 
+#: ../Doc/library/email.headerregistry.rst:94
+msgid "parse(string, kwds)"
+msgstr ""
+
 #: ../Doc/library/email.headerregistry.rst:96
 msgid ""
 "``kwds`` is a dictionary containing one pre-initialized key, ``defects``. "
@@ -201,7 +205,7 @@ msgstr ""
 "``defects``. ``defects`` es una lista vacía. El método de análisis debe "
 "agregar cualquier defecto detectado a esta lista. A la devolución, el "
 "diccionario ``kwds`` *debe* (*must*) contener valores para al menos las "
-"claves ``decoded` y ``defects``. ``decoded`` debe ser el valor de cadena "
+"claves ``decoded`` y ``defects``. ``decoded`` debe ser el valor de cadena "
 "para el encabezado (es decir, el valor del encabezado completamente "
 "decodificado a Unicode). El método de análisis debe asumir que *string* "
 "puede contener partes codificadas por transferencia de contenido, pero "
@@ -220,6 +224,13 @@ msgstr ""
 "proporcionar un método ``init`` si desea establecer atributos adicionales "
 "más allá de los proporcionados por  ``BaseHeader``. Tal método ``init`` "
 "debería verse así::"
+
+#: ../Doc/library/email.headerregistry.rst:110
+msgid ""
+"def init(self, /, *args, **kw):\n"
+"    self._myattr = kw.pop('myattr')\n"
+"    super().init(*args, **kw)"
+msgstr ""
 
 #: ../Doc/library/email.headerregistry.rst:114
 msgid ""
@@ -275,8 +286,8 @@ msgstr "Este tipo de encabezado no proporciona atributos adicionales."
 msgid ""
 ":rfc:`5322` specifies a very specific format for dates within email headers. "
 "The ``DateHeader`` parser recognizes that date format, as well as "
-"recognizing a number of variant forms that are sometimes found \"in the wild"
-"\"."
+"recognizing a number of variant forms that are sometimes found \"in the "
+"wild\"."
 msgstr ""
 ":rfc:`5322` especifica un formato muy específico para las fechas dentro de "
 "los encabezados de correo electrónico. El analizador ``DateHeader`` reconoce "
@@ -296,7 +307,7 @@ msgid ""
 "representing that date.  If the timezone of the input date is specified as "
 "``-0000`` (indicating it is in UTC but contains no information about the "
 "source timezone), then :attr:`.datetime` will be a naive :class:`~datetime."
-"datetime`.  If a specific timezone offset is found (including `+0000`), "
+"datetime`.  If a specific timezone offset is found (including ``+0000``), "
 "then :attr:`.datetime` will contain an aware ``datetime`` that uses :class:"
 "`datetime.timezone` to record the timezone offset."
 msgstr ""
@@ -306,9 +317,9 @@ msgstr ""
 "entrada se especifica como ``-0000`` (lo que indica que está en UTC pero no "
 "contiene información sobre la zona horaria de origen), entonces :attr:`."
 "datetime` será un ingenuo :class:`~datetime.datetime`. Si se encuentra un "
-"desplazamiento de zona horaria específico (incluido `+0000`), entonces :attr:"
-"`.datetime` contendrá un ``datetime`` consciente que usa :class:`datetime."
-"timezone` para registrar el desplazamiento de la zona horaria."
+"desplazamiento de zona horaria específico (incluido ``+0000``), entonces :"
+"attr:`.datetime` contendrá un ``datetime`` consciente que usa :class:"
+"`datetime.timezone` para registrar el desplazamiento de la zona horaria."
 
 #: ../Doc/library/email.headerregistry.rst:160
 msgid ""
@@ -317,6 +328,10 @@ msgid ""
 msgstr ""
 "El valor ``decoded`` del encabezado se determina formateando la ``datetime`` "
 "de acuerdo con las reglas :rfc:`5322`; es decir, esto se establece en:"
+
+#: ../Doc/library/email.headerregistry.rst:163
+msgid "email.utils.format_datetime(self.datetime)"
+msgstr ""
 
 #: ../Doc/library/email.headerregistry.rst:165
 msgid ""
@@ -327,6 +342,10 @@ msgstr ""
 "Al crear un ``DateHeader``, *value* puede ser :class:`~datetime.datetime` "
 "instancia. Esto significa, por ejemplo, que el siguiente código es válido y "
 "hace lo que cabría esperar:"
+
+#: ../Doc/library/email.headerregistry.rst:169
+msgid "msg['Date'] = datetime(2011, 7, 15, 21)"
+msgstr ""
 
 #: ../Doc/library/email.headerregistry.rst:171
 msgid ""
@@ -339,6 +358,10 @@ msgstr ""
 "marca de tiempo UTC, y el valor resultante tendrá una zona horaria de "
 "``-0000``. Mucho más útil es usar la función :func:`~email.utils.localtime` "
 "del módulo :mod:`~email.utils`::"
+
+#: ../Doc/library/email.headerregistry.rst:176
+msgid "msg['Date'] = utils.localtime()"
+msgstr ""
 
 #: ../Doc/library/email.headerregistry.rst:178
 msgid ""
@@ -387,14 +410,15 @@ msgstr ""
 msgid ""
 "The ``decoded`` value of the header will have all encoded words decoded to "
 "unicode.  :class:`~encodings.idna` encoded domain names are also decoded to "
-"unicode.  The ``decoded`` value is set by :attr:`~str.join`\\ ing the :class:"
-"`str` value of the elements of the ``groups`` attribute with ``', '``."
+"unicode.  The ``decoded`` value is set by :ref:`joining <meth-str-join>` "
+"the :class:`str` value of the elements of the ``groups`` attribute with ``', "
+"'``."
 msgstr ""
 "El valor ``decoded`` del encabezado tendrá todas las palabras codificadas "
 "decodificadas a Unicode. Los nombres de dominio codificados :class:"
 "`~encodings.idna` también se decodifican en Unicode. El valor ``decoded`` se "
-"establece mediante :attr:`~str.join` del valor :class:`str` de los elementos "
-"del atributo ``groups`` con ``', '``."
+"establece :ref:`concatenando <meth-str-join>` el valor :class:`str` de los "
+"elementos del atributo ``groups`` con ``', '``."
 
 #: ../Doc/library/email.headerregistry.rst:213
 msgid ""
@@ -526,6 +550,7 @@ msgstr ""
 "printable``. Consulte :rfc:`2045` para obtener más información."
 
 #: ../Doc/library/email.headerregistry.rst:312
+#, fuzzy
 msgid ""
 "This is the factory used by :class:`~email.policy.EmailPolicy` by default. "
 "``HeaderRegistry`` builds the class used to create a header instance "
@@ -535,7 +560,7 @@ msgid ""
 "class.  When *use_default_map* is ``True`` (the default), the standard "
 "mapping of header names to classes is copied in to the registry during "
 "initialization.  *base_class* is always the last class in the generated "
-"class's ``__bases__`` list."
+"class's :class:`~type.__bases__` list."
 msgstr ""
 "Esta es la mecánica utilizada por :class:`~email.policy.EmailPolicy` por "
 "defecto. ``HeaderRegistry`` construye la clase utilizada para crear una "
@@ -743,9 +768,17 @@ msgstr ""
 "La clase utilizada para representar una dirección de correo electrónico. La "
 "forma general de una dirección es::"
 
+#: ../Doc/library/email.headerregistry.rst:380
+msgid "[display_name] <username@domain>"
+msgstr ""
+
 #: ../Doc/library/email.headerregistry.rst:382
 msgid "or::"
 msgstr "or::"
+
+#: ../Doc/library/email.headerregistry.rst:384
+msgid "username@domain"
+msgstr ""
 
 #: ../Doc/library/email.headerregistry.rst:386
 msgid ""
@@ -827,6 +860,10 @@ msgid ""
 msgstr ""
 "La clase utilizada para representar un grupo de direcciones. La forma "
 "general de un grupo de direcciones es::"
+
+#: ../Doc/library/email.headerregistry.rst:432
+msgid "display_name: [address-list];"
+msgstr ""
 
 #: ../Doc/library/email.headerregistry.rst:434
 msgid ""

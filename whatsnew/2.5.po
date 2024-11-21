@@ -10,21 +10,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-05 12:54+0200\n"
-"PO-Revision-Date: 2021-10-03 10:57-0300\n"
-"Language-Team: python-doc-es\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2024-11-21 16:38-0300\n"
+"PO-Revision-Date: 2022-11-24 11:54+0100\n"
 "Last-Translator: Claudia Millan <clmilneb@gmail.com>\n"
 "Language: es\n"
-"X-Generator: Poedit 2.4.2\n"
+"Language-Team: python-doc-es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
 
 #: ../Doc/whatsnew/2.5.rst:3
 msgid "What's New in Python 2.5"
-msgstr "Novedades de Python 2.5"
+msgstr "Qué hay de nuevo en Python 2.5"
 
 #: ../Doc/whatsnew/2.5.rst
 msgid "Author"
@@ -38,27 +37,28 @@ msgstr "A.M. Kuchling"
 msgid ""
 "This article explains the new features in Python 2.5.  The final release of "
 "Python 2.5 is scheduled for August 2006; :pep:`356` describes the planned "
-"release schedule."
+"release schedule.  Python 2.5 was released on September 19, 2006."
 msgstr ""
 "Este artículo explica las nuevas características de Python 2.5.  La versión "
 "final de Python 2.5 está prevista para agosto de 2006; :pep:`356` describe "
-"el calendario de publicación previsto."
+"el cronograma de lanzamiento planificado."
 
 #: ../Doc/whatsnew/2.5.rst:16
 msgid ""
 "The changes in Python 2.5 are an interesting mix of language and library "
 "improvements. The library enhancements will be more important to Python's "
-"user community, I think, because several widely-useful packages were added.  "
+"user community, I think, because several widely useful packages were added.  "
 "New modules include ElementTree for XML processing (:mod:`xml.etree`), the "
 "SQLite database module (:mod:`sqlite`), and the :mod:`ctypes` module for "
 "calling C functions."
 msgstr ""
 "Los cambios en Python 2.5 son una interesante mezcla de mejoras en el "
-"lenguaje y en las bibliotecas. Las mejoras de la biblioteca serán más "
-"importantes para la comunidad de usuarios de Python, creo, porque se han "
-"añadido varios paquetes muy útiles.  Los nuevos módulos incluyen ElementTree "
-"para el procesamiento de XML (:mod:`xml.etree`), el módulo de base de datos "
-"SQLite (:mod:`sqlite`), y el módulo :mod:`ctypes` para llamar a funciones C."
+"lenguaje y en las bibliotecas. Las mejoras en las bibliotecas serán más "
+"importantes para la comunidad de usuarios de Python, creo, debido a que se "
+"han añadido varios paquetes bastante útiles.  Los nuevos módulos incluyen "
+"ElementTree para el procesamiento de XML (:mod:`xml.etree`), el módulo de "
+"base de datos SQLite (:mod:`sqlite`), y el módulo :mod:`ctypes` para llamar "
+"a funciones escritas en lenguaje C."
 
 #: ../Doc/whatsnew/2.5.rst:23
 msgid ""
@@ -143,6 +143,14 @@ msgstr ""
 "expresión condicional le permite escribir una única sentencia de asignación "
 "que tiene el mismo efecto que la siguiente::"
 
+#: ../Doc/whatsnew/2.5.rst:61
+msgid ""
+"if condition:\n"
+"    x = true_value\n"
+"else:\n"
+"    x = false_value"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:66
 msgid ""
 "There have been endless tedious discussions of syntax on both python-dev and "
@@ -161,6 +169,10 @@ msgstr ""
 #: ../Doc/whatsnew/2.5.rst:72
 msgid "Guido van Rossum eventually chose a surprising syntax::"
 msgstr "Guido van Rossum eligió finalmente una sintaxis sorprendente::"
+
+#: ../Doc/whatsnew/2.5.rst:74
+msgid "x = true_value if condition else false_value"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:76
 msgid ""
@@ -196,6 +208,10 @@ msgstr ""
 "utilizado sólo en las raras ocasiones en las que no se cumple la condición.  "
 "La sintaxis condicional hace que este patrón sea un poco más obvio::"
 
+#: ../Doc/whatsnew/2.5.rst:90
+msgid "contents = ((doc + '\\n') if doc else '')"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:92
 msgid ""
 "I read the above statement as meaning \"here *contents* is  usually assigned "
@@ -220,6 +236,15 @@ msgstr ""
 "requerir paréntesis en la gramática del lenguaje Python, pero como una "
 "cuestión de estilo creo que siempre deberías usarlos. Considere estas dos "
 "declaraciones::"
+
+#: ../Doc/whatsnew/2.5.rst:102
+msgid ""
+"# First version -- no parens\n"
+"level = 1 if logging else 0\n"
+"\n"
+"# Second version -- with parens\n"
+"level = (1 if logging else 0)"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:108
 msgid ""
@@ -301,6 +326,20 @@ msgstr ""
 msgid "Here's a small but realistic example::"
 msgstr "He aquí un pequeño pero realista ejemplo::"
 
+#: ../Doc/whatsnew/2.5.rst:150
+#, python-format
+msgid ""
+"import functools\n"
+"\n"
+"def log (message, subsystem):\n"
+"    \"Write the contents of 'message' to the specified subsystem.\"\n"
+"    print '%s: %s' % (subsystem, message)\n"
+"    ...\n"
+"\n"
+"server_log = functools.partial(log, subsystem='server')\n"
+"server_log('Unable to open socket')"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:160
 msgid ""
 "Here's another example, from a program that uses PyGTK.  Here a context-"
@@ -313,6 +352,17 @@ msgstr ""
 "callback proporcionado para la opción de menú es una versión parcialmente "
 "aplicada del método :meth:`open_item`, donde se ha proporcionado el primer "
 "argumento ::"
+
+#: ../Doc/whatsnew/2.5.rst:165
+msgid ""
+"...\n"
+"class Application:\n"
+"    def open_item(self, path):\n"
+"       ...\n"
+"    def init (self):\n"
+"        open_func = functools.partial(self.open_item, item_path)\n"
+"        popup_menu.append( (\"Open\", open_func, 1) )"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:173
 msgid ""
@@ -329,6 +379,16 @@ msgstr ""
 "función envuelta sean más fáciles de entender.  Por ejemplo, puedes "
 "escribir::"
 
+#: ../Doc/whatsnew/2.5.rst:179
+msgid ""
+"def my_decorator(f):\n"
+"    def wrapper(*args, **kwds):\n"
+"        print 'Calling decorated function'\n"
+"        return f(*args, **kwds)\n"
+"    functools.update_wrapper(wrapper, f)\n"
+"    return wrapper"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:186
 msgid ""
 ":func:`wraps` is a decorator that can be used inside your own decorators to "
@@ -338,6 +398,16 @@ msgstr ""
 ":func:`wraps` es un decorador que se puede utilizar dentro de sus propios "
 "decoradores para copiar la información de la función envuelta.  Una versión "
 "alternativa del ejemplo anterior sería::"
+
+#: ../Doc/whatsnew/2.5.rst:190
+msgid ""
+"def my_decorator(f):\n"
+"    @functools.wraps(f)\n"
+"    def wrapper(*args, **kwds):\n"
+"        print 'Calling decorated function'\n"
+"        return f(*args, **kwds)\n"
+"    return wrapper"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:201
 msgid ":pep:`309` - Partial Function Application"
@@ -380,6 +450,19 @@ msgstr ""
 "establecerse como una URL para el código fuente del paquete.  Esto significa "
 "que ahora es posible buscar una entrada en el índice de paquetes, determinar "
 "las dependencias de un paquete y descargar los paquetes necesarios. ::"
+
+#: ../Doc/whatsnew/2.5.rst:222
+#, python-format
+msgid ""
+"VERSION = '1.0'\n"
+"setup(name='PyPackage',\n"
+"      version=VERSION,\n"
+"      requires=['numarray', 'zlib (>=1.1.4)'],\n"
+"      obsoletes=['OldPackage']\n"
+"      download_url=('http://www.example.com/pypackage/dist/pkg-%s.tar.gz'\n"
+"                    % VERSION),\n"
+"     )"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:231
 msgid ""
@@ -454,6 +537,14 @@ msgstr ""
 #: ../Doc/whatsnew/2.5.rst:267
 msgid "Let's say you have a package directory like this::"
 msgstr "Digamos que tienes un directorio de paquetes como este::"
+
+#: ../Doc/whatsnew/2.5.rst:269
+msgid ""
+"pkg/\n"
+"pkg/__init__.py\n"
+"pkg/main.py\n"
+"pkg/string.py"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:274
 msgid ""
@@ -543,6 +634,14 @@ msgstr ""
 "Las importaciones relativas siguen siendo posibles añadiendo un punto "
 "inicial al nombre del módulo cuando se utiliza la forma ``from ... import``::"
 
+#: ../Doc/whatsnew/2.5.rst:310
+msgid ""
+"# Import names from pkg.string\n"
+"from .string import name1, name2\n"
+"# Import pkg.string\n"
+"from . import string"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:315
 msgid ""
 "This imports the :mod:`string` module relative to the current package, so "
@@ -556,6 +655,13 @@ msgstr ""
 "Los puntos iniciales adicionales realizan la importación relativa empezando "
 "por el padre del paquete actual.  Por ejemplo, el código en el módulo :mod:"
 "`A.B.C` puede hacer::"
+
+#: ../Doc/whatsnew/2.5.rst:320
+msgid ""
+"from . import D                 # Imports A.B.D\n"
+"from .. import E                # Imports A.E\n"
+"from ..F import G               # Imports A.F.G"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:324
 msgid ""
@@ -657,6 +763,20 @@ msgstr ""
 "`finally`, y esto aclaró lo que debería significar la declaración.  En "
 "Python 2.5, ahora se puede escribir::"
 
+#: ../Doc/whatsnew/2.5.rst:382
+msgid ""
+"try:\n"
+"    block-1 ...\n"
+"except Exception1:\n"
+"    handler-1 ...\n"
+"except Exception2:\n"
+"    handler-2 ...\n"
+"else:\n"
+"    else-block\n"
+"finally:\n"
+"    final-block"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:393
 msgid ""
 "The code in *block-1* is executed.  If the code raises an exception, the "
@@ -722,6 +842,15 @@ msgstr ""
 "Para refrescar la memoria de los generadores básicos, he aquí un ejemplo "
 "sencillo::"
 
+#: ../Doc/whatsnew/2.5.rst:428
+msgid ""
+"def counter (maximum):\n"
+"    i = 0\n"
+"    while i < maximum:\n"
+"        yield i\n"
+"        i += 1"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:434
 msgid ""
 "When you call ``counter(10)``, the result is an iterator that returns the "
@@ -748,6 +877,10 @@ msgstr ""
 "valor.  En 2.5, :keyword:`!yield` es ahora una expresión, que devuelve un "
 "valor que se puede asignar a una variable o que se puede operar de otra "
 "manera::"
+
+#: ../Doc/whatsnew/2.5.rst:444
+msgid "val = (yield i)"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:446
 msgid ""
@@ -795,9 +928,40 @@ msgstr ""
 "Aquí está el ejemplo anterior, modificado para permitir cambiar el valor del "
 "contador interno. ::"
 
+#: ../Doc/whatsnew/2.5.rst:466
+msgid ""
+"def counter (maximum):\n"
+"    i = 0\n"
+"    while i < maximum:\n"
+"        val = (yield i)\n"
+"        # If value provided, change counter\n"
+"        if val is not None:\n"
+"            i = val\n"
+"        else:\n"
+"            i += 1"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:476
 msgid "And here's an example of changing the counter::"
 msgstr "Y aquí hay un ejemplo de cambio de contador::"
+
+#: ../Doc/whatsnew/2.5.rst:478
+msgid ""
+">>> it = counter(10)\n"
+">>> print it.next()\n"
+"0\n"
+">>> print it.next()\n"
+"1\n"
+">>> print it.send(8)\n"
+"8\n"
+">>> print it.next()\n"
+"9\n"
+">>> print it.next()\n"
+"Traceback (most recent call last):\n"
+"  File \"t.py\", line 15, in ?\n"
+"    print it.next()\n"
+"StopIteration"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:493
 msgid ""
@@ -951,8 +1115,12 @@ msgid "The Wikipedia entry for  coroutines."
 msgstr "La entrada de Wikipedia para las coroutines."
 
 #: ../Doc/whatsnew/2.5.rst:554
-msgid "http://www.sidhe.org/~dan/blog/archives/000178.html"
-msgstr "http://www.sidhe.org/~dan/blog/archivos/000178.html"
+msgid ""
+"https://web.archive.org/web/20160321211320/http://www.sidhe.org/~dan/blog/"
+"archives/000178.html"
+msgstr ""
+"https://web.archive.org/web/20160321211320/http://www.sidhe.org/~dan/blog/"
+"archives/000178.html"
 
 #: ../Doc/whatsnew/2.5.rst:555
 msgid ""
@@ -988,22 +1156,30 @@ msgstr ""
 "La declaración ':keyword:`with`' es una nueva estructura de flujo de control "
 "cuya estructura básica es::"
 
+#: ../Doc/whatsnew/2.5.rst:574
+msgid ""
+"with expression [as variable]:\n"
+"    with-block"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:577
+#, fuzzy
 msgid ""
 "The expression is evaluated, and it should result in an object that supports "
-"the context management protocol (that is, has :meth:`__enter__` and :meth:"
-"`__exit__` methods."
+"the context management protocol (that is, has :meth:`~object.__enter__` and :"
+"meth:`~object.__exit__` methods."
 msgstr ""
 "La expresión se evalúa y debe dar como resultado un objeto que soporte el "
 "protocolo de gestión de contextos (es decir, que tenga los métodos :meth:"
 "`__enter__` y :meth:`__exit__`)."
 
 #: ../Doc/whatsnew/2.5.rst:581
+#, fuzzy
 msgid ""
-"The object's :meth:`__enter__` is called before *with-block* is executed and "
-"therefore can run set-up code. It also may return a value that is bound to "
-"the name *variable*, if given.  (Note carefully that *variable* is *not* "
-"assigned the result of *expression*.)"
+"The object's :meth:`~object.__enter__` is called before *with-block* is "
+"executed and therefore can run set-up code. It also may return a value that "
+"is bound to the name *variable*, if given.  (Note carefully that *variable* "
+"is *not* assigned the result of *expression*.)"
 msgstr ""
 "El :meth:`__enter__` del objeto es llamado antes de que se ejecute *with-"
 "block* y por lo tanto puede ejecutar código de configuración. También puede "
@@ -1012,9 +1188,10 @@ msgstr ""
 "*expresión*)"
 
 #: ../Doc/whatsnew/2.5.rst:586
+#, fuzzy
 msgid ""
-"After execution of the *with-block* is finished, the object's :meth:"
-"`__exit__` method is called, even if the block raised an exception, and can "
+"After execution of the *with-block* is finished, the object's :meth:`~object."
+"__exit__` method is called, even if the block raised an exception, and can "
 "therefore run clean-up code."
 msgstr ""
 "Una vez finalizada la ejecución del *with-block*, se llama al método :meth:"
@@ -1028,6 +1205,10 @@ msgid ""
 msgstr ""
 "Para habilitar la declaración en Python 2.5, debe añadir la siguiente "
 "directiva a su módulo::"
+
+#: ../Doc/whatsnew/2.5.rst:593
+msgid "from __future__ import with_statement"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:595
 msgid "The statement will always be enabled in Python 2.6."
@@ -1043,6 +1224,14 @@ msgstr ""
 "contextos y pueden utilizarse con la sentencia ':keyword:`with`''. Los "
 "objetos de archivo son un ejemplo::"
 
+#: ../Doc/whatsnew/2.5.rst:600
+msgid ""
+"with open('/etc/passwd', 'r') as f:\n"
+"    for line in f:\n"
+"        print line\n"
+"        ... more processing code ..."
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:605
 msgid ""
 "After this statement has executed, the file object in *f* will have been "
@@ -1054,9 +1243,10 @@ msgstr ""
 "excepción a mitad del bloque."
 
 #: ../Doc/whatsnew/2.5.rst:611
+#, fuzzy
 msgid ""
 "In this case, *f* is the same object created by :func:`open`, because :meth:"
-"`file.__enter__` returns *self*."
+"`~object.__enter__` returns *self*."
 msgstr ""
 "En este caso, *f* es el mismo objeto creado por :func:`open`, porque :meth:"
 "`file.__enter__` devuelve *self*."
@@ -1068,6 +1258,14 @@ msgid ""
 msgstr ""
 "Los bloqueos y las variables de condición del módulo :mod:`threading` "
 "también soportan la sentencia ':keyword:`with`'::"
+
+#: ../Doc/whatsnew/2.5.rst:617
+msgid ""
+"lock = threading.Lock()\n"
+"with lock:\n"
+"    # Critical section of code\n"
+"    ..."
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:622
 msgid ""
@@ -1086,6 +1284,20 @@ msgstr ""
 "La nueva función :func:`localcontext` del módulo :mod:`decimal` facilita el "
 "guardado y la restauración del contexto decimal actual, que encapsula las "
 "características de precisión y redondeo deseadas para los cálculos::"
+
+#: ../Doc/whatsnew/2.5.rst:629
+msgid ""
+"from decimal import Decimal, Context, localcontext\n"
+"\n"
+"# Displays with default precision of 28 digits\n"
+"v = Decimal('578')\n"
+"print v.sqrt()\n"
+"\n"
+"with localcontext(Context(prec=16)):\n"
+"    # All code in this block uses a precision of 16 digits.\n"
+"    # The original context is restored on exiting the block.\n"
+"    print v.sqrt()"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:644
 msgid "Writing Context Managers"
@@ -1112,18 +1324,20 @@ msgstr ""
 "Una explicación de alto nivel del protocolo de gestión del contexto es:"
 
 #: ../Doc/whatsnew/2.5.rst:654
+#, fuzzy
 msgid ""
 "The expression is evaluated and should result in an object called a "
-"\"context manager\".  The context manager must have :meth:`__enter__` and :"
-"meth:`__exit__` methods."
+"\"context manager\".  The context manager must have :meth:`~object."
+"__enter__` and :meth:`~object.__exit__` methods."
 msgstr ""
 "La expresión se evalúa y debe dar como resultado un objeto llamado \"gestor "
 "de contexto\".  El gestor de contexto debe tener métodos :meth:`__enter__` "
 "y :meth:`__exit__`."
 
 #: ../Doc/whatsnew/2.5.rst:658
+#, fuzzy
 msgid ""
-"The context manager's :meth:`__enter__` method is called.  The value "
+"The context manager's :meth:`~object.__enter__` method is called.  The value "
 "returned is assigned to *VAR*.  If no ``'as VAR'`` clause is present, the "
 "value is simply discarded."
 msgstr ""
@@ -1155,9 +1369,10 @@ msgstr ""
 "ha ido mal."
 
 #: ../Doc/whatsnew/2.5.rst:672
+#, fuzzy
 msgid ""
-"If *BLOCK* didn't raise an exception,  the :meth:`__exit__` method is still "
-"called, but *type*, *value*, and *traceback* are all ``None``."
+"If *BLOCK* didn't raise an exception,  the :meth:`~object.__exit__` method "
+"is still called, but *type*, *value*, and *traceback* are all ``None``."
 msgstr ""
 "Si *BLOCK* no lanzó una excepción, el método :meth:`__exit__` sigue siendo "
 "llamado, pero *type*, *value*, y *traceback* son todos ``None``."
@@ -1195,6 +1410,15 @@ msgstr ""
 "Supongamos que hay un objeto que representa una conexión a la base de datos. "
 "Nuestro objetivo será permitir que el usuario escriba código como este::"
 
+#: ../Doc/whatsnew/2.5.rst:687
+msgid ""
+"db_connection = DatabaseConnection()\n"
+"with db_connection as cursor:\n"
+"    cursor.execute('insert into ...')\n"
+"    cursor.execute('delete from ...')\n"
+"    # ... more operations ..."
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:693
 msgid ""
 "The transaction should be committed if the code in the block runs flawlessly "
@@ -1205,11 +1429,24 @@ msgstr ""
 "problemas o revertida si hay una excepción. Aquí está la interfaz básica "
 "para :class:`DatabaseConnection` que voy a asumir::"
 
-#: ../Doc/whatsnew/2.5.rst:706
+#: ../Doc/whatsnew/2.5.rst:697
 msgid ""
-"The :meth:`__enter__` method is pretty easy, having only to start a new "
-"transaction.  For this application the resulting cursor object would be a "
-"useful result, so the method will return it.  The user can then add ``as "
+"class DatabaseConnection:\n"
+"    # Database interface\n"
+"    def cursor (self):\n"
+"        \"Returns a cursor object and starts a new transaction\"\n"
+"    def commit (self):\n"
+"        \"Commits current transaction\"\n"
+"    def rollback (self):\n"
+"        \"Rolls back current transaction\""
+msgstr ""
+
+#: ../Doc/whatsnew/2.5.rst:706
+#, fuzzy
+msgid ""
+"The :meth:`~object.__enter__` method is pretty easy, having only to start a "
+"new transaction.  For this application the resulting cursor object would be "
+"a useful result, so the method will return it.  The user can then add ``as "
 "cursor`` to their ':keyword:`with`' statement to bind the cursor to a "
 "variable name. ::"
 msgstr ""
@@ -1219,12 +1456,23 @@ msgstr ""
 "usuario puede entonces añadir ``as cursor`` a su sentencia ':keyword:`with`' "
 "para ligar el cursor a un nombre de variable. ::"
 
-#: ../Doc/whatsnew/2.5.rst:718
+#: ../Doc/whatsnew/2.5.rst:711
 msgid ""
-"The :meth:`__exit__` method is the most complicated because it's where most "
-"of the work has to be done.  The method has to check if an exception "
-"occurred.  If there was no exception, the transaction is committed.  The "
-"transaction is rolled back if there was an exception."
+"class DatabaseConnection:\n"
+"    ...\n"
+"    def __enter__ (self):\n"
+"        # Code to start a new transaction\n"
+"        cursor = self.cursor()\n"
+"        return cursor"
+msgstr ""
+
+#: ../Doc/whatsnew/2.5.rst:718
+#, fuzzy
+msgid ""
+"The :meth:`~object.__exit__` method is the most complicated because it's "
+"where most of the work has to be done.  The method has to check if an "
+"exception occurred.  If there was no exception, the transaction is "
+"committed.  The transaction is rolled back if there was an exception."
 msgstr ""
 "El método :meth:`__exit__` es el más complicado porque es donde hay que "
 "hacer la mayor parte del trabajo.  El método tiene que comprobar si se "
@@ -1244,6 +1492,20 @@ msgstr ""
 "puede ser más explícito y añadir una declaración :keyword:`return` en el "
 "lugar marcado. ::"
 
+#: ../Doc/whatsnew/2.5.rst:728
+msgid ""
+"class DatabaseConnection:\n"
+"    ...\n"
+"    def __exit__ (self, type, value, tb):\n"
+"        if tb is None:\n"
+"            # No exception, so commit\n"
+"            self.commit()\n"
+"        else:\n"
+"            # Exception occurred, so rollback.\n"
+"            self.rollback()\n"
+"            # return False"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:743
 msgid "The contextlib module"
 msgstr "El módulo contextlib"
@@ -1259,16 +1521,17 @@ msgstr ""
 "keyword:`with`'."
 
 #: ../Doc/whatsnew/2.5.rst:748
+#, fuzzy
 msgid ""
 "The decorator is called :func:`contextmanager`, and lets you write a single "
 "generator function instead of defining a new class.  The generator should "
 "yield exactly one value.  The code up to the :keyword:`yield` will be "
-"executed as the :meth:`__enter__` method, and the value yielded will be the "
-"method's return value that will get bound to the variable in the ':keyword:"
-"`with`' statement's :keyword:`!as` clause, if any.  The code after the :"
-"keyword:`yield` will be executed in the :meth:`__exit__` method.  Any "
-"exception raised in the block will be raised by the :keyword:`!yield` "
-"statement."
+"executed as the :meth:`~object.__enter__` method, and the value yielded will "
+"be the method's return value that will get bound to the variable in the ':"
+"keyword:`with`' statement's :keyword:`!as` clause, if any.  The code after "
+"the :keyword:`yield` will be executed in the :meth:`~object.__exit__` "
+"method.  Any exception raised in the block will be raised by the :keyword:`!"
+"yield` statement."
 msgstr ""
 "El decorador se llama :func:`contextmanager`, y permite escribir una única "
 "función generadora en lugar de definir una nueva clase.  El generador debe "
@@ -1288,6 +1551,26 @@ msgstr ""
 "Nuestro ejemplo de base de datos de la sección anterior podría escribirse "
 "utilizando este decorador como::"
 
+#: ../Doc/whatsnew/2.5.rst:760
+msgid ""
+"from contextlib import contextmanager\n"
+"\n"
+"@contextmanager\n"
+"def db_transaction (connection):\n"
+"    cursor = connection.cursor()\n"
+"    try:\n"
+"        yield cursor\n"
+"    except:\n"
+"        connection.rollback()\n"
+"        raise\n"
+"    else:\n"
+"        connection.commit()\n"
+"\n"
+"db = DatabaseConnection()\n"
+"with db_transaction(db) as cursor:\n"
+"    ..."
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:777
 msgid ""
 "The :mod:`contextlib` module also has a ``nested(mgr1, mgr2, ...)`` function "
@@ -1302,6 +1585,13 @@ msgstr ""
 "la única sentencia ':keyword:`!with`` inicia una transacción de base de "
 "datos y adquiere un bloqueo de hilo::"
 
+#: ../Doc/whatsnew/2.5.rst:782
+msgid ""
+"lock = threading.Lock()\n"
+"with nested (db_transaction(db), lock) as (cursor, locked):\n"
+"    ..."
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:786
 msgid ""
 "Finally, the ``closing(object)`` function returns *object* so that it can be "
@@ -1310,6 +1600,16 @@ msgstr ""
 "Por último, la función ``closing(object)`` devuelve el *objeto* para que "
 "pueda ser vinculado a una variable, y llama a ``object.close`` al final del "
 "bloque. ::"
+
+#: ../Doc/whatsnew/2.5.rst:789
+msgid ""
+"import urllib, sys\n"
+"from contextlib import closing\n"
+"\n"
+"with closing(urllib.urlopen('http://www.yahoo.com')) as f:\n"
+"    for line in f:\n"
+"        sys.stdout.write(line)"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:803
 msgid ":pep:`343` - The \"with\" statement"
@@ -1355,6 +1655,15 @@ msgstr ""
 "La jerarquía de herencia de las excepciones se ha reordenado un poco. En "
 "2.5, las relaciones de herencia son::"
 
+#: ../Doc/whatsnew/2.5.rst:822
+msgid ""
+"BaseException       # New in Python 2.5\n"
+"|- KeyboardInterrupt\n"
+"|- SystemExit\n"
+"|- Exception\n"
+"   |- (all other current built-in exceptions)"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:828
 msgid ""
 "This rearrangement was done because people often want to catch all "
@@ -1373,6 +1682,17 @@ msgstr ""
 "todas las excepciones, por lo que comúnmente se necesita listar :exc:"
 "`KeyboardInterrupt` y :exc:`SystemExit` para volver a lanzarlas.  El patrón "
 "habitual es::"
+
+#: ../Doc/whatsnew/2.5.rst:835
+msgid ""
+"try:\n"
+"    ...\n"
+"except (KeyboardInterrupt, SystemExit):\n"
+"    raise\n"
+"except:\n"
+"    # Log error...\n"
+"    # Continue running program..."
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:843
 msgid ""
@@ -1435,36 +1755,36 @@ msgstr "PEP 353: Uso de ssize_t como tipo de índice"
 #: ../Doc/whatsnew/2.5.rst:874
 msgid ""
 "A wide-ranging change to Python's C API, using a new  :c:type:`Py_ssize_t` "
-"type definition instead of :c:type:`int`,  will permit the interpreter to "
+"type definition instead of :c:expr:`int`,  will permit the interpreter to "
 "handle more data on 64-bit platforms. This change doesn't affect Python's "
 "capacity on 32-bit platforms."
 msgstr ""
-"Un amplio cambio en la API C de Python, que utiliza una nueva definición de "
-"tipo :c:type:`Py_ssize_t` en lugar de :c:type:`int`, permitirá al intérprete "
-"manejar más datos en plataformas de 64 bits. Este cambio no afecta a la "
-"capacidad de Python en plataformas de 32 bits."
+"Un cambio de gran alcance en la API C de Python, que usa una nueva "
+"definición de tipo :c:type:`Py_ssize_t` en lugar de :c:expr:`int`, permitirá "
+"que el intérprete maneje más datos en plataformas de 64 bits. Este cambio no "
+"afecta la capacidad de Python en plataformas de 32 bits."
 
 #: ../Doc/whatsnew/2.5.rst:879
 msgid ""
-"Various pieces of the Python interpreter used C's :c:type:`int` type to "
+"Various pieces of the Python interpreter used C's :c:expr:`int` type to "
 "store sizes or counts; for example, the number of items in a list or tuple "
-"were stored in an :c:type:`int`.  The C compilers for most 64-bit platforms "
-"still define :c:type:`int` as a 32-bit type, so that meant that lists could "
+"were stored in an :c:expr:`int`.  The C compilers for most 64-bit platforms "
+"still define :c:expr:`int` as a 32-bit type, so that meant that lists could "
 "only hold up to ``2**31 - 1`` = 2147483647 items. (There are actually a few "
-"different programming models that 64-bit C compilers can use -- see http://"
-"www.unix.org/version2/whatsnew/lp64_wp.html for a discussion -- but the most "
-"commonly available model leaves :c:type:`int` as 32 bits.)"
+"different programming models that 64-bit C compilers can use -- see https://"
+"unix.org/version2/whatsnew/lp64_wp.html for a discussion -- but the most "
+"commonly available model leaves :c:expr:`int` as 32 bits.)"
 msgstr ""
-"Varias partes del intérprete de Python utilizaban el tipo :c:type:`int` de C "
-"para almacenar tamaños o recuentos; por ejemplo, el número de elementos de "
-"una lista o tupla se almacenaba en un :c:type:`int`.  Los compiladores de C "
-"para la mayoría de las plataformas de 64 bits siguen definiendo :c:type:"
-"`int` como un tipo de 32 bits, lo que significa que las listas sólo pueden "
-"contener hasta ``2**31 - 1`` = 2147483647 elementos. (En realidad, hay "
-"algunos modelos de programación diferentes que los compiladores de C de 64 "
-"bits pueden utilizar -- véase http://www.unix.org/version2/whatsnew/lp64_wp."
-"html para una discusión -- pero el modelo más comúnmente disponible deja :c:"
-"type:`int` como de 32 bits)"
+"Varias piezas del intérprete de Python usaban el tipo :c:expr:`int` de C "
+"para almacenar tamaños o conteos; por ejemplo, la cantidad de elementos en "
+"una lista o tupla se almacenaron en un :c:expr:`int`. Los compiladores de C "
+"para la mayoría de las plataformas de 64 bits aún definen :c:expr:`int` como "
+"un tipo de 32 bits, lo que significa que las listas solo pueden contener "
+"hasta ``2**31 - 1`` = 2147483647 elementos. (En realidad, hay algunos "
+"modelos de programación diferentes que los compiladores de C de 64 bits "
+"pueden usar; consulte https://unix.org/version2/whatsnew/lp64_wp.html para "
+"ver una discusión, pero el modelo más comúnmente disponible deja :c:expr:"
+"`int` como 32 bits)."
 
 #: ../Doc/whatsnew/2.5.rst:888
 msgid ""
@@ -1487,23 +1807,23 @@ msgid ""
 "The pointers for a list that size would only require 16 GiB of space, so "
 "it's not unreasonable that Python programmers might construct lists that "
 "large. Therefore, the Python interpreter had to be changed to use some type "
-"other than :c:type:`int`, and this will be a 64-bit type on 64-bit "
+"other than :c:expr:`int`, and this will be a 64-bit type on 64-bit "
 "platforms.  The change will cause incompatibilities on 64-bit machines, so "
 "it was deemed worth making the transition now, while the number of 64-bit "
 "users is still relatively small. (In 5 or 10 years, we may *all* be on 64-"
 "bit machines, and the transition would be more painful then.)"
 msgstr ""
-"Sin embargo, es posible direccionar esa cantidad de memoria en una "
-"plataforma de 64 bits.  Los punteros para una lista de ese tamaño sólo "
-"requerirían 16 GiB de espacio, por lo que no es descabellado que los "
-"programadores de Python puedan construir listas tan grandes. Por lo tanto, "
-"el intérprete de Python tuvo que ser cambiado para usar algún tipo diferente "
-"a :c:type:`int`, y este será un tipo de 64 bits en plataformas de 64 bits.  "
-"El cambio causará incompatibilidades en las máquinas de 64 bits, por lo que "
-"se consideró que valía la pena hacer la transición ahora, mientras el número "
-"de usuarios de 64 bits es todavía relativamente pequeño. (En 5 o 10 años, "
-"puede que *todos* estemos en máquinas de 64 bits, y la transición sería "
-"entonces más dolorosa)"
+"Sin embargo, es posible abordar esa cantidad de memoria en una plataforma de "
+"64 bits. Los punteros para una lista de ese tamaño solo requerirían 16 GiB "
+"de espacio, por lo que no es irrazonable que los programadores de Python "
+"puedan construir listas tan grandes. Por lo tanto, el intérprete de Python "
+"tuvo que cambiarse para usar algún tipo diferente a :c:expr:`int`, y este "
+"será un tipo de 64 bits en plataformas de 64 bits. El cambio provocará "
+"incompatibilidades en las máquinas de 64 bits, por lo que se consideró que "
+"valía la pena hacer la transición ahora, mientras que la cantidad de "
+"usuarios de 64 bits aún es relativamente pequeña. (En 5 o 10 años, es "
+"posible que *todo* esté en máquinas de 64 bits y la transición sería más "
+"dolorosa entonces)."
 
 #: ../Doc/whatsnew/2.5.rst:904
 msgid ""
@@ -1524,16 +1844,15 @@ msgstr ""
 msgid ""
 "The :c:func:`PyArg_ParseTuple` and :c:func:`Py_BuildValue` functions have a "
 "new conversion code, ``n``, for :c:type:`Py_ssize_t`.   :c:func:"
-"`PyArg_ParseTuple`'s ``s#`` and ``t#`` still output :c:type:`int` by "
+"`PyArg_ParseTuple`'s ``s#`` and ``t#`` still output :c:expr:`int` by "
 "default, but you can define the macro  :c:macro:`PY_SSIZE_T_CLEAN` before "
 "including :file:`Python.h`  to make them return :c:type:`Py_ssize_t`."
 msgstr ""
 "Las funciones :c:func:`PyArg_ParseTuple` y :c:func:`Py_BuildValue` tienen un "
-"nuevo código de conversión, ``n``, para :c:type:`Py_ssize_t`.   Las "
-"funciones :c:func:`PyArg_ParseTuple` ``s#`` y ``t#`` siguen devolviendo :c:"
-"type:`int` por defecto, pero puedes definir la macro :c:macro:"
-"`PY_SSIZE_T_CLEAN` antes de incluir :file:`Python.h` para que devuelvan :c:"
-"type:`Py_ssize_t`."
+"nuevo código de conversión, ``n``, para :c:type:`Py_ssize_t`. ``s#`` y "
+"``t#`` de :c:func:`PyArg_ParseTuple` aún generan :c:expr:`int` de forma "
+"predeterminada, pero puede definir la macro :c:macro:`PY_SSIZE_T_CLEAN` "
+"antes de incluir :file:`Python.h` para que devuelvan :c:type:`Py_ssize_t`."
 
 #: ../Doc/whatsnew/2.5.rst:916
 msgid ""
@@ -1597,6 +1916,13 @@ msgstr ""
 "`__index__`.  No toma argumentos y devuelve un entero que da el índice de "
 "corte a utilizar.  Por ejemplo::"
 
+#: ../Doc/whatsnew/2.5.rst:949
+msgid ""
+"class C:\n"
+"    def __index__ (self):\n"
+"        return self.value"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:953
 msgid ""
 "The return value must be either a Python integer or long integer. The "
@@ -1609,16 +1935,16 @@ msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:957
 msgid ""
-"A corresponding :attr:`nb_index` slot was added to the C-level :c:type:"
-"`PyNumberMethods` structure to let C extensions implement this protocol. "
-"``PyNumber_Index(obj)`` can be used in extension code to call the :meth:"
-"`__index__` function and retrieve its result."
+"A corresponding :c:member:`~PyNumberMethods.nb_index` slot was added to the "
+"C-level :c:type:`PyNumberMethods` structure to let C extensions implement "
+"this protocol. ``PyNumber_Index(obj)`` can be used in extension code to call "
+"the :meth:`__index__` function and retrieve its result."
 msgstr ""
-"Se ha añadido la correspondiente ranura :attr:`nb_index` a la estructura :c:"
-"type:`PyNumberMethods` de nivel C para que las extensiones C puedan "
-"implementar este protocolo. El código de la extensión puede utilizar "
-"``PyNumber_Index(obj)`` para llamar a la función :meth:`__index__` y obtener "
-"su resultado."
+"Se agregó una ranura :c:member:`~PyNumberMethods.nb_index` correspondiente a "
+"la estructura :c:type:`PyNumberMethods` de nivel C para permitir que las "
+"extensiones C implementen este protocolo. ``PyNumber_Index(obj)`` se puede "
+"utilizar en código de extensión para llamar a la función :meth:`__index__` y "
+"recuperar su resultado."
 
 #: ../Doc/whatsnew/2.5.rst:965
 msgid ":pep:`357` - Allowing Any Object to be Used for Slicing"
@@ -1657,6 +1983,17 @@ msgstr ""
 "siguiente ejemplo define un diccionario que devuelve cero para cualquier "
 "clave que falte::"
 
+#: ../Doc/whatsnew/2.5.rst:985
+msgid ""
+"class zerodict (dict):\n"
+"    def __missing__ (self, key):\n"
+"        return 0\n"
+"\n"
+"d = zerodict({1:1, 2:2})\n"
+"print d[1], d[2]   # Prints 1, 2\n"
+"print d[3], d[4]   # Prints 0, 0"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:993
 msgid ""
 "Both 8-bit and Unicode strings have new ``partition(sep)``  and "
@@ -1692,6 +2029,20 @@ msgstr ""
 msgid "Some examples::"
 msgstr "Algunos ejemplos::"
 
+#: ../Doc/whatsnew/2.5.rst:1007
+msgid ""
+">>> ('http://www.python.org').partition('://')\n"
+"('http', '://', 'www.python.org')\n"
+">>> ('file:/usr/share/doc/index.html').partition('://')\n"
+"('file:/usr/share/doc/index.html', '', '')\n"
+">>> (u'Subject: a quick question').partition(':')\n"
+"(u'Subject', u':', u' a quick question')\n"
+">>> 'www.python.org'.rpartition('.')\n"
+"('www.python', '.', 'org')\n"
+">>> 'www.python.org'.rpartition(':')\n"
+"('', '', 'www.python.org')"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:1018
 msgid ""
 "(Implemented by Fredrik Lundh following a suggestion by Raymond Hettinger.)"
@@ -1705,6 +2056,12 @@ msgid ""
 msgstr ""
 "Los métodos :meth:`startswith` y :meth:`endswith` de los tipos de cadena "
 "aceptan ahora tuplas de cadenas para su comprobación. ::"
+
+#: ../Doc/whatsnew/2.5.rst:1023
+msgid ""
+"def is_image_file (filename):\n"
+"    return filename.endswith(('.gif', '.jpg', '.tiff'))"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:1026
 msgid "(Implemented by Georg Brandl following a suggestion by Tom Lynn.)"
@@ -1725,6 +2082,15 @@ msgstr ""
 "para cada valor de la lista; :func:`min`/:func:`max` devolverá el elemento "
 "con el valor de retorno más pequeño/más grande de esta función. Por ejemplo, "
 "para encontrar la cadena más larga de una lista, puede hacer::"
+
+#: ../Doc/whatsnew/2.5.rst:1037
+msgid ""
+"L = ['medium', 'longest', 'short']\n"
+"# Prints 'longest'\n"
+"print max(L, key=len)\n"
+"# Prints 'short', because lexicographically 'short' has the largest value\n"
+"print max(L)"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:1043
 msgid "(Contributed by Steven Bethard and Raymond Hettinger.)"
@@ -1778,6 +2144,10 @@ msgstr ""
 "declarar la codificación de un módulo; por ejemplo, puede añadir una línea "
 "como ésta cerca de la parte superior del fichero fuente::"
 
+#: ../Doc/whatsnew/2.5.rst:1067
+msgid "# -*- coding: latin1 -*-"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:1069
 msgid ""
 "A new warning, :class:`UnicodeWarning`, is triggered when  you attempt to "
@@ -1789,6 +2159,17 @@ msgstr ""
 "comparar una cadena Unicode y una cadena de 8 bits que no se puede convertir "
 "a Unicode utilizando la codificación ASCII por defecto.   El resultado de la "
 "comparación es falso::"
+
+#: ../Doc/whatsnew/2.5.rst:1073
+msgid ""
+">>> chr(128) == unichr(128)   # Can't convert chr(128) to Unicode\n"
+"__main__:1: UnicodeWarning: Unicode equal comparison failed\n"
+"  to convert both arguments to Unicode - interpreting them\n"
+"  as being unequal\n"
+"False\n"
+">>> chr(127) == unichr(127)   # chr(127) can be converted\n"
+"True"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:1081
 msgid ""
@@ -1852,6 +2233,12 @@ msgstr ""
 "La lista de clases base en una definición de clase ahora puede estar "
 "vacía.   Como ejemplo, esto es ahora legal::"
 
+#: ../Doc/whatsnew/2.5.rst:1105
+msgid ""
+"class C():\n"
+"    pass"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:1108
 msgid "(Implemented by Brett Cannon.)"
 msgstr "(Implementado por Brett Cannon.)"
@@ -1869,6 +2256,12 @@ msgstr ""
 "En el intérprete interactivo, ``quit`` y ``exit`` han sido durante mucho "
 "tiempo cadenas para que los nuevos usuarios obtengan un mensaje algo útil "
 "cuando intenten salir::"
+
+#: ../Doc/whatsnew/2.5.rst:1121
+msgid ""
+">>> quit\n"
+"'Use Ctrl-D (i.e. EOF) to exit.'"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:1124
 msgid ""
@@ -1953,14 +2346,15 @@ msgstr ""
 "rápida. (Aportado por Alan McIntyre y comprometido en el sprint NeedForSpeed)"
 
 #: ../Doc/whatsnew/2.5.rst:1168
+#, fuzzy
 msgid ""
 "It's now illegal to mix iterating over a file  with ``for line in file`` and "
 "calling  the file object's :meth:`read`/:meth:`readline`/:meth:`readlines` "
-"methods.  Iteration uses an internal buffer and the  :meth:`read\\*` methods "
-"don't use that buffer.   Instead they would return the data following the "
-"buffer, causing the data to appear out of order.  Mixing iteration and these "
-"methods will now trigger a :exc:`ValueError` from the :meth:`read\\*` "
-"method. (Implemented by Thomas Wouters.)"
+"methods.  Iteration uses an internal buffer and the  :meth:`!read\\*` "
+"methods don't use that buffer.   Instead they would return the data "
+"following the buffer, causing the data to appear out of order.  Mixing "
+"iteration and these methods will now trigger a :exc:`ValueError` from the :"
+"meth:`!read\\*` method. (Implemented by Thomas Wouters.)"
 msgstr ""
 "Ahora es ilegal mezclar la iteración sobre un fichero con ``for line in "
 "file`` y llamar a los métodos :meth:`read`/:meth:`readline`/:meth:"
@@ -1970,18 +2364,20 @@ msgstr ""
 "desordenados.  Mezclar la iteración y estos métodos provocará ahora un :exc:"
 "`ValueError` del método :meth:`read\\*`. (Implementado por Thomas Wouters)"
 
-#: ../Doc/whatsnew/2.5.rst:1178, python-format
+#: ../Doc/whatsnew/2.5.rst:1178
+#, python-format
 msgid ""
 "The :mod:`struct` module now compiles structure format  strings into an "
-"internal representation and caches this representation, yielding a 20% "
-"speedup. (Contributed by Bob Ippolito at the NeedForSpeed sprint.)"
+"internal representation and caches this representation, yielding a "
+"20% speedup. (Contributed by Bob Ippolito at the NeedForSpeed sprint.)"
 msgstr ""
 "El módulo :mod:`struct` ahora compila cadenas de formato de estructura en "
 "una representación interna y almacena en caché esta representación, lo que "
 "supone una mejora del 20% s. (Contribuido por Bob Ippolito en el sprint "
 "NeedForSpeed)"
 
-#: ../Doc/whatsnew/2.5.rst:1182, python-format
+#: ../Doc/whatsnew/2.5.rst:1182
+#, python-format
 msgid ""
 "The :mod:`re` module got a 1 or 2% speedup by switching to  Python's "
 "allocator functions instead of the system's  :c:func:`malloc` and :c:func:"
@@ -2024,7 +2420,8 @@ msgstr ""
 "localidad de la caché y reducir un poco el uso de la memoria.  (Contribución "
 "de Neal Norwitz)"
 
-#: ../Doc/whatsnew/2.5.rst:1201, python-format
+#: ../Doc/whatsnew/2.5.rst:1201
+#, python-format
 msgid ""
 "Python's built-in exceptions are now new-style classes, a change that speeds "
 "up instantiation considerably.  Exception handling in Python 2.5 is "
@@ -2067,8 +2464,9 @@ msgstr ""
 "detalles."
 
 #: ../Doc/whatsnew/2.5.rst:1225
+#, fuzzy
 msgid ""
-"The :mod:`audioop` module now supports the a-LAW encoding, and the code for "
+"The :mod:`!audioop` module now supports the a-LAW encoding, and the code for "
 "u-LAW encoding has been improved.  (Contributed by Lars Immisch.)"
 msgstr ""
 "El módulo :mod:`audioop` soporta ahora la codificación a-LAW, y se ha "
@@ -2128,9 +2526,31 @@ msgstr ""
 "Por ejemplo, puedes hacer un índice de palabras basado en su letra inicial "
 "así::"
 
+#: ../Doc/whatsnew/2.5.rst:1251
+msgid ""
+"words = \"\"\"Nel mezzo del cammin di nostra vita\n"
+"mi ritrovai per una selva oscura\n"
+"che la diritta via era smarrita\"\"\".lower().split()\n"
+"\n"
+"index = defaultdict(list)\n"
+"\n"
+"for w in words:\n"
+"    init_letter = w[0]\n"
+"    index[init_letter].append(w)"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:1261
 msgid "Printing ``index`` results in the following output::"
 msgstr "Al imprimir ``index`` se obtiene la siguiente salida::"
+
+#: ../Doc/whatsnew/2.5.rst:1263
+msgid ""
+"defaultdict(<type 'list'>, {'c': ['cammin', 'che'], 'e': ['era'],\n"
+"        'd': ['del', 'di', 'diritta'], 'm': ['mezzo', 'mi'],\n"
+"        'l': ['la'], 'o': ['oscura'], 'n': ['nel', 'nostra'],\n"
+"        'p': ['per'], 's': ['selva', 'smarrita'],\n"
+"        'r': ['ritrovai'], 'u': ['una'], 'v': ['vita', 'via']}"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:1269
 msgid "(Contributed by Guido van Rossum.)"
@@ -2195,20 +2615,19 @@ msgid ""
 "received several enhancements and a number of bugfixes.  You can now set the "
 "maximum size in bytes of a field by calling the ``csv."
 "field_size_limit(new_limit)`` function; omitting the *new_limit* argument "
-"will return the currently-set limit.  The :class:`reader` class now has a :"
+"will return the currently set limit.  The :class:`reader` class now has a :"
 "attr:`line_num` attribute that counts the number of physical lines read from "
 "the source; records can span multiple physical lines, so :attr:`line_num` is "
 "not the same as the number of records read."
 msgstr ""
 "El módulo :mod:`csv`, que analiza archivos en formato de valores separados "
-"por comas, ha recibido varias mejoras y una serie de correcciones de "
-"errores.  Ahora se puede establecer el tamaño máximo en bytes de un campo "
-"llamando a la función ``csv.field_size_limit(new_limit)``; si se omite el "
-"argumento *new_limit* se devolverá el límite establecido actualmente.  La "
-"clase :class:`reader` tiene ahora un atributo :attr:`line_num` que cuenta el "
-"número de líneas físicas leídas de la fuente; los registros pueden abarcar "
-"varias líneas físicas, por lo que :attr:`line_num` no es lo mismo que el "
-"número de registros leídos."
+"por comas, recibió varias mejoras y varias correcciones de errores. Ahora "
+"puede establecer el tamaño máximo en bytes de un campo llamando a la función "
+"``csv.field_size_limit(new_limit)``; omitir el argumento *new_limit* "
+"devolverá el límite establecido actualmente. La clase :class:`reader` ahora "
+"tiene un atributo :attr:`line_num` que cuenta la cantidad de líneas físicas "
+"leídas de la fuente; los registros pueden abarcar varias líneas físicas, por "
+"lo que :attr:`line_num` no es lo mismo que el número de registros leídos."
 
 #: ../Doc/whatsnew/2.5.rst:1301
 msgid ""
@@ -2246,6 +2665,15 @@ msgstr ""
 "un método ``strptime(string, format)`` para analizar cadenas de fechas, "
 "aportado por Josh Spoerri. Utiliza los mismos caracteres de formato que :"
 "func:`time.strptime` y :func:`time.strftime`::"
+
+#: ../Doc/whatsnew/2.5.rst:1316
+#, python-format
+msgid ""
+"from datetime import datetime\n"
+"\n"
+"ts = datetime.strptime('10:13:15 2006-03-07',\n"
+"                       '%H:%M:%S %Y-%m-%d')"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:1321
 msgid ""
@@ -2292,6 +2720,7 @@ msgstr ""
 "de Barry Warsaw.)"
 
 #: ../Doc/whatsnew/2.5.rst:1345
+#, fuzzy
 msgid ""
 "The :mod:`fileinput` module was made more flexible. Unicode filenames are "
 "now supported, and a *mode* parameter that defaults to ``\"r\"`` was added "
@@ -2299,8 +2728,8 @@ msgid ""
 "`universal newlines` mode.  Another new parameter, *openhook*, lets you use "
 "a function other than :func:`open`  to open the input files.  Once you're "
 "iterating over the set of files, the :class:`FileInput` object's new :meth:"
-"`fileno` returns the file descriptor for the currently opened file. "
-"(Contributed by Georg Brandl.)"
+"`~fileinput.fileno` returns the file descriptor for the currently opened "
+"file. (Contributed by Georg Brandl.)"
 msgstr ""
 "El módulo :mod:`fileinput` se ha hecho más flexible. Ahora se soportan los "
 "nombres de archivo Unicode, y se ha añadido un parámetro *mode* que por "
@@ -2342,6 +2771,16 @@ msgstr ""
 "proporcionado por las funciones :func:`min`/:func:`max` y los métodos :meth:"
 "`sort`.  Por ejemplo::"
 
+#: ../Doc/whatsnew/2.5.rst:1366
+msgid ""
+">>> import heapq\n"
+">>> L = [\"short\", 'medium', 'longest', 'longer still']\n"
+">>> heapq.nsmallest(2, L)  # Return two lowest elements, lexicographically\n"
+"['longer still', 'longest']\n"
+">>> heapq.nsmallest(2, L, key=len)   # Return two shortest elements\n"
+"['short', 'medium']"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:1373 ../Doc/whatsnew/2.5.rst:1382
 msgid "(Contributed by Raymond Hettinger.)"
 msgstr "(Contribución de Raymond Hettinger.)"
@@ -2356,6 +2795,12 @@ msgstr ""
 "argumentos de inicio y paso.  Esto la hace más compatible con los atributos "
 "de los objetos slice, por lo que ahora se puede escribir lo siguiente::"
 
+#: ../Doc/whatsnew/2.5.rst:1379
+msgid ""
+"s = slice(5)     # Create slice object\n"
+"itertools.islice(iterable, s.start, s.stop, s.step)"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:1384
 msgid ""
 "The :func:`format` function in the :mod:`locale` module has been modified "
@@ -2364,7 +2809,8 @@ msgstr ""
 "Se ha modificado la función :func:`format` del módulo :mod:`locale` y se han "
 "añadido dos nuevas funciones, :func:`format_string` y :func:`currency`."
 
-#: ../Doc/whatsnew/2.5.rst:1387, python-format
+#: ../Doc/whatsnew/2.5.rst:1387
+#, python-format
 msgid ""
 "The :func:`format` function's *val* parameter could previously be a string "
 "as long as no more than one %char specifier appeared; now the parameter must "
@@ -2380,7 +2826,8 @@ msgstr ""
 "utilizará las reglas de la configuración regional para formatear la moneda "
 "al colocar un separador entre grupos de tres dígitos."
 
-#: ../Doc/whatsnew/2.5.rst:1393, python-format
+#: ../Doc/whatsnew/2.5.rst:1393
+#, python-format
 msgid ""
 "To format strings with multiple %char specifiers, use the new :func:"
 "`format_string` function that works like :func:`format` but also supports "
@@ -2420,6 +2867,19 @@ msgstr ""
 "`unlock` para bloquear/desbloquear el buzón. El siguiente ejemplo convierte "
 "un buzón con formato maildir en uno con formato mbox::"
 
+#: ../Doc/whatsnew/2.5.rst:1412
+msgid ""
+"import mailbox\n"
+"\n"
+"# 'factory=None' uses email.Message.Message as the class representing\n"
+"# individual messages.\n"
+"src = mailbox.Maildir('maildir', factory=None)\n"
+"dest = mailbox.mbox('/tmp/mbox')\n"
+"\n"
+"for msg in src:\n"
+"    dest.add(msg)"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:1422
 msgid ""
 "(Contributed by Gregory K. Johnson.  Funding was provided by Google's 2005 "
@@ -2429,8 +2889,9 @@ msgstr ""
 "el Summer of Code 2005 de Google)"
 
 #: ../Doc/whatsnew/2.5.rst:1425
+#, fuzzy
 msgid ""
-"New module: the :mod:`msilib` module allows creating Microsoft Installer :"
+"New module: the :mod:`!msilib` module allows creating Microsoft Installer :"
 "file:`.msi` files and CAB files.  Some support for reading the :file:`.msi` "
 "database is also included. (Contributed by Martin von Löwis.)"
 msgstr ""
@@ -2439,10 +2900,11 @@ msgstr ""
 "lectura de la base de datos :file:`.msi`. (Contribución de Martin von Löwis)"
 
 #: ../Doc/whatsnew/2.5.rst:1429
+#, fuzzy
 msgid ""
-"The :mod:`nis` module now supports accessing domains other than the system "
-"default domain by supplying a *domain* argument to the :func:`nis.match` "
-"and :func:`nis.maps` functions. (Contributed by Ben Bell.)"
+"The :mod:`!nis` module now supports accessing domains other than the system "
+"default domain by supplying a *domain* argument to the :func:`!nis.match` "
+"and :func:`!nis.maps` functions. (Contributed by Ben Bell.)"
 msgstr ""
 "El módulo :mod:`nis` soporta ahora el acceso a dominios distintos del "
 "dominio por defecto del sistema proporcionando un argumento *dominio* a las "
@@ -2495,14 +2957,14 @@ msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:1451
 msgid ""
-"Constants named :attr:`os.SEEK_SET`, :attr:`os.SEEK_CUR`, and :attr:`os."
+"Constants named :const:`os.SEEK_SET`, :const:`os.SEEK_CUR`, and :const:`os."
 "SEEK_END` have been added; these are the parameters to the :func:`os.lseek` "
-"function.  Two new constants for locking are :attr:`os.O_SHLOCK` and :attr:"
+"function.  Two new constants for locking are :const:`os.O_SHLOCK` and :const:"
 "`os.O_EXLOCK`."
 msgstr ""
-"Se han añadido las constantes :attr:`os.SEEK_SET`, :attr:`os.SEEK_CUR` y :"
-"attr:`os.SEEK_END`, que son los parámetros de la función :func:`os.lseek`.  "
-"Dos nuevas constantes para el bloqueo son :attr:`os.O_SHLOCK` y :attr:`os."
+"Se han añadido las constantes :const:`os.SEEK_SET`, :const:`os.SEEK_CUR` y :"
+"const:`os.SEEK_END`, que son los parámetros de la función :func:`os.lseek`.  "
+"Dos nuevas constantes para el bloqueo son :const:`os.O_SHLOCK` y :const:`os."
 "O_EXLOCK`."
 
 #: ../Doc/whatsnew/2.5.rst:1456
@@ -2556,11 +3018,12 @@ msgstr ""
 "(Contribución de Grégoire Dooms.)"
 
 #: ../Doc/whatsnew/2.5.rst:1481
+#, fuzzy
 msgid ""
-"The :mod:`pickle` and :mod:`cPickle` modules no longer accept a return value "
-"of ``None`` from the :meth:`__reduce__` method; the method must return a "
-"tuple of arguments instead.  The ability to return ``None`` was deprecated "
-"in Python 2.4, so this completes the removal of the feature."
+"The :mod:`pickle` and :mod:`!cPickle` modules no longer accept a return "
+"value of ``None`` from the :meth:`~object.__reduce__` method; the method "
+"must return a tuple of arguments instead.  The ability to return ``None`` "
+"was deprecated in Python 2.4, so this completes the removal of the feature."
 msgstr ""
 "Los módulos :mod:`pickle` y :mod:`cPickle` ya no aceptan un valor de retorno "
 "de ``None`` del método :meth:`__reduce__`; el método debe devolver una tupla "
@@ -2656,12 +3119,13 @@ msgstr ""
 "de Robert Kiendl.)"
 
 #: ../Doc/whatsnew/2.5.rst:1522
+#, fuzzy
 msgid ""
-"The :mod:`SimpleXMLRPCServer` and :mod:`DocXMLRPCServer`  classes now have "
-"a :attr:`rpc_paths` attribute that constrains XML-RPC operations to a "
-"limited set of URL paths; the default is to allow only ``'/'`` and ``'/"
-"RPC2'``.  Setting :attr:`rpc_paths` to ``None`` or an empty tuple disables  "
-"this path checking."
+"The :mod:`SimpleXMLRPCServer <xmlrpc.server>` and :mod:`DocXMLRPCServer "
+"<xmlrpc.server>`  classes now have a :attr:`rpc_paths` attribute that "
+"constrains XML-RPC operations to a limited set of URL paths; the default is "
+"to allow only ``'/'`` and ``'/RPC2'``.  Setting :attr:`rpc_paths` to "
+"``None`` or an empty tuple disables  this path checking."
 msgstr ""
 "Las clases :mod:`SimpleXMLRPCServer` y :mod:`DocXMLRPCServer` tienen ahora "
 "un atributo :attr:`rpc_paths` que restringe las operaciones XML-RPC a un "
@@ -2711,8 +3175,9 @@ msgstr ""
 "tipo y protocolo del socket."
 
 #: ../Doc/whatsnew/2.5.rst:1545
+#, fuzzy
 msgid ""
-"New module: the :mod:`spwd` module provides functions for accessing the "
+"New module: the :mod:`!spwd` module provides functions for accessing the "
 "shadow password database on systems that support  shadow passwords."
 msgstr ""
 "Nuevo módulo: el módulo :mod:`spwd` proporciona funciones para acceder a la "
@@ -2735,6 +3200,14 @@ msgstr ""
 "func:`pack` y :func:`unpack` a nivel de módulo; éstas crearán objetos :class:"
 "`Struct` y los almacenarán en caché.  O puede utilizar directamente las "
 "instancias de :class:`Struct`::"
+
+#: ../Doc/whatsnew/2.5.rst:1555
+msgid ""
+"s = struct.Struct('ih3s')\n"
+"\n"
+"data = s.pack(1972, 187, 'abc')\n"
+"year, number, name = s.unpack(data)"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:1560
 msgid ""
@@ -2840,12 +3313,12 @@ msgstr ""
 msgid ""
 "The :mod:`unicodedata` module has been updated to use version 4.1.0 of the "
 "Unicode character database.  Version 3.2.0 is required  by some "
-"specifications, so it's still available as  :attr:`unicodedata.ucd_3_2_0`."
+"specifications, so it's still available as  :data:`unicodedata.ucd_3_2_0`."
 msgstr ""
 "El módulo :mod:`unicodedata` ha sido actualizado para utilizar la versión "
 "4.1.0 de la base de datos de caracteres Unicode.  La versión 3.2.0 es "
 "requerida por algunas especificaciones, por lo que sigue estando disponible "
-"como :attr:`unicodedata.ucd_3_2_0`."
+"como :data:`unicodedata.ucd_3_2_0`."
 
 #: ../Doc/whatsnew/2.5.rst:1607
 msgid ""
@@ -2866,6 +3339,26 @@ msgstr ""
 "`uuid3`, :func:`uuid4`, y :func:`uuid5` para generar diferentes versiones de "
 "UUID.  (Los UUID de la versión 2 no se especifican en :rfc:`4122` y no están "
 "soportados por este módulo) ::"
+
+#: ../Doc/whatsnew/2.5.rst:1615
+msgid ""
+">>> import uuid\n"
+">>> # make a UUID based on the host ID and current time\n"
+">>> uuid.uuid1()\n"
+"UUID('a8098c1a-f86e-11da-bd1a-00112444be1e')\n"
+"\n"
+">>> # make a UUID using an MD5 hash of a namespace UUID and a name\n"
+">>> uuid.uuid3(uuid.NAMESPACE_DNS, 'python.org')\n"
+"UUID('6fa459ea-ee8a-3ca4-894e-db77e160355e')\n"
+"\n"
+">>> # make a random UUID\n"
+">>> uuid.uuid4()\n"
+"UUID('16fd2706-8baf-433b-82eb-8c7fada847da')\n"
+"\n"
+">>> # make a UUID using a SHA-1 hash of a namespace UUID and a name\n"
+">>> uuid.uuid5(uuid.NAMESPACE_DNS, 'python.org')\n"
+"UUID('886313e1-3b8a-5372-9b90-0c9aee199e5d')"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:1632
 msgid "(Contributed by Ka-Ping Yee.)"
@@ -2913,11 +3406,13 @@ msgstr ""
 "Broytmann y Georg Brandl)"
 
 #: ../Doc/whatsnew/2.5.rst:1653
+#, fuzzy
 msgid ""
-"The :mod:`xmlrpclib` module now supports returning  :class:`~datetime."
-"datetime` objects for the XML-RPC date type.  Supply  ``use_datetime=True`` "
-"to the :func:`loads` function or the :class:`Unmarshaller` class to enable "
-"this feature. (Contributed by Skip Montanaro.)"
+"The :mod:`xmlrpclib <xmlrpc.client>` module now supports returning  :class:"
+"`~datetime.datetime` objects for the XML-RPC date type.  Supply  "
+"``use_datetime=True`` to the :func:`~xmlrpc.client.loads` function or the :"
+"class:`!Unmarshaller` class to enable this feature. (Contributed by Skip "
+"Montanaro.)"
 msgstr ""
 "El módulo :mod:`xmlrpclib` ahora soporta la devolución de objetos :class:"
 "`~datetime.datetime` para el tipo de fecha XML-RPC.  Proporcione "
@@ -2953,10 +3448,11 @@ msgid "The ctypes package"
 msgstr "El paquete ctypes"
 
 #: ../Doc/whatsnew/2.5.rst:1681
+#, fuzzy
 msgid ""
 "The :mod:`ctypes` package, written by Thomas Heller, has been added  to the "
 "standard library.  :mod:`ctypes` lets you call arbitrary functions  in "
-"shared libraries or DLLs.  Long-time users may remember the :mod:`dl` "
+"shared libraries or DLLs.  Long-time users may remember the :mod:`!dl` "
 "module, which provides functions for loading shared libraries and calling "
 "functions in them. The :mod:`ctypes` package is much fancier."
 msgstr ""
@@ -2979,10 +3475,18 @@ msgstr ""
 "compartida o DLL. Una vez hecho esto, puedes llamar a funciones arbitrarias "
 "accediendo a ellas como atributos del objeto :class:`CDLL`. ::"
 
+#: ../Doc/whatsnew/2.5.rst:1692
+msgid ""
+"import ctypes\n"
+"\n"
+"libc = ctypes.CDLL('libc.so.6')\n"
+"result = libc.printf(\"Line of output\\n\")"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:1697
 msgid ""
 "Type constructors for the various C types are provided: :func:`c_int`, :func:"
-"`c_float`, :func:`c_double`, :func:`c_char_p` (equivalent to :c:type:`char "
+"`c_float`, :func:`c_double`, :func:`c_char_p` (equivalent to :c:expr:`char "
 "\\*`), and so forth.  Unlike Python's types, the C versions are all mutable; "
 "you can assign to their :attr:`value` attribute to change the wrapped "
 "value.  Python integers and strings will be automatically converted to the "
@@ -2990,15 +3494,15 @@ msgid ""
 "constructor.  (And I mean *must*;  getting it wrong will often result in the "
 "interpreter crashing with a segmentation fault.)"
 msgstr ""
-"Se proporcionan constructores de tipos para los distintos tipos de C: :func:"
+"Se proporcionan constructores de tipo para los distintos tipos de C: :func:"
 "`c_int`, :func:`c_float`, :func:`c_double`, :func:`c_char_p` (equivalente a :"
-"c:type:`char \\*`), etc.  A diferencia de los tipos de Python, las versiones "
-"de C son todas mutables; puedes asignar a su atributo :attr:`value` para "
-"cambiar el valor envuelto.  Los enteros y las cadenas de Python se "
+"c:expr:`char \\*` ), etcétera. A diferencia de los tipos de Python, las "
+"versiones C son todas mutables; puede asignar a su atributo :attr:`value` "
+"para cambiar el valor envuelto. Los enteros y las cadenas de Python se "
 "convertirán automáticamente a los tipos C correspondientes, pero para otros "
-"tipos debes llamar al constructor de tipo correcto.  (Y quiero decir *debe*; "
-"si se equivoca, a menudo el intérprete se bloquea con un fallo de "
-"segmentación)"
+"tipos debe llamar al constructor de tipo correcto. (Y me refiero a *debe*; "
+"hacerlo mal a menudo resultará en que el intérprete falle con una falla de "
+"segmentación)."
 
 #: ../Doc/whatsnew/2.5.rst:1706
 msgid ""
@@ -3013,6 +3517,13 @@ msgstr ""
 "Cuando necesite un área de memoria modificable, utilice :func:"
 "`create_string_buffer`::"
 
+#: ../Doc/whatsnew/2.5.rst:1711
+msgid ""
+"s = \"this is a string\"\n"
+"buf = ctypes.create_string_buffer(s)\n"
+"libc.strfry(buf)"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:1715
 msgid ""
 "C functions are assumed to return integers, but you can set the :attr:"
@@ -3022,26 +3533,47 @@ msgstr ""
 "establecer el atributo :attr:`restype` del objeto de la función para cambiar "
 "esto::"
 
+#: ../Doc/whatsnew/2.5.rst:1718
+msgid ""
+">>> libc.atof('2.71828')\n"
+"-1783957616\n"
+">>> libc.atof.restype = ctypes.c_double\n"
+">>> libc.atof('2.71828')\n"
+"2.71828"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:1724
+#, fuzzy
 msgid ""
 ":mod:`ctypes` also provides a wrapper for Python's C API  as the ``ctypes."
 "pythonapi`` object.  This object does *not*  release the global interpreter "
 "lock before calling a function, because the lock must be held when calling "
-"into the interpreter's code.   There's a :class:`py_object()` type "
-"constructor that will create a  :c:type:`PyObject \\*` pointer.  A simple "
+"into the interpreter's code.   There's a :class:`~ctypes.py_object` type "
+"constructor that will create a  :c:expr:`PyObject *` pointer.  A simple "
 "usage::"
 msgstr ""
-":mod:`ctypes` también proporciona una envoltura para la API de C de Python "
-"como el objeto ``ctypes.pythonapi``.  Este objeto *no* libera el bloqueo "
-"global del intérprete antes de llamar a una función, porque el bloqueo debe "
-"mantenerse cuando se llama al código del intérprete.   Hay un constructor de "
-"tipo :class:`py_object()` que creará un puntero :c:type:`PyObject \\*`.  Un "
-"uso sencillo::"
+":mod:`ctypes` también proporciona un contenedor para la API C de Python como "
+"objeto ``ctypes.pythonapi``. Este objeto *not* libera el bloqueo del "
+"intérprete global antes de llamar a una función, porque el bloqueo debe "
+"mantenerse cuando se llama al código del intérprete. Hay un constructor de "
+"tipo :class:`py_object()` que creará un puntero :c:expr:`PyObject *`. Un uso "
+"simple::"
+
+#: ../Doc/whatsnew/2.5.rst:1730
+msgid ""
+"import ctypes\n"
+"\n"
+"d = {}\n"
+"ctypes.pythonapi.PyObject_SetItem(ctypes.py_object(d),\n"
+"          ctypes.py_object(\"abc\"),  ctypes.py_object(1))\n"
+"# d is now {'abc', 1}."
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:1737
+#, fuzzy
 msgid ""
-"Don't forget to use :class:`py_object()`; if it's omitted you end  up with a "
-"segmentation fault."
+"Don't forget to use :func:`~ctypes.py_object`; if it's omitted you end  up "
+"with a segmentation fault."
 msgstr ""
 "No olvides usar :class:`py_object()`; si se omite acabas con un fallo de "
 "segmentación."
@@ -3062,13 +3594,18 @@ msgstr ""
 "que :mod:`ctypes` está incluido en el núcleo de Python."
 
 #: ../Doc/whatsnew/2.5.rst:1750
-msgid "http://starship.python.net/crew/theller/ctypes/"
-msgstr "http://starship.python.net/crew/theller/ctypes/"
+msgid ""
+"https://web.archive.org/web/20180410025338/http://starship.python.net/crew/"
+"theller/ctypes/"
+msgstr ""
+"https://web.archive.org/web/20180410025338/http://starship.python.net/crew/"
+"theller/ctypes/"
 
 #: ../Doc/whatsnew/2.5.rst:1750
-msgid "The ctypes web page, with a tutorial, reference, and FAQ."
+msgid "The pre-stdlib ctypes web page, with a tutorial, reference, and FAQ."
 msgstr ""
-"La página web de ctypes, con un tutorial, referencias y preguntas frecuentes."
+"La página web pre-stdlib ctypes, con un tutorial, referencia y preguntas "
+"frecuentes."
 
 #: ../Doc/whatsnew/2.5.rst:1752
 msgid "The documentation  for the :mod:`ctypes` module."
@@ -3095,12 +3632,13 @@ msgstr ""
 #: ../Doc/whatsnew/2.5.rst:1768
 msgid ""
 "The rest of this section will provide a brief overview of using ElementTree. "
-"Full documentation for ElementTree is available at http://effbot.org/zone/"
-"element-index.htm."
+"Full documentation for ElementTree is available at https://web.archive.org/"
+"web/20201124024954/http://effbot.org/zone/element-index.htm."
 msgstr ""
-"El resto de esta sección proporcionará una breve descripción del uso de "
-"ElementTree. La documentación completa de ElementTree está disponible en "
-"http://effbot.org/zone/element-index.htm."
+"El resto de esta sección proporcionará una breve descripción general del uso "
+"de ElementTree. La documentación completa de ElementTree está disponible en "
+"https://web.archive.org/web/20201124024954/http://effbot.org/zone/element-"
+"index.htm."
 
 #: ../Doc/whatsnew/2.5.rst:1772
 msgid ""
@@ -3126,6 +3664,17 @@ msgstr ""
 "(se supone que contiene un nombre de archivo) o un objeto similar a un "
 "archivo y devuelve una instancia de :class:`ElementTree`::"
 
+#: ../Doc/whatsnew/2.5.rst:1782
+msgid ""
+"from xml.etree import ElementTree as ET\n"
+"\n"
+"tree = ET.parse('ex-1.xml')\n"
+"\n"
+"feed = urllib.urlopen(\n"
+"          'http://planet.python.org/rss10.xml')\n"
+"tree = ET.parse(feed)"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:1790
 msgid ""
 "Once you have an :class:`ElementTree` instance, you can call its :meth:"
@@ -3145,6 +3694,14 @@ msgstr ""
 "un nodo :class:`Element` (no un :class:`ElementTree`).   Esta función "
 "proporciona una forma ordenada de incorporar fragmentos XML, acercándose a "
 "la comodidad de un literal XML::"
+
+#: ../Doc/whatsnew/2.5.rst:1798
+msgid ""
+"svg = ET.XML(\"\"\"<svg width=\"10px\" version=\"1.0\">\n"
+"             </svg>\"\"\")\n"
+"svg.set('height', '320px')\n"
+"svg.append(elem1)"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:1803
 msgid ""
@@ -3271,6 +3828,14 @@ msgstr ""
 "como nodos :class:`Element`.  Para comprobar si un nodo es un comentario o "
 "unas instrucciones de procesamiento::"
 
+#: ../Doc/whatsnew/2.5.rst:1840
+msgid ""
+"if elem.tag is ET.Comment:\n"
+"    ...\n"
+"elif elem.tag is ET.ProcessingInstruction:\n"
+"    ..."
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:1845
 msgid ""
 "To generate XML output, you should call the :meth:`ElementTree.write` "
@@ -3280,6 +3845,16 @@ msgstr ""
 "Para generar una salida XML, debes llamar al método :meth:`ElementTree."
 "write`. Al igual que :func:`parse`, puede tomar una cadena o un objeto tipo "
 "archivo::"
+
+#: ../Doc/whatsnew/2.5.rst:1848
+msgid ""
+"# Encoding is US-ASCII\n"
+"tree.write('output.xml')\n"
+"\n"
+"# Encoding is UTF-8\n"
+"f = open('output.xml', 'w')\n"
+"tree.write(f, encoding='utf-8')"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:1855
 msgid ""
@@ -3308,8 +3883,12 @@ msgstr ""
 "detalles."
 
 #: ../Doc/whatsnew/2.5.rst:1868
-msgid "http://effbot.org/zone/element-index.htm"
-msgstr "http://effbot.org/zone/element-index.htm"
+msgid ""
+"https://web.archive.org/web/20201124024954/http://effbot.org/zone/element-"
+"index.htm"
+msgstr ""
+"https://web.archive.org/web/20201124024954/http://effbot.org/zone/element-"
+"index.htm"
 
 #: ../Doc/whatsnew/2.5.rst:1869
 msgid "Official documentation for ElementTree."
@@ -3320,12 +3899,13 @@ msgid "The hashlib package"
 msgstr "El paquete hashlib"
 
 #: ../Doc/whatsnew/2.5.rst:1879
+#, fuzzy
 msgid ""
 "A new :mod:`hashlib` module, written by Gregory P. Smith,  has been added to "
-"replace the :mod:`md5` and :mod:`sha` modules.  :mod:`hashlib` adds support "
-"for additional secure hashes (SHA-224, SHA-256, SHA-384, and SHA-512). When "
-"available, the module uses OpenSSL for fast platform optimized "
-"implementations of algorithms."
+"replace the :mod:`!md5` and :mod:`!sha` modules.  :mod:`hashlib` adds "
+"support for additional secure hashes (SHA-224, SHA-256, SHA-384, and "
+"SHA-512). When available, the module uses OpenSSL for fast platform "
+"optimized implementations of algorithms."
 msgstr ""
 "Se ha añadido un nuevo módulo :mod:`hashlib`, escrito por Gregory P. Smith, "
 "para sustituir a los módulos :mod:`md5` y :mod:`sha`. :mod:`hashlib` añade "
@@ -3334,8 +3914,9 @@ msgstr ""
 "implementaciones rápidas de algoritmos optimizados para la plataforma."
 
 #: ../Doc/whatsnew/2.5.rst:1885
+#, fuzzy
 msgid ""
-"The old :mod:`md5` and :mod:`sha` modules still exist as wrappers around "
+"The old :mod:`!md5` and :mod:`!sha` modules still exist as wrappers around "
 "hashlib to preserve backwards compatibility.  The new module's interface is "
 "very close to that of the old modules, but not identical. The most "
 "significant difference is that the constructor functions for creating new "
@@ -3346,6 +3927,32 @@ msgstr ""
 "interfaz del nuevo módulo es muy parecida a la de los módulos antiguos, pero "
 "no es idéntica. La diferencia más significativa es que las funciones "
 "constructoras para crear nuevos objetos hashing tienen un nombre diferente ::"
+
+#: ../Doc/whatsnew/2.5.rst:1891
+msgid ""
+"# Old versions\n"
+"h = md5.md5()\n"
+"h = md5.new()\n"
+"\n"
+"# New version\n"
+"h = hashlib.md5()\n"
+"\n"
+"# Old versions\n"
+"h = sha.sha()\n"
+"h = sha.new()\n"
+"\n"
+"# New version\n"
+"h = hashlib.sha1()\n"
+"\n"
+"# Hash that weren't previously available\n"
+"h = hashlib.sha224()\n"
+"h = hashlib.sha256()\n"
+"h = hashlib.sha384()\n"
+"h = hashlib.sha512()\n"
+"\n"
+"# Alternative form\n"
+"h = hashlib.new('md5')          # Provide algorithm as a string"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:1914
 msgid ""
@@ -3371,13 +3978,13 @@ msgstr "El paquete sqlite3"
 
 #: ../Doc/whatsnew/2.5.rst:1933
 msgid ""
-"The pysqlite module (http://www.pysqlite.org), a wrapper for the SQLite "
+"The pysqlite module (https://www.pysqlite.org), a wrapper for the SQLite "
 "embedded database, has been added to the standard library under the package "
 "name :mod:`sqlite3`."
 msgstr ""
-"El módulo pysqlite (http://www.pysqlite.org), una envoltura para la base de "
-"datos incrustada SQLite, se ha añadido a la biblioteca estándar bajo el "
-"nombre de paquete :mod:`sqlite3`."
+"El módulo pysqlite (https://www.pysqlite.org), un envoltorio para la base de "
+"datos incrustada de SQLite, se agregó a la biblioteca estándar con el nombre "
+"de paquete :mod:`sqlite3`."
 
 #: ../Doc/whatsnew/2.5.rst:1937
 msgid ""
@@ -3428,6 +4035,10 @@ msgstr ""
 "que represente la base de datos.  Aquí los datos se almacenarán en el "
 "archivo :file:`/tmp/example`::"
 
+#: ../Doc/whatsnew/2.5.rst:1956
+msgid "conn = sqlite3.connect('/tmp/example')"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:1958
 msgid ""
 "You can also supply the special name ``:memory:`` to create a database in "
@@ -3444,6 +4055,20 @@ msgstr ""
 "Una vez que tengas una :class:`Connection`, puedes crear un objeto :class:"
 "`Cursor` y llamar a su método :meth:`execute` para realizar comandos SQL::"
 
+#: ../Doc/whatsnew/2.5.rst:1963
+msgid ""
+"c = conn.cursor()\n"
+"\n"
+"# Create table\n"
+"c.execute('''create table stocks\n"
+"(date text, trans text, symbol text,\n"
+" qty real, price real)''')\n"
+"\n"
+"# Insert a row of data\n"
+"c.execute(\"\"\"insert into stocks\n"
+"          values ('2006-01-05','BUY','RHAT',100,35.14)\"\"\")"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:1974
 msgid ""
 "Usually your SQL operations will need to use values from Python variables.  "
@@ -3456,7 +4081,8 @@ msgstr ""
 "Python porque hacerlo es inseguro; hace que tu programa sea vulnerable a un "
 "ataque de inyección SQL."
 
-#: ../Doc/whatsnew/2.5.rst:1978, python-format
+#: ../Doc/whatsnew/2.5.rst:1978
+#, python-format
 msgid ""
 "Instead, use the DB-API's parameter substitution.  Put ``?`` as a "
 "placeholder wherever you want to use a value, and then provide a tuple of "
@@ -3469,6 +4095,25 @@ msgstr ""
 "una tupla de valores como segundo argumento al método :meth:`execute` del "
 "cursor.  (Otros módulos de base de datos pueden utilizar un marcador de "
 "posición diferente, como ``%s`` o ``:1``) Por ejemplo::"
+
+#: ../Doc/whatsnew/2.5.rst:1983
+#, python-format
+msgid ""
+"# Never do this -- insecure!\n"
+"symbol = 'IBM'\n"
+"c.execute(\"... where symbol = '%s'\" % symbol)\n"
+"\n"
+"# Do this instead\n"
+"t = (symbol,)\n"
+"c.execute('select * from stocks where symbol=?', t)\n"
+"\n"
+"# Larger example\n"
+"for t in (('2006-03-28', 'BUY', 'IBM', 1000, 45.00),\n"
+"          ('2006-04-05', 'BUY', 'MSOFT', 1000, 72.00),\n"
+"          ('2006-04-06', 'SELL', 'IBM', 500, 53.00),\n"
+"         ):\n"
+"    c.execute('insert into stocks values (?,?,?,?,?)', t)"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:1998
 msgid ""
@@ -3486,6 +4131,20 @@ msgstr ""
 msgid "This example uses the iterator form::"
 msgstr "Este ejemplo utiliza la forma del iterador::"
 
+#: ../Doc/whatsnew/2.5.rst:2005
+msgid ""
+">>> c = conn.cursor()\n"
+">>> c.execute('select * from stocks order by price')\n"
+">>> for row in c:\n"
+"...    print row\n"
+"...\n"
+"(u'2006-01-05', u'BUY', u'RHAT', 100, 35.140000000000001)\n"
+"(u'2006-03-28', u'BUY', u'IBM', 1000, 45.0)\n"
+"(u'2006-04-06', u'SELL', u'IBM', 500, 53.0)\n"
+"(u'2006-04-05', u'BUY', u'MSOFT', 1000, 72.0)\n"
+">>>"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:2016
 msgid ""
 "For more information about the SQL dialect supported by SQLite, see https://"
@@ -3495,8 +4154,8 @@ msgstr ""
 "https://www.sqlite.org."
 
 #: ../Doc/whatsnew/2.5.rst:2023
-msgid "http://www.pysqlite.org"
-msgstr "http://www.pysqlite.org"
+msgid "https://www.pysqlite.org"
+msgstr "https://www.pysqlite.org"
 
 #: ../Doc/whatsnew/2.5.rst:2023
 msgid "The pysqlite web page."
@@ -3553,9 +4212,25 @@ msgstr ""
 "uso en producción.  La configuración de un servidor sólo requiere unas pocas "
 "líneas de código::"
 
+#: ../Doc/whatsnew/2.5.rst:2053
+msgid ""
+"from wsgiref import simple_server\n"
+"\n"
+"wsgi_app = ...\n"
+"\n"
+"host = ''\n"
+"port = 8000\n"
+"httpd = simple_server.make_server(host, port, wsgi_app)\n"
+"httpd.serve_forever()"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:2069
-msgid "http://www.wsgi.org"
-msgstr "http://www.wsgi.org"
+msgid ""
+"https://web.archive.org/web/20160331090247/http://wsgi.readthedocs.org/en/"
+"latest/"
+msgstr ""
+"https://web.archive.org/web/20160331090247/http://wsgi.readthedocs.org/en/"
+"latest/"
 
 #: ../Doc/whatsnew/2.5.rst:2069
 msgid "A central web site for WSGI-related resources."
@@ -3608,14 +4283,14 @@ msgstr ""
 #: ../Doc/whatsnew/2.5.rst:2094
 msgid ""
 "The largest change to the C API came from :pep:`353`, which modifies the "
-"interpreter to use a :c:type:`Py_ssize_t` type definition instead of :c:type:"
+"interpreter to use a :c:type:`Py_ssize_t` type definition instead of :c:expr:"
 "`int`.  See the earlier section :ref:`pep-353` for a discussion of this "
 "change."
 msgstr ""
-"El mayor cambio en la API de C proviene de :pep:`353`, que modifica el "
-"intérprete para utilizar una definición de tipo :c:type:`Py_ssize_t` en "
-"lugar de :c:type:`int`.  Vea la sección anterior :ref:`pep-353` para una "
-"discusión de este cambio."
+"El mayor cambio en la API de C provino de :pep:`353`, que modifica el "
+"intérprete para usar una definición de tipo :c:type:`Py_ssize_t` en lugar "
+"de :c:expr:`int`. Consulte la sección anterior :ref:`pep-353` para obtener "
+"una explicación de este cambio."
 
 #: ../Doc/whatsnew/2.5.rst:2099
 msgid ""
@@ -3640,6 +4315,18 @@ msgstr ""
 "func:`compile` y especificando ``_ast.PyCF_ONLY_AST`` como valor del "
 "parámetro *flags*::"
 
+#: ../Doc/whatsnew/2.5.rst:2108
+msgid ""
+"from _ast import PyCF_ONLY_AST\n"
+"ast = compile(\"\"\"a=0\n"
+"for i in range(10):\n"
+"    a += i\n"
+"\"\"\", \"<string>\", 'exec', PyCF_ONLY_AST)\n"
+"\n"
+"assignment = ast.body[0]\n"
+"for_loop = ast.body[1]"
+msgstr ""
+
 #: ../Doc/whatsnew/2.5.rst:2117
 msgid ""
 "No official documentation has been written for the AST code yet, but :pep:"
@@ -3647,10 +4334,10 @@ msgid ""
 "definition of the various AST nodes in :file:`Parser/Python.asdl`.  A Python "
 "script reads this file and generates a set of C structure definitions in :"
 "file:`Include/Python-ast.h`.  The :c:func:`PyParser_ASTFromString` and :c:"
-"func:`PyParser_ASTFromFile`, defined in :file:`Include/pythonrun.h`, take "
+"func:`!PyParser_ASTFromFile`, defined in :file:`Include/pythonrun.h`, take "
 "Python source as input and return the root of an AST representing the "
-"contents. This AST can then be turned into a code object by :c:func:"
-"`PyAST_Compile`.  For more information, read the source code, and then ask "
+"contents. This AST can then be turned into a code object by :c:func:`!"
+"PyAST_Compile`.  For more information, read the source code, and then ask "
 "questions on python-dev."
 msgstr ""
 "Todavía no se ha escrito ninguna documentación oficial para el código AST, "
@@ -3658,10 +4345,10 @@ msgstr ""
 "definición de los distintos nodos AST en :file:`Parser/Python.asdl`.  Un "
 "script de Python lee este archivo y genera un conjunto de definiciones de "
 "estructuras C en :file:`Include/Python-ast.h`.  Las funciones :c:func:"
-"`PyParser_ASTFromString` y :c:func:`PyParser_ASTFromFile`, definidas en :"
+"`PyParser_ASTFromString` y :c:func:`!PyParser_ASTFromFile`, definidas en :"
 "file:`Include/pythonrun.h`, toman el código fuente de Python como entrada y "
 "devuelven la raíz de un AST que representa el contenido. Este AST puede "
-"convertirse en un objeto de código mediante :c:func:`PyAST_Compile`.  Para "
+"convertirse en un objeto de código mediante :c:func:`!PyAST_Compile`.  Para "
 "más información, lea el código fuente, y luego haga preguntas en python-dev."
 
 #: ../Doc/whatsnew/2.5.rst:2127
@@ -3720,20 +4407,19 @@ msgstr ""
 msgid ""
 "Previously these different families all reduced to the platform's :c:func:"
 "`malloc` and :c:func:`free` functions.  This meant  it didn't matter if you "
-"got things wrong and allocated memory with the :c:func:`PyMem` function but "
-"freed it with the :c:func:`PyObject` function.  With 2.5's changes to "
-"obmalloc, these families now do different things and mismatches will "
-"probably result in a segfault.  You should carefully test your C extension "
-"modules with Python 2.5."
+"got things wrong and allocated memory with the ``PyMem`` function but freed "
+"it with the ``PyObject`` function.  With 2.5's changes to obmalloc, these "
+"families now do different things and mismatches will probably result in a "
+"segfault.  You should carefully test your C extension modules with Python "
+"2.5."
 msgstr ""
 "Anteriormente estas diferentes familias se reducían a las funciones :c:func:"
 "`malloc` y :c:func:`free` de la plataforma.  Esto significaba que no "
-"importaba si te equivocabas y asignabas memoria con la función :c:func:"
-"`PyMem` pero la liberabas con la función :c:func:`PyObject`.  Con los "
-"cambios de la versión 2.5 en obmalloc, estas familias hacen ahora cosas "
-"diferentes y los desajustes probablemente darán lugar a un fallo de "
-"seguridad.  Deberías probar cuidadosamente tus módulos de extensión C con "
-"Python 2.5."
+"importaba si te equivocabas y asignabas memoria con la función ``PyMem`` "
+"pero la liberabas con la función ``PyObject``.  Con los cambios de la "
+"versión 2.5 en obmalloc, estas familias hacen ahora cosas diferentes y los "
+"desajustes probablemente darán lugar a un fallo de seguridad.  Deberías "
+"probar cuidadosamente tus módulos de extensión C con Python 2.5."
 
 #: ../Doc/whatsnew/2.5.rst:2159
 msgid ""
@@ -3758,8 +4444,8 @@ msgid ""
 msgstr ""
 "El código C puede ahora obtener información sobre la revisión exacta del "
 "intérprete de Python llamando a la función :c:func:`Py_GetBuildInfo` que "
-"devuelve una cadena de información de compilación como esta ``"
-"\"trunk:45355:45356M, Apr 13 2006, 07:42:19\"``.   (Contribuido por Barry "
+"devuelve una cadena de información de compilación como esta "
+"``\"trunk:45355:45356M, Apr 13 2006, 07:42:19\"``.   (Contribuido por Barry "
 "Warsaw.)"
 
 #: ../Doc/whatsnew/2.5.rst:2170
@@ -3769,18 +4455,18 @@ msgid ""
 "``Py_LOCAL(type)`` declares the function as returning a value of the "
 "specified *type* and uses a fast-calling qualifier. "
 "``Py_LOCAL_INLINE(type)`` does the same thing and also requests the function "
-"be inlined.  If :c:func:`PY_LOCAL_AGGRESSIVE` is defined before :file:"
-"`python.h` is included, a set of more aggressive optimizations are enabled "
-"for the module; you should benchmark the results to find out if these "
-"optimizations actually make the code faster.  (Contributed by Fredrik Lundh "
-"at the NeedForSpeed sprint.)"
+"be inlined.  If macro :c:macro:`!PY_LOCAL_AGGRESSIVE` is defined before :"
+"file:`python.h` is included, a set of more aggressive optimizations are "
+"enabled for the module; you should benchmark the results to find out if "
+"these optimizations actually make the code faster.  (Contributed by Fredrik "
+"Lundh at the NeedForSpeed sprint.)"
 msgstr ""
 "Se pueden utilizar dos nuevas macros para indicar las funciones C que son "
 "locales al fichero actual, de modo que se pueda utilizar una convención de "
 "llamada más rápida. ``Py_LOCAL(type)`` declara que la función devuelve un "
 "valor del *tipo* especificado y utiliza un calificador de llamada rápida. "
 "``Py_LOCAL_INLINE(type)`` hace lo mismo y también solicita que la función "
-"sea inline.  Si :c:func:`PY_LOCAL_AGGRESSIVE` se define antes de que se "
+"sea inline.  Si :c:macro:`!PY_LOCAL_AGGRESSIVE` se define antes de que se "
 "incluya :file:`python.h`, se habilita un conjunto de optimizaciones más "
 "agresivas para el módulo; debería comparar los resultados para averiguar si "
 "estas optimizaciones realmente hacen el código más rápido.  (Contribuido por "
@@ -3796,13 +4482,13 @@ msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:2184
 msgid ""
-"The :c:func:`PyErr_Warn` function for issuing warnings is now deprecated in "
+"The :c:func:`!PyErr_Warn` function for issuing warnings is now deprecated in "
 "favour of ``PyErr_WarnEx(category, message, stacklevel)`` which lets you "
 "specify the number of stack frames separating this function and the caller.  "
 "A *stacklevel* of 1 is the function calling :c:func:`PyErr_WarnEx`, 2 is the "
 "function above that, and so forth.  (Added by Neal Norwitz.)"
 msgstr ""
-"La función :c:func:`PyErr_Warn` para emitir avisos está ahora obsoleta en "
+"La función :c:func:`!PyErr_Warn` para emitir avisos está ahora obsoleta en "
 "favor de ``PyErr_WarnEx(category, message, stacklevel)`` que permite "
 "especificar el número de marcos de pila que separan esta función y la que la "
 "llama.  Un *stacklevel* de 1 es la función que llama a :c:func:"
@@ -3821,15 +4507,21 @@ msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:2194
 msgid ""
-"The :c:func:`PyRange_New` function was removed.  It was never documented, "
+"The :c:func:`!PyRange_New` function was removed.  It was never documented, "
 "never used in the core code, and had dangerously lax error checking.  In the "
 "unlikely case that your extensions were using it, you can replace it by "
 "something like the following::"
 msgstr ""
-"Se ha eliminado la función :c:func:`PyRange_New`.  Nunca se documentó, nunca "
-"se utilizó en el código del núcleo, y tenía una comprobación de errores "
-"peligrosamente laxa.  En el improbable caso de que sus extensiones la "
-"utilizaran, puede sustituirla por algo como lo siguiente::"
+"Se ha eliminado la función :c:func:`!PyRange_New`.  Nunca se documentó, "
+"nunca se utilizó en el código del núcleo, y tenía una comprobación de "
+"errores peligrosamente laxa.  En el improbable caso de que sus extensiones "
+"la utilizaran, puede sustituirla por algo como lo siguiente::"
+
+#: ../Doc/whatsnew/2.5.rst:2199
+msgid ""
+"range = PyObject_CallFunction((PyObject*) &PyRange_Type, \"lll\",\n"
+"                              start, stop, step);"
+msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:2208
 msgid "Port-Specific Changes"
@@ -3924,7 +4616,8 @@ msgstr ""
 "incrustadas dentro de los campos, la entrada debe dividirse en líneas de "
 "manera que se conserven los caracteres de nueva línea."
 
-#: ../Doc/whatsnew/2.5.rst:2251, python-format
+#: ../Doc/whatsnew/2.5.rst:2251
+#, python-format
 msgid ""
 "Library: the :mod:`locale` module's  :func:`format` function's would "
 "previously  accept any string as long as no more than one %char specifier "
@@ -3937,11 +4630,12 @@ msgstr ""
 "%char sin texto alrededor."
 
 #: ../Doc/whatsnew/2.5.rst:2256
+#, fuzzy
 msgid ""
-"Library: The :mod:`pickle` and :mod:`cPickle` modules no longer accept a "
-"return value of ``None`` from the :meth:`__reduce__` method; the method must "
-"return a tuple of arguments instead.  The modules also no longer accept the "
-"deprecated *bin* keyword parameter."
+"Library: The :mod:`pickle` and :mod:`!cPickle` modules no longer accept a "
+"return value of ``None`` from the :meth:`~object.__reduce__` method; the "
+"method must return a tuple of arguments instead.  The modules also no longer "
+"accept the deprecated *bin* keyword parameter."
 msgstr ""
 "Biblioteca: Los módulos :mod:`pickle` y :mod:`cPickle` ya no aceptan un "
 "valor de retorno de ``None`` del método :meth:`__reduce__`; el método debe "
@@ -3949,12 +4643,13 @@ msgstr ""
 "parámetro obsoleto de la palabra clave *bin*."
 
 #: ../Doc/whatsnew/2.5.rst:2261
+#, fuzzy
 msgid ""
-"Library: The :mod:`SimpleXMLRPCServer` and :mod:`DocXMLRPCServer`  classes "
-"now have a :attr:`rpc_paths` attribute that constrains XML-RPC operations to "
-"a limited set of URL paths; the default is to allow only ``'/'`` and ``'/"
-"RPC2'``. Setting  :attr:`rpc_paths` to ``None`` or an empty tuple disables  "
-"this path checking."
+"Library: The :mod:`SimpleXMLRPCServer <xmlrpc.server>` and :mod:"
+"`DocXMLRPCServer <xmlrpc.server>`  classes now have a :attr:`rpc_paths` "
+"attribute that constrains XML-RPC operations to a limited set of URL paths; "
+"the default is to allow only ``'/'`` and ``'/RPC2'``. Setting  :attr:"
+"`rpc_paths` to ``None`` or an empty tuple disables  this path checking."
 msgstr ""
 "Biblioteca: Las clases :mod:`SimpleXMLRPCServer` y :mod:`DocXMLRPCServer` "
 "tienen ahora un atributo :attr:`rpc_paths` que restringe las operaciones XML-"
@@ -3964,29 +4659,28 @@ msgstr ""
 
 #: ../Doc/whatsnew/2.5.rst:2267
 msgid ""
-"C API: Many functions now use :c:type:`Py_ssize_t`  instead of :c:type:`int` "
+"C API: Many functions now use :c:type:`Py_ssize_t`  instead of :c:expr:`int` "
 "to allow processing more data on 64-bit machines.  Extension code may need "
 "to make the same change to avoid warnings and to support 64-bit machines.  "
 "See the earlier section :ref:`pep-353` for a discussion of this change."
 msgstr ""
-"API C: Muchas funciones utilizan ahora :c:type:`Py_ssize_t` en lugar de :c:"
-"type:`int` para permitir el procesamiento de más datos en máquinas de 64 "
-"bits.  Es posible que el código de las extensiones tenga que hacer el mismo "
-"cambio para evitar advertencias y soportar máquinas de 64 bits.  Véase la "
-"sección anterior :ref:`pep-353` para una discusión de este cambio."
+"API de C: muchas funciones ahora usan :c:type:`Py_ssize_t` en lugar de :c:"
+"expr:`int` para permitir el procesamiento de más datos en máquinas de 64 "
+"bits. Es posible que el código de extensión deba realizar el mismo cambio "
+"para evitar advertencias y admitir máquinas de 64 bits. Consulte la sección "
+"anterior :ref:`pep-353` para obtener una explicación de este cambio."
 
 #: ../Doc/whatsnew/2.5.rst:2272
 msgid ""
 "C API:  The obmalloc changes mean that  you must be careful to not mix usage "
-"of the :c:func:`PyMem_\\*` and :c:func:`PyObject_\\*` families of functions. "
-"Memory allocated with  one family's :c:func:`\\*_Malloc` must be  freed with "
-"the corresponding family's :c:func:`\\*_Free` function."
+"of the ``PyMem_*`` and ``PyObject_*`` families of functions. Memory "
+"allocated with  one family's ``*_Malloc`` must be  freed with the "
+"corresponding family's ``*_Free`` function."
 msgstr ""
-"C API:  Los cambios en obmalloc significan que debe tener cuidado de no "
-"mezclar el uso de las familias de funciones :c:func:`PyMem_\\*` y :c:func:"
-"`PyObject_\\*`. La memoria asignada con la función :c:func:`\\*_Malloc` de "
-"una familia debe ser liberada con la función :c:func:`\\*_Free` de la "
-"familia correspondiente."
+"API C:  Los cambios en obmalloc significan que debe tener cuidado de no "
+"mezclar el uso de las familias de funciones ``PyMem_*`` y ``PyObject_*``. La "
+"memoria asignada con la función ``*_Malloc`` de una familia, debe ser "
+"liberada con la función ``*_Free`` de la familia correspondiente."
 
 #: ../Doc/whatsnew/2.5.rst:2281
 msgid "Acknowledgements"
@@ -4008,3 +4702,11 @@ msgstr ""
 "Grosse-Kunstleve, Kent Johnson, Iain Lowe, Martin von Löwis, Fredrik Lundh, "
 "Andrew McNamara, Skip Montanaro, Gustavo Niemeyer, Paul Prescod, James "
 "Pryor, Mike Rovner, Scott Weikart, Barry Warsaw, Thomas Wouters."
+
+#: ../Doc/whatsnew/2.5.rst:1342
+msgid "universal newlines"
+msgstr "nuevas líneas universales"
+
+#: ../Doc/whatsnew/2.5.rst:1342
+msgid "What's new"
+msgstr "Qué hay de nuevo"

@@ -10,20 +10,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-16 21:42+0200\n"
+"POT-Creation-Date: 2024-11-21 16:38-0300\n"
 "PO-Revision-Date: 2021-08-02 01:24+0200\n"
 "Last-Translator: Cristián Maureira-Fredes <cmaureirafredes@gmail.com>\n"
-"Language-Team: python-doc-es\n"
 "Language: es\n"
+"Language-Team: python-doc-es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.16.0\n"
 
 #: ../Doc/c-api/long.rst:6
 msgid "Integer Objects"
-msgstr "Objetos Enteros"
+msgstr "Objetos enteros"
 
 #: ../Doc/c-api/long.rst:11
 msgid ""
@@ -79,9 +79,10 @@ msgstr ""
 "de error."
 
 #: ../Doc/c-api/long.rst:43
+#, fuzzy
 msgid ""
 "The current implementation keeps an array of integer objects for all "
-"integers between ``-5`` and ``256``, when you create an int in that range "
+"integers between ``-5`` and ``256``. When you create an int in that range "
 "you actually just get back a reference to the existing object."
 msgstr ""
 "La implementación actual mantiene un arreglo de objetos enteros para todos "
@@ -89,8 +90,9 @@ msgstr ""
 "realidad solo obtiene una referencia al objeto existente."
 
 #: ../Doc/c-api/long.rst:50
+#, fuzzy
 msgid ""
-"Return a new :c:type:`PyLongObject` object from a C :c:type:`unsigned long`, "
+"Return a new :c:type:`PyLongObject` object from a C :c:expr:`unsigned long`, "
 "or ``NULL`` on failure."
 msgstr ""
 "Retorna un objeto :c:type:`PyLongObject` nuevo desde un C :c:type:`unsigned "
@@ -113,16 +115,18 @@ msgstr ""
 "o ``NULL`` en caso de error."
 
 #: ../Doc/c-api/long.rst:68
+#, fuzzy
 msgid ""
-"Return a new :c:type:`PyLongObject` object from a C :c:type:`long long`, or "
+"Return a new :c:type:`PyLongObject` object from a C :c:expr:`long long`, or "
 "``NULL`` on failure."
 msgstr ""
 "Retorna un objeto :c:type:`PyLongObject` nuevo desde un C :c:type:`long "
 "long`, o ``NULL`` en caso de error."
 
 #: ../Doc/c-api/long.rst:74
+#, fuzzy
 msgid ""
-"Return a new :c:type:`PyLongObject` object from a C :c:type:`unsigned long "
+"Return a new :c:type:`PyLongObject` object from a C :c:expr:`unsigned long "
 "long`, or ``NULL`` on failure."
 msgstr ""
 "Retorna un objeto :c:type:`PyLongObject` nuevo desde un C :c:type:`unsigned "
@@ -137,16 +141,19 @@ msgstr ""
 "``NULL`` en caso de error."
 
 #: ../Doc/c-api/long.rst:86
+#, fuzzy
 msgid ""
 "Return a new :c:type:`PyLongObject` based on the string value in *str*, "
-"which is interpreted according to the radix in *base*.  If *pend* is non-"
-"``NULL``, *\\*pend* will point to the first character in *str* which follows "
-"the representation of the number.  If *base* is ``0``, *str* is interpreted "
-"using the :ref:`integers` definition; in this case, leading zeros in a non-"
-"zero decimal number raises a :exc:`ValueError`. If *base* is not ``0``, it "
-"must be between ``2`` and ``36``, inclusive.  Leading spaces and single "
-"underscores after a base specifier and between digits are ignored.  If there "
-"are no digits, :exc:`ValueError` will be raised."
+"which is interpreted according to the radix in *base*, or ``NULL`` on "
+"failure.  If *pend* is non-``NULL``, *\\*pend* will point to the end of "
+"*str* on success or to the first character that could not be processed on "
+"error.  If *base* is ``0``, *str* is interpreted using the :ref:`integers` "
+"definition; in this case, leading zeros in a non-zero decimal number raises "
+"a :exc:`ValueError`.  If *base* is not ``0``, it must be between ``2`` and "
+"``36``, inclusive.  Leading and trailing whitespace and single underscores "
+"after a base specifier and between digits are ignored.  If there are no "
+"digits or *str* is not NULL-terminated following the digits and trailing "
+"whitespace, :exc:`ValueError` will be raised."
 msgstr ""
 "Retorna un nuevo :c:type:`PyLongObject` basado en el valor de cadena de "
 "caracteres en *str*, que se interpreta de acuerdo con la raíz en *base*. Si "
@@ -159,7 +166,14 @@ msgstr ""
 "individuales después de un especificador base y entre dígitos. Si no hay "
 "dígitos, se lanzará :exc:`ValueError`."
 
-#: ../Doc/c-api/long.rst:99
+#: ../Doc/c-api/long.rst:97
+msgid ""
+"Python methods :meth:`int.to_bytes` and :meth:`int.from_bytes` to convert a :"
+"c:type:`PyLongObject` to/from an array of bytes in base ``256``. You can "
+"call those from C using :c:func:`PyObject_CallMethod`."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:104
 msgid ""
 "Convert a sequence of Unicode digits in the string *u* to a Python integer "
 "value."
@@ -167,7 +181,7 @@ msgstr ""
 "Convierte una secuencia de dígitos Unicode en la cadena de caracteres *u* en "
 "un valor entero de Python."
 
-#: ../Doc/c-api/long.rst:107
+#: ../Doc/c-api/long.rst:112
 msgid ""
 "Create a Python integer from the pointer *p*. The pointer value can be "
 "retrieved from the resulting value using :c:func:`PyLong_AsVoidPtr`."
@@ -175,50 +189,100 @@ msgstr ""
 "Crea un entero de Python desde el puntero *p*. El valor del puntero se puede "
 "recuperar del valor resultante usando :c:func:`PyLong_AsVoidPtr`."
 
-#: ../Doc/c-api/long.rst:118 ../Doc/c-api/long.rst:136
+#: ../Doc/c-api/long.rst:118
 msgid ""
-"Return a C :c:type:`long` representation of *obj*.  If *obj* is not an "
-"instance of :c:type:`PyLongObject`, first call its :meth:`__index__` method "
-"(if present) to convert it to a :c:type:`PyLongObject`."
+"Create a Python integer from the value contained in the first *n_bytes* of "
+"*buffer*, interpreted as a two's-complement signed number."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:121
+msgid ""
+"*flags* are as for :c:func:`PyLong_AsNativeBytes`. Passing ``-1`` will "
+"select the native endian that CPython was compiled with and assume that the "
+"most-significant bit is a sign bit. Passing "
+"``Py_ASNATIVEBYTES_UNSIGNED_BUFFER`` will produce the same result as "
+"calling :c:func:`PyLong_FromUnsignedNativeBytes`. Other flags are ignored."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:132
+msgid ""
+"Create a Python integer from the value contained in the first *n_bytes* of "
+"*buffer*, interpreted as an unsigned number."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:135
+msgid ""
+"*flags* are as for :c:func:`PyLong_AsNativeBytes`. Passing ``-1`` will "
+"select the native endian that CPython was compiled with and assume that the "
+"most-significant bit is not a sign bit. Flags other than endian are ignored."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:148 ../Doc/c-api/long.rst:184
+#, fuzzy
+msgid ""
+"Return a C :c:expr:`long` representation of *obj*.  If *obj* is not an "
+"instance of :c:type:`PyLongObject`, first call its :meth:`~object.__index__` "
+"method (if present) to convert it to a :c:type:`PyLongObject`."
 msgstr ""
 "Retorna una representación C :c:type:`long` de *obj*. Si *obj* no es una "
 "instancia de :c:type:`PyLongObject`, primero llama a su método :meth:"
 "`__index__` (si está presente) para convertirlo en un :c:type:`PyLongObject`."
 
-#: ../Doc/c-api/long.rst:122
+#: ../Doc/c-api/long.rst:152
+#, fuzzy
 msgid ""
 "Raise :exc:`OverflowError` if the value of *obj* is out of range for a :c:"
-"type:`long`."
+"expr:`long`."
 msgstr ""
 "Lanza :exc:`OverflowError` si el valor de *obj* está fuera de rango para un :"
 "c:type:`long`."
 
-#: ../Doc/c-api/long.rst:125 ../Doc/c-api/long.rst:145
-#: ../Doc/c-api/long.rst:166 ../Doc/c-api/long.rst:186
-#: ../Doc/c-api/long.rst:209
+#: ../Doc/c-api/long.rst:155 ../Doc/c-api/long.rst:193
+#: ../Doc/c-api/long.rst:214 ../Doc/c-api/long.rst:234
+#: ../Doc/c-api/long.rst:257
 msgid "Returns ``-1`` on error.  Use :c:func:`PyErr_Occurred` to disambiguate."
 msgstr ""
 "Retorna ``-1`` en caso de error. Use :c:func:`PyErr_Occurred` para "
 "desambiguar."
 
-#: ../Doc/c-api/long.rst:127 ../Doc/c-api/long.rst:147
-#: ../Doc/c-api/long.rst:168 ../Doc/c-api/long.rst:190
-#: ../Doc/c-api/long.rst:274 ../Doc/c-api/long.rst:294
-msgid "Use :meth:`__index__` if available."
+#: ../Doc/c-api/long.rst:157 ../Doc/c-api/long.rst:195
+#: ../Doc/c-api/long.rst:216 ../Doc/c-api/long.rst:238
+#: ../Doc/c-api/long.rst:322 ../Doc/c-api/long.rst:342
+#, fuzzy
+msgid "Use :meth:`~object.__index__` if available."
 msgstr "Use :meth:`__index__` si está disponible."
 
-#: ../Doc/c-api/long.rst:130 ../Doc/c-api/long.rst:150
-#: ../Doc/c-api/long.rst:171 ../Doc/c-api/long.rst:193
-#: ../Doc/c-api/long.rst:277 ../Doc/c-api/long.rst:297
-msgid "This function will no longer use :meth:`__int__`."
+#: ../Doc/c-api/long.rst:160 ../Doc/c-api/long.rst:198
+#: ../Doc/c-api/long.rst:219 ../Doc/c-api/long.rst:241
+#: ../Doc/c-api/long.rst:325 ../Doc/c-api/long.rst:345
+#, fuzzy
+msgid "This function will no longer use :meth:`~object.__int__`."
 msgstr "Esta función no usará más :meth:`__int__`."
 
-#: ../Doc/c-api/long.rst:140
+#: ../Doc/c-api/long.rst:167
 msgid ""
-"If the value of *obj* is greater than :const:`LONG_MAX` or less than :const:"
-"`LONG_MIN`, set *\\*overflow* to ``1`` or ``-1``, respectively, and return "
-"``-1``; otherwise, set *\\*overflow* to ``0``.  If any other exception "
-"occurs set *\\*overflow* to ``0`` and return ``-1`` as usual."
+"A :term:`soft deprecated` alias. Exactly equivalent to the preferred "
+"``PyLong_AsLong``. In particular, it can fail with :exc:`OverflowError` or "
+"another exception."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:171
+msgid "The function is soft deprecated."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:176
+msgid ""
+"Similar to :c:func:`PyLong_AsLong`, but store the result in a C :c:expr:"
+"`int` instead of a C :c:expr:`long`."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:188
+#, fuzzy
+msgid ""
+"If the value of *obj* is greater than :c:macro:`LONG_MAX` or less than :c:"
+"macro:`LONG_MIN`, set *\\*overflow* to ``1`` or ``-1``, respectively, and "
+"return ``-1``; otherwise, set *\\*overflow* to ``0``.  If any other "
+"exception occurs set *\\*overflow* to ``0`` and return ``-1`` as usual."
 msgstr ""
 "Si el valor de *obj* es mayor que :const:`LONG_MAX` o menor que :const:"
 "`LONG_MIN`, establece *\\*overflow * en ``1`` o ``-1``, respectivamente, y "
@@ -226,30 +290,33 @@ msgstr ""
 "produce alguna otra excepción, configura *\\*overflow* en ``0`` y retorna "
 "``-1`` como de costumbre."
 
-#: ../Doc/c-api/long.rst:159 ../Doc/c-api/long.rst:177
+#: ../Doc/c-api/long.rst:207 ../Doc/c-api/long.rst:225
+#, fuzzy
 msgid ""
-"Return a C :c:type:`long long` representation of *obj*.  If *obj* is not an "
-"instance of :c:type:`PyLongObject`, first call its :meth:`__index__` method "
-"(if present) to convert it to a :c:type:`PyLongObject`."
+"Return a C :c:expr:`long long` representation of *obj*.  If *obj* is not an "
+"instance of :c:type:`PyLongObject`, first call its :meth:`~object.__index__` "
+"method (if present) to convert it to a :c:type:`PyLongObject`."
 msgstr ""
 "Retorna una representación C :c:type:`long long` de *obj*. Si *obj* no es "
 "una instancia de :c:type:`PyLongObject`, primero llame a su método :meth:"
 "`__index__` (si está presente) para convertirlo en un :c:type:`PyLongObject`."
 
-#: ../Doc/c-api/long.rst:163
+#: ../Doc/c-api/long.rst:211
+#, fuzzy
 msgid ""
 "Raise :exc:`OverflowError` if the value of *obj* is out of range for a :c:"
-"type:`long long`."
+"expr:`long long`."
 msgstr ""
 "Lanza :exc:`OverflowError` si el valor de *obj* está fuera de rango para un :"
 "c:type:`long long`."
 
-#: ../Doc/c-api/long.rst:181
+#: ../Doc/c-api/long.rst:229
+#, fuzzy
 msgid ""
-"If the value of *obj* is greater than :const:`LLONG_MAX` or less than :const:"
-"`LLONG_MIN`, set *\\*overflow* to ``1`` or ``-1``, respectively, and return "
-"``-1``; otherwise, set *\\*overflow* to ``0``.  If any other exception "
-"occurs set *\\*overflow* to ``0`` and return ``-1`` as usual."
+"If the value of *obj* is greater than :c:macro:`LLONG_MAX` or less than :c:"
+"macro:`LLONG_MIN`, set *\\*overflow* to ``1`` or ``-1``, respectively, and "
+"return ``-1``; otherwise, set *\\*overflow* to ``0``.  If any other "
+"exception occurs set *\\*overflow* to ``0`` and return ``-1`` as usual."
 msgstr ""
 "Si el valor de *obj* es mayor que :const:`LLONG_MAX` o menor que :const:"
 "`LLONG_MIN`, establece *\\*overflow* en ``1`` o ``-1``, respectivamente, y "
@@ -257,7 +324,7 @@ msgstr ""
 "produce alguna otra excepción, configura *\\*overflow* en ``0`` y retorna "
 "``-1`` como de costumbre."
 
-#: ../Doc/c-api/long.rst:203
+#: ../Doc/c-api/long.rst:251
 msgid ""
 "Return a C :c:type:`Py_ssize_t` representation of *pylong*.  *pylong* must "
 "be an instance of :c:type:`PyLongObject`."
@@ -265,7 +332,7 @@ msgstr ""
 "Retorna una representación de C :c:type:`Py_ssize_t` de *pylong*. *pylong* "
 "debe ser una instancia de :c:type:`PyLongObject`."
 
-#: ../Doc/c-api/long.rst:206
+#: ../Doc/c-api/long.rst:254
 msgid ""
 "Raise :exc:`OverflowError` if the value of *pylong* is out of range for a :c:"
 "type:`Py_ssize_t`."
@@ -273,23 +340,25 @@ msgstr ""
 "Lanza :exc:`OverflowError` si el valor de *pylong* está fuera de rango para "
 "un :c:type:`Py_ssize_t`."
 
-#: ../Doc/c-api/long.rst:218
+#: ../Doc/c-api/long.rst:266
+#, fuzzy
 msgid ""
-"Return a C :c:type:`unsigned long` representation of *pylong*.  *pylong* "
+"Return a C :c:expr:`unsigned long` representation of *pylong*.  *pylong* "
 "must be an instance of :c:type:`PyLongObject`."
 msgstr ""
 "Retorna una representación de C :c:type:`unsigned long` de *pylong*. "
 "*pylong* debe ser una instancia de :c:type:`PyLongObject`."
 
-#: ../Doc/c-api/long.rst:221
+#: ../Doc/c-api/long.rst:269
+#, fuzzy
 msgid ""
 "Raise :exc:`OverflowError` if the value of *pylong* is out of range for a :c:"
-"type:`unsigned long`."
+"expr:`unsigned long`."
 msgstr ""
 "Lanza :exc:`OverflowError` si el valor de *pylong* está fuera de rango para "
 "un :c:type:`unsigned long`."
 
-#: ../Doc/c-api/long.rst:224
+#: ../Doc/c-api/long.rst:272
 msgid ""
 "Returns ``(unsigned long)-1`` on error. Use :c:func:`PyErr_Occurred` to "
 "disambiguate."
@@ -297,7 +366,7 @@ msgstr ""
 "Retorna ``(unsigned long)-1`` en caso de error. Use :c:func:`PyErr_Occurred` "
 "para desambiguar."
 
-#: ../Doc/c-api/long.rst:234
+#: ../Doc/c-api/long.rst:282
 msgid ""
 "Return a C :c:type:`size_t` representation of *pylong*.  *pylong* must be an "
 "instance of :c:type:`PyLongObject`."
@@ -305,7 +374,7 @@ msgstr ""
 "Retorna una representación de C :c:type:`size_t` de *pylong*. *pylong* debe "
 "ser una instancia de :c:type:`PyLongObject`."
 
-#: ../Doc/c-api/long.rst:237
+#: ../Doc/c-api/long.rst:285
 msgid ""
 "Raise :exc:`OverflowError` if the value of *pylong* is out of range for a :c:"
 "type:`size_t`."
@@ -313,7 +382,7 @@ msgstr ""
 "Lanza :exc:`OverflowError` si el valor de *pylong* está fuera de rango para "
 "un :c:type:`size_t`."
 
-#: ../Doc/c-api/long.rst:240
+#: ../Doc/c-api/long.rst:288
 msgid ""
 "Returns ``(size_t)-1`` on error. Use :c:func:`PyErr_Occurred` to "
 "disambiguate."
@@ -321,23 +390,25 @@ msgstr ""
 "Retorna ``(size_t) -1`` en caso de error. Use :c:func:`PyErr_Occurred` para "
 "desambiguar."
 
-#: ../Doc/c-api/long.rst:249
+#: ../Doc/c-api/long.rst:297
+#, fuzzy
 msgid ""
-"Return a C :c:type:`unsigned long long` representation of *pylong*.  "
+"Return a C :c:expr:`unsigned long long` representation of *pylong*.  "
 "*pylong* must be an instance of :c:type:`PyLongObject`."
 msgstr ""
 "Retorna una representación de C :c:type:`unsigned long long` de *pylong*. "
 "*pylong* debe ser una instancia de :c:type:`PyLongObject`."
 
-#: ../Doc/c-api/long.rst:252
+#: ../Doc/c-api/long.rst:300
+#, fuzzy
 msgid ""
 "Raise :exc:`OverflowError` if the value of *pylong* is out of range for an :"
-"c:type:`unsigned long long`."
+"c:expr:`unsigned long long`."
 msgstr ""
 "Lanza :exc:`OverflowError` si el valor de *pylong* está fuera de rango para "
 "un :c:type:`unsigned long long`."
 
-#: ../Doc/c-api/long.rst:255
+#: ../Doc/c-api/long.rst:303
 msgid ""
 "Returns ``(unsigned long long)-1`` on error. Use :c:func:`PyErr_Occurred` to "
 "disambiguate."
@@ -345,32 +416,34 @@ msgstr ""
 "Retorna ``(unsigned long long) -1`` en caso de error. Use :c:func:"
 "`PyErr_Occurred` para desambiguar."
 
-#: ../Doc/c-api/long.rst:258
+#: ../Doc/c-api/long.rst:306
 msgid ""
 "A negative *pylong* now raises :exc:`OverflowError`, not :exc:`TypeError`."
 msgstr ""
 "Ahora un *pylong* negativo lanza un :exc:`OverflowError`, no :exc:"
 "`TypeError`."
 
-#: ../Doc/c-api/long.rst:264
+#: ../Doc/c-api/long.rst:312
+#, fuzzy
 msgid ""
-"Return a C :c:type:`unsigned long` representation of *obj*.  If *obj* is not "
-"an instance of :c:type:`PyLongObject`, first call its :meth:`__index__` "
-"method (if present) to convert it to a :c:type:`PyLongObject`."
+"Return a C :c:expr:`unsigned long` representation of *obj*.  If *obj* is not "
+"an instance of :c:type:`PyLongObject`, first call its :meth:`~object."
+"__index__` method (if present) to convert it to a :c:type:`PyLongObject`."
 msgstr ""
 "Retorna una representación C :c:type:`unsigned long` de *obj*. Si *obj* no "
 "es una instancia de :c:type:`PyLongObject`, primero llame a su método :meth:"
 "`__index__` (si está presente) para convertirlo en un :c:type:`PyLongObject`."
 
-#: ../Doc/c-api/long.rst:268
+#: ../Doc/c-api/long.rst:316
+#, fuzzy
 msgid ""
-"If the value of *obj* is out of range for an :c:type:`unsigned long`, return "
+"If the value of *obj* is out of range for an :c:expr:`unsigned long`, return "
 "the reduction of that value modulo ``ULONG_MAX + 1``."
 msgstr ""
 "Si el valor de *obj* está fuera del rango para :c:type:`unsigned long`, "
 "retorna la reducción de ese valor módulo ``ULONG_MAX + 1``."
 
-#: ../Doc/c-api/long.rst:271
+#: ../Doc/c-api/long.rst:319
 msgid ""
 "Returns ``(unsigned long)-1`` on error.  Use :c:func:`PyErr_Occurred` to "
 "disambiguate."
@@ -378,26 +451,28 @@ msgstr ""
 "Retorna ``(unsigned long)-1`` en caso de error. Use :c:func:`PyErr_Occurred` "
 "para desambiguar."
 
-#: ../Doc/c-api/long.rst:283
+#: ../Doc/c-api/long.rst:331
+#, fuzzy
 msgid ""
-"Return a C :c:type:`unsigned long long` representation of *obj*.  If *obj* "
-"is not an instance of :c:type:`PyLongObject`, first call its :meth:"
-"`__index__` method (if present) to convert it to a :c:type:`PyLongObject`."
+"Return a C :c:expr:`unsigned long long` representation of *obj*.  If *obj* "
+"is not an instance of :c:type:`PyLongObject`, first call its :meth:`~object."
+"__index__` method (if present) to convert it to a :c:type:`PyLongObject`."
 msgstr ""
 "Retorna una representación C :c:type:`unsigned long long` de *obj*. Si *obj* "
 "no es una instancia de :c:type:`PyLongObject`, primero llame a su método :"
 "meth:`__index__` (si está presente) para convertirlo en un :c:type:"
 "`PyLongObject`."
 
-#: ../Doc/c-api/long.rst:288
+#: ../Doc/c-api/long.rst:336
+#, fuzzy
 msgid ""
-"If the value of *obj* is out of range for an :c:type:`unsigned long long`, "
+"If the value of *obj* is out of range for an :c:expr:`unsigned long long`, "
 "return the reduction of that value modulo ``ULLONG_MAX + 1``."
 msgstr ""
 "Si el valor de *obj* está fuera del rango para :c:type:`unsigned long long`, "
 "retorna la reducción de ese valor módulo ``ULLONG_MAX + 1``."
 
-#: ../Doc/c-api/long.rst:291
+#: ../Doc/c-api/long.rst:339
 msgid ""
 "Returns ``(unsigned long long)-1`` on error.  Use :c:func:`PyErr_Occurred` "
 "to disambiguate."
@@ -405,34 +480,37 @@ msgstr ""
 "Retorna ``(unsigned long long) -1`` por error. Use :c:func:`PyErr_Occurred` "
 "para desambiguar."
 
-#: ../Doc/c-api/long.rst:303
+#: ../Doc/c-api/long.rst:351
+#, fuzzy
 msgid ""
-"Return a C :c:type:`double` representation of *pylong*.  *pylong* must be an "
+"Return a C :c:expr:`double` representation of *pylong*.  *pylong* must be an "
 "instance of :c:type:`PyLongObject`."
 msgstr ""
 "Retorna una representación de C :c:type:`double` de *pylong*. *pylong* debe "
 "ser una instancia de :c:type:`PyLongObject`."
 
-#: ../Doc/c-api/long.rst:306
+#: ../Doc/c-api/long.rst:354
+#, fuzzy
 msgid ""
 "Raise :exc:`OverflowError` if the value of *pylong* is out of range for a :c:"
-"type:`double`."
+"expr:`double`."
 msgstr ""
 "Lanza :exc:`OverflowError` si el valor de *pylong* está fuera de rango para "
 "un :c:type:`double`."
 
-#: ../Doc/c-api/long.rst:309
+#: ../Doc/c-api/long.rst:357
 msgid ""
 "Returns ``-1.0`` on error.  Use :c:func:`PyErr_Occurred` to disambiguate."
 msgstr ""
 "Retorna ``-1.0`` en caso de error. Use :c:func:`PyErr_Occurred` para "
 "desambiguar."
 
-#: ../Doc/c-api/long.rst:314
+#: ../Doc/c-api/long.rst:362
+#, fuzzy
 msgid ""
-"Convert a Python integer *pylong* to a C :c:type:`void` pointer. If *pylong* "
+"Convert a Python integer *pylong* to a C :c:expr:`void` pointer. If *pylong* "
 "cannot be converted, an :exc:`OverflowError` will be raised.  This is only "
-"assured to produce a usable :c:type:`void` pointer for values created with :"
+"assured to produce a usable :c:expr:`void` pointer for values created with :"
 "c:func:`PyLong_FromVoidPtr`."
 msgstr ""
 "Convierte un entero Python *pylong* en un puntero C :c:type:`void`. Si "
@@ -440,9 +518,299 @@ msgstr ""
 "solo se garantiza para producir un puntero utilizable :c:type:`void` para "
 "valores creados con :c:func:`PyLong_FromVoidPtr`."
 
-#: ../Doc/c-api/long.rst:319
+#: ../Doc/c-api/long.rst:367
 msgid ""
 "Returns ``NULL`` on error.  Use :c:func:`PyErr_Occurred` to disambiguate."
 msgstr ""
 "Retorna ``NULL`` en caso de error. Use :c:func:`PyErr_Occurred` para "
 "desambiguar."
+
+#: ../Doc/c-api/long.rst:372
+msgid ""
+"Copy the Python integer value *pylong* to a native *buffer* of size "
+"*n_bytes*. The *flags* can be set to ``-1`` to behave similarly to a C cast, "
+"or to values documented below to control the behavior."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:376
+msgid ""
+"Returns ``-1`` with an exception raised on error.  This may happen if "
+"*pylong* cannot be interpreted as an integer, or if *pylong* was negative "
+"and the ``Py_ASNATIVEBYTES_REJECT_NEGATIVE`` flag was set."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:380
+msgid ""
+"Otherwise, returns the number of bytes required to store the value. If this "
+"is equal to or less than *n_bytes*, the entire value was copied. All "
+"*n_bytes* of the buffer are written: large buffers are padded with zeroes."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:385
+msgid ""
+"If the returned value is greater than than *n_bytes*, the value was "
+"truncated: as many of the lowest bits of the value as could fit are written, "
+"and the higher bits are ignored. This matches the typical behavior of a C-"
+"style downcast."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:392
+msgid ""
+"Overflow is not considered an error. If the returned value is larger than "
+"*n_bytes*, most significant bits were discarded."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:395
+msgid "``0`` will never be returned."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:397
+msgid "Values are always copied as two's-complement."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:399
+msgid "Usage example::"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:401
+msgid ""
+"int32_t value;\n"
+"Py_ssize_t bytes = PyLong_AsNativeBytes(pylong, &value, sizeof(value), -1);\n"
+"if (bytes < 0) {\n"
+"    // Failed. A Python exception was set with the reason.\n"
+"    return NULL;\n"
+"}\n"
+"else if (bytes <= (Py_ssize_t)sizeof(value)) {\n"
+"    // Success!\n"
+"}\n"
+"else {\n"
+"    // Overflow occurred, but 'value' contains the truncated\n"
+"    // lowest bits of pylong.\n"
+"}"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:415
+msgid ""
+"Passing zero to *n_bytes* will return the size of a buffer that would be "
+"large enough to hold the value. This may be larger than technically "
+"necessary, but not unreasonably so. If *n_bytes=0*, *buffer* may be ``NULL``."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:422
+msgid ""
+"Passing *n_bytes=0* to this function is not an accurate way to determine the "
+"bit length of the value."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:425
+msgid ""
+"To get at the entire Python value of an unknown size, the function can be "
+"called twice: first to determine the buffer size, then to fill it::"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:428
+msgid ""
+"// Ask how much space we need.\n"
+"Py_ssize_t expected = PyLong_AsNativeBytes(pylong, NULL, 0, -1);\n"
+"if (expected < 0) {\n"
+"    // Failed. A Python exception was set with the reason.\n"
+"    return NULL;\n"
+"}\n"
+"assert(expected != 0);  // Impossible per the API definition.\n"
+"uint8_t *bignum = malloc(expected);\n"
+"if (!bignum) {\n"
+"    PyErr_SetString(PyExc_MemoryError, \"bignum malloc failed.\");\n"
+"    return NULL;\n"
+"}\n"
+"// Safely get the entire value.\n"
+"Py_ssize_t bytes = PyLong_AsNativeBytes(pylong, bignum, expected, -1);\n"
+"if (bytes < 0) {  // Exception has been set.\n"
+"    free(bignum);\n"
+"    return NULL;\n"
+"}\n"
+"else if (bytes > expected) {  // This should not be possible.\n"
+"    PyErr_SetString(PyExc_RuntimeError,\n"
+"        \"Unexpected bignum truncation after a size check.\");\n"
+"    free(bignum);\n"
+"    return NULL;\n"
+"}\n"
+"// The expected success given the above pre-check.\n"
+"// ... use bignum ...\n"
+"free(bignum);"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:456
+msgid ""
+"*flags* is either ``-1`` (``Py_ASNATIVEBYTES_DEFAULTS``) to select defaults "
+"that behave most like a C cast, or a combintation of the other flags in the "
+"table below. Note that ``-1`` cannot be combined with other flags."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:461
+msgid ""
+"Currently, ``-1`` corresponds to ``Py_ASNATIVEBYTES_NATIVE_ENDIAN | "
+"Py_ASNATIVEBYTES_UNSIGNED_BUFFER``."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:467
+msgid "Flag"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:467
+msgid "Value"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:469
+msgid "``-1``"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:470
+msgid "``0``"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:471
+msgid "``1``"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:472
+msgid "``3``"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:473
+msgid "``4``"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:474
+msgid "``8``"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:475
+msgid "``16``"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:478
+msgid ""
+"Specifying ``Py_ASNATIVEBYTES_NATIVE_ENDIAN`` will override any other endian "
+"flags. Passing ``2`` is reserved."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:481
+msgid ""
+"By default, sufficient buffer will be requested to include a sign bit. For "
+"example, when converting 128 with *n_bytes=1*, the function will return 2 "
+"(or more) in order to store a zero sign bit."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:485
+msgid ""
+"If ``Py_ASNATIVEBYTES_UNSIGNED_BUFFER`` is specified, a zero sign bit will "
+"be omitted from size calculations. This allows, for example, 128 to fit in a "
+"single-byte buffer. If the destination buffer is later treated as signed, a "
+"positive input value may become negative. Note that the flag does not affect "
+"handling of negative values: for those, space for a sign bit is always "
+"requested."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:492
+msgid ""
+"Specifying ``Py_ASNATIVEBYTES_REJECT_NEGATIVE`` causes an exception to be "
+"set if *pylong* is negative. Without this flag, negative values will be "
+"copied provided there is enough space for at least one sign bit, regardless "
+"of whether ``Py_ASNATIVEBYTES_UNSIGNED_BUFFER`` was specified."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:497
+msgid ""
+"If ``Py_ASNATIVEBYTES_ALLOW_INDEX`` is specified and a non-integer value is "
+"passed, its :meth:`~object.__index__` method will be called first. This may "
+"result in Python code executing and other threads being allowed to run, "
+"which could cause changes to other objects or values in use. When *flags* is "
+"``-1``, this option is not set, and non-integer values will raise :exc:"
+"`TypeError`."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:506
+msgid ""
+"With the default *flags* (``-1``, or *UNSIGNED_BUFFER*  without "
+"*REJECT_NEGATIVE*), multiple Python integers can map to a single value "
+"without overflow. For example, both ``255`` and ``-1`` fit a single-byte "
+"buffer and set all its bits. This matches typical C cast behavior."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:517
+msgid ""
+"On success, return a read only :term:`named tuple`, that holds information "
+"about Python's internal representation of integers. See :data:`sys.int_info` "
+"for description of individual fields."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:521
+msgid "On failure, return ``NULL`` with an exception set."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:528
+msgid "Return 1 if *op* is compact, 0 otherwise."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:530
+msgid ""
+"This function makes it possible for performance-critical code to implement a "
+"“fast path” for small integers. For compact values use :c:func:"
+"`PyUnstable_Long_CompactValue`; for others fall back to a :c:func:"
+"`PyLong_As* <PyLong_AsSize_t>` function or :c:func:`PyLong_AsNativeBytes`."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:536
+msgid "The speedup is expected to be negligible for most users."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:538
+msgid ""
+"Exactly what values are considered compact is an implementation detail and "
+"is subject to change."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:543
+msgid ""
+"If *op* is compact, as determined by :c:func:`PyUnstable_Long_IsCompact`, "
+"return its value."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:546
+msgid "Otherwise, the return value is undefined."
+msgstr ""
+
+#: ../Doc/c-api/long.rst:8
+msgid "object"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:8
+msgid "long integer"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:8
+#, fuzzy
+msgid "integer"
+msgstr "Objetos enteros"
+
+#: ../Doc/c-api/long.rst:144
+msgid "LONG_MAX (C macro)"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:144 ../Doc/c-api/long.rst:204
+#: ../Doc/c-api/long.rst:247 ../Doc/c-api/long.rst:262
+#: ../Doc/c-api/long.rst:278 ../Doc/c-api/long.rst:294
+msgid "OverflowError (built-in exception)"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:247
+msgid "PY_SSIZE_T_MAX (C macro)"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:262
+msgid "ULONG_MAX (C macro)"
+msgstr ""
+
+#: ../Doc/c-api/long.rst:278
+msgid "SIZE_MAX (C macro)"
+msgstr ""

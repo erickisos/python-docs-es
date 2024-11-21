@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-16 21:42+0200\n"
-"PO-Revision-Date: 2021-12-12 13:06-0500\n"
+"POT-Creation-Date: 2024-11-21 16:38-0300\n"
+"PO-Revision-Date: 2023-01-27 17:19-0300\n"
 "Last-Translator: Adolfo Hristo David Roque Gámez <aroquega@gmail.com>\n"
 "Language: es_ES\n"
 "Language-Team: \n"
@@ -16,11 +16,11 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-"X-Generator: Poedit 3.0\n"
+"Generated-By: Babel 2.16.0\n"
 
 #: ../Doc/library/random.rst:2
-msgid ":mod:`random` --- Generate pseudo-random numbers"
+#, fuzzy
+msgid ":mod:`!random` --- Generate pseudo-random numbers"
 msgstr ":mod:`random` ---Generar números pseudoaleatorios"
 
 #: ../Doc/library/random.rst:7
@@ -59,11 +59,12 @@ msgstr ""
 "distribución de von Mises."
 
 #: ../Doc/library/random.rst:23
+#, fuzzy
 msgid ""
 "Almost all module functions depend on the basic function :func:`.random`, "
-"which generates a random float uniformly in the semi-open range [0.0, 1.0).  "
-"Python uses the Mersenne Twister as the core generator.  It produces 53-bit "
-"precision floats and has a period of 2\\*\\*19937-1.  The underlying "
+"which generates a random float uniformly in the half-open range ``0.0 <= X < "
+"1.0``. Python uses the Mersenne Twister as the core generator.  It produces "
+"53-bit precision floats and has a period of 2\\*\\*19937-1.  The underlying "
 "implementation in C is both fast and threadsafe.  The Mersenne Twister is "
 "one of the most extensively tested random number generators in existence.  "
 "However, being completely deterministic, it is not suitable for all "
@@ -93,21 +94,11 @@ msgstr ""
 #: ../Doc/library/random.rst:36
 msgid ""
 "Class :class:`Random` can also be subclassed if you want to use a different "
-"basic generator of your own devising: in that case, override the :meth:"
-"`~Random.random`, :meth:`~Random.seed`, :meth:`~Random.getstate`, and :meth:"
-"`~Random.setstate` methods. Optionally, a new generator can supply a :meth:"
-"`~Random.getrandbits` method --- this allows :meth:`randrange` to produce "
-"selections over an arbitrarily large range."
+"basic generator of your own devising: see the documentation on that class "
+"for more details."
 msgstr ""
-"La clase :class:`Random` puede ser también subclaseada si quieres usar un "
-"generador básico diferente para tu propio diseño: en este caso, invalida los "
-"métodos :meth:`~Random.random`, :meth:`~Random.seed`, :meth:`~Random."
-"getstate` y :meth:`~Random.setstate`. Opcionalmente, se puede substituir un "
-"método :meth:`~Random.getrandbits` por un nuevo generador --- esto permite "
-"a :meth:`randrange` producir selecciones sobre un rango arbitrariamente "
-"amplio."
 
-#: ../Doc/library/random.rst:42
+#: ../Doc/library/random.rst:40
 msgid ""
 "The :mod:`random` module also provides the :class:`SystemRandom` class which "
 "uses the system function :func:`os.urandom` to generate random numbers from "
@@ -117,7 +108,7 @@ msgstr ""
 "la cuál usa la función del sistema :func:`os.urandom` para generar números "
 "aleatorios a partir de fuentes proporcionadas por el sistema operativo."
 
-#: ../Doc/library/random.rst:48
+#: ../Doc/library/random.rst:46
 msgid ""
 "The pseudo-random generators of this module should not be used for security "
 "purposes.  For security or cryptographic uses, see the :mod:`secrets` module."
@@ -126,7 +117,7 @@ msgstr ""
 "fines de seguridad. Para usos de seguridad o criptográficos, consulta el "
 "módulo :mod:`secrets`."
 
-#: ../Doc/library/random.rst:54
+#: ../Doc/library/random.rst:52
 msgid ""
 "M. Matsumoto and T. Nishimura, \"Mersenne Twister: A 623-dimensionally "
 "equidistributed uniform pseudorandom number generator\", ACM Transactions on "
@@ -136,25 +127,36 @@ msgstr ""
 "equidistributed uniform pseudorandom number generator*\", ACM Transactions "
 "on Modeling and Computer Simulation Vol. 8, No. 1, January pp.3--30 1998."
 
-#: ../Doc/library/random.rst:59
+#: ../Doc/library/random.rst:57
+#, fuzzy
 msgid ""
 "`Complementary-Multiply-with-Carry recipe <https://code.activestate.com/"
-"recipes/576707/>`_ for a compatible alternative random number generator with "
-"a long period and comparatively simple update operations."
+"recipes/576707-long-period-random-number-generator/>`_ for a compatible "
+"alternative random number generator with a long period and comparatively "
+"simple update operations."
 msgstr ""
 "`*Complementary-Multiply-with-Carry recipe* <https://code.activestate.com/"
 "recipes/576707/>`_ para otro generador de números aleatorios con un período "
 "largo compatible y con operaciones de actualización comparativamente simples."
 
-#: ../Doc/library/random.rst:66
+#: ../Doc/library/random.rst:63
+msgid ""
+"The global random number generator and instances of :class:`Random` are "
+"thread-safe. However, in the free-threaded build, concurrent calls to the "
+"global generator or to the same instance of :class:`Random` may encounter "
+"contention and poor performance. Consider using separate instances of :class:"
+"`Random` per thread instead."
+msgstr ""
+
+#: ../Doc/library/random.rst:70
 msgid "Bookkeeping functions"
 msgstr "Funciones de contabilidad"
 
-#: ../Doc/library/random.rst:70
+#: ../Doc/library/random.rst:74
 msgid "Initialize the random number generator."
 msgstr "Inicializa el generador de números aleatorios."
 
-#: ../Doc/library/random.rst:72
+#: ../Doc/library/random.rst:76
 msgid ""
 "If *a* is omitted or ``None``, the current system time is used.  If "
 "randomness sources are provided by the operating system, they are used "
@@ -166,11 +168,11 @@ msgstr ""
 "vez de la hora del sistema (ver la función :func:`os.urandom` para detalles "
 "sobre su disponibilidad)."
 
-#: ../Doc/library/random.rst:77
+#: ../Doc/library/random.rst:81
 msgid "If *a* is an int, it is used directly."
 msgstr "Si *a* es un entero, se usará directamente."
 
-#: ../Doc/library/random.rst:79
+#: ../Doc/library/random.rst:83
 msgid ""
 "With version 2 (the default), a :class:`str`, :class:`bytes`, or :class:"
 "`bytearray` object gets converted to an :class:`int` and all of its bits are "
@@ -180,7 +182,7 @@ msgstr ""
 "`bytes`, o :class:`bytearray` se convierte en :class:`int` y se usarán todos "
 "sus bits."
 
-#: ../Doc/library/random.rst:82
+#: ../Doc/library/random.rst:86
 msgid ""
 "With version 1 (provided for reproducing random sequences from older "
 "versions of Python), the algorithm for :class:`str` and :class:`bytes` "
@@ -190,24 +192,23 @@ msgstr ""
 "versiones anteriores de Python), el algoritmo para :class:`str` y :class:"
 "`bytes` genera un rango de semillas más estrecho."
 
-#: ../Doc/library/random.rst:86
+#: ../Doc/library/random.rst:90
 msgid ""
 "Moved to the version 2 scheme which uses all of the bits in a string seed."
 msgstr ""
 "El esquema que usa todos los bits en una semilla de tipo cadena, se ha "
 "movido a la versión 2."
 
-#: ../Doc/library/random.rst:89
+#: ../Doc/library/random.rst:93
+#, fuzzy
 msgid ""
-"In the future, the *seed* must be one of the following types: *NoneType*, :"
-"class:`int`, :class:`float`, :class:`str`, :class:`bytes`, or :class:"
-"`bytearray`."
+"The *seed* must be one of the following types: ``None``, :class:`int`, :"
+"class:`float`, :class:`str`, :class:`bytes`, or :class:`bytearray`."
 msgstr ""
-"En el futuro, la *semilla* debe ser de uno de los siguientes tipos: "
-"*NoneType*, :class:`int`, :class:`float`, :class:`str`, :class:`bytes`, o :"
-"class:`bytearray`."
+"La *semilla* debe ser de uno de los siguientes tipos: *NoneType*, :class:"
+"`int`, :class:`float`, :class:`str`, :class:`bytes`, o :class:`bytearray`."
 
-#: ../Doc/library/random.rst:96
+#: ../Doc/library/random.rst:100
 msgid ""
 "Return an object capturing the current internal state of the generator.  "
 "This object can be passed to :func:`setstate` to restore the state."
@@ -215,7 +216,7 @@ msgstr ""
 "Retorna un objeto capturando el estado interno del generador. Este objeto "
 "puede pasarse a :func:`setstate` para restaurar su estado."
 
-#: ../Doc/library/random.rst:102
+#: ../Doc/library/random.rst:106
 msgid ""
 "*state* should have been obtained from a previous call to :func:`getstate`, "
 "and :func:`setstate` restores the internal state of the generator to what it "
@@ -225,15 +226,15 @@ msgstr ""
 "`getstate`, y :func:`setstate` reestablece el estado interno del generador "
 "al que tenia cuando se llamó a la función :func:`getstate`."
 
-#: ../Doc/library/random.rst:108
+#: ../Doc/library/random.rst:112
 msgid "Functions for bytes"
 msgstr "Funciones para los bytes"
 
-#: ../Doc/library/random.rst:112
+#: ../Doc/library/random.rst:116
 msgid "Generate *n* random bytes."
 msgstr "Genera *n* bytes aleatorios."
 
-#: ../Doc/library/random.rst:114
+#: ../Doc/library/random.rst:118
 msgid ""
 "This method should not be used for generating security tokens. Use :func:"
 "`secrets.token_bytes` instead."
@@ -241,31 +242,32 @@ msgstr ""
 "Este método no debe utilizarse para generar tokens de seguridad. Utilice :"
 "func:`secrets.token_bytes` en su lugar."
 
-#: ../Doc/library/random.rst:121
+#: ../Doc/library/random.rst:125
 msgid "Functions for integers"
 msgstr "Funciones para enteros"
 
-#: ../Doc/library/random.rst:126
-msgid ""
-"Return a randomly selected element from ``range(start, stop, step)``.  This "
-"is equivalent to ``choice(range(start, stop, step))``, but doesn't actually "
-"build a range object."
-msgstr ""
-"Retorna un elemento de ``range(start, stop, step)`` seleccionado "
-"aleatoriamente. Esto es equivalente a ``choice(range(start, stop, step))``, "
-"pero en realidad no crea un objeto rango."
-
 #: ../Doc/library/random.rst:130
-msgid ""
-"The positional argument pattern matches that of :func:`range`.  Keyword "
-"arguments should not be used because the function may use them in unexpected "
-"ways."
+msgid "Return a randomly selected element from ``range(start, stop, step)``."
 msgstr ""
-"El patrón de argumento posicional coincide con el de :func:`range`. Los "
-"argumentos no deben usarse porque la función puede usarlos de forma "
-"inesperada."
 
-#: ../Doc/library/random.rst:133
+#: ../Doc/library/random.rst:132
+msgid ""
+"This is roughly equivalent to ``choice(range(start, stop, step))`` but "
+"supports arbitrarily large ranges and is optimized for common cases."
+msgstr ""
+
+#: ../Doc/library/random.rst:135
+msgid "The positional argument pattern matches the :func:`range` function."
+msgstr ""
+
+#: ../Doc/library/random.rst:137
+msgid ""
+"Keyword arguments should not be used because they can be interpreted in "
+"unexpected ways. For example ``randrange(start=100)`` is interpreted as "
+"``randrange(0, 100, 1)``."
+msgstr ""
+
+#: ../Doc/library/random.rst:141
 msgid ""
 ":meth:`randrange` is more sophisticated about producing equally distributed "
 "values.  Formerly it used a style like ``int(random()*n)`` which could "
@@ -275,26 +277,18 @@ msgstr ""
 "distribuidos. Anteriormente utilizaba un estilo como ``int(random()*n)`` el "
 "cual puede producir distribuciones ligeramente desiguales."
 
-#: ../Doc/library/random.rst:138
+#: ../Doc/library/random.rst:146
+#, fuzzy
 msgid ""
-"The automatic conversion of non-integer types to equivalent integers is "
-"deprecated.  Currently ``randrange(10.0)`` is losslessly converted to "
-"``randrange(10)``.  In the future, this will raise a :exc:`TypeError`."
+"Automatic conversion of non-integer types is no longer supported. Calls such "
+"as ``randrange(10.0)`` and ``randrange(Fraction(10, 1))`` now raise a :exc:"
+"`TypeError`."
 msgstr ""
 "La conversión automática de tipos que no son enteros a enteros equivalentes "
 "está obsoleta. Actualmente ``randrange(10.0)`` se convierte sin pérdidas a "
 "``randrange(10)``.  En el futuro, esto lanzará un :exc:`TypeError`."
 
-#: ../Doc/library/random.rst:143
-msgid ""
-"The exception raised for non-integral values such as ``randrange(10.5)`` or "
-"``randrange('10')`` will be changed from :exc:`ValueError` to :exc:"
-"`TypeError`."
-msgstr ""
-"La excepción que se lanza de valores no enteros como ``randrange(10.5)`` o "
-"``randrange('10')`` se cambiará de :exc:`ValueError` a :exc:`TypeError`."
-
-#: ../Doc/library/random.rst:150
+#: ../Doc/library/random.rst:153
 msgid ""
 "Return a random integer *N* such that ``a <= N <= b``.  Alias for "
 "``randrange(a, b+1)``."
@@ -302,10 +296,11 @@ msgstr ""
 "Retorna un entero aleatorio *N* tal que ``a <= N <= b``. Alias de "
 "``randrange(a, b+1)``."
 
-#: ../Doc/library/random.rst:155
+#: ../Doc/library/random.rst:158
+#, fuzzy
 msgid ""
 "Returns a non-negative Python integer with *k* random bits. This method is "
-"supplied with the MersenneTwister generator and some other generators may "
+"supplied with the Mersenne Twister generator and some other generators may "
 "also provide it as an optional part of the API. When available, :meth:"
 "`getrandbits` enables :meth:`randrange` to handle arbitrarily large ranges."
 msgstr ""
@@ -315,15 +310,15 @@ msgstr ""
 "disponible, :meth:`getrandbits` permite a :meth:`randrange` manejar rangos "
 "arbitrariamente grandes."
 
-#: ../Doc/library/random.rst:161
+#: ../Doc/library/random.rst:164
 msgid "This method now accepts zero for *k*."
 msgstr "Este método ahora acepta cero para *k*."
 
-#: ../Doc/library/random.rst:166
+#: ../Doc/library/random.rst:169
 msgid "Functions for sequences"
 msgstr "Funciones para secuencias"
 
-#: ../Doc/library/random.rst:170
+#: ../Doc/library/random.rst:173
 msgid ""
 "Return a random element from the non-empty sequence *seq*. If *seq* is "
 "empty, raises :exc:`IndexError`."
@@ -331,7 +326,7 @@ msgstr ""
 "Retorna un elemento aleatorio de una secuencia *seq* no vacía. Si *seq* está "
 "vacía, lanza :exc:`IndexError`."
 
-#: ../Doc/library/random.rst:175
+#: ../Doc/library/random.rst:178
 msgid ""
 "Return a *k* sized list of elements chosen from the *population* with "
 "replacement. If the *population* is empty, raises :exc:`IndexError`."
@@ -339,7 +334,7 @@ msgstr ""
 "Retorna una lista de elementos de tamaño *k* elegidos de la *population* con "
 "reemplazo. Si la *population* está vacía, lanza :exc:`IndexError`."
 
-#: ../Doc/library/random.rst:178
+#: ../Doc/library/random.rst:181
 msgid ""
 "If a *weights* sequence is specified, selections are made according to the "
 "relative weights.  Alternatively, if a *cum_weights* sequence is given, the "
@@ -358,7 +353,7 @@ msgstr ""
 "convierten en pesos cumulativos antes de hacer selecciones, por lo cual "
 "suplir los pesos cumulativos ahorra trabajo."
 
-#: ../Doc/library/random.rst:187
+#: ../Doc/library/random.rst:190
 msgid ""
 "If neither *weights* nor *cum_weights* are specified, selections are made "
 "with equal probability.  If a weights sequence is supplied, it must be the "
@@ -370,7 +365,7 @@ msgstr ""
 "ponderaciones, debe tener la misma longitud que la secuencia *population*. "
 "Es un :exc:`TypeError` especificar ambas *weights* y *cum_weights*."
 
-#: ../Doc/library/random.rst:192
+#: ../Doc/library/random.rst:195
 msgid ""
 "The *weights* or *cum_weights* can use any numeric type that interoperates "
 "with the :class:`float` values returned by :func:`random` (that includes "
@@ -384,11 +379,12 @@ msgstr ""
 "asume que los pesos son no negativos y finitos.  Se lanza un :exc:"
 "`ValueError` si todos los pesos son cero."
 
-#: ../Doc/library/random.rst:198
+#: ../Doc/library/random.rst:201
+#, fuzzy
 msgid ""
 "For a given seed, the :func:`choices` function with equal weighting "
 "typically produces a different sequence than repeated calls to :func:"
-"`choice`.  The algorithm used by :func:`choices` uses floating point "
+"`choice`.  The algorithm used by :func:`choices` uses floating-point "
 "arithmetic for internal consistency and speed.  The algorithm used by :func:"
 "`choice` defaults to integer arithmetic with repeated selections to avoid "
 "small biases from round-off error."
@@ -400,22 +396,13 @@ msgstr ""
 "por :func:`choice` emplea por defecto aritmética de enteros con selecciones "
 "repetidas para evitar pequeños sesgos de errores de redondeo."
 
-#: ../Doc/library/random.rst:207
+#: ../Doc/library/random.rst:210
 msgid "Raises a :exc:`ValueError` if all weights are zero."
 msgstr "Genera un :exc:`ValueError` si todos los pesos son cero."
 
-#: ../Doc/library/random.rst:213
+#: ../Doc/library/random.rst:216
 msgid "Shuffle the sequence *x* in place."
 msgstr "Mezcla la secuencia *x* in-situ."
-
-#: ../Doc/library/random.rst:215
-msgid ""
-"The optional argument *random* is a 0-argument function returning a random "
-"float in [0.0, 1.0); by default, this is the function :func:`.random`."
-msgstr ""
-"El argumento opcional *random* es una función de 0 argumentos que retorna un "
-"flotante random en [0.0, 1.0); por defecto esta es la función :func:`."
-"random`."
 
 #: ../Doc/library/random.rst:218
 msgid ""
@@ -440,14 +427,16 @@ msgstr ""
 "una secuencia de longitud 2080 es la más grande que cabe dentro del período "
 "del generador de números aleatorios de Mersenne Twister."
 
-#: ../Doc/library/random.rst:228
-msgid "The optional parameter *random*."
+#: ../Doc/library/random.rst:227
+#, fuzzy
+msgid "Removed the optional parameter *random*."
 msgstr "El parámetro opcional *random*."
 
 #: ../Doc/library/random.rst:233
+#, fuzzy
 msgid ""
 "Return a *k* length list of unique elements chosen from the population "
-"sequence or set. Used for random sampling without replacement."
+"sequence.  Used for random sampling without replacement."
 msgstr ""
 "Retorna una lista de longitud *k* de elementos únicos elegidos de la "
 "secuencia de población o conjunto. Se utiliza para el muestreo aleatorio sin "
@@ -511,23 +500,50 @@ msgstr ""
 msgid "Added the *counts* parameter."
 msgstr "Se añadió el parámetro *counts*."
 
-#: ../Doc/library/random.rst:260
+#: ../Doc/library/random.rst:262
 msgid ""
-"In the future, the *population* must be a sequence.  Instances of :class:"
-"`set` are no longer supported.  The set must first be converted to a :class:"
-"`list` or :class:`tuple`, preferably in a deterministic order so that the "
-"sample is reproducible."
+"The *population* must be a sequence.  Automatic conversion of sets to lists "
+"is no longer supported."
 msgstr ""
-"En el futuro, la *población* debe ser una secuencia.  Las instancias de :"
-"class:`set` ya no se admiten.  El conjunto debe convertirse primero en una :"
-"class:`list` o :class:`tuple`, preferiblemente en un orden determinista para "
-"que la muestra sea reproducible."
+"La población debe ser una secuencia. La conversión automática de sets a "
+"listas ya no es compatible."
 
-#: ../Doc/library/random.rst:270
+#: ../Doc/library/random.rst:266
+#, fuzzy
+msgid "Discrete distributions"
+msgstr "Distribuciones para los nombres reales"
+
+#: ../Doc/library/random.rst:268
+msgid "The following function generates a discrete distribution."
+msgstr ""
+
+#: ../Doc/library/random.rst:272
+msgid ""
+"`Binomial distribution <https://mathworld.wolfram.com/BinomialDistribution."
+"html>`_. Return the number of successes for *n* independent trials with the "
+"probability of success in each trial being *p*:"
+msgstr ""
+
+#: ../Doc/library/random.rst:277
+msgid "Mathematically equivalent to::"
+msgstr ""
+
+#: ../Doc/library/random.rst:279
+msgid "sum(random() < p for i in range(n))"
+msgstr ""
+
+#: ../Doc/library/random.rst:281
+msgid ""
+"The number of trials *n* should be a non-negative integer. The probability "
+"of success *p* should be between ``0.0 <= p <= 1.0``. The result is an "
+"integer in the range ``0 <= X <= n``."
+msgstr ""
+
+#: ../Doc/library/random.rst:291
 msgid "Real-valued distributions"
 msgstr "Distribuciones para los nombres reales"
 
-#: ../Doc/library/random.rst:272
+#: ../Doc/library/random.rst:293
 msgid ""
 "The following functions generate specific real-valued distributions. "
 "Function parameters are named after the corresponding variables in the "
@@ -540,31 +556,36 @@ msgstr ""
 "la práctica matemática común.; la mayoría de estas ecuaciones se pueden "
 "encontrar en cualquier texto estadístico."
 
-#: ../Doc/library/random.rst:280
-msgid "Return the next random floating point number in the range [0.0, 1.0)."
+#: ../Doc/library/random.rst:301
+#, fuzzy
+msgid ""
+"Return the next random floating-point number in the range ``0.0 <= X < 1.0``"
 msgstr ""
 "Retorna el siguiente número en coma flotante aleatorio dentro del rango "
 "[0.0, 1.0)."
 
-#: ../Doc/library/random.rst:285
+#: ../Doc/library/random.rst:306
+#, fuzzy
 msgid ""
-"Return a random floating point number *N* such that ``a <= N <= b`` for ``a "
+"Return a random floating-point number *N* such that ``a <= N <= b`` for ``a "
 "<= b`` and ``b <= N <= a`` for ``b < a``."
 msgstr ""
 "Retorna un número en coma flotante aleatorio *N* tal que ``a <= N <= b`` "
 "para ``a <= b`` y ``b <= N <= a`` para ``b < a``."
 
-#: ../Doc/library/random.rst:288
+#: ../Doc/library/random.rst:309
+#, fuzzy
 msgid ""
 "The end-point value ``b`` may or may not be included in the range depending "
-"on floating-point rounding in the equation ``a + (b-a) * random()``."
+"on floating-point rounding in the expression ``a + (b-a) * random()``."
 msgstr ""
 "El valor final ``b`` puede o no estar incluido en el rango, dependiendo del "
 "redondeo de coma flotante en la ecuación ``a + (b-a) * random()``."
 
-#: ../Doc/library/random.rst:294
+#: ../Doc/library/random.rst:316
+#, fuzzy
 msgid ""
-"Return a random floating point number *N* such that ``low <= N <= high`` and "
+"Return a random floating-point number *N* such that ``low <= N <= high`` and "
 "with the specified *mode* between those bounds.  The *low* and *high* bounds "
 "default to zero and one.  The *mode* argument defaults to the midpoint "
 "between the bounds, giving a symmetric distribution."
@@ -575,7 +596,7 @@ msgstr ""
 "valor por defecto el punto medio entre los límites, dando lugar a una "
 "distribución simétrica."
 
-#: ../Doc/library/random.rst:302
+#: ../Doc/library/random.rst:324
 msgid ""
 "Beta distribution.  Conditions on the parameters are ``alpha > 0`` and "
 "``beta > 0``. Returned values range between 0 and 1."
@@ -583,7 +604,7 @@ msgstr ""
 "Distribución beta. Las condiciones de los parámetros son ``alpha > 0`` y "
 "``beta > 0``. Retorna valores dentro del rango entre 0 y 1."
 
-#: ../Doc/library/random.rst:308
+#: ../Doc/library/random.rst:330
 msgid ""
 "Exponential distribution.  *lambd* is 1.0 divided by the desired mean.  It "
 "should be nonzero.  (The parameter would be called \"lambda\", but that is a "
@@ -597,21 +618,32 @@ msgstr ""
 "infinito positivo si *lambd* es positivo, y de infinito negativo a 0 si "
 "*lambd* es negativo."
 
-#: ../Doc/library/random.rst:317
-msgid ""
-"Gamma distribution.  (*Not* the gamma function!)  Conditions on the "
-"parameters are ``alpha > 0`` and ``beta > 0``."
+#: ../Doc/library/random.rst:336
+msgid "Added the default value for ``lambd``."
 msgstr ""
-"Distribución gamma. (¡*No* la función gamma!) Las condiciones en los "
-"parámetros son ``alpha > 0`` y ``beta > 0``."
 
-#: ../Doc/library/random.rst:320
+#: ../Doc/library/random.rst:342
+msgid ""
+"Gamma distribution.  (*Not* the gamma function!)  The shape and scale "
+"parameters, *alpha* and *beta*, must have positive values. (Calling "
+"conventions vary and some sources define 'beta' as the inverse of the scale)."
+msgstr ""
+
+#: ../Doc/library/random.rst:347
 msgid "The probability distribution function is::"
 msgstr "La función de distribución de la probabilidad es::"
 
-#: ../Doc/library/random.rst:329
+#: ../Doc/library/random.rst:349
 msgid ""
-"Normal distribution, also called the Gaussian distribution.  *mu* is the "
+"          x ** (alpha - 1) * math.exp(-x / beta)\n"
+"pdf(x) =  --------------------------------------\n"
+"            math.gamma(alpha) * beta ** alpha"
+msgstr ""
+
+#: ../Doc/library/random.rst:356
+#, fuzzy
+msgid ""
+"Normal distribution, also called the Gaussian distribution. *mu* is the "
 "mean, and *sigma* is the standard deviation.  This is slightly faster than "
 "the :func:`normalvariate` function defined below."
 msgstr ""
@@ -619,7 +651,7 @@ msgstr ""
 "media y *sigma* es la desviación estándar. Es un poco más rápida que la "
 "función :func:`normalvariate` definida debajo."
 
-#: ../Doc/library/random.rst:333
+#: ../Doc/library/random.rst:361
 msgid ""
 "Multithreading note:  When two threads call this function simultaneously, it "
 "is possible that they will receive the same return value.  This can be "
@@ -634,7 +666,11 @@ msgstr ""
 "de todas las llamadas. 3) Utilizar la función :func:`normalvariate`, más "
 "lenta pero segura para los hilos, en su lugar."
 
-#: ../Doc/library/random.rst:343
+#: ../Doc/library/random.rst:368 ../Doc/library/random.rst:384
+msgid "*mu* and *sigma* now have default arguments."
+msgstr "*mu* y *sigma* ahora tienen argumentos predeterminados."
+
+#: ../Doc/library/random.rst:374
 msgid ""
 "Log normal distribution.  If you take the natural logarithm of this "
 "distribution, you'll get a normal distribution with mean *mu* and standard "
@@ -646,14 +682,14 @@ msgstr ""
 "desviación estándar *sigma*. *mu* puede tener cualquier valor, y *sigma* "
 "debe ser mayor que cero."
 
-#: ../Doc/library/random.rst:351
+#: ../Doc/library/random.rst:382
 msgid ""
 "Normal distribution.  *mu* is the mean, and *sigma* is the standard "
 "deviation."
 msgstr ""
 "Distribución normal. *mu* es la media y *sigma* es la desviación estándar."
 
-#: ../Doc/library/random.rst:356
+#: ../Doc/library/random.rst:390
 msgid ""
 "*mu* is the mean angle, expressed in radians between 0 and 2\\*\\ *pi*, and "
 "*kappa* is the concentration parameter, which must be greater than or equal "
@@ -665,11 +701,11 @@ msgstr ""
 "Si *kappa* es igual a cero, esta distribución se reduce a un ángulo "
 "aleatorio uniforme sobre el rango de 0 a 2\\*\\ *pi*."
 
-#: ../Doc/library/random.rst:364
+#: ../Doc/library/random.rst:398
 msgid "Pareto distribution.  *alpha* is the shape parameter."
 msgstr "Distribución de Pareto. *alpha* es el parámetro de forma."
 
-#: ../Doc/library/random.rst:369
+#: ../Doc/library/random.rst:403
 msgid ""
 "Weibull distribution.  *alpha* is the scale parameter and *beta* is the "
 "shape parameter."
@@ -677,11 +713,11 @@ msgstr ""
 "Distribución de Weibull. *alpha* es el parámetro de escala y *beta* es el "
 "parámetro de forma."
 
-#: ../Doc/library/random.rst:374
+#: ../Doc/library/random.rst:408
 msgid "Alternative Generator"
 msgstr "Generador alternativo"
 
-#: ../Doc/library/random.rst:378
+#: ../Doc/library/random.rst:412
 msgid ""
 "Class that implements the default pseudo-random number generator used by "
 "the :mod:`random` module."
@@ -689,17 +725,59 @@ msgstr ""
 "Esta clase implementa el generador de números pseudoaleatorios "
 "predeterminado que usa el módulo :mod:`random` ."
 
-#: ../Doc/library/random.rst:381
+#: ../Doc/library/random.rst:415
+#, fuzzy
 msgid ""
-"In the future, the *seed* must be one of the following types: :class:"
-"`NoneType`, :class:`int`, :class:`float`, :class:`str`, :class:`bytes`, or :"
+"Formerly the *seed* could be any hashable object.  Now it is limited to: "
+"``None``, :class:`int`, :class:`float`, :class:`str`, :class:`bytes`, or :"
 "class:`bytearray`."
 msgstr ""
 "En el futuro, la *semilla* debe ser de uno de los siguientes tipos: :class:"
 "`NoneType`, :class:`int`, :class:`float`, :class:`str`, :class:`bytes`, o :"
 "class:`bytearray`."
 
-#: ../Doc/library/random.rst:388
+#: ../Doc/library/random.rst:420
+msgid ""
+"Subclasses of :class:`!Random` should override the following methods if they "
+"wish to make use of a different basic generator:"
+msgstr ""
+
+#: ../Doc/library/random.rst:425
+msgid ""
+"Override this method in subclasses to customise the :meth:`~random.seed` "
+"behaviour of :class:`!Random` instances."
+msgstr ""
+
+#: ../Doc/library/random.rst:430
+msgid ""
+"Override this method in subclasses to customise the :meth:`~random.getstate` "
+"behaviour of :class:`!Random` instances."
+msgstr ""
+
+#: ../Doc/library/random.rst:435
+msgid ""
+"Override this method in subclasses to customise the :meth:`~random.setstate` "
+"behaviour of :class:`!Random` instances."
+msgstr ""
+
+#: ../Doc/library/random.rst:440
+msgid ""
+"Override this method in subclasses to customise the :meth:`~random.random` "
+"behaviour of :class:`!Random` instances."
+msgstr ""
+
+#: ../Doc/library/random.rst:443
+msgid ""
+"Optionally, a custom generator subclass can also supply the following method:"
+msgstr ""
+
+#: ../Doc/library/random.rst:447
+msgid ""
+"Override this method in subclasses to customise the :meth:`~random."
+"getrandbits` behaviour of :class:`!Random` instances."
+msgstr ""
+
+#: ../Doc/library/random.rst:453
 msgid ""
 "Class that uses the :func:`os.urandom` function for generating random "
 "numbers from sources provided by the operating system. Not available on all "
@@ -715,14 +793,15 @@ msgstr ""
 "`seed` no tiene efecto y es ignorado. Los métodos :meth:`getstate` y :meth:"
 "`setstate` lanzan :exc:`NotImplementedError` si se les llama."
 
-#: ../Doc/library/random.rst:397
+#: ../Doc/library/random.rst:462
 msgid "Notes on Reproducibility"
 msgstr "Notas sobre la Reproducibilidad"
 
-#: ../Doc/library/random.rst:399
+#: ../Doc/library/random.rst:464
+#, fuzzy
 msgid ""
 "Sometimes it is useful to be able to reproduce the sequences given by a "
-"pseudo-random number generator.  By re-using a seed value, the same sequence "
+"pseudo-random number generator.  By reusing a seed value, the same sequence "
 "should be reproducible from run to run as long as multiple threads are not "
 "running."
 msgstr ""
@@ -731,7 +810,7 @@ msgstr ""
 "secuencia debería ser reproducible de una ejecución a otra siempre que no se "
 "estén ejecutando múltiples hilos."
 
-#: ../Doc/library/random.rst:403
+#: ../Doc/library/random.rst:468
 msgid ""
 "Most of the random module's algorithms and seeding functions are subject to "
 "change across Python versions, but two aspects are guaranteed not to change:"
@@ -740,7 +819,7 @@ msgstr ""
 "módulo aleatorio pueden cambiar entre versiones de Python, pero se garantiza "
 "que dos aspectos no cambien::"
 
-#: ../Doc/library/random.rst:406
+#: ../Doc/library/random.rst:471
 msgid ""
 "If a new seeding method is added, then a backward compatible seeder will be "
 "offered."
@@ -748,7 +827,7 @@ msgstr ""
 "Si se añade un nuevo método de generación de semilla, se ofrecerá un "
 "generador de semilla retrocompatible."
 
-#: ../Doc/library/random.rst:409
+#: ../Doc/library/random.rst:474
 msgid ""
 "The generator's :meth:`~Random.random` method will continue to produce the "
 "same sequence when the compatible seeder is given the same seed."
@@ -757,19 +836,78 @@ msgstr ""
 "secuencia cuando se le da la misma semilla al generador de semilla "
 "compatible."
 
-#: ../Doc/library/random.rst:415
+#: ../Doc/library/random.rst:480
 msgid "Examples"
 msgstr "Ejemplos"
 
-#: ../Doc/library/random.rst:417
+#: ../Doc/library/random.rst:482
 msgid "Basic examples::"
 msgstr "Ejemplos básicos::"
 
-#: ../Doc/library/random.rst:445
+#: ../Doc/library/random.rst:484
+msgid ""
+">>> random()                          # Random float:  0.0 <= x < 1.0\n"
+"0.37444887175646646\n"
+"\n"
+">>> uniform(2.5, 10.0)                # Random float:  2.5 <= x <= 10.0\n"
+"3.1800146073117523\n"
+"\n"
+">>> expovariate(1 / 5)                # Interval between arrivals averaging "
+"5 seconds\n"
+"5.148957571865031\n"
+"\n"
+">>> randrange(10)                     # Integer from 0 to 9 inclusive\n"
+"7\n"
+"\n"
+">>> randrange(0, 101, 2)              # Even integer from 0 to 100 "
+"inclusive\n"
+"26\n"
+"\n"
+">>> choice(['win', 'lose', 'draw'])   # Single random element from a "
+"sequence\n"
+"'draw'\n"
+"\n"
+">>> deck = 'ace two three four'.split()\n"
+">>> shuffle(deck)                     # Shuffle a list\n"
+">>> deck\n"
+"['four', 'two', 'ace', 'three']\n"
+"\n"
+">>> sample([10, 20, 30, 40, 50], k=4) # Four samples without replacement\n"
+"[40, 10, 50, 30]"
+msgstr ""
+
+#: ../Doc/library/random.rst:510
 msgid "Simulations::"
 msgstr "Simulaciones::"
 
-#: ../Doc/library/random.rst:473
+#: ../Doc/library/random.rst:512
+#, python-format
+msgid ""
+">>> # Six roulette wheel spins (weighted sampling with replacement)\n"
+">>> choices(['red', 'black', 'green'], [18, 18, 2], k=6)\n"
+"['red', 'green', 'black', 'black', 'red', 'black']\n"
+"\n"
+">>> # Deal 20 cards without replacement from a deck\n"
+">>> # of 52 playing cards, and determine the proportion of cards\n"
+">>> # with a ten-value:  ten, jack, queen, or king.\n"
+">>> deal = sample(['tens', 'low cards'], counts=[16, 36], k=20)\n"
+">>> deal.count('tens') / 20\n"
+"0.15\n"
+"\n"
+">>> # Estimate the probability of getting 5 or more heads from 7 spins\n"
+">>> # of a biased coin that settles on heads 60% of the time.\n"
+">>> sum(binomialvariate(n=7, p=0.6) >= 5 for i in range(10_000)) / 10_000\n"
+"0.4169\n"
+"\n"
+">>> # Probability of the median of 5 samples being in middle two quartiles\n"
+">>> def trial():\n"
+"...     return 2_500 <= sorted(choices(range(10_000), k=5))[2] < 7_500\n"
+"...\n"
+">>> sum(trial() for i in range(10_000)) / 10_000\n"
+"0.7958"
+msgstr ""
+
+#: ../Doc/library/random.rst:535
 msgid ""
 "Example of `statistical bootstrapping <https://en.wikipedia.org/wiki/"
 "Bootstrapping_(statistics)>`_ using resampling with replacement to estimate "
@@ -779,7 +917,20 @@ msgstr ""
 "Bootstrapping_(statistics)>`_ utilizando el remuestreo con reemplazo para "
 "estimar un intervalo de confianza para la media de una muestra::"
 
-#: ../Doc/library/random.rst:486
+#: ../Doc/library/random.rst:539
+#, python-format
+msgid ""
+"# https://www.thoughtco.com/example-of-bootstrapping-3126155\n"
+"from statistics import fmean as mean\n"
+"from random import choices\n"
+"\n"
+"data = [41, 50, 29, 37, 81, 30, 73, 63, 20, 35, 68, 22, 60, 31, 95]\n"
+"means = sorted(mean(choices(data, k=len(data))) for i in range(100))\n"
+"print(f'The sample mean of {mean(data):.1f} has a 90% confidence '\n"
+"      f'interval from {means[5]:.1f} to {means[94]:.1f}')"
+msgstr ""
+
+#: ../Doc/library/random.rst:548
 msgid ""
 "Example of a `resampling permutation test <https://en.wikipedia.org/wiki/"
 "Resampling_(statistics)#Permutation_tests>`_ to determine the statistical "
@@ -792,14 +943,71 @@ msgstr ""
 "Valor_p>`_ de una diferencia observada entre los efectos de un fármaco y un "
 "placebo::"
 
-#: ../Doc/library/random.rst:513
+#: ../Doc/library/random.rst:554
+msgid ""
+"# Example from \"Statistics is Easy\" by Dennis Shasha and Manda Wilson\n"
+"from statistics import fmean as mean\n"
+"from random import shuffle\n"
+"\n"
+"drug = [54, 73, 53, 70, 73, 68, 52, 65, 65]\n"
+"placebo = [54, 51, 58, 44, 55, 52, 42, 47, 58, 46]\n"
+"observed_diff = mean(drug) - mean(placebo)\n"
+"\n"
+"n = 10_000\n"
+"count = 0\n"
+"combined = drug + placebo\n"
+"for i in range(n):\n"
+"    shuffle(combined)\n"
+"    new_diff = mean(combined[:len(drug)]) - mean(combined[len(drug):])\n"
+"    count += (new_diff >= observed_diff)\n"
+"\n"
+"print(f'{n} label reshufflings produced only {count} instances with a "
+"difference')\n"
+"print(f'at least as extreme as the observed difference of "
+"{observed_diff:.1f}.')\n"
+"print(f'The one-sided p-value of {count / n:.4f} leads us to reject the "
+"null')\n"
+"print(f'hypothesis that there is no difference between the drug and the "
+"placebo.')"
+msgstr ""
+
+#: ../Doc/library/random.rst:575
 msgid ""
 "Simulation of arrival times and service deliveries for a multiserver queue::"
 msgstr ""
 "Simulación de tiempos de llegada y entrega de servicios para una cola de "
 "múltiples servidores::"
 
-#: ../Doc/library/random.rst:541
+#: ../Doc/library/random.rst:577
+msgid ""
+"from heapq import heapify, heapreplace\n"
+"from random import expovariate, gauss\n"
+"from statistics import mean, quantiles\n"
+"\n"
+"average_arrival_interval = 5.6\n"
+"average_service_time = 15.0\n"
+"stdev_service_time = 3.5\n"
+"num_servers = 3\n"
+"\n"
+"waits = []\n"
+"arrival_time = 0.0\n"
+"servers = [0.0] * num_servers  # time when each server becomes available\n"
+"heapify(servers)\n"
+"for i in range(1_000_000):\n"
+"    arrival_time += expovariate(1.0 / average_arrival_interval)\n"
+"    next_server_available = servers[0]\n"
+"    wait = max(0.0, next_server_available - arrival_time)\n"
+"    waits.append(wait)\n"
+"    service_duration = max(0.0, gauss(average_service_time, "
+"stdev_service_time))\n"
+"    service_completed = arrival_time + wait + service_duration\n"
+"    heapreplace(servers, service_completed)\n"
+"\n"
+"print(f'Mean wait: {mean(waits):.1f}   Max wait: {max(waits):.1f}')\n"
+"print('Quartiles:', [round(q, 1) for q in quantiles(waits)])"
+msgstr ""
+
+#: ../Doc/library/random.rst:604
 msgid ""
 "`Statistics for Hackers <https://www.youtube.com/watch?v=Iq9DzN6mvYA>`_ a "
 "video tutorial by `Jake Vanderplas <https://us.pycon.org/2016/speaker/"
@@ -811,13 +1019,14 @@ msgstr ""
 "profile/295/>`_ sobre análisis estadístico usando sólo algunos conceptos "
 "fundamentales incluyendo simulación, muestreo, baraja y validación cruzada."
 
-#: ../Doc/library/random.rst:547
+#: ../Doc/library/random.rst:610
+#, fuzzy
 msgid ""
-"`Economics Simulation <http://nbviewer.jupyter.org/url/norvig.com/ipython/"
-"Economics.ipynb>`_ a simulation of a marketplace by `Peter Norvig <http://"
-"norvig.com/bio.html>`_ that shows effective use of many of the tools and "
-"distributions provided by this module (gauss, uniform, sample, betavariate, "
-"choice, triangular, and randrange)."
+"`Economics Simulation <https://nbviewer.org/url/norvig.com/ipython/Economics."
+"ipynb>`_ a simulation of a marketplace by `Peter Norvig <https://norvig.com/"
+"bio.html>`_ that shows effective use of many of the tools and distributions "
+"provided by this module (gauss, uniform, sample, betavariate, choice, "
+"triangular, and randrange)."
 msgstr ""
 "`*Economics Simulation* <http://nbviewer.jupyter.org/url/norvig.com/ipython/"
 "Economics.ipynb>`_una simulación de un mercado por `Peter Norvig <http://"
@@ -825,13 +1034,13 @@ msgstr ""
 "distribuciones proporcionadas por este modulo (*gauss*, *uniform*, *sample*, "
 "*betavariate*, *choice*, *triangular*, y *randrange*)."
 
-#: ../Doc/library/random.rst:554
+#: ../Doc/library/random.rst:617
+#, fuzzy
 msgid ""
-"`A Concrete Introduction to Probability (using Python) <http://nbviewer."
-"jupyter.org/url/norvig.com/ipython/Probability.ipynb>`_ a tutorial by `Peter "
-"Norvig <http://norvig.com/bio.html>`_ covering the basics of probability "
-"theory, how to write simulations, and how to perform data analysis using "
-"Python."
+"`A Concrete Introduction to Probability (using Python) <https://nbviewer.org/"
+"url/norvig.com/ipython/Probability.ipynb>`_ a tutorial by `Peter Norvig "
+"<https://norvig.com/bio.html>`_ covering the basics of probability theory, "
+"how to write simulations, and how to perform data analysis using Python."
 msgstr ""
 "`*A Concrete Introduction to Probability (using Python)* <http://nbviewer."
 "jupyter.org/url/norvig.com/ipython/Probability.ipynb>`_un tutorial de `Peter "
@@ -839,11 +1048,50 @@ msgstr ""
 "probabilidad, cómo escribir simulaciones y cómo realizar un análisis de "
 "datos usando Python."
 
-#: ../Doc/library/random.rst:562
+#: ../Doc/library/random.rst:625
 msgid "Recipes"
 msgstr "Recetas"
 
-#: ../Doc/library/random.rst:564
+#: ../Doc/library/random.rst:627
+msgid ""
+"These recipes show how to efficiently make random selections from the "
+"combinatoric iterators in the :mod:`itertools` module:"
+msgstr ""
+"Estas recetas muestran cómo hacer de manera eficiente selecciones aleatorias "
+"de los iteradores combinatorios en el módulo :mod:`itertools`:"
+
+#: ../Doc/library/random.rst:630
+msgid ""
+"def random_product(*args, repeat=1):\n"
+"    \"Random selection from itertools.product(*args, **kwds)\"\n"
+"    pools = [tuple(pool) for pool in args] * repeat\n"
+"    return tuple(map(random.choice, pools))\n"
+"\n"
+"def random_permutation(iterable, r=None):\n"
+"    \"Random selection from itertools.permutations(iterable, r)\"\n"
+"    pool = tuple(iterable)\n"
+"    r = len(pool) if r is None else r\n"
+"    return tuple(random.sample(pool, r))\n"
+"\n"
+"def random_combination(iterable, r):\n"
+"    \"Random selection from itertools.combinations(iterable, r)\"\n"
+"    pool = tuple(iterable)\n"
+"    n = len(pool)\n"
+"    indices = sorted(random.sample(range(n), r))\n"
+"    return tuple(pool[i] for i in indices)\n"
+"\n"
+"def random_combination_with_replacement(iterable, r):\n"
+"    \"Choose r elements with replacement.  Order the result to match the "
+"iterable.\"\n"
+"    # Result will be in set(itertools."
+"combinations_with_replacement(iterable, r)).\n"
+"    pool = tuple(iterable)\n"
+"    n = len(pool)\n"
+"    indices = sorted(random.choices(range(n), k=r))\n"
+"    return tuple(pool[i] for i in indices)"
+msgstr ""
+
+#: ../Doc/library/random.rst:659
 msgid ""
 "The default :func:`.random` returns multiples of 2⁻⁵³ in the range *0.0 ≤ x "
 "< 1.0*.  All such numbers are evenly spaced and are exactly representable as "
@@ -858,7 +1106,7 @@ msgstr ""
 "posibles.  Por ejemplo, ``0.05954861408025609`` no es un múltiplo entero de "
 "2⁻⁵³."
 
-#: ../Doc/library/random.rst:570
+#: ../Doc/library/random.rst:665
 msgid ""
 "The following recipe takes a different approach.  All floats in the interval "
 "are possible selections.  The mantissa comes from a uniform distribution of "
@@ -872,7 +1120,24 @@ msgstr ""
 "proviene de una distribución geométrica en la que los exponentes menores de "
 "*-53* ocurren con la mitad de frecuencia que el siguiente exponente mayor."
 
-#: ../Doc/library/random.rst:592
+#: ../Doc/library/random.rst:673
+msgid ""
+"from random import Random\n"
+"from math import ldexp\n"
+"\n"
+"class FullRandom(Random):\n"
+"\n"
+"    def random(self):\n"
+"        mantissa = 0x10_0000_0000_0000 | self.getrandbits(52)\n"
+"        exponent = -53\n"
+"        x = 0\n"
+"        while not x:\n"
+"            x = self.getrandbits(32)\n"
+"            exponent += x.bit_length() - 32\n"
+"        return ldexp(mantissa, exponent)"
+msgstr ""
+
+#: ../Doc/library/random.rst:687
 msgid ""
 "All :ref:`real valued distributions <real-valued-distributions>` in the "
 "class will use the new method::"
@@ -880,7 +1145,16 @@ msgstr ""
 "Todas las :ref:`distribuciones de valor real <real-valued-distributions>` de "
 "la clase utilizarán el nuevo método::"
 
-#: ../Doc/library/random.rst:601
+#: ../Doc/library/random.rst:690
+msgid ""
+">>> fr = FullRandom()\n"
+">>> fr.random()\n"
+"0.05954861408025609\n"
+">>> fr.expovariate(0.25)\n"
+"8.87925541791544"
+msgstr ""
+
+#: ../Doc/library/random.rst:696
 msgid ""
 "The recipe is conceptually equivalent to an algorithm that chooses from all "
 "the multiples of 2⁻¹⁰⁷⁴ in the range *0.0 ≤ x < 1.0*.  All such numbers are "
@@ -894,7 +1168,7 @@ msgstr ""
 "flotante de Python representable más cercano.  (El valor 2⁻¹⁰⁷⁴ es el menor "
 "flotante positivo no normalizado y es igual a ``math.ulp(0.0)``.)"
 
-#: ../Doc/library/random.rst:610
+#: ../Doc/library/random.rst:705
 msgid ""
 "`Generating Pseudo-random Floating-Point Values <https://allendowney.com/"
 "research/rand/downey07randfloat.pdf>`_ a paper by Allen B. Downey describing "
@@ -905,3 +1179,96 @@ msgstr ""
 "research/rand/downey07randfloat.pdf>`_ un artículo de Allen B. Downey en el "
 "que se describen formas de generar flotantes más refinados que los generados "
 "normalmente por :func:`.random`."
+
+#: ../Doc/library/random.rst:713
+msgid "Command-line usage"
+msgstr ""
+
+#: ../Doc/library/random.rst:717
+msgid "The :mod:`!random` module can be executed from the command line."
+msgstr ""
+
+#: ../Doc/library/random.rst:719
+msgid ""
+"python -m random [-h] [-c CHOICE [CHOICE ...] | -i N | -f N] [input ...]"
+msgstr ""
+
+#: ../Doc/library/random.rst:723
+msgid "The following options are accepted:"
+msgstr ""
+
+#: ../Doc/library/random.rst:729
+msgid "Show the help message and exit."
+msgstr ""
+
+#: ../Doc/library/random.rst:734
+msgid "Print a random choice, using :meth:`choice`."
+msgstr ""
+
+#: ../Doc/library/random.rst:739
+msgid ""
+"Print a random integer between 1 and N inclusive, using :meth:`randint`."
+msgstr ""
+
+#: ../Doc/library/random.rst:744
+msgid ""
+"Print a random floating-point number between 0 and N inclusive, using :meth:"
+"`uniform`."
+msgstr ""
+
+#: ../Doc/library/random.rst:747
+msgid "If no options are given, the output depends on the input:"
+msgstr ""
+
+#: ../Doc/library/random.rst:749
+msgid "String or multiple: same as :option:`--choice`."
+msgstr ""
+
+#: ../Doc/library/random.rst:750
+msgid "Integer: same as :option:`--integer`."
+msgstr ""
+
+#: ../Doc/library/random.rst:751
+msgid "Float: same as :option:`--float`."
+msgstr ""
+
+#: ../Doc/library/random.rst:756
+msgid "Command-line example"
+msgstr ""
+
+#: ../Doc/library/random.rst:758
+msgid "Here are some examples of the :mod:`!random` command-line interface:"
+msgstr ""
+
+#: ../Doc/library/random.rst:760
+msgid ""
+"$ # Choose one at random\n"
+"$ python -m random egg bacon sausage spam \"Lobster Thermidor aux crevettes "
+"with a Mornay sauce\"\n"
+"Lobster Thermidor aux crevettes with a Mornay sauce\n"
+"\n"
+"$ # Random integer\n"
+"$ python -m random 6\n"
+"6\n"
+"\n"
+"$ # Random floating-point number\n"
+"$ python -m random 1.8\n"
+"1.7080016272295635\n"
+"\n"
+"$ # With explicit arguments\n"
+"$ python  -m random --choice egg bacon sausage spam \"Lobster Thermidor aux "
+"crevettes with a Mornay sauce\"\n"
+"egg\n"
+"\n"
+"$ python -m random --integer 6\n"
+"3\n"
+"\n"
+"$ python -m random --float 1.8\n"
+"1.5666339105010318\n"
+"\n"
+"$ python -m random --integer 6\n"
+"5\n"
+"\n"
+"$ python -m random --float 6\n"
+"3.1942323316565915"
+msgstr ""

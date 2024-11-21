@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-16 21:42+0200\n"
-"PO-Revision-Date: 2021-10-25 23:40+0100\n"
+"POT-Creation-Date: 2024-11-21 16:38-0300\n"
+"PO-Revision-Date: 2022-11-02 13:49-0300\n"
 "Last-Translator: Claudia Millan <clmilneb@gmail.com>\n"
 "Language: es\n"
 "Language-Team: python-doc-es\n"
@@ -19,50 +19,38 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-"X-Generator: Poedit 3.0\n"
+"Generated-By: Babel 2.16.0\n"
 
 #: ../Doc/library/os.path.rst:2
-msgid ":mod:`os.path` --- Common pathname manipulations"
+#, fuzzy
+msgid ":mod:`!os.path` --- Common pathname manipulations"
 msgstr ":mod:`os.path` --- Manipulaciones comunes de nombre de ruta"
 
 #: ../Doc/library/os.path.rst:7
+#, fuzzy
 msgid ""
-"**Source code:** :source:`Lib/posixpath.py` (for POSIX) and :source:`Lib/"
-"ntpath.py` (for Windows NT)."
+"**Source code:** :source:`Lib/genericpath.py`, :source:`Lib/posixpath.py` "
+"(for POSIX) and :source:`Lib/ntpath.py` (for Windows)."
 msgstr ""
 "**Código fuente:** :source:`Lib/posixpath.py` (para POSIX) y :source:`Lib/"
-"ntpath.py` (para Windows NT)."
+"ntpath.py` (para Windows)."
 
 #: ../Doc/library/os.path.rst:14
 msgid ""
 "This module implements some useful functions on pathnames. To read or write "
 "files see :func:`open`, and for accessing the filesystem see the :mod:`os` "
-"module. The path parameters can be passed as either strings, or bytes. "
-"Applications are encouraged to represent file names as (Unicode) character "
-"strings. Unfortunately, some file names may not be representable as strings "
-"on Unix, so applications that need to support arbitrary file names on Unix "
-"should use bytes objects to represent path names. Vice versa, using bytes "
-"objects cannot represent all file names on Windows (in the standard ``mbcs`` "
-"encoding), hence Windows applications should use string objects to access "
-"all files."
+"module. The path parameters can be passed as strings, or bytes, or any "
+"object implementing the :class:`os.PathLike` protocol."
 msgstr ""
-"Este módulo implementa algunas funciones útiles en nombres de ruta. Para "
-"leer o escribir archivos consulta :func:`open`, y para acceder al sistema de "
-"archivos consulta el módulo :mod:`os`. Los parámetros de ruta puede ser "
-"pasados tanto siendo cadenas o bytes. Se recomienda que las aplicaciones "
-"representen los nombres de archivo como caracteres de cadena (Unicode). "
-"Desafortunadamente, algunos nombres de archivo puede que no sean "
-"representables como cadenas en Unix, así que las aplicaciones que necesiten "
-"tener soporte para nombres de archivo arbitrarios deberían usar objetos byte "
-"para representar nombres de archivo. Viceversa, el uso de objetos de bytes "
-"no puede representar todos los nombres de archivo en Windows (en la "
-"codificación estándar ``mbcs``), por lo tanto, las aplicaciones de Windows "
-"deben usar objetos de cadena para acceder a todos los archivos."
+"Este módulo implementa algunas funciones útiles sobre los nombres de rutas. "
+"Para leer o escribir archivos consulte :func:`open`, y para acceder a "
+"archivos del sistema vea el :mod:`os`. Los parámetros para las rutas pueden "
+"ser pasados como caracteres, o bytes ,o cualquier objeto implementado en el "
+"protocolo :class:`os.PathLike`."
 
-#: ../Doc/library/os.path.rst:25
+#: ../Doc/library/os.path.rst:19
 msgid ""
-"Unlike a unix shell, Python does not do any *automatic* path expansions. "
+"Unlike a Unix shell, Python does not do any *automatic* path expansions. "
 "Functions such as :func:`expanduser` and :func:`expandvars` can be invoked "
 "explicitly when an application desires shell-like path expansion.  (See also "
 "the :mod:`glob` module.)"
@@ -70,13 +58,13 @@ msgstr ""
 "A diferencia de un shell Unix, Python no realiza ninguna expansión de ruta "
 "*automática*. Las funciones como :func:`expanduser` y :func:`expandvars` "
 "puede ser invocadas de manera explicita cuando una aplicación desea realizar "
-"una expansión de ruta *shell-like*. (Consulta el módulo :mod:`glob`)"
+"una expansión de ruta *shell-like*. (Consulte el módulo :mod:`glob`.)"
 
-#: ../Doc/library/os.path.rst:32
+#: ../Doc/library/os.path.rst:26
 msgid "The :mod:`pathlib` module offers high-level path objects."
 msgstr "El módulo :mod:`pathlib` ofrece objetos de ruta de alto nivel."
 
-#: ../Doc/library/os.path.rst:37
+#: ../Doc/library/os.path.rst:31
 msgid ""
 "All of these functions accept either only bytes or only string objects as "
 "their parameters.  The result is an object of the same type, if a path or "
@@ -86,7 +74,7 @@ msgstr ""
 "parámetros. El resultado es un objeto del mismo tipo, si se retorna una ruta "
 "o un nombre de archivo."
 
-#: ../Doc/library/os.path.rst:44
+#: ../Doc/library/os.path.rst:37
 msgid ""
 "Since different operating systems have different path name conventions, "
 "there are several versions of this module in the standard library.  The :mod:"
@@ -104,15 +92,15 @@ msgstr ""
 "utilizar los módulos individuales si deseas manipular una ruta que *siempre* "
 "está en uno de los diferentes formatos. Todos tienen la misma interfaz:"
 
-#: ../Doc/library/os.path.rst:52
+#: ../Doc/library/os.path.rst:45
 msgid ":mod:`posixpath` for UNIX-style paths"
 msgstr ":mod:`posixpath` para rutas con estilo UNIX"
 
-#: ../Doc/library/os.path.rst:53
+#: ../Doc/library/os.path.rst:46
 msgid ":mod:`ntpath` for Windows paths"
 msgstr ":mod:`ntpath` para rutas Windows"
 
-#: ../Doc/library/os.path.rst:58
+#: ../Doc/library/os.path.rst:51
 msgid ""
 ":func:`exists`, :func:`lexists`, :func:`isdir`, :func:`isfile`, :func:"
 "`islink`, and :func:`ismount` now return ``False`` instead of raising an "
@@ -124,7 +112,7 @@ msgstr ""
 "excepción para rutas que contienen caracteres o bytes que no se puedan "
 "representar a nivel de sistema operativo."
 
-#: ../Doc/library/os.path.rst:66
+#: ../Doc/library/os.path.rst:59
 msgid ""
 "Return a normalized absolutized version of the pathname *path*. On most "
 "platforms, this is equivalent to calling the function :func:`normpath` as "
@@ -132,25 +120,25 @@ msgid ""
 msgstr ""
 "Retorna una versión normalizada y absoluta del nombre de ruta *path*. En la "
 "mayoría de las plataformas esto es el equivalente a invocar la función :func:"
-"`normpath`de la siguiente manera: ``normpath(join(os.getcwd(), path))``."
+"`normpath` de la siguiente manera: ``normpath(join(os.getcwd(), path))``."
 
-#: ../Doc/library/os.path.rst:70 ../Doc/library/os.path.rst:83
-#: ../Doc/library/os.path.rst:123 ../Doc/library/os.path.rst:132
-#: ../Doc/library/os.path.rst:148 ../Doc/library/os.path.rst:158
-#: ../Doc/library/os.path.rst:184 ../Doc/library/os.path.rst:204
-#: ../Doc/library/os.path.rst:221 ../Doc/library/os.path.rst:233
-#: ../Doc/library/os.path.rst:242 ../Doc/library/os.path.rst:252
-#: ../Doc/library/os.path.rst:262 ../Doc/library/os.path.rst:272
-#: ../Doc/library/os.path.rst:282 ../Doc/library/os.path.rst:301
-#: ../Doc/library/os.path.rst:331 ../Doc/library/os.path.rst:351
-#: ../Doc/library/os.path.rst:374 ../Doc/library/os.path.rst:396
-#: ../Doc/library/os.path.rst:414 ../Doc/library/os.path.rst:427
-#: ../Doc/library/os.path.rst:443 ../Doc/library/os.path.rst:459
-#: ../Doc/library/os.path.rst:484 ../Doc/library/os.path.rst:510
+#: ../Doc/library/os.path.rst:63 ../Doc/library/os.path.rst:76
+#: ../Doc/library/os.path.rst:117 ../Doc/library/os.path.rst:126
+#: ../Doc/library/os.path.rst:142 ../Doc/library/os.path.rst:152
+#: ../Doc/library/os.path.rst:178 ../Doc/library/os.path.rst:198
+#: ../Doc/library/os.path.rst:215 ../Doc/library/os.path.rst:227
+#: ../Doc/library/os.path.rst:236 ../Doc/library/os.path.rst:246
+#: ../Doc/library/os.path.rst:260 ../Doc/library/os.path.rst:270
+#: ../Doc/library/os.path.rst:289 ../Doc/library/os.path.rst:308
+#: ../Doc/library/os.path.rst:380 ../Doc/library/os.path.rst:400
+#: ../Doc/library/os.path.rst:423 ../Doc/library/os.path.rst:443
+#: ../Doc/library/os.path.rst:459 ../Doc/library/os.path.rst:470
+#: ../Doc/library/os.path.rst:484 ../Doc/library/os.path.rst:500
+#: ../Doc/library/os.path.rst:525 ../Doc/library/os.path.rst:589
 msgid "Accepts a :term:`path-like object`."
 msgstr "Acepta un :term:`path-like object`."
 
-#: ../Doc/library/os.path.rst:76
+#: ../Doc/library/os.path.rst:69
 msgid ""
 "Return the base name of pathname *path*.  This is the second element of the "
 "pair returned by passing *path* to the function :func:`split`.  Note that "
@@ -164,11 +152,12 @@ msgstr ""
 "program:`basename`; donde :program:`basename` para ``'/foo/bar/'`` retorna "
 "``'bar'``, la función :func:`basename` retorna una cadena vacía (``''``)."
 
-#: ../Doc/library/os.path.rst:89
+#: ../Doc/library/os.path.rst:82
+#, fuzzy
 msgid ""
-"Return the longest common sub-path of each pathname in the sequence "
+"Return the longest common sub-path of each pathname in the iterable "
 "*paths*.  Raise :exc:`ValueError` if *paths* contain both absolute and "
-"relative pathnames, the *paths* are on the different drives or if *paths* is "
+"relative pathnames, if *paths* are on different drives, or if *paths* is "
 "empty.  Unlike :func:`commonprefix`, this returns a valid path."
 msgstr ""
 "Retorna la sub-ruta común más larga de cada nombre de ruta en la secuencia "
@@ -177,17 +166,15 @@ msgstr ""
 "*paths* está vacío. A diferencia de :func:`commonprefix`, retorna una ruta "
 "valida."
 
-#: ../Doc/library/os.path.rst:96 ../Doc/library/os.path.rst:395
-#: ../Doc/library/os.path.rst:407 ../Doc/library/os.path.rst:423
-#: ../Doc/library/os.path.rst:439
-msgid ":ref:`Availability <availability>`: Unix, Windows."
-msgstr ":ref:`Availability <availability>`: Unix, Windows."
-
-#: ../Doc/library/os.path.rst:99
+#: ../Doc/library/os.path.rst:90
 msgid "Accepts a sequence of :term:`path-like objects <path-like object>`."
 msgstr "Acepta una secuencia de :term:`path-like objects <path-like object>`."
 
-#: ../Doc/library/os.path.rst:105
+#: ../Doc/library/os.path.rst:93
+msgid "Any iterable can now be passed, rather than just sequences."
+msgstr ""
+
+#: ../Doc/library/os.path.rst:99
 msgid ""
 "Return the longest path prefix (taken character-by-character) that is a "
 "prefix of all paths in  *list*.  If *list* is empty, return the empty string "
@@ -197,7 +184,7 @@ msgstr ""
 "un prefijo de todas las rutas en *list*. Si *list* está vacía, retorna la "
 "cadena vacía (``''``)."
 
-#: ../Doc/library/os.path.rst:111
+#: ../Doc/library/os.path.rst:105
 msgid ""
 "This function may return invalid paths because it works a character at a "
 "time.  To obtain a valid path, see :func:`commonpath`."
@@ -205,7 +192,16 @@ msgstr ""
 "Esta función puede que retorne rutas invalidas porque trabaja un carácter a "
 "la vez. Para obtener una ruta valida, consulta :func:`commonpath`."
 
-#: ../Doc/library/os.path.rst:129
+#: ../Doc/library/os.path.rst:111
+msgid ""
+">>> os.path.commonprefix(['/usr/lib', '/usr/local/lib'])\n"
+"'/usr/l'\n"
+"\n"
+">>> os.path.commonpath(['/usr/lib', '/usr/local/lib'])\n"
+"'/usr'"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:123
 msgid ""
 "Return the directory name of pathname *path*.  This is the first element of "
 "the pair returned by passing *path* to the function :func:`split`."
@@ -213,7 +209,7 @@ msgstr ""
 "Retorna el nombre del directorio de la ruta *path*. Es el primer elemento "
 "del par retornado al pasar *path* a la función :func:`split`."
 
-#: ../Doc/library/os.path.rst:138
+#: ../Doc/library/os.path.rst:132
 msgid ""
 "Return ``True`` if *path* refers to an existing path or an open file "
 "descriptor.  Returns ``False`` for broken symbolic links.  On some "
@@ -227,7 +223,7 @@ msgstr ""
 "permiso para ejecutar :func:`os.stat` en el archivo solicitado, incluso la "
 "ruta *path* existe físicamente."
 
-#: ../Doc/library/os.path.rst:144
+#: ../Doc/library/os.path.rst:138
 msgid ""
 "*path* can now be an integer: ``True`` is returned if it is an  open file "
 "descriptor, ``False`` otherwise."
@@ -235,17 +231,18 @@ msgstr ""
 "*path* ahora puede ser un valor entero: retorna ``True`` si es un descriptor "
 "de archivo abierto, de otro modo retorna ``False``."
 
-#: ../Doc/library/os.path.rst:154
+#: ../Doc/library/os.path.rst:148
+#, fuzzy
 msgid ""
-"Return ``True`` if *path* refers to an existing path. Returns ``True`` for "
-"broken symbolic links.   Equivalent to :func:`exists` on platforms lacking :"
-"func:`os.lstat`."
+"Return ``True`` if *path* refers to an existing path, including broken "
+"symbolic links.   Equivalent to :func:`exists` on platforms lacking :func:"
+"`os.lstat`."
 msgstr ""
 "Retorna ``True`` si *path* se refiere a un camino existente. Retorna "
 "``True`` para los enlaces simbólicos rotos. Equivalente a :func:`exists` en "
 "plataformas que carecen de :func:`os.lstat`."
 
-#: ../Doc/library/os.path.rst:166
+#: ../Doc/library/os.path.rst:160
 msgid ""
 "On Unix and Windows, return the argument with an initial component of ``~`` "
 "or ``~user`` replaced by that *user*'s home directory."
@@ -253,7 +250,7 @@ msgstr ""
 "En Unix y Windows, retorna el argumento con un componente inicial de ``~`` o "
 "``~user`` reemplazado por el directorio *home* de *user*."
 
-#: ../Doc/library/os.path.rst:171
+#: ../Doc/library/os.path.rst:165
 msgid ""
 "On Unix, an initial ``~`` is replaced by the environment variable :envvar:"
 "`HOME` if it is set; otherwise the current user's home directory is looked "
@@ -266,7 +263,7 @@ msgstr ""
 "mod:`pwd`. Un ``~user`` inicial es buscado directamente en el directorio de "
 "contraseñas."
 
-#: ../Doc/library/os.path.rst:176
+#: ../Doc/library/os.path.rst:170
 msgid ""
 "On Windows, :envvar:`USERPROFILE` will be used if set, otherwise a "
 "combination of :envvar:`HOMEPATH` and :envvar:`HOMEDRIVE` will be used.  An "
@@ -280,7 +277,7 @@ msgstr ""
 "directorio del directorio de inicio del usuario actual coincide con :envvar:"
 "`USERNAME`, y reemplazándolo si es así."
 
-#: ../Doc/library/os.path.rst:181
+#: ../Doc/library/os.path.rst:175
 msgid ""
 "If the expansion fails or if the path does not begin with a tilde, the path "
 "is returned unchanged."
@@ -288,11 +285,11 @@ msgstr ""
 "Si la expansión falla o si la ruta no comienza con una tilde, la ruta se "
 "retorna sin cambios."
 
-#: ../Doc/library/os.path.rst:187
+#: ../Doc/library/os.path.rst:181
 msgid "No longer uses :envvar:`HOME` on Windows."
 msgstr "Ya no utiliza :envvar:`HOME` en Windows."
 
-#: ../Doc/library/os.path.rst:196
+#: ../Doc/library/os.path.rst:190
 msgid ""
 "Return the argument with environment variables expanded.  Substrings of the "
 "form ``$name`` or ``${name}`` are replaced by the value of environment "
@@ -304,7 +301,7 @@ msgstr ""
 "de entorno *name*. Los nombres de variables mal formadas y las referencias a "
 "variables no existentes se dejan sin cambios."
 
-#: ../Doc/library/os.path.rst:201
+#: ../Doc/library/os.path.rst:195
 msgid ""
 "On Windows, ``%name%`` expansions are supported in addition to ``$name`` and "
 "``${name}``."
@@ -312,9 +309,10 @@ msgstr ""
 "En Windows, las expansiones ``%name%`` están soportadas además de ``$name`` "
 "y ``${name}``."
 
-#: ../Doc/library/os.path.rst:210
+#: ../Doc/library/os.path.rst:204
+#, fuzzy
 msgid ""
-"Return the time of last access of *path*.  The return value is a floating "
+"Return the time of last access of *path*.  The return value is a floating-"
 "point number giving the number of seconds since the epoch (see the  :mod:"
 "`time` module).  Raise :exc:`OSError` if the file does not exist or is "
 "inaccessible."
@@ -324,10 +322,11 @@ msgstr ""
 "(Consulta el módulo :mod:`time`). Lanza una excepción :exc:`OSError` si el "
 "archivo no existe o es inaccesible."
 
-#: ../Doc/library/os.path.rst:217
+#: ../Doc/library/os.path.rst:211
+#, fuzzy
 msgid ""
 "Return the time of last modification of *path*.  The return value is a "
-"floating point number giving the number of seconds since the epoch (see "
+"floating-point number giving the number of seconds since the epoch (see "
 "the  :mod:`time` module). Raise :exc:`OSError` if the file does not exist or "
 "is inaccessible."
 msgstr ""
@@ -336,7 +335,7 @@ msgstr ""
 "(consulta el módulo :mod:`time`). lanza una excepción :exc:`OSError` si el "
 "archivo no existe o es inaccesible."
 
-#: ../Doc/library/os.path.rst:227
+#: ../Doc/library/os.path.rst:221
 msgid ""
 "Return the system's ctime which, on some systems (like Unix) is the time of "
 "the last metadata change, and, on others (like Windows), is the creation "
@@ -350,7 +349,7 @@ msgstr ""
 "segundos desde la época (consulta el módulo :mod:`time`). Lanza una "
 "excepción :exc:`OSError` si el archivo no existe o es inaccesible."
 
-#: ../Doc/library/os.path.rst:239
+#: ../Doc/library/os.path.rst:233
 msgid ""
 "Return the size, in bytes, of *path*.  Raise :exc:`OSError` if the file does "
 "not exist or is inaccessible."
@@ -358,18 +357,25 @@ msgstr ""
 "Retorna el tamaño en bytes de *path*, Lanza una excepción :exc:`OSError` si "
 "el archivo no existe o es inaccesible."
 
-#: ../Doc/library/os.path.rst:248
+#: ../Doc/library/os.path.rst:242
+#, fuzzy
 msgid ""
 "Return ``True`` if *path* is an absolute pathname.  On Unix, that means it "
-"begins with a slash, on Windows that it begins with a (back)slash after "
-"chopping off a potential drive letter."
+"begins with a slash, on Windows that it begins with two (back)slashes, or a "
+"drive letter, colon, and (back)slash together."
 msgstr ""
 "Retorna ``True`` si *path* es un nombre de ruta de acceso absoluto. En Unix, "
 "eso significa que comienza con una barra diagonal, en Windows que comienza "
 "con una barra diagonal (invertida) después de cortar una letra de unidad "
 "potencial."
 
-#: ../Doc/library/os.path.rst:258
+#: ../Doc/library/os.path.rst:249
+msgid ""
+"On Windows, returns ``False`` if the given path starts with exactly one "
+"(back)slash."
+msgstr ""
+
+#: ../Doc/library/os.path.rst:256
 msgid ""
 "Return ``True`` if *path* is an :func:`existing <exists>` regular file. This "
 "follows symbolic links, so both :func:`islink` and :func:`isfile` can be "
@@ -379,7 +385,7 @@ msgstr ""
 "sigue los enlaces simbólicos, por lo que tanto :func:`islink` como :func:"
 "`isfile` pueden ser verdaderos para la misma ruta."
 
-#: ../Doc/library/os.path.rst:268
+#: ../Doc/library/os.path.rst:266
 msgid ""
 "Return ``True`` if *path* is an :func:`existing <exists>` directory.  This "
 "follows symbolic links, so both :func:`islink` and :func:`isdir` can be true "
@@ -389,7 +395,18 @@ msgstr ""
 "sigue los enlaces simbólicos, por lo que tanto :func:`islink` como :func:"
 "`isdir` pueden ser verdaderos para la misma ruta."
 
-#: ../Doc/library/os.path.rst:278
+#: ../Doc/library/os.path.rst:276
+#, fuzzy
+msgid ""
+"Return ``True`` if *path* refers to an :func:`existing <lexists>` directory "
+"entry that is a junction.  Always return ``False`` if junctions are not "
+"supported on the current platform."
+msgstr ""
+"Retorna  ``True`` si *path* hace referencia a una entrada de directorio :"
+"func:`existing <exists>` que es un enlace simbólico. Siempre ``False`` si el "
+"entorno de ejecución de Python no admite vínculos simbólicos.."
+
+#: ../Doc/library/os.path.rst:285
 msgid ""
 "Return ``True`` if *path* refers to an :func:`existing <exists>` directory "
 "entry that is a symbolic link.  Always ``False`` if symbolic links are not "
@@ -399,7 +416,7 @@ msgstr ""
 "func:`existing <exists>` que es un enlace simbólico. Siempre ``False`` si el "
 "entorno de ejecución de Python no admite vínculos simbólicos.."
 
-#: ../Doc/library/os.path.rst:288
+#: ../Doc/library/os.path.rst:295
 msgid ""
 "Return ``True`` if pathname *path* is a :dfn:`mount point`: a point in a "
 "file system where a different file system has been mounted.  On POSIX, the "
@@ -423,18 +440,70 @@ msgstr ""
 "cualquier otra ruta de acceso ``GetVolumePathName`` se llama para ver si es "
 "diferente de la ruta de acceso de entrada."
 
-#: ../Doc/library/os.path.rst:298
-msgid "Support for detecting non-root mount points on Windows."
+#: ../Doc/library/os.path.rst:305
+#, fuzzy
+msgid "Added support for detecting non-root mount points on Windows."
 msgstr "Soporte para detectar puntos de montaje *non-root* en Windows."
 
-#: ../Doc/library/os.path.rst:307
+#: ../Doc/library/os.path.rst:314
 msgid ""
-"Join one or more path components intelligently.  The return value is the "
-"concatenation of *path* and any members of *\\*paths* with exactly one "
-"directory separator following each non-empty part except the last, meaning "
-"that the result will only end in a separator if the last part is empty.  If "
-"a component is an absolute path, all previous components are thrown away and "
-"joining continues from the absolute path component."
+"Return ``True`` if pathname *path* is located on a Windows Dev Drive. A Dev "
+"Drive is optimized for developer scenarios, and offers faster performance "
+"for reading and writing files. It is recommended for use for source code, "
+"temporary build directories, package caches, and other IO-intensive "
+"operations."
+msgstr ""
+
+#: ../Doc/library/os.path.rst:320
+msgid ""
+"May raise an error for an invalid path, for example, one without a "
+"recognizable drive, but returns ``False`` on platforms that do not support "
+"Dev Drives. See `the Windows documentation <https://learn.microsoft.com/"
+"windows/dev-drive/>`_ for information on enabling and creating Dev Drives."
+msgstr ""
+
+#: ../Doc/library/os.path.rst:327
+msgid ""
+"The function is now available on all platforms, and will always return "
+"``False`` on those that have no support for Dev Drives"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:333
+msgid "Return ``True`` if *path* is a reserved pathname on the current system."
+msgstr ""
+
+#: ../Doc/library/os.path.rst:335
+msgid ""
+"On Windows, reserved filenames include those that end with a space or dot; "
+"those that contain colons (i.e. file streams such as \"name:stream\"), "
+"wildcard characters (i.e. ``'*?\"<>'``), pipe, or ASCII control characters; "
+"as well as DOS device names such as \"NUL\", \"CON\", \"CONIN$\", \"CONOUT$"
+"\", \"AUX\", \"PRN\", \"COM1\", and \"LPT1\"."
+msgstr ""
+
+#: ../Doc/library/os.path.rst:343
+msgid ""
+"This function approximates rules for reserved paths on most Windows systems. "
+"These rules change over time in various Windows releases. This function may "
+"be updated in future Python releases as changes to the rules become broadly "
+"available."
+msgstr ""
+
+#: ../Doc/library/os.path.rst:348
+#, fuzzy
+msgid ":ref:`Availability <availability>`: Windows."
+msgstr ":ref:`Availability <availability>`: Unix, Windows."
+
+#: ../Doc/library/os.path.rst:355
+#, fuzzy
+msgid ""
+"Join one or more path segments intelligently.  The return value is the "
+"concatenation of *path* and all members of *\\*paths*, with exactly one "
+"directory separator following each non-empty part, except the last. That is, "
+"the result will only end in a separator if the last part is either empty or "
+"ends in a separator. If a segment is an absolute path (which on Windows "
+"requires both a drive and a root), then all previous segments are ignored "
+"and joining continues from the absolute path segment."
 msgstr ""
 "Une uno o más componentes de ruta de forma inteligente.  El valor retornado "
 "es la concatenación de *path* y cualquier miembro de *\\*paths* con "
@@ -444,28 +513,29 @@ msgstr ""
 "absoluta, todos los componentes anteriores se desechan y la unión continúa "
 "desde el componente de ruta absoluta."
 
-#: ../Doc/library/os.path.rst:314
+#: ../Doc/library/os.path.rst:363
+#, fuzzy
 msgid ""
-"On Windows, the drive letter is not reset when an absolute path component (e."
-"g., ``r'\\foo'``) is encountered.  If a component contains a drive letter, "
-"all previous components are thrown away and the drive letter is reset.  Note "
-"that since there is a current directory for each drive, ``os.path.join(\"c:"
-"\", \"foo\")`` represents a path relative to the current directory on drive :"
-"file:`C:` (:file:`c:foo`), not :file:`c:\\\\foo`."
+"On Windows, the drive is not reset when a rooted path segment (e.g., "
+"``r'\\foo'``) is encountered. If a segment is on a different drive or is an "
+"absolute path, all previous segments are ignored and the drive is reset. "
+"Note that since there is a current directory for each drive, ``os.path."
+"join(\"c:\", \"foo\")`` represents a path relative to the current directory "
+"on drive :file:`C:` (:file:`c:foo`), not :file:`c:\\\\foo`."
 msgstr ""
 "En Windows, la letra de la unidad no se restablece cuando se encuentra un "
 "componente de ruta absoluta (por ejemplo, ``r'\\foo'``). Si un componente "
 "contiene una letra de unidad, todos los componentes anteriores se desechan y "
 "la letra de unidad se restablece. Ten en cuenta que, dado que hay un "
-"directorio actual para cada unidad, `` os.path.join (\"c:\", \"foo\") `` "
+"directorio actual para cada unidad, ``os.path.join (\"c:\", \"foo\")`` "
 "representa una ruta relativa al directorio actual en la unidad :file:`C:` (:"
 "file:`c:foo`),, no :file:`c:\\\\foo`."
 
-#: ../Doc/library/os.path.rst:321
+#: ../Doc/library/os.path.rst:370
 msgid "Accepts a :term:`path-like object` for *path* and *paths*."
 msgstr "Acepta un objeto :term:`path-like object` para *path* y *paths*."
 
-#: ../Doc/library/os.path.rst:327
+#: ../Doc/library/os.path.rst:376
 msgid ""
 "Normalize the case of a pathname.  On Windows, convert all characters in the "
 "pathname to lowercase, and also convert forward slashes to backward slashes. "
@@ -476,7 +546,7 @@ msgstr ""
 "convierte las barras inclinadas hacia atrás en barras inclinadas hacia "
 "atrás. En otros sistemas operativos, retorna la ruta sin cambios."
 
-#: ../Doc/library/os.path.rst:337
+#: ../Doc/library/os.path.rst:386
 msgid ""
 "Normalize a pathname by collapsing redundant separators and up-level "
 "references so that ``A//B``, ``A/B/``, ``A/./B`` and ``A/foo/../B`` all "
@@ -486,51 +556,54 @@ msgid ""
 msgstr ""
 "Normaliza un nombre de ruta colapsando separadores redundantes y referencias "
 "de nivel superior para que ``A//B``, ``A/B/``, ``A/./B`` y ``A/foo/../B`` se "
-"transformen en``A/B``. Esta modificación de cadena puede que modifique el "
+"transformen en ``A/B``. Esta modificación de cadena puede que modifique el "
 "significado de la ruta que contenga enlaces simbólicos. En Windows, "
 "convierte las barras inclinadas hacia adelante en barras hacia atrás. Para "
 "normalizar mayúsculas y minúsculas, utiliza :func:`normcase`."
 
-#: ../Doc/library/os.path.rst:344
+#: ../Doc/library/os.path.rst:393
 msgid ""
 "On POSIX systems, in accordance with `IEEE Std 1003.1 2013 Edition; 4.13 "
-"Pathname Resolution <http://pubs.opengroup.org/onlinepubs/9699919799/"
+"Pathname Resolution <https://pubs.opengroup.org/onlinepubs/9699919799/"
 "basedefs/V1_chap04.html#tag_04_13>`_, if a pathname begins with exactly two "
 "slashes, the first component following the leading characters may be "
 "interpreted in an implementation-defined manner, although more than two "
 "leading characters shall be treated as a single character."
 msgstr ""
-"En sistemas POSIX, de acuerdo con `IEEE Std 1003.1 2013 Edition; 4.13 "
-"Pathname Resolution <http://pubs.opengroup.org/onlinepubs/9699919799/"
-"basedefs/V1_chap04.html#tag_04_13>`_, si un nombre de ruta comienza con "
-"exactamente dos barras diagonales, el primer componente que sigue a los "
-"caracteres principales puede interpretarse de una manera definida por la "
-"implementación, aunque más de dos caracteres principales se tratarán como un "
-"solo carácter."
+"En sistemas POSIX, de acuerdo con `IEEE Std 1003.1 Edición 2013; 4.13 "
+"Resolución de Nombres de Rutas <https://pubs.opengroup.org/"
+"onlinepubs/9699919799/basedefs/V1_chap04.html#tag_04_13>`_, si el nombre de "
+"ruta comienza con exactamente dos barras diagonales, el primer componente "
+"que sigue a los caracteres principales puede interpretarse de una manera "
+"definida por la implementación, aunque más de dos caracteres principales se "
+"tratarán como un solo carácter."
 
-#: ../Doc/library/os.path.rst:357
+#: ../Doc/library/os.path.rst:406
+#, fuzzy
 msgid ""
 "Return the canonical path of the specified filename, eliminating any "
 "symbolic links encountered in the path (if they are supported by the "
-"operating system)."
+"operating system). On Windows, this function will also resolve MS-DOS (also "
+"called 8.3) style names such as ``C:\\\\PROGRA~1`` to ``C:\\\\Program "
+"Files``."
 msgstr ""
 "Retorna la ruta canónica del nombre de archivo especificado, eliminando "
 "cualquier enlace simbólico encontrado en la ruta (si es que tienen soporte "
 "por el sistema operativo)."
 
-#: ../Doc/library/os.path.rst:361
+#: ../Doc/library/os.path.rst:411
+#, fuzzy
 msgid ""
 "If a path doesn't exist or a symlink loop is encountered, and *strict* is "
-"``True``, :exc:`OSError` is raised. If *strict* is ``False``, the path is "
-"resolved as far as possible and any remainder is appended without checking "
-"whether it exists."
+"``True``, :exc:`OSError` is raised. If *strict* is ``False`` these errors "
+"are ignored, and so the result might be missing or otherwise inaccessible."
 msgstr ""
 "Si no existe una ruta o se encuentra un bucle de enlace simbólico, y "
 "*strict* es ``True``, se genera :exc:`OSError`. Si *strict* es ``False``, la "
 "ruta se resuelve en la medida de lo posible y cualquier resto se anexa sin "
 "verificar si existe."
 
-#: ../Doc/library/os.path.rst:367
+#: ../Doc/library/os.path.rst:416
 msgid ""
 "This function emulates the operating system's procedure for making a path "
 "canonical, which differs slightly between Windows and UNIX with respect to "
@@ -540,7 +613,7 @@ msgstr ""
 "ruta sea canónica, que difiere ligeramente entre Windows y UNIX con respecto "
 "a cómo interactúan los enlaces y los componentes de la ruta posterior."
 
-#: ../Doc/library/os.path.rst:371
+#: ../Doc/library/os.path.rst:420
 msgid ""
 "Operating system APIs make paths canonical as needed, so it's not normally "
 "necessary to call this function."
@@ -548,15 +621,15 @@ msgstr ""
 "Las API del sistema operativo hacen que las rutas sean canónicas según sea "
 "necesario, por lo que normalmente no es necesario llamar a esta función."
 
-#: ../Doc/library/os.path.rst:377
+#: ../Doc/library/os.path.rst:426
 msgid "Symbolic links and junctions are now resolved on Windows."
 msgstr "Los enlaces y uniones simbólicos ahora se resuelven en Windows."
 
-#: ../Doc/library/os.path.rst:380
+#: ../Doc/library/os.path.rst:429
 msgid "The *strict* parameter was added."
 msgstr "Se agregó el parámetro *strict*."
 
-#: ../Doc/library/os.path.rst:386
+#: ../Doc/library/os.path.rst:435
 msgid ""
 "Return a relative filepath to *path* either from the current directory or "
 "from an optional *start* directory.  This is a path computation:  the "
@@ -570,11 +643,12 @@ msgstr ""
 "*start*. En Windows, se lanza :exc:`ValueError`  cuando *path* y *start* "
 "están en discos diferentes."
 
-#: ../Doc/library/os.path.rst:392
-msgid "*start* defaults to :attr:`os.curdir`."
+#: ../Doc/library/os.path.rst:441
+#, fuzzy
+msgid "*start* defaults to :data:`os.curdir`."
 msgstr "*start* toma de forma predeterminada el valor de :attr:`os.curdir`."
 
-#: ../Doc/library/os.path.rst:402
+#: ../Doc/library/os.path.rst:449
 msgid ""
 "Return ``True`` if both pathname arguments refer to the same file or "
 "directory. This is determined by the device number and i-node number and "
@@ -585,18 +659,18 @@ msgstr ""
 "número de *i-node* y lanza una excepción si una llamada de :func:`os.stat` "
 "en alguno de los nombres de ruta falla."
 
-#: ../Doc/library/os.path.rst:408 ../Doc/library/os.path.rst:424
-#: ../Doc/library/os.path.rst:440
+#: ../Doc/library/os.path.rst:453 ../Doc/library/os.path.rst:467
+#: ../Doc/library/os.path.rst:481
 msgid "Added Windows support."
 msgstr "Añadido soporte para Windows."
 
-#: ../Doc/library/os.path.rst:411
+#: ../Doc/library/os.path.rst:456
 msgid "Windows now uses the same implementation as all other platforms."
 msgstr ""
 "Windows ahora utiliza la misma implementación que en el resto de las "
 "plataformas."
 
-#: ../Doc/library/os.path.rst:420
+#: ../Doc/library/os.path.rst:465
 msgid ""
 "Return ``True`` if the file descriptors *fp1* and *fp2* refer to the same "
 "file."
@@ -604,7 +678,7 @@ msgstr ""
 "Retorna ``True`` si los descriptores de archivo *fp1* y *fp2* se refieren al "
 "mismo archivo."
 
-#: ../Doc/library/os.path.rst:433
+#: ../Doc/library/os.path.rst:476
 msgid ""
 "Return ``True`` if the stat tuples *stat1* and *stat2* refer to the same "
 "file. These structures may have been returned by :func:`os.fstat`, :func:`os."
@@ -617,7 +691,7 @@ msgstr ""
 "comparación subyacente utilizada por: :func:`samefile` y :func:"
 "`sameopenfile`."
 
-#: ../Doc/library/os.path.rst:449
+#: ../Doc/library/os.path.rst:490
 msgid ""
 "Split the pathname *path* into a pair, ``(head, tail)`` where *tail* is the "
 "last pathname component and *head* is everything leading up to that.  The "
@@ -629,8 +703,8 @@ msgid ""
 "*path* (but the strings may differ).  Also see the functions :func:`dirname` "
 "and :func:`basename`."
 msgstr ""
-"Divide el nombre de la ruta *path * en un par, `` (head, tail) `` donde "
-"*tail* es el último componente del nombre de la ruta y *head* es todo lo que "
+"Divide el nombre de la ruta *path * en un par, ``(head, tail)`` donde *tail* "
+"es el último componente del nombre de la ruta y *head* es todo lo que "
 "conduce a eso. La parte *head* nunca contendrá una barra; si *head* termina "
 "en una barra, *tail* estará vacía. Si no hay barra inclinada en *path*, "
 "*head* estará vacío. Si *path* está vacía, tanto *head* como *tail* estarán "
@@ -639,7 +713,7 @@ msgstr ""
 "retorna una ruta a la misma ubicación que *path* (pero las cadenas pueden "
 "diferir). Consulta las funciones :func:`dirname` y :func:`basename`."
 
-#: ../Doc/library/os.path.rst:465
+#: ../Doc/library/os.path.rst:506
 msgid ""
 "Split the pathname *path* into a pair ``(drive, tail)`` where *drive* is "
 "either a mount point or the empty string.  On systems which do not use drive "
@@ -651,14 +725,14 @@ msgstr ""
 "especificaciones de unidad, *drive* siempre será una cadena vacía. En todos "
 "los casos, ``drive + tail`` será lo mismo que *path*."
 
-#: ../Doc/library/os.path.rst:470
+#: ../Doc/library/os.path.rst:511
 msgid ""
 "On Windows, splits a pathname into drive/UNC sharepoint and relative path."
 msgstr ""
 "En Windows, divide un nombre de ruta en unidad / punto compartido UNC y ruta "
 "relativa."
 
-#: ../Doc/library/os.path.rst:472
+#: ../Doc/library/os.path.rst:513
 msgid ""
 "If the path contains a drive letter, drive will contain everything up to and "
 "including the colon::"
@@ -666,29 +740,95 @@ msgstr ""
 "Si la ruta contiene una letra de unidad, la unidad contendrá todo hasta los "
 "dos puntos inclusive::"
 
-#: ../Doc/library/os.path.rst:478
+#: ../Doc/library/os.path.rst:516
 msgid ""
-"If the path contains a UNC path, drive will contain the host name and share, "
-"up to but not including the fourth separator::"
+">>> splitdrive(\"c:/dir\")\n"
+"(\"c:\", \"/dir\")"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:519
+#, fuzzy
+msgid ""
+"If the path contains a UNC path, drive will contain the host name and share::"
 msgstr ""
 "Si la ruta contiene una ruta UNC, *drive* contendrá el nombre de host y el "
 "recurso compartido, hasta el cuarto separador, pero sin incluirlo::"
 
-#: ../Doc/library/os.path.rst:490
+#: ../Doc/library/os.path.rst:522
+msgid ""
+">>> splitdrive(\"//host/computer/dir\")\n"
+"(\"//host/computer\", \"/dir\")"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:531
+#, fuzzy
+msgid ""
+"Split the pathname *path* into a 3-item tuple ``(drive, root, tail)`` where "
+"*drive* is a device name or mount point, *root* is a string of separators "
+"after the drive, and *tail* is everything after the root. Any of these items "
+"may be the empty string. In all cases, ``drive + root + tail`` will be the "
+"same as *path*."
+msgstr ""
+"Divide el nombre de ruta *path* en un par ``(drive, tail)`` donde *drive* es "
+"un punto de montaje o una cadena vacía. En sistemas que no utilizan "
+"especificaciones de unidad, *drive* siempre será una cadena vacía. En todos "
+"los casos, ``drive + tail`` será lo mismo que *path*."
+
+#: ../Doc/library/os.path.rst:537
+msgid ""
+"On POSIX systems, *drive* is always empty. The *root* may be empty (if "
+"*path* is relative), a single forward slash (if *path* is absolute), or two "
+"forward slashes (implementation-defined per `IEEE Std 1003.1-2017; 4.13 "
+"Pathname Resolution <https://pubs.opengroup.org/onlinepubs/9699919799/"
+"basedefs/V1_chap04.html#tag_04_13>`_.) For example::"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:543
+msgid ""
+">>> splitroot('/home/sam')\n"
+"('', '/', 'home/sam')\n"
+">>> splitroot('//home/sam')\n"
+"('', '//', 'home/sam')\n"
+">>> splitroot('///home/sam')\n"
+"('', '/', '//home/sam')"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:550
+msgid ""
+"On Windows, *drive* may be empty, a drive-letter name, a UNC share, or a "
+"device name. The *root* may be empty, a forward slash, or a backward slash. "
+"For example::"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:554
+msgid ""
+">>> splitroot('C:/Users/Sam')\n"
+"('C:', '/', 'Users/Sam')\n"
+">>> splitroot('//Server/Share/Users/Sam')\n"
+"('//Server/Share', '/', 'Users/Sam')"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:564
 msgid ""
 "Split the pathname *path* into a pair ``(root, ext)``  such that ``root + "
 "ext == path``, and the extension, *ext*, is empty or begins with a period "
 "and contains at most one period."
 msgstr ""
-"Divide el nombre de ruta *path* en un par ``(root, ext)`` de tal forma que "
-"``root + ext == path``, y *ext* queda vacío o inicia con un punto y contiene "
-"a lo mucho un punto. "
+"Divide el nombre de la ruta *path* en un par ``(root, ext)`` de tal forma "
+"que ``root + ext == path``, y *ext* queda vacío o inicia con un punto y "
+"contiene a lo mucho un punto."
 
-#: ../Doc/library/os.path.rst:494
+#: ../Doc/library/os.path.rst:568
 msgid "If the path contains no extension, *ext* will be ``''``::"
 msgstr "Si la ruta no contiene ninguna extensión, *ext* será  ``’’``::"
 
-#: ../Doc/library/os.path.rst:499
+#: ../Doc/library/os.path.rst:570
+msgid ""
+">>> splitext('bar')\n"
+"('bar', '')"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:573
 msgid ""
 "If the path contains an extension, then *ext* will be set to this extension, "
 "including the leading period. Note that previous periods will be ignored::"
@@ -697,14 +837,74 @@ msgstr ""
 "incluido el punto por delante. Tenga en cuenta que los puntos anteriores se "
 "ignorarán:"
 
-#: ../Doc/library/os.path.rst:505
-msgid "Leading periods on the basename are ignored::"
-msgstr "Los puntos por delante del *basename* son ignorados::"
+#: ../Doc/library/os.path.rst:576
+msgid ""
+">>> splitext('foo.bar.exe')\n"
+"('foo.bar', '.exe')\n"
+">>> splitext('/foo/bar.exe')\n"
+"('/foo/bar', '.exe')"
+msgstr ""
 
-#: ../Doc/library/os.path.rst:516
+#: ../Doc/library/os.path.rst:581
+msgid ""
+"Leading periods of the last component of the path are considered to be part "
+"of the root::"
+msgstr ""
+"Los puntos que están por delante del último componente de la ruta son "
+"considerados parte de la raíz::"
+
+#: ../Doc/library/os.path.rst:584
+msgid ""
+">>> splitext('.cshrc')\n"
+"('.cshrc', '')\n"
+">>> splitext('/foo/....jpg')\n"
+"('/foo/....jpg', '')"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:595
 msgid ""
 "``True`` if arbitrary Unicode strings can be used as file names (within "
 "limitations imposed by the file system)."
 msgstr ""
 "``True`` si se pueden utilizar cadenas Unicode arbitrarias como nombres de "
 "archivo (dentro de las limitaciones impuestas por el sistema de archivos)."
+
+#: ../Doc/library/os.path.rst:10
+msgid "path"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:10
+msgid "operations"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:156
+msgid "~ (tilde)"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:156
+msgid "home directory expansion"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:163
+msgid "module"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:163
+msgid "pwd"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:184
+msgid "$ (dollar)"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:184
+msgid "environment variables expansion"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:184
+msgid "% (percent)"
+msgstr ""
+
+#: ../Doc/library/os.path.rst:184
+msgid "environment variables expansion (Windows)"
+msgstr ""

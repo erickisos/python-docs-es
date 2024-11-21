@@ -10,20 +10,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-05 12:54+0200\n"
-"PO-Revision-Date: 2021-04-01 11:31-0500\n"
-"Language-Team: python-doc-es\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: Adolfo Hristo David Roque Gámez <hristo.roqueg@gmail.com>\n"
+"POT-Creation-Date: 2024-11-21 16:38-0300\n"
+"PO-Revision-Date: 2024-02-02 00:07+0100\n"
+"Last-Translator: Carlos Mena Pérez <@carlosm00>\n"
 "Language: es\n"
-"X-Generator: Poedit 2.4.2\n"
+"Language-Team: python-doc-es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
 
 #: ../Doc/library/doctest.rst:2
-msgid ":mod:`doctest` --- Test interactive Python examples"
+#, fuzzy
+msgid ":mod:`!doctest` --- Test interactive Python examples"
 msgstr ":mod:`doctest` -- Prueba ejemplos interactivos de Python"
 
 #: ../Doc/library/doctest.rst:12
@@ -73,13 +73,77 @@ msgstr ""
 msgid "Here's a complete but small example module::"
 msgstr "Aquí hay un módulo de ejemplo completo pero pequeño::"
 
+#: ../Doc/library/doctest.rst:33
+msgid ""
+"\"\"\"\n"
+"This is the \"example\" module.\n"
+"\n"
+"The example module supplies one function, factorial().  For example,\n"
+"\n"
+">>> factorial(5)\n"
+"120\n"
+"\"\"\"\n"
+"\n"
+"def factorial(n):\n"
+"    \"\"\"Return the factorial of n, an exact integer >= 0.\n"
+"\n"
+"    >>> [factorial(n) for n in range(6)]\n"
+"    [1, 1, 2, 6, 24, 120]\n"
+"    >>> factorial(30)\n"
+"    265252859812191058636308480000000\n"
+"    >>> factorial(-1)\n"
+"    Traceback (most recent call last):\n"
+"        ...\n"
+"    ValueError: n must be >= 0\n"
+"\n"
+"    Factorials of floats are OK, but the float must be an exact integer:\n"
+"    >>> factorial(30.1)\n"
+"    Traceback (most recent call last):\n"
+"        ...\n"
+"    ValueError: n must be exact integer\n"
+"    >>> factorial(30.0)\n"
+"    265252859812191058636308480000000\n"
+"\n"
+"    It must also not be ridiculously large:\n"
+"    >>> factorial(1e100)\n"
+"    Traceback (most recent call last):\n"
+"        ...\n"
+"    OverflowError: n too large\n"
+"    \"\"\"\n"
+"\n"
+"    import math\n"
+"    if not n >= 0:\n"
+"        raise ValueError(\"n must be >= 0\")\n"
+"    if math.floor(n) != n:\n"
+"        raise ValueError(\"n must be exact integer\")\n"
+"    if n+1 == n:  # catch a value like 1e300\n"
+"        raise OverflowError(\"n too large\")\n"
+"    result = 1\n"
+"    factor = 2\n"
+"    while factor <= n:\n"
+"        result *= factor\n"
+"        factor += 1\n"
+"    return result\n"
+"\n"
+"\n"
+"if __name__ == \"__main__\":\n"
+"    import doctest\n"
+"    doctest.testmod()"
+msgstr ""
+
 #: ../Doc/library/doctest.rst:88
 msgid ""
 "If you run :file:`example.py` directly from the command line, :mod:`doctest` "
 "works its magic:"
 msgstr ""
-"Si tu ejecutas :file:`example.py` directamente desde la línea de comandos, :"
-"mod:`doctest` hará su magia:"
+"Si ejecutas :file:`example.py` directamente desde la línea de comandos, :mod:"
+"`doctest` hará su magia:"
+
+#: ../Doc/library/doctest.rst:91
+msgid ""
+"$ python example.py\n"
+"$"
+msgstr ""
 
 #: ../Doc/library/doctest.rst:96
 msgid ""
@@ -91,17 +155,51 @@ msgstr ""
 "funcionaron. Pasa ``-v`` al script, y :mod:`doctest` imprime un registro "
 "detallado de lo que está intentando, e imprime un resumen al final:"
 
+#: ../Doc/library/doctest.rst:100
+msgid ""
+"$ python example.py -v\n"
+"Trying:\n"
+"    factorial(5)\n"
+"Expecting:\n"
+"    120\n"
+"ok\n"
+"Trying:\n"
+"    [factorial(n) for n in range(6)]\n"
+"Expecting:\n"
+"    [1, 1, 2, 6, 24, 120]\n"
+"ok"
+msgstr ""
+
 #: ../Doc/library/doctest.rst:114
 msgid "And so on, eventually ending with:"
 msgstr "Y demás, eventualmente terminando con:"
 
+#: ../Doc/library/doctest.rst:116
+msgid ""
+"Trying:\n"
+"    factorial(1e100)\n"
+"Expecting:\n"
+"    Traceback (most recent call last):\n"
+"        ...\n"
+"    OverflowError: n too large\n"
+"ok\n"
+"2 items passed all tests:\n"
+"   1 test in __main__\n"
+"   6 tests in __main__.factorial\n"
+"7 tests in 2 items.\n"
+"7 passed.\n"
+"Test passed.\n"
+"$"
+msgstr ""
+
 #: ../Doc/library/doctest.rst:133
+#, fuzzy
 msgid ""
 "That's all you need to know to start making productive use of :mod:"
 "`doctest`! Jump in.  The following sections provide full details.  Note that "
 "there are many examples of doctests in the standard Python test suite and "
 "libraries. Especially useful examples can be found in the standard test "
-"file :file:`Lib/test/test_doctest.py`."
+"file :file:`Lib/test/test_doctest/test_doctest.py`."
 msgstr ""
 "¡Eso es todo lo que necesitas saber para empezar a hacer uso productivo de :"
 "mod:`doctest`! Lánzate. Las siguientes secciones proporcionan detalles "
@@ -115,15 +213,24 @@ msgid "Simple Usage: Checking Examples in Docstrings"
 msgstr "Uso simple: verificar ejemplos en docstrings"
 
 #: ../Doc/library/doctest.rst:145
+#, fuzzy
 msgid ""
 "The simplest way to start using doctest (but not necessarily the way you'll "
-"continue to do it) is to end each module :mod:`M` with::"
+"continue to do it) is to end each module :mod:`!M` with::"
 msgstr ""
 "La forma más simple para empezar a usar doctest (pero no necesariamente la "
 "forma que continuarás usándolo) es terminar cada módulo :mod:`M` con::"
 
+#: ../Doc/library/doctest.rst:148
+msgid ""
+"if __name__ == \"__main__\":\n"
+"    import doctest\n"
+"    doctest.testmod()"
+msgstr ""
+
 #: ../Doc/library/doctest.rst:152
-msgid ":mod:`doctest` then examines docstrings in module :mod:`M`."
+#, fuzzy
+msgid ":mod:`!doctest` then examines docstrings in module :mod:`!M`."
 msgstr ":mod:`doctest` entonces examina docstrings en el módulo :mod:`M`."
 
 #: ../Doc/library/doctest.rst:154
@@ -132,7 +239,11 @@ msgid ""
 "executed and verified::"
 msgstr ""
 "Ejecutar el módulo como un script causa que los ejemplos en los docstrings "
-"se ejecuten y verifiquen::"
+"se ejecuten y sean verificados::"
+
+#: ../Doc/library/doctest.rst:157
+msgid "python M.py"
+msgstr ""
 
 #: ../Doc/library/doctest.rst:159
 msgid ""
@@ -149,6 +260,10 @@ msgstr ""
 #: ../Doc/library/doctest.rst:164
 msgid "Run it with the ``-v`` switch instead::"
 msgstr "Ejecútalo con el modificador ``-v`` en su lugar::"
+
+#: ../Doc/library/doctest.rst:166
+msgid "python M.py -v"
+msgstr ""
 
 #: ../Doc/library/doctest.rst:168
 msgid ""
@@ -181,6 +296,10 @@ msgstr ""
 "directamente de la biblioteca estándar y pasar los nombres del módulo en la "
 "línea de comandos::"
 
+#: ../Doc/library/doctest.rst:180
+msgid "python -m doctest -v example.py"
+msgstr ""
+
 #: ../Doc/library/doctest.rst:182
 msgid ""
 "This will import :file:`example.py` as a standalone module and run :func:"
@@ -196,7 +315,7 @@ msgid ""
 "For more information on :func:`testmod`, see section :ref:`doctest-basic-"
 "api`."
 msgstr ""
-"Para más información de :func:`testmod`, véase la sección :ref:`doctest-"
+"Para más información de :func:`testmod`, consulte la sección :ref:`doctest-"
 "basic-api`."
 
 #: ../Doc/library/doctest.rst:192
@@ -211,6 +330,12 @@ msgstr ""
 "Otra simple aplicación de doctest es probar ejemplos interactivos en un "
 "archivo de texto.  Esto puede ser hecho con la función :func:`testfile`::"
 
+#: ../Doc/library/doctest.rst:197
+msgid ""
+"import doctest\n"
+"doctest.testfile(\"example.txt\")"
+msgstr ""
+
 #: ../Doc/library/doctest.rst:200
 msgid ""
 "That short script executes and verifies any interactive Python examples "
@@ -224,6 +349,25 @@ msgstr ""
 "contener un programa de Python! Por ejemplo, tal vez :file:`example.txt` "
 "contenga esto:"
 
+#: ../Doc/library/doctest.rst:205
+msgid ""
+"The ``example`` module\n"
+"======================\n"
+"\n"
+"Using ``factorial``\n"
+"-------------------\n"
+"\n"
+"This is an example text file in reStructuredText format.  First import\n"
+"``factorial`` from the ``example`` module:\n"
+"\n"
+"    >>> from example import factorial\n"
+"\n"
+"Now use it:\n"
+"\n"
+"    >>> factorial(6)\n"
+"    120"
+msgstr ""
+
 #: ../Doc/library/doctest.rst:223
 msgid ""
 "Running ``doctest.testfile(\"example.txt\")`` then finds the error in this "
@@ -231,6 +375,17 @@ msgid ""
 msgstr ""
 "Ejecutar ``doctest.testfile(\"example.txt\")`` entonces encuentra el error "
 "en esta documentación::"
+
+#: ../Doc/library/doctest.rst:226
+msgid ""
+"File \"./example.txt\", line 14, in example.txt\n"
+"Failed example:\n"
+"    factorial(6)\n"
+"Expected:\n"
+"    120\n"
+"Got:\n"
+"    720"
+msgstr ""
 
 #: ../Doc/library/doctest.rst:234
 msgid ""
@@ -274,6 +429,10 @@ msgstr ""
 "Puedes indicar al intérprete de Python para correr el módulo doctest "
 "directamente desde la biblioteca estándar y pasar el nombre de los archivos "
 "en la línea de comandos::"
+
+#: ../Doc/library/doctest.rst:251
+msgid "python -m doctest -v example.txt"
+msgstr ""
 
 #: ../Doc/library/doctest.rst:253
 msgid ""
@@ -325,12 +484,17 @@ msgstr ""
 "buscan."
 
 #: ../Doc/library/doctest.rst:280
+#, fuzzy
 msgid ""
-"In addition, if ``M.__test__`` exists and \"is true\", it must be a dict, "
-"and each entry maps a (string) name to a function object, class object, or "
-"string. Function and class object docstrings found from ``M.__test__`` are "
-"searched, and strings are treated as if they were docstrings.  In output, a "
-"key ``K`` in ``M.__test__`` appears with name ::"
+"In addition, there are cases when you want tests to be part of a module but "
+"not part of the help text, which requires that the tests not be included in "
+"the docstring. Doctest looks for a module-level variable called ``__test__`` "
+"and uses it to locate other tests. If ``M.__test__`` exists, it must be a "
+"dict, and each entry maps a (string) name to a function object, class "
+"object, or string. Function and class object docstrings found from ``M."
+"__test__`` are searched, and strings are treated as if they were "
+"docstrings.  In output, a key ``K`` in ``M.__test__`` appears with name ``M."
+"__test__.K``."
 msgstr ""
 "Además, si ``M.__test__`` existe y \"es verdaderos\", debe ser un "
 "diccionario, y cada entrada mapea un nombre (cadena de caracteres) a un "
@@ -340,7 +504,33 @@ msgstr ""
 "docstrings. En la salida, una clave ``K`` en ``M.__test__`` aparece con el "
 "nombre::"
 
-#: ../Doc/library/doctest.rst:288
+#: ../Doc/library/doctest.rst:289
+msgid "For example, place this block of code at the top of :file:`example.py`:"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:291
+msgid ""
+"__test__ = {\n"
+"    'numbers': \"\"\"\n"
+">>> factorial(6)\n"
+"720\n"
+"\n"
+">>> [factorial(n) for n in range(6)]\n"
+"[1, 1, 2, 6, 24, 120]\n"
+"\"\"\"\n"
+"}"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:303
+msgid ""
+"The value of ``example.__test__[\"numbers\"]`` will be treated as a "
+"docstring and all the tests inside it will be run. It is important to note "
+"that the value can be mapped to a function, class object, or module; if so, :"
+"mod:`!doctest` searches them recursively for docstrings, which are then "
+"scanned for tests."
+msgstr ""
+
+#: ../Doc/library/doctest.rst:309
 msgid ""
 "Any classes found are recursively searched similarly, to test docstrings in "
 "their contained methods and nested classes."
@@ -348,11 +538,11 @@ msgstr ""
 "Todas las clases encontradas se buscan recursivamente de manera similar, "
 "para probar docstrings en sus métodos contenidos y clases anidadas."
 
-#: ../Doc/library/doctest.rst:299
+#: ../Doc/library/doctest.rst:316
 msgid "How are Docstring Examples Recognized?"
 msgstr "¿Cómo se reconocen los ejemplos de docstring?"
 
-#: ../Doc/library/doctest.rst:301
+#: ../Doc/library/doctest.rst:318
 msgid ""
 "In most cases a copy-and-paste of an interactive console session works fine, "
 "but doctest isn't trying to do an exact emulation of any specific Python "
@@ -362,7 +552,26 @@ msgstr ""
 "interactiva funciona bien, pero doctest no está intentando hacer una "
 "emulación exacta de ningún shell específico de Python."
 
-#: ../Doc/library/doctest.rst:326
+#: ../Doc/library/doctest.rst:323
+msgid ""
+">>> # comments are ignored\n"
+">>> x = 12\n"
+">>> x\n"
+"12\n"
+">>> if x == 13:\n"
+"...     print(\"yes\")\n"
+"... else:\n"
+"...     print(\"no\")\n"
+"...     print(\"NO\")\n"
+"...     print(\"NO!!!\")\n"
+"...\n"
+"no\n"
+"NO\n"
+"NO!!!\n"
+">>>"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:343
 msgid ""
 "Any expected output must immediately follow the final ``'>>> '`` or ``'... "
 "'`` line containing the code, and the expected output (if any) extends to "
@@ -372,11 +581,11 @@ msgstr ""
 "``'>>>'`` o ``'...'`` conteniendo el código, y la salida esperada (si la "
 "hubiera) se extiende hasta el siguiente ``'>>>'`` o la línea en blanco."
 
-#: ../Doc/library/doctest.rst:330
+#: ../Doc/library/doctest.rst:347
 msgid "The fine print:"
 msgstr "La letra pequeña:"
 
-#: ../Doc/library/doctest.rst:332
+#: ../Doc/library/doctest.rst:349
 msgid ""
 "Expected output cannot contain an all-whitespace line, since such a line is "
 "taken to signal the end of expected output.  If expected output does contain "
@@ -389,7 +598,7 @@ msgstr ""
 "en tu ejemplo de doctest en cada lugar donde una línea en blanco sea "
 "esperada."
 
-#: ../Doc/library/doctest.rst:337
+#: ../Doc/library/doctest.rst:354
 msgid ""
 "All hard tab characters are expanded to spaces, using 8-column tab stops. "
 "Tabs in output generated by the tested code are not modified.  Because any "
@@ -416,7 +625,7 @@ msgstr ""
 "posible usar un algoritmo diferente para manejar tabulaciones al escribir "
 "una clase :class:`DocTestParser` personalizada."
 
-#: ../Doc/library/doctest.rst:349
+#: ../Doc/library/doctest.rst:366
 msgid ""
 "Output to stdout is captured, but not output to stderr (exception tracebacks "
 "are captured via a different means)."
@@ -424,7 +633,7 @@ msgstr ""
 "La salida a stdout es capturada, pero no la salida a stderr (los rastreos de "
 "la excepción son capturados a través de maneras diferentes)."
 
-#: ../Doc/library/doctest.rst:352
+#: ../Doc/library/doctest.rst:369
 msgid ""
 "If you continue a line via backslashing in an interactive session, or for "
 "any other reason use a backslash, you should use a raw docstring, which will "
@@ -435,7 +644,16 @@ msgstr ""
 "un docstring crudo, que preservará tus barras invertidas exactamente como "
 "las escribes::"
 
-#: ../Doc/library/doctest.rst:361
+#: ../Doc/library/doctest.rst:373
+msgid ""
+">>> def f(x):\n"
+"...     r'''Backslashes in a raw docstring: m\\n'''\n"
+"...\n"
+">>> print(f.__doc__)\n"
+"Backslashes in a raw docstring: m\\n"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:379
 msgid ""
 "Otherwise, the backslash will be interpreted as part of the string. For "
 "example, the ``\\n`` above would be interpreted as a newline character.  "
@@ -447,11 +665,28 @@ msgstr ""
 "de nueva línea. Alternativamente, puedes duplicar cada barra invertida en  "
 "la versión de doctest (y no usar una cadena de caracteres cruda)::"
 
-#: ../Doc/library/doctest.rst:370
+#: ../Doc/library/doctest.rst:383
+msgid ""
+">>> def f(x):\n"
+"...     '''Backslashes in a raw docstring: m\\\\n'''\n"
+"...\n"
+">>> print(f.__doc__)\n"
+"Backslashes in a raw docstring: m\\n"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:389
 msgid "The starting column doesn't matter::"
 msgstr "La columna inicial no importa::"
 
-#: ../Doc/library/doctest.rst:377
+#: ../Doc/library/doctest.rst:391
+msgid ""
+">>> assert \"Easy!\"\n"
+"      >>> import math\n"
+"          >>> math.floor(1.9)\n"
+"          1"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:396
 msgid ""
 "and as many leading whitespace characters are stripped from the expected "
 "output as appeared in the initial ``'>>> '`` line that started the example."
@@ -459,17 +694,18 @@ msgstr ""
 "y tantos espacios en blanco al principio se eliminan de la salida esperada "
 "como aparece en la línea ``'>>>'`` inicial que empezó el ejemplo."
 
-#: ../Doc/library/doctest.rst:384
+#: ../Doc/library/doctest.rst:403
 msgid "What's the Execution Context?"
 msgstr "¿Cuál es el contexto de ejecución?"
 
-#: ../Doc/library/doctest.rst:386
+#: ../Doc/library/doctest.rst:405
+#, fuzzy
 msgid ""
 "By default, each time :mod:`doctest` finds a docstring to test, it uses a "
-"*shallow copy* of :mod:`M`'s globals, so that running tests doesn't change "
-"the module's real globals, and so that one test in :mod:`M` can't leave "
+"*shallow copy* of :mod:`!M`'s globals, so that running tests doesn't change "
+"the module's real globals, and so that one test in :mod:`!M` can't leave "
 "behind crumbs that accidentally allow another test to work.  This means "
-"examples can freely use any names defined at top-level in :mod:`M`, and "
+"examples can freely use any names defined at top-level in :mod:`!M`, and "
 "names defined earlier in the docstring being run. Examples cannot see names "
 "defined in other docstrings."
 msgstr ""
@@ -482,7 +718,7 @@ msgstr ""
 "en los docstrings siendo ejecutados. Los ejemplos no pueden ver nombres "
 "definidos en otros docstrings."
 
-#: ../Doc/library/doctest.rst:394
+#: ../Doc/library/doctest.rst:413
 msgid ""
 "You can force use of your own dict as the execution context by passing "
 "``globs=your_dict`` to :func:`testmod` or :func:`testfile` instead."
@@ -491,11 +727,11 @@ msgstr ""
 "al pasar ``globs=your_dict`` a :func:`testmod` o :func:`testfile` en su "
 "lugar."
 
-#: ../Doc/library/doctest.rst:401
+#: ../Doc/library/doctest.rst:420
 msgid "What About Exceptions?"
 msgstr "¿Y las excepciones?"
 
-#: ../Doc/library/doctest.rst:403
+#: ../Doc/library/doctest.rst:422
 msgid ""
 "No problem, provided that the traceback is the only output produced by the "
 "example:  just paste in the traceback. [#]_ Since tracebacks contain details "
@@ -509,11 +745,19 @@ msgstr ""
 "exactas y números de línea), este es un caso donde doctest trabaja duro para "
 "ser flexible en lo que acepta."
 
-#: ../Doc/library/doctest.rst:409
+#: ../Doc/library/doctest.rst:428
 msgid "Simple example::"
 msgstr "Ejemplo simple::"
 
-#: ../Doc/library/doctest.rst:416
+#: ../Doc/library/doctest.rst:430
+msgid ""
+">>> [1, 2, 3].remove(42)\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 1, in <module>\n"
+"ValueError: list.remove(x): x not in list"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:435
 msgid ""
 "That doctest succeeds if :exc:`ValueError` is raised, with the ``list."
 "remove(x): x not in list`` detail as shown."
@@ -521,7 +765,7 @@ msgstr ""
 "El doctest tiene éxito si se lanza :exc:`ValueError`, con el detalle ``list."
 "remove(x): x not in list`` como se muestra."
 
-#: ../Doc/library/doctest.rst:419
+#: ../Doc/library/doctest.rst:438
 msgid ""
 "The expected output for an exception must start with a traceback header, "
 "which may be either of the following two lines, indented the same as the "
@@ -531,7 +775,13 @@ msgstr ""
 "rastreo, que puede ser una de las siguientes dos líneas, con el mismo "
 "sangrado de la primera línea del ejemplo:"
 
-#: ../Doc/library/doctest.rst:426
+#: ../Doc/library/doctest.rst:442
+msgid ""
+"Traceback (most recent call last):\n"
+"Traceback (innermost last):"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:445
 msgid ""
 "The traceback header is followed by an optional traceback stack, whose "
 "contents are ignored by doctest.  The traceback stack is typically omitted, "
@@ -541,7 +791,7 @@ msgstr ""
 "contenido es ignorado por doctest.  La pila de rastreo es típicamente "
 "omitida, o copiada palabra por palabra de una sesión interactiva."
 
-#: ../Doc/library/doctest.rst:430
+#: ../Doc/library/doctest.rst:449
 msgid ""
 "The traceback stack is followed by the most interesting part: the line(s) "
 "containing the exception type and detail.  This is usually the last line of "
@@ -553,7 +803,17 @@ msgstr ""
 "última línea de un rastreo, pero se puede extender a través de múltiples "
 "líneas si la excepción tiene un detalle de varias líneas::"
 
-#: ../Doc/library/doctest.rst:442
+#: ../Doc/library/doctest.rst:454
+msgid ""
+">>> raise ValueError('multi\\n    line\\ndetail')\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 1, in <module>\n"
+"ValueError: multi\n"
+"    line\n"
+"detail"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:461
 msgid ""
 "The last three lines (starting with :exc:`ValueError`) are compared against "
 "the exception's type and detail, and the rest are ignored."
@@ -561,7 +821,7 @@ msgstr ""
 "Las últimas tres líneas (empezando con :exc:`ValueError`) son comparados con "
 "el tipo de excepción y detalle, y el resto es ignorado."
 
-#: ../Doc/library/doctest.rst:445
+#: ../Doc/library/doctest.rst:464
 msgid ""
 "Best practice is to omit the traceback stack, unless it adds significant "
 "documentation value to the example.  So the last example is probably better "
@@ -571,7 +831,17 @@ msgstr ""
 "documentación significante al ejemplo. Por lo que el último ejemplo es "
 "probablemente mejor como::"
 
-#: ../Doc/library/doctest.rst:455
+#: ../Doc/library/doctest.rst:467
+msgid ""
+">>> raise ValueError('multi\\n    line\\ndetail')\n"
+"Traceback (most recent call last):\n"
+"    ...\n"
+"ValueError: multi\n"
+"    line\n"
+"detail"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:474
 msgid ""
 "Note that tracebacks are treated very specially.  In particular, in the "
 "rewritten example, the use of ``...`` is independent of doctest's :const:"
@@ -585,11 +855,11 @@ msgstr ""
 "ejemplo, así como también pueden haber tres (o trescientas) comas o dígitos, "
 "o una transcripción sangrada de un *sketch* de Monty Python."
 
-#: ../Doc/library/doctest.rst:461
+#: ../Doc/library/doctest.rst:480
 msgid "Some details you should read once, but won't need to remember:"
 msgstr "Algunos detalles que debes leer una vez, pero no necesitarás recordar:"
 
-#: ../Doc/library/doctest.rst:463
+#: ../Doc/library/doctest.rst:482
 msgid ""
 "Doctest can't guess whether your expected output came from an exception "
 "traceback or from ordinary printing.  So, e.g., an example that expects "
@@ -605,7 +875,7 @@ msgstr ""
 "práctica, la salida ordinaria raramente comienza con una línea de cabecera "
 "de rastreo, por lo que esto no crea problemas reales."
 
-#: ../Doc/library/doctest.rst:470
+#: ../Doc/library/doctest.rst:489
 msgid ""
 "Each line of the traceback stack (if present) must be indented further than "
 "the first line of the example, *or* start with a non-alphanumeric character. "
@@ -620,7 +890,7 @@ msgstr ""
 "detalle de la excepción. Por supuesto que esto es lo correcto para rastreos "
 "genuinos."
 
-#: ../Doc/library/doctest.rst:476
+#: ../Doc/library/doctest.rst:495
 msgid ""
 "When the :const:`IGNORE_EXCEPTION_DETAIL` doctest option is specified, "
 "everything following the leftmost colon and any module information in the "
@@ -630,7 +900,7 @@ msgstr ""
 "todo lo que sigue a los dos puntos más a la izquierda y cualquier otra "
 "información del módulo en el nombre de la excepción se ignora."
 
-#: ../Doc/library/doctest.rst:480
+#: ../Doc/library/doctest.rst:499
 msgid ""
 "The interactive shell omits the traceback header line for some :exc:"
 "`SyntaxError`\\ s.  But doctest uses the traceback header line to "
@@ -645,15 +915,24 @@ msgstr ""
 "rastreo, necesitarás poner manualmente la línea de cabecera de rastreo en tu "
 "ejemplo de prueba."
 
-#: ../Doc/library/doctest.rst:488
+#: ../Doc/library/doctest.rst:507
 msgid ""
-"For some :exc:`SyntaxError`\\ s, Python displays the character position of "
-"the syntax error, using a ``^`` marker::"
+"For some exceptions, Python displays the position of the error using ``^`` "
+"markers and tildes::"
 msgstr ""
-"Para algunos :exc:`SyntaxError`, Python muestra la posición del carácter del "
-"error de sintaxis, usando un marcador ``^``::"
+"En el caso de algunas excepciones Python señala la posición donde ocurrió el "
+"error usando un marcador ``^``::"
 
-#: ../Doc/library/doctest.rst:497
+#: ../Doc/library/doctest.rst:510
+msgid ""
+">>> 1 + None\n"
+"  File \"<stdin>\", line 1\n"
+"    1 + None\n"
+"    ~~^~~~~~\n"
+"TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:516
 msgid ""
 "Since the lines showing the position of the error come before the exception "
 "type and detail, they are not checked by doctest.  For example, the "
@@ -665,11 +944,20 @@ msgstr ""
 "test pasaría, a pesar de que pone el marcador ``^`` en la posición "
 "equivocada::"
 
-#: ../Doc/library/doctest.rst:513
+#: ../Doc/library/doctest.rst:520
+msgid ""
+">>> 1 + None\n"
+"  File \"<stdin>\", line 1\n"
+"    1 + None\n"
+"    ^~~~~~~~\n"
+"TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:531
 msgid "Option Flags"
 msgstr "Banderas de Opción"
 
-#: ../Doc/library/doctest.rst:515
+#: ../Doc/library/doctest.rst:533
 msgid ""
 "A number of option flags control various aspects of doctest's behavior. "
 "Symbolic names for the flags are supplied as module constants, which can be :"
@@ -686,11 +974,11 @@ msgstr ""
 "pasar a la interfaz de la línea de comandos de doctest a través de la opción "
 "``-o``."
 
-#: ../Doc/library/doctest.rst:521
+#: ../Doc/library/doctest.rst:539
 msgid "The ``-o`` command line option."
 msgstr "La opción de la línea de comandos ``-o``."
 
-#: ../Doc/library/doctest.rst:524
+#: ../Doc/library/doctest.rst:542
 msgid ""
 "The first group of options define test semantics, controlling aspects of how "
 "doctest decides whether actual output matches an example's expected output:"
@@ -699,7 +987,7 @@ msgstr ""
 "aspectos de cómo doctest decide si la salida de hecho concuerda con la "
 "salida esperada del ejemplo:"
 
-#: ../Doc/library/doctest.rst:530
+#: ../Doc/library/doctest.rst:548
 msgid ""
 "By default, if an expected output block contains just ``1``, an actual "
 "output block containing just ``1`` or just ``True`` is considered to be a "
@@ -719,7 +1007,7 @@ msgstr ""
 "pequeño enteros\" todavía trabajan en estos casos. Esta opción probablemente "
 "se vaya, pero no por muchos años."
 
-#: ../Doc/library/doctest.rst:542
+#: ../Doc/library/doctest.rst:560
 msgid ""
 "By default, if an expected output block contains a line containing only the "
 "string ``<BLANKLINE>``, then that line will match a blank line in the actual "
@@ -734,7 +1022,7 @@ msgstr ""
 "comunicar que una línea en blanco es esperada. Cuando se especifica :const:"
 "`DONT_ACCEPT_BLANKLINE`, esta substitución no se permite."
 
-#: ../Doc/library/doctest.rst:551
+#: ../Doc/library/doctest.rst:569
 msgid ""
 "When specified, all sequences of whitespace (blanks and newlines) are "
 "treated as equal.  Any sequence of whitespace within the expected output "
@@ -751,7 +1039,7 @@ msgstr ""
 "especialmente útil cuando una línea de la salida esperada es muy larga, y "
 "quieres envolverla a través de múltiples líneas en tu código fuente."
 
-#: ../Doc/library/doctest.rst:562
+#: ../Doc/library/doctest.rst:580
 msgid ""
 "When specified, an ellipsis marker (``...``) in the expected output can "
 "match any substring in the actual output.  This includes substrings that "
@@ -767,62 +1055,58 @@ msgstr ""
 "\"ups, coincidió demasiado\" que ``.*`` es propenso a hacer en expresiones "
 "regulares."
 
-#: ../Doc/library/doctest.rst:571
-msgid ""
-"When specified, an example that expects an exception passes if an exception "
-"of the expected type is raised, even if the exception detail does not "
-"match.  For example, an example expecting ``ValueError: 42`` will pass if "
-"the actual exception raised is ``ValueError: 3*14``, but will fail, e.g., "
-"if :exc:`TypeError` is raised."
-msgstr ""
-"Cuando se especifica, un ejemplo que espera una excepción pasa si una "
-"excepción del tipo esperado es lanzada, incluso si el detalle de la "
-"excepción no corresponde. Por ejemplo, un ejemplo esperando ``ValueError: "
-"42`` pasará si la excepción real lanzada es ``ValueError: 3*14``, pero "
-"fallará, e.g., si :exc:`TypeError` es lanzado."
-
-#: ../Doc/library/doctest.rst:577
-msgid ""
-"It will also ignore the module name used in Python 3 doctest reports. Hence "
-"both of these variations will work with the flag specified, regardless of "
-"whether the test is run under Python 2.7 or Python 3.2 (or later versions)::"
-msgstr ""
-"También ignorará el nombre del módulo usado en los reportes de doctest de "
-"Python 3. Por lo que ambas de estas variaciones trabajarán con las banderas "
-"especificadas, sin importar si la prueba es ejecutada bajo Python 2.7 o "
-"Python 3.2 (o versiones más modernas)::"
-
 #: ../Doc/library/doctest.rst:589
 msgid ""
-"Note that :const:`ELLIPSIS` can also be used to ignore the details of the "
-"exception message, but such a test may still fail based on whether or not "
-"the module details are printed as part of the exception name. Using :const:"
-"`IGNORE_EXCEPTION_DETAIL` and the details from Python 2.3 is also the only "
-"clear way to write a doctest that doesn't care about the exception detail "
-"yet continues to pass under Python 2.3 or earlier (those releases do not "
-"support :ref:`doctest directives <doctest-directives>` and ignore them as "
-"irrelevant comments). For example::"
+"When specified, doctests expecting exceptions pass so long as an exception "
+"of the expected type is raised, even if the details (message and fully "
+"qualified exception name) don't match."
 msgstr ""
-"Note que :const:`ELLIPSIS` también se puede usar para ignorar los detalles "
-"del mensaje de excepción, pero tal prueba todavía puede fallar basado en si "
-"los detalles del módulo se imprimen como parte del nombre de excepción. "
-"Usar :const:`IGNORE_EXCEPTION_DETAIL` y los detalles de Python 2.3 son "
-"también la única manera de escribir un doctest que no le importe el detalle "
-"de excepción y todavía pase bajo Python 2.3 o menos (esas versiones no "
-"soportan :ref:`directivas de doctest <doctest-directives>` y los ignoran "
-"como comentarios irrelevantes). Por ejemplo::"
+"Cuando se especifica, las excepciones que doctest espera, pasarán siempre "
+"que sea lanzada una excepción del tipo esperado, incluso si los detalles "
+"(mensaje y nombre completo de la excepción) no coinciden."
 
-#: ../Doc/library/doctest.rst:603
+#: ../Doc/library/doctest.rst:593
 msgid ""
-"passes under Python 2.3 and later Python versions with the flag specified, "
-"even though the detail changed in Python 2.4 to say \"does not\" instead of "
-"\"doesn't\"."
+"For example, an example expecting ``ValueError: 42`` will pass if the actual "
+"exception raised is ``ValueError: 3*14``, but will fail if, say, a :exc:"
+"`TypeError` is raised instead. It will also ignore any fully qualified name "
+"included before the exception class, which can vary between implementations "
+"and versions of Python and the code/libraries in use. Hence, all three of "
+"these variations will work with the flag specified:"
 msgstr ""
-"pasa bajo Python 2.3 y versiones posteriores de Python con la bandera "
-"especificada, incluso si el detalle cambió en Python 2.4 para decir \"*does "
-"not*\" en vez de \"*doesn't*\"."
+"Por ejemplo, si se espera ``ValueError: 42``, el test pasará si la verdadera "
+"excepción lanzada es ``ValueError: 3*14``, pero fallará si es lanzada un :"
+"exc:`TypeError`. También ignorará cualquier nombre completo incluido antes "
+"de la clase de la excepción, lo cual puede variar entre implementaciones y "
+"versiones de Python y bibliotecas/código en uso. Por lo tanto, las tres "
+"variaciones funcionarán con la bandera especificada:"
 
-#: ../Doc/library/doctest.rst:607
+#: ../Doc/library/doctest.rst:601
+msgid ""
+">>> raise Exception('message')\n"
+"Traceback (most recent call last):\n"
+"Exception: message\n"
+"\n"
+">>> raise Exception('message')\n"
+"Traceback (most recent call last):\n"
+"builtins.Exception: message\n"
+"\n"
+">>> raise Exception('message')\n"
+"Traceback (most recent call last):\n"
+"__main__.Exception: message"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:615
+msgid ""
+"Note that :const:`ELLIPSIS` can also be used to ignore the details of the "
+"exception message, but such a test may still fail based on whether the "
+"module name is present or matches exactly."
+msgstr ""
+"Tenga en cuenta que :const:`ELLIPSIS` también puede ser usado para ignorar "
+"detalles del mensaje de la excepción, pero dicha prueba aún podría fallar si "
+"el nombre del modulo está presente o si hay coincidencias exactas."
+
+#: ../Doc/library/doctest.rst:619
 msgid ""
 ":const:`IGNORE_EXCEPTION_DETAIL` now also ignores any information relating "
 "to the module containing the exception under test."
@@ -830,7 +1114,7 @@ msgstr ""
 ":const:`IGNORE_EXCEPTION_DETAIL` también ignora cualquier información "
 "relacionada al módulo conteniendo la excepción bajo prueba."
 
-#: ../Doc/library/doctest.rst:614
+#: ../Doc/library/doctest.rst:626
 msgid ""
 "When specified, do not run the example at all.  This can be useful in "
 "contexts where doctest examples serve as both documentation and test cases, "
@@ -845,25 +1129,25 @@ msgstr ""
 "puede ser aleatoria, o el ejemplo puede depender de recursos que no estarían "
 "disponibles para el controlador de pruebas."
 
-#: ../Doc/library/doctest.rst:620
+#: ../Doc/library/doctest.rst:632
 msgid ""
 "The SKIP flag can also be used for temporarily \"commenting out\" examples."
 msgstr ""
 "La bandera *SKIP* también se puede usar para temporalmente \"quitar\" "
 "ejemplos."
 
-#: ../Doc/library/doctest.rst:625
+#: ../Doc/library/doctest.rst:637
 msgid "A bitmask or'ing together all the comparison flags above."
 msgstr ""
 "Una máscara de bits o juntadas lógicamente todas las banderas de arriba."
 
-#: ../Doc/library/doctest.rst:627
+#: ../Doc/library/doctest.rst:639
 msgid "The second group of options controls how test failures are reported:"
 msgstr ""
 "El segundo grupo de opciones controla cómo las fallas de las pruebas son "
 "reportadas:"
 
-#: ../Doc/library/doctest.rst:632
+#: ../Doc/library/doctest.rst:644
 msgid ""
 "When specified, failures that involve multi-line expected and actual outputs "
 "are displayed using a unified diff."
@@ -871,7 +1155,7 @@ msgstr ""
 "Cuando se especifica, las fallas que involucran salidas multilínea esperadas "
 "y reales son mostradas usando una diferencia (*diff*) unificada."
 
-#: ../Doc/library/doctest.rst:638
+#: ../Doc/library/doctest.rst:650
 msgid ""
 "When specified, failures that involve multi-line expected and actual outputs "
 "will be displayed using a context diff."
@@ -879,7 +1163,7 @@ msgstr ""
 "Cuando se especifica, las fallas que involucran salidas multilínea esperadas "
 "y reales se mostrarán usando una diferencia (*diff*) contextual."
 
-#: ../Doc/library/doctest.rst:644
+#: ../Doc/library/doctest.rst:656
 msgid ""
 "When specified, differences are computed by ``difflib.Differ``, using the "
 "same algorithm as the popular :file:`ndiff.py` utility. This is the only "
@@ -896,7 +1180,7 @@ msgstr ""
 "con una marca de inserción marcando la posición de las columnas que no "
 "coinciden."
 
-#: ../Doc/library/doctest.rst:653
+#: ../Doc/library/doctest.rst:665
 msgid ""
 "When specified, display the first failing example in each doctest, but "
 "suppress output for all remaining examples.  This will prevent doctest from "
@@ -914,7 +1198,7 @@ msgstr ""
 "`REPORT_ONLY_FIRST_FAILURE`, los ejemplos restantes aún se ejecutan, y aún "
 "cuentan para el número total de fallas reportadas, sólo se suprime la salida."
 
-#: ../Doc/library/doctest.rst:664
+#: ../Doc/library/doctest.rst:676
 msgid ""
 "When specified, exit after the first failing example and don't attempt to "
 "run the remaining examples. Thus, the number of failures reported will be at "
@@ -927,7 +1211,7 @@ msgstr ""
 "depuración, ya que los ejemplos después de la primera falla ni siquiera "
 "producirán salida de depuración."
 
-#: ../Doc/library/doctest.rst:669
+#: ../Doc/library/doctest.rst:681
 msgid ""
 "The doctest command line accepts the option ``-f`` as a shorthand for ``-o "
 "FAIL_FAST``."
@@ -935,11 +1219,11 @@ msgstr ""
 "La línea de comandos de doctest acepta la opción ``-f`` como un atajo para "
 "``-o FAIL_FAST``."
 
-#: ../Doc/library/doctest.rst:677
+#: ../Doc/library/doctest.rst:689
 msgid "A bitmask or'ing together all the reporting flags above."
 msgstr "Una máscara de bits o todas las banderas de reporte arriba combinadas."
 
-#: ../Doc/library/doctest.rst:680
+#: ../Doc/library/doctest.rst:692
 msgid ""
 "There is also a way to register new option flag names, though this isn't "
 "useful unless you intend to extend :mod:`doctest` internals via subclassing:"
@@ -948,7 +1232,7 @@ msgstr ""
 "aunque esto no es útil a menos que intentes extender :mod:`doctest` a través "
 "de herencia:"
 
-#: ../Doc/library/doctest.rst:686
+#: ../Doc/library/doctest.rst:698
 msgid ""
 "Create a new option flag with a given name, and return the new flag's "
 "integer value.  :func:`register_optionflag` can be used when subclassing :"
@@ -963,11 +1247,15 @@ msgstr ""
 "`register_optionflag` siempre debe ser llamado usando la siguiente "
 "expresión::"
 
-#: ../Doc/library/doctest.rst:702
+#: ../Doc/library/doctest.rst:704
+msgid "MY_FLAG = register_optionflag('MY_FLAG')"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:714
 msgid "Directives"
 msgstr "Directivas"
 
-#: ../Doc/library/doctest.rst:704
+#: ../Doc/library/doctest.rst:716
 msgid ""
 "Doctest directives may be used to modify the :ref:`option flags <doctest-"
 "options>` for an individual example.  Doctest directives are special Python "
@@ -978,7 +1266,7 @@ msgstr ""
 "doctest son comentarios de Python especiales que siguen el código fuente de "
 "un ejemplo:"
 
-#: ../Doc/library/doctest.rst:715
+#: ../Doc/library/doctest.rst:727
 msgid ""
 "Whitespace is not allowed between the ``+`` or ``-`` and the directive "
 "option name.  The directive option name can be any of the option flag names "
@@ -989,7 +1277,7 @@ msgstr ""
 "directiva puede ser cualquiera de los nombres de las banderas de opciones "
 "explicadas arriba."
 
-#: ../Doc/library/doctest.rst:719
+#: ../Doc/library/doctest.rst:731
 msgid ""
 "An example's doctest directives modify doctest's behavior for that single "
 "example.  Use ``+`` to enable the named behavior, or ``-`` to disable it."
@@ -998,50 +1286,83 @@ msgstr ""
 "doctest para ese único ejemplo. Usa ``+`` para habilitar el comportamiento "
 "nombrado, o ``-`` para deshabilitarlo."
 
-#: ../Doc/library/doctest.rst:722
-msgid "For example, this test passes::"
-msgstr "Por ejemplo, esta prueba pasa::"
+#: ../Doc/library/doctest.rst:734
+msgid "For example, this test passes:"
+msgstr "Por ejemplo, esta prueba se ejecuta con normalidad:"
 
-#: ../Doc/library/doctest.rst:728
+#: ../Doc/library/doctest.rst:736
+msgid ""
+">>> print(list(range(20)))  # doctest: +NORMALIZE_WHITESPACE\n"
+"[0,   1,  2,  3,  4,  5,  6,  7,  8,  9,\n"
+"10,  11, 12, 13, 14, 15, 16, 17, 18, 19]"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:743
 msgid ""
 "Without the directive it would fail, both because the actual output doesn't "
 "have two blanks before the single-digit list elements, and because the "
 "actual output is on a single line.  This test also passes, and also requires "
-"a directive to do so::"
+"a directive to do so:"
 msgstr ""
-"Sin la directiva esto fallaría, porque la salida real no tiene dos espacios "
-"en blanco antes los elementos de la lista de un dígito, y porque la salida "
-"real está en una sola línea. Esta prueba también pasa, y también requiere "
-"directivas para hacerlo::"
+"Sin la directiva esto fallaría, porque de hecho la salida verdadera no tiene "
+"dos espacios en blanco antes de cada elemento de la lista, y además porque "
+"la la salida verdadera está en una sola línea. Mientras tanto, la siguiente "
+"prueba también pasa, y de la misma forma requiere de directivas para "
+"hacerlo::"
 
-#: ../Doc/library/doctest.rst:736
+#: ../Doc/library/doctest.rst:748
+msgid ""
+">>> print(list(range(20)))  # doctest: +ELLIPSIS\n"
+"[0, 1, ..., 18, 19]"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:754
 msgid ""
 "Multiple directives can be used on a single physical line, separated by "
-"commas::"
+"commas:"
 msgstr ""
-"Se pueden usar múltiples directivas en una sola línea física, separadas por "
-"comas::"
+"Se pueden usar varias directivas en una sola línea, separadas por comas::"
 
-#: ../Doc/library/doctest.rst:742
+#: ../Doc/library/doctest.rst:757
+msgid ""
+">>> print(list(range(20)))  # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE\n"
+"[0,    1, ...,   18,    19]"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:763
 msgid ""
 "If multiple directive comments are used for a single example, then they are "
-"combined::"
+"combined:"
 msgstr ""
-"Si múltiples directivas se usan para un sólo ejemplo, entonces son "
-"combinadas::"
+"Si las diferentes directivas se usan para un sólo ejemplo, entonces estas se "
+"combinarán::"
 
-#: ../Doc/library/doctest.rst:749
+#: ../Doc/library/doctest.rst:766
+msgid ""
+">>> print(list(range(20)))  # doctest: +ELLIPSIS\n"
+"...                         # doctest: +NORMALIZE_WHITESPACE\n"
+"[0,    1, ...,   18,    19]"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:773
 msgid ""
 "As the previous example shows, you can add ``...`` lines to your example "
 "containing only directives.  This can be useful when an example is too long "
-"for a directive to comfortably fit on the same line::"
+"for a directive to comfortably fit on the same line:"
 msgstr ""
-"Como muestran los ejemplos previos, puedes añadir líneas de ``...`` a tus "
-"ejemplos conteniendo sólo directivas. Puede ser útil cuando un ejemplo es "
-"demasiado largo para que una directiva pueda caber cómodamente en la misma "
-"línea::"
+"Como se muestran en los ejemplos anteriores, puedes añadir líneas de ``...`` "
+"a tus ejemplos conteniendo sólo directivas. Puede ser útil cuando un ejemplo "
+"es demasiado largo para que una directiva pueda caber cómodamente en la "
+"misma línea::"
 
-#: ../Doc/library/doctest.rst:757
+#: ../Doc/library/doctest.rst:777
+msgid ""
+">>> print(list(range(5)) + list(range(10, 20)) + list(range(30, 40)))\n"
+"... # doctest: +ELLIPSIS\n"
+"[0, ..., 4, 10, ..., 19, 30, ..., 39]"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:784
 msgid ""
 "Note that since all options are disabled by default, and directives apply "
 "only to the example they appear in, enabling options (via ``+`` in a "
@@ -1058,11 +1379,11 @@ msgstr ""
 "defecto diferentes. En tales casos, deshabilitar una opción a través de ``-"
 "`` en una directiva puede ser útil."
 
-#: ../Doc/library/doctest.rst:767
+#: ../Doc/library/doctest.rst:794
 msgid "Warnings"
 msgstr "Advertencias"
 
-#: ../Doc/library/doctest.rst:769
+#: ../Doc/library/doctest.rst:796
 msgid ""
 ":mod:`doctest` is serious about requiring exact matches in expected output.  "
 "If even a single character doesn't match, the test fails.  This will "
@@ -1076,43 +1397,67 @@ msgstr ""
 "Esto probablemente te sorprenderá algunas veces, mientras aprendes "
 "exactamente lo que Python asegura y no asegura sobre la salida. Por ejemplo, "
 "cuando se imprime un conjunto, Python no asegura que el elemento sea impreso "
-"en ningún orden particular, por lo que una prueba como ::"
+"en ningún orden particular, por lo que una prueba como: ::"
 
-#: ../Doc/library/doctest.rst:778
-msgid "is vulnerable!  One workaround is to do ::"
-msgstr "¡es vulnerable! Una solución puede ser hacer ::"
-
-#: ../Doc/library/doctest.rst:783
-msgid "instead.  Another is to do ::"
-msgstr "es su lugar. Otra es hacer ::"
-
-#: ../Doc/library/doctest.rst:791
+#: ../Doc/library/doctest.rst:802
 msgid ""
-"Before Python 3.6, when printing a dict, Python did not guarantee that the "
-"key-value pairs was printed in any particular order."
+">>> foo()\n"
+"{\"spam\", \"eggs\"}"
 msgstr ""
-"Antes de Python 3.6, cuando se imprime un diccionario, Python no aseguraba "
-"que los pares de claves y valores sean impresos en ningún orden en "
-"particular."
 
-#: ../Doc/library/doctest.rst:794
+#: ../Doc/library/doctest.rst:805
+msgid "is vulnerable!  One workaround is to do ::"
+msgstr "¡es vulnerable! Una solución puede ser hacer::"
+
+#: ../Doc/library/doctest.rst:807
+msgid ""
+">>> foo() == {\"spam\", \"eggs\"}\n"
+"True"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:810
+msgid "instead.  Another is to do ::"
+msgstr "en su lugar. Otra es hacer ::"
+
+#: ../Doc/library/doctest.rst:812
+msgid ""
+">>> d = sorted(foo())\n"
+">>> d\n"
+"['eggs', 'spam']"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:816
 msgid "There are others, but you get the idea."
 msgstr "Existen otros casos, pero ya captas la idea."
 
-#: ../Doc/library/doctest.rst:796
-msgid ""
-"Another bad idea is to print things that embed an object address, like ::"
+#: ../Doc/library/doctest.rst:818
+msgid "Another bad idea is to print things that embed an object address, like"
 msgstr ""
-"Otra mala idea es imprimir cosas que incorporan una dirección de un objeto, "
-"como ::"
+"Otra mala idea es imprimir elementos que tienen la dirección de un objeto, "
+"como por ejemplo"
 
-#: ../Doc/library/doctest.rst:804
+#: ../Doc/library/doctest.rst:820
 msgid ""
-"The :const:`ELLIPSIS` directive gives a nice approach for the last example::"
+">>> id(1.0)  # certain to fail some of the time  \n"
+"7948648\n"
+">>> class C: pass\n"
+">>> C()  # the default repr() for instances embeds an address   \n"
+"<C object at 0x00AC18F0>"
 msgstr ""
-"La directiva :const:`ELLIPSIS` da un buen enfoque para el último ejemplo::"
 
-#: ../Doc/library/doctest.rst:809
+#: ../Doc/library/doctest.rst:828
+msgid ""
+"The :const:`ELLIPSIS` directive gives a nice approach for the last example:"
+msgstr ""
+"Con la directiva :const:`ELLIPSIS` podemos sacar ventaja del último ejemplo::"
+
+#: ../Doc/library/doctest.rst:830
+msgid ""
+">>> C()  # doctest: +ELLIPSIS\n"
+"<C object at 0x...>"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:836
 msgid ""
 "Floating-point numbers are also subject to small output variations across "
 "platforms, because Python defers to the platform C library for float "
@@ -1123,7 +1468,17 @@ msgstr ""
 "de la plataforma para el formato de flotantes, y las librerías de C varían "
 "extensamente en calidad aquí. ::"
 
-#: ../Doc/library/doctest.rst:820
+#: ../Doc/library/doctest.rst:840
+msgid ""
+">>> 1./7  # risky\n"
+"0.14285714285714285\n"
+">>> print(1./7) # safer\n"
+"0.142857142857\n"
+">>> print(round(1./7, 6)) # much safer\n"
+"0.142857"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:847
 msgid ""
 "Numbers of the form ``I/2.**J`` are safe across all platforms, and I often "
 "contrive doctest examples to produce numbers of that form::"
@@ -1132,7 +1487,13 @@ msgstr ""
 "plataformas, y yo frecuentemente planeo ejemplos de doctest para producir "
 "números de esa forma::"
 
-#: ../Doc/library/doctest.rst:826
+#: ../Doc/library/doctest.rst:850
+msgid ""
+">>> 3./4  # utterly safe\n"
+"0.75"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:853
 msgid ""
 "Simple fractions are also easier for people to understand, and that makes "
 "for better documentation."
@@ -1140,11 +1501,11 @@ msgstr ""
 "Las facciones simples también son más fáciles de entender para las personas, "
 "y eso conduce a una mejor documentación."
 
-#: ../Doc/library/doctest.rst:833
+#: ../Doc/library/doctest.rst:860
 msgid "Basic API"
 msgstr "API básica"
 
-#: ../Doc/library/doctest.rst:835
+#: ../Doc/library/doctest.rst:862
 msgid ""
 "The functions :func:`testmod` and :func:`testfile` provide a simple "
 "interface to doctest that should be sufficient for most basic uses.  For a "
@@ -1156,7 +1517,7 @@ msgstr ""
 "básicos. Para una introducción menos formal a estas funciones, véase las "
 "secciones :ref:`doctest-simple-testmod` y :ref:`doctest-simple-testfile`."
 
-#: ../Doc/library/doctest.rst:843
+#: ../Doc/library/doctest.rst:870
 msgid ""
 "All arguments except *filename* are optional, and should be specified in "
 "keyword form."
@@ -1164,7 +1525,7 @@ msgstr ""
 "Todos los argumentos excepto *filename* son opcionales, y deben ser "
 "especificados en forma de palabras claves."
 
-#: ../Doc/library/doctest.rst:846
+#: ../Doc/library/doctest.rst:873
 msgid ""
 "Test examples in the file named *filename*.  Return ``(failure_count, "
 "test_count)``."
@@ -1172,7 +1533,7 @@ msgstr ""
 "Prueba los ejemplos en el archivo con nombre *filename*. Retorna "
 "``(failure_count, test_count)``."
 
-#: ../Doc/library/doctest.rst:849
+#: ../Doc/library/doctest.rst:876
 msgid ""
 "Optional argument *module_relative* specifies how the filename should be "
 "interpreted:"
@@ -1180,7 +1541,7 @@ msgstr ""
 "El argumento opcional *module_relative* especifica cómo el nombre de archivo "
 "debe ser interpretado:"
 
-#: ../Doc/library/doctest.rst:852
+#: ../Doc/library/doctest.rst:879
 msgid ""
 "If *module_relative* is ``True`` (the default), then *filename* specifies an "
 "OS-independent module-relative path.  By default, this path is relative to "
@@ -1197,7 +1558,7 @@ msgstr ""
 "caracteres ``/`` para separar segmentos, y no puede ser una ruta absoluta "
 "(por ejemplo., no puede empezar con ``/``)."
 
-#: ../Doc/library/doctest.rst:859
+#: ../Doc/library/doctest.rst:886
 msgid ""
 "If *module_relative* is ``False``, then *filename* specifies an OS-specific "
 "path.  The path may be absolute or relative; relative paths are resolved "
@@ -1207,7 +1568,7 @@ msgstr ""
 "especifica del SO. La ruta puede ser absoluta o relativa; las rutas "
 "relativas son resueltas con respecto al directorio de trabajo actual."
 
-#: ../Doc/library/doctest.rst:863
+#: ../Doc/library/doctest.rst:890
 msgid ""
 "Optional argument *name* gives the name of the test; by default, or if "
 "``None``, ``os.path.basename(filename)`` is used."
@@ -1215,7 +1576,7 @@ msgstr ""
 "El argumento opcional *name* proporciona el nombre de la prueba; por "
 "defecto, o si es ``None``, se usa ``os.path.basename(filename)``."
 
-#: ../Doc/library/doctest.rst:866
+#: ../Doc/library/doctest.rst:893
 msgid ""
 "Optional argument *package* is a Python package or the name of a Python "
 "package whose directory should be used as the base directory for a module-"
@@ -1230,7 +1591,7 @@ msgstr ""
 "directorio base para los nombres de archivos relativos al módulo. Es un "
 "error especificar *package* si *module_relative* es ``False``."
 
-#: ../Doc/library/doctest.rst:872
+#: ../Doc/library/doctest.rst:899
 msgid ""
 "Optional argument *globs* gives a dict to be used as the globals when "
 "executing examples.  A new shallow copy of this dict is created for the "
@@ -1243,7 +1604,7 @@ msgstr ""
 "empiezan con una pizarra en blanco. Por defecto, o si es ``None``, se usa un "
 "nuevo diccionario vacío."
 
-#: ../Doc/library/doctest.rst:877
+#: ../Doc/library/doctest.rst:904
 msgid ""
 "Optional argument *extraglobs* gives a dict merged into the globals used to "
 "execute examples.  This works like :meth:`dict.update`:  if *globs* and "
@@ -1266,7 +1627,7 @@ msgstr ""
 "pasar un diccionario de *extraglobs* mapeando el nombre genérico a la clase "
 "heredada para ser probada."
 
-#: ../Doc/library/doctest.rst:886
+#: ../Doc/library/doctest.rst:913
 msgid ""
 "Optional argument *verbose* prints lots of stuff if true, and prints only "
 "failures if false; by default, or if ``None``, it's true if and only if ``'-"
@@ -1276,7 +1637,7 @@ msgstr ""
 "e imprime sólo las fallas si es falso; por defecto, o si es ``None``, es "
 "verdadero si y sólo si ``'-v'`` está en ``sys.argv``."
 
-#: ../Doc/library/doctest.rst:890
+#: ../Doc/library/doctest.rst:917
 msgid ""
 "Optional argument *report* prints a summary at the end when true, else "
 "prints nothing at the end.  In verbose mode, the summary is detailed, else "
@@ -1287,7 +1648,7 @@ msgstr ""
 "resumen es detallado; si no, el resumen es muy corto (de hecho, vacío si "
 "todos las pruebas pasan)."
 
-#: ../Doc/library/doctest.rst:894
+#: ../Doc/library/doctest.rst:921
 msgid ""
 "Optional argument *optionflags* (default value 0) takes the :ref:`bitwise OR "
 "<bitwise>` of option flags. See section :ref:`doctest-options`."
@@ -1296,7 +1657,7 @@ msgstr ""
 "de opciones :ref:`juntadas lógicamente por un OR <bitwise>`. Véase la "
 "sección :ref:`doctest-options`."
 
-#: ../Doc/library/doctest.rst:898
+#: ../Doc/library/doctest.rst:925
 msgid ""
 "Optional argument *raise_on_error* defaults to false.  If true, an exception "
 "is raised upon the first failure or unexpected exception in an example.  "
@@ -1309,7 +1670,7 @@ msgstr ""
 "análisis a posteriori. El comportamiento por defecto es continuar corriendo "
 "los ejemplos."
 
-#: ../Doc/library/doctest.rst:903 ../Doc/library/doctest.rst:1043
+#: ../Doc/library/doctest.rst:930 ../Doc/library/doctest.rst:1072
 msgid ""
 "Optional argument *parser* specifies a :class:`DocTestParser` (or subclass) "
 "that should be used to extract tests from the files.  It defaults to a "
@@ -1320,7 +1681,7 @@ msgstr ""
 "valor por defecto es un analizador sintáctico normal (i.e., "
 "``DocTestParser()``)."
 
-#: ../Doc/library/doctest.rst:907 ../Doc/library/doctest.rst:1047
+#: ../Doc/library/doctest.rst:934 ../Doc/library/doctest.rst:1076
 msgid ""
 "Optional argument *encoding* specifies an encoding that should be used to "
 "convert the file to unicode."
@@ -1328,7 +1689,7 @@ msgstr ""
 "El argumento opcional *encoding* especifica una codificación que debe ser "
 "usada para convertir el archivo a *unicode*."
 
-#: ../Doc/library/doctest.rst:913
+#: ../Doc/library/doctest.rst:940
 msgid ""
 "All arguments are optional, and all except for *m* should be specified in "
 "keyword form."
@@ -1336,7 +1697,7 @@ msgstr ""
 "Todos los argumentos son opcionales, y todos excepto por *m* deben ser "
 "especificados en forma de palabras claves."
 
-#: ../Doc/library/doctest.rst:916
+#: ../Doc/library/doctest.rst:943
 msgid ""
 "Test examples in docstrings in functions and classes reachable from module "
 "*m* (or module :mod:`__main__` if *m* is not supplied or is ``None``), "
@@ -1346,12 +1707,13 @@ msgstr ""
 "desde el módulo *m* (o desde el módulo :mod:`__main__` si *m* no es "
 "proporcionado o es ``None``), empezando con ``m.__doc__``."
 
-#: ../Doc/library/doctest.rst:920
+#: ../Doc/library/doctest.rst:947
+#, fuzzy
 msgid ""
-"Also test examples reachable from dict ``m.__test__``, if it exists and is "
-"not ``None``.  ``m.__test__`` maps names (strings) to functions, classes and "
-"strings; function and class docstrings are searched for examples; strings "
-"are searched directly, as if they were docstrings."
+"Also test examples reachable from dict ``m.__test__``, if it exists. ``m."
+"__test__`` maps names (strings) to functions, classes and strings; function "
+"and class docstrings are searched for examples; strings are searched "
+"directly, as if they were docstrings."
 msgstr ""
 "También prueba los ejemplos alcanzables desde el diccionario de ``m."
 "__test__``, si existe y no es ``None``. ``m.__test__`` mapea los nombres "
@@ -1359,18 +1721,18 @@ msgstr ""
 "buscan los ejemplos de las funciones y clases; se buscan las cadenas de "
 "caracteres directamente como si fueran docstrings."
 
-#: ../Doc/library/doctest.rst:925
+#: ../Doc/library/doctest.rst:952
 msgid ""
 "Only docstrings attached to objects belonging to module *m* are searched."
 msgstr ""
 "Sólo se buscan los docstrings anexados a los objetos pertenecientes al "
 "módulo *m*."
 
-#: ../Doc/library/doctest.rst:927
+#: ../Doc/library/doctest.rst:954
 msgid "Return ``(failure_count, test_count)``."
 msgstr "Retorna ``(failure_count, test_count)``."
 
-#: ../Doc/library/doctest.rst:929
+#: ../Doc/library/doctest.rst:956
 msgid ""
 "Optional argument *name* gives the name of the module; by default, or if "
 "``None``, ``m.__name__`` is used."
@@ -1378,14 +1740,16 @@ msgstr ""
 "El argumento opcional *name* proporciona el nombre del módulo; por defecto, "
 "o si es ``None``, se usa ``m.__name__``."
 
-#: ../Doc/library/doctest.rst:932
+#: ../Doc/library/doctest.rst:959
+#, fuzzy
 msgid ""
 "Optional argument *exclude_empty* defaults to false.  If true, objects for "
 "which no doctests are found are excluded from consideration. The default is "
 "a backward compatibility hack, so that code still using :meth:`doctest."
-"master.summarize` in conjunction with :func:`testmod` continues to get "
-"output for objects with no tests. The *exclude_empty* argument to the newer :"
-"class:`DocTestFinder` constructor defaults to true."
+"master.summarize <DocTestRunner.summarize>` in conjunction with :func:"
+"`testmod` continues to get output for objects with no tests. The "
+"*exclude_empty* argument to the newer :class:`DocTestFinder` constructor "
+"defaults to true."
 msgstr ""
 "El argumento opcional *exclude_empty* es por defecto *false*. Si es "
 "verdadero, se excluyen los objetos por los cuales no se encuentren doctest. "
@@ -1395,7 +1759,7 @@ msgstr ""
 "argumento *exclude_empty* para el más nuevo constructor :class:"
 "`DocTestFinder` es por defecto verdadero."
 
-#: ../Doc/library/doctest.rst:939
+#: ../Doc/library/doctest.rst:967
 msgid ""
 "Optional arguments *extraglobs*, *verbose*, *report*, *optionflags*, "
 "*raise_on_error*, and *globs* are the same as for function :func:`testfile` "
@@ -1405,7 +1769,7 @@ msgstr ""
 "*raise_on_error*, y *globs* son los mismos en cuanto a la función :func:"
 "`testfile` arriba, excepto que *globs* es por defecto ``m.__dict__``."
 
-#: ../Doc/library/doctest.rst:946
+#: ../Doc/library/doctest.rst:974
 msgid ""
 "Test examples associated with object *f*; for example, *f* may be a string, "
 "a module, a function, or a class object."
@@ -1413,7 +1777,7 @@ msgstr ""
 "Prueba los ejemplos asociados con el objeto *f*; por ejemplo, *f* puede ser "
 "una cadena de caracteres, un módulo, una función, o un objeto clase."
 
-#: ../Doc/library/doctest.rst:949
+#: ../Doc/library/doctest.rst:977
 msgid ""
 "A shallow copy of dictionary argument *globs* is used for the execution "
 "context."
@@ -1421,15 +1785,15 @@ msgstr ""
 "Una copia superficial del diccionario del argumento *globs* se usa para la "
 "ejecución del contexto."
 
-#: ../Doc/library/doctest.rst:951
+#: ../Doc/library/doctest.rst:979
 msgid ""
-"Optional argument *name* is used in failure messages, and defaults to ``"
-"\"NoName\"``."
+"Optional argument *name* is used in failure messages, and defaults to "
+"``\"NoName\"``."
 msgstr ""
 "Se usa el argumento opcional *name* en mensajes de fallos, y por defecto es "
 "``\"NoName\"``."
 
-#: ../Doc/library/doctest.rst:954
+#: ../Doc/library/doctest.rst:982
 msgid ""
 "If optional argument *verbose* is true, output is generated even if there "
 "are no failures.  By default, output is generated only in case of an example "
@@ -1439,7 +1803,7 @@ msgstr ""
 "si no hay fallas. Por defecto, la salida se genera sólo en caso de la falla "
 "de un ejemplo."
 
-#: ../Doc/library/doctest.rst:957
+#: ../Doc/library/doctest.rst:985
 msgid ""
 "Optional argument *compileflags* gives the set of flags that should be used "
 "by the Python compiler when running the examples.  By default, or if "
@@ -1451,24 +1815,26 @@ msgstr ""
 "defecto, o si es ``None``, las banderas se deducen correspondiendo al "
 "conjunto de características futuras encontradas en *globs*."
 
-#: ../Doc/library/doctest.rst:961
+#: ../Doc/library/doctest.rst:989
 msgid ""
 "Optional argument *optionflags* works as for function :func:`testfile` above."
 msgstr ""
 "El argumento opcional *optionflags* trabaja con respecto a la función :func:"
 "`testfile` de arriba."
 
-#: ../Doc/library/doctest.rst:967
+#: ../Doc/library/doctest.rst:995
 msgid "Unittest API"
 msgstr "API de unittest"
 
-#: ../Doc/library/doctest.rst:969
+#: ../Doc/library/doctest.rst:997
+#, fuzzy
 msgid ""
 "As your collection of doctest'ed modules grows, you'll want a way to run all "
 "their doctests systematically.  :mod:`doctest` provides two functions that "
 "can be used to create :mod:`unittest` test suites from modules and text "
 "files containing doctests.  To integrate with :mod:`unittest` test "
-"discovery, include a :func:`load_tests` function in your test module::"
+"discovery, include a :ref:`load_tests <load_tests-protocol>` function in "
+"your test module::"
 msgstr ""
 "Mientras crece tu colección de módulos probados con doctest, vas a querer "
 "una forma de ejecutar todos sus doctests sistemáticamente. :mod:`doctest` "
@@ -1478,7 +1844,18 @@ msgstr ""
 "`unittest` , incluye una función  :func:`load_tests` en tu módulo de "
 "pruebas::"
 
-#: ../Doc/library/doctest.rst:983
+#: ../Doc/library/doctest.rst:1003
+msgid ""
+"import unittest\n"
+"import doctest\n"
+"import my_module_with_doctests\n"
+"\n"
+"def load_tests(loader, tests, ignore):\n"
+"    tests.addTests(doctest.DocTestSuite(my_module_with_doctests))\n"
+"    return tests"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:1011
 msgid ""
 "There are two main functions for creating :class:`unittest.TestSuite` "
 "instances from text files and modules with doctests:"
@@ -1486,7 +1863,7 @@ msgstr ""
 "Hay dos funciones principales para crear instancias de :class:`unittest."
 "TestSuite` desde los archivos de texto y módulos con doctests:"
 
-#: ../Doc/library/doctest.rst:989
+#: ../Doc/library/doctest.rst:1017
 msgid ""
 "Convert doctest tests from one or more text files to a :class:`unittest."
 "TestSuite`."
@@ -1494,13 +1871,16 @@ msgstr ""
 "Convierte las pruebas de doctest de uno o más archivos de texto a una :class:"
 "`unittest.TestSuite`."
 
-#: ../Doc/library/doctest.rst:992
+#: ../Doc/library/doctest.rst:1020
+#, fuzzy
 msgid ""
 "The returned :class:`unittest.TestSuite` is to be run by the unittest "
 "framework and runs the interactive examples in each file.  If an example in "
 "any file fails, then the synthesized unit test fails, and a :exc:"
 "`failureException` exception is raised showing the name of the file "
-"containing the test and a (sometimes approximate) line number."
+"containing the test and a (sometimes approximate) line number.  If all the "
+"examples in a file are skipped, then the synthesized unit test is also "
+"marked as skipped."
 msgstr ""
 "El :class:`unittest.TestSuite` que se retorne será ejecutado por el "
 "framework de unittest y ejecuta los ejemplos interactivos en cada archivo. "
@@ -1509,17 +1889,17 @@ msgstr ""
 "mostrando el nombre del archivo conteniendo la prueba y un número de línea "
 "(algunas veces aproximado)."
 
-#: ../Doc/library/doctest.rst:998
+#: ../Doc/library/doctest.rst:1027
 msgid "Pass one or more paths (as strings) to text files to be examined."
 msgstr ""
 "Pasa una o más rutas (como cadenas de caracteres) a archivos de texto para "
 "ser examinados."
 
-#: ../Doc/library/doctest.rst:1000
+#: ../Doc/library/doctest.rst:1029
 msgid "Options may be provided as keyword arguments:"
 msgstr "Se pueden proporcionar las opciones como argumentos por palabra clave:"
 
-#: ../Doc/library/doctest.rst:1002
+#: ../Doc/library/doctest.rst:1031
 msgid ""
 "Optional argument *module_relative* specifies how the filenames in *paths* "
 "should be interpreted:"
@@ -1527,7 +1907,7 @@ msgstr ""
 "El argumento opcional *module_relative* especifica cómo los nombres de "
 "archivos en *paths* se deben interpretar:"
 
-#: ../Doc/library/doctest.rst:1005
+#: ../Doc/library/doctest.rst:1034
 msgid ""
 "If *module_relative* is ``True`` (the default), then each filename in "
 "*paths* specifies an OS-independent module-relative path.  By default, this "
@@ -1546,7 +1926,7 @@ msgstr ""
 "de rutas, y puede no ser una ruta absoluta (i.e., puede no empezar con ``/"
 "``)."
 
-#: ../Doc/library/doctest.rst:1013
+#: ../Doc/library/doctest.rst:1042
 msgid ""
 "If *module_relative* is ``False``, then each filename in *paths* specifies "
 "an OS-specific path.  The path may be absolute or relative; relative paths "
@@ -1557,7 +1937,7 @@ msgstr ""
 "relativa; las rutas relativas son resueltas con respecto a directorio de "
 "trabajo actual."
 
-#: ../Doc/library/doctest.rst:1017
+#: ../Doc/library/doctest.rst:1046
 msgid ""
 "Optional argument *package* is a Python package or the name of a Python "
 "package whose directory should be used as the base directory for module-"
@@ -1574,7 +1954,7 @@ msgstr ""
 "relativos al módulo. Es un error especificar *package* si *module_relative* "
 "es ``False``."
 
-#: ../Doc/library/doctest.rst:1024
+#: ../Doc/library/doctest.rst:1053
 msgid ""
 "Optional argument *setUp* specifies a set-up function for the test suite. "
 "This is called before running the tests in each file.  The *setUp* function "
@@ -1587,7 +1967,7 @@ msgstr ""
 "función *setUp* puede acceder a las variables globales de prueba como el "
 "atributo *globs* de la prueba pasada."
 
-#: ../Doc/library/doctest.rst:1029
+#: ../Doc/library/doctest.rst:1058
 msgid ""
 "Optional argument *tearDown* specifies a tear-down function for the test "
 "suite.  This is called after running the tests in each file.  The *tearDown* "
@@ -1600,7 +1980,7 @@ msgstr ""
 "función *setUp* de configuración puede acceder a los globales de la prueba "
 "como el atributo *globs* de la prueba pasada."
 
-#: ../Doc/library/doctest.rst:1034 ../Doc/library/doctest.rst:1068
+#: ../Doc/library/doctest.rst:1063 ../Doc/library/doctest.rst:1098
 msgid ""
 "Optional argument *globs* is a dictionary containing the initial global "
 "variables for the tests.  A new copy of this dictionary is created for each "
@@ -1611,7 +1991,7 @@ msgstr ""
 "diccionario para cada prueba. Por defecto, *globs* es un nuevo diccionario "
 "vacío."
 
-#: ../Doc/library/doctest.rst:1038
+#: ../Doc/library/doctest.rst:1067
 msgid ""
 "Optional argument *optionflags* specifies the default doctest options for "
 "the tests, created by or-ing together individual option flags.  See section :"
@@ -1624,7 +2004,7 @@ msgstr ""
 "función :func:`set_unittest_reportflags` abajo para una mejor manera de "
 "definir las opciones de informe."
 
-#: ../Doc/library/doctest.rst:1050
+#: ../Doc/library/doctest.rst:1079
 msgid ""
 "The global ``__file__`` is added to the globals provided to doctests loaded "
 "from a text file using :func:`DocFileSuite`."
@@ -1632,19 +2012,21 @@ msgstr ""
 "Se añade el global ``__file__`` a los globales proporcionados a los doctests "
 "cargados desde un archivo de texto usando :func:`DocFileSuite`."
 
-#: ../Doc/library/doctest.rst:1056
+#: ../Doc/library/doctest.rst:1085
 msgid "Convert doctest tests for a module to a :class:`unittest.TestSuite`."
 msgstr ""
 "Convierte las pruebas de doctest para un módulo a un  :class:`unittest."
 "TestSuite`."
 
-#: ../Doc/library/doctest.rst:1058
+#: ../Doc/library/doctest.rst:1087
+#, fuzzy
 msgid ""
 "The returned :class:`unittest.TestSuite` is to be run by the unittest "
 "framework and runs each doctest in the module.  If any of the doctests fail, "
 "then the synthesized unit test fails, and a :exc:`failureException` "
 "exception is raised showing the name of the file containing the test and a "
-"(sometimes approximate) line number."
+"(sometimes approximate) line number.  If all the examples in a docstring are "
+"skipped, then the synthesized unit test is also marked as skipped."
 msgstr ""
 "El :class:`unittest.TestSuite` que se retorne será ejecutado por el "
 "framework de unittest y corre cada doctest en el módulo. Si cualquiera de "
@@ -1652,7 +2034,7 @@ msgstr ""
 "una excepción :exc:`failureException` mostrando el nombre del archivo que "
 "contiene la prueba y un número de línea (a veces aproximado)."
 
-#: ../Doc/library/doctest.rst:1064
+#: ../Doc/library/doctest.rst:1094
 msgid ""
 "Optional argument *module* provides the module to be tested.  It can be a "
 "module object or a (possibly dotted) module name.  If not specified, the "
@@ -1662,7 +2044,7 @@ msgstr ""
 "objeto de módulo o un nombre (posiblemente punteado)  de módulo. Si no se "
 "especifica, se usa el módulo que invoca esta función."
 
-#: ../Doc/library/doctest.rst:1072
+#: ../Doc/library/doctest.rst:1102
 msgid ""
 "Optional argument *extraglobs* specifies an extra set of global variables, "
 "which is merged into *globs*.  By default, no extra globals are used."
@@ -1671,7 +2053,7 @@ msgstr ""
 "globales adicionales que son mezcladas con *globs*. Por defecto, no se usa "
 "ningún global adicional."
 
-#: ../Doc/library/doctest.rst:1075
+#: ../Doc/library/doctest.rst:1105
 msgid ""
 "Optional argument *test_finder* is the :class:`DocTestFinder` object (or a "
 "drop-in replacement) that is used to extract doctests from the module."
@@ -1679,7 +2061,7 @@ msgstr ""
 "El argumento opcional *test_finder* es el objeto :class:`DocTestFinder` (o "
 "un reemplazo directo) que se usa para extraer doctests desde el módulo."
 
-#: ../Doc/library/doctest.rst:1078
+#: ../Doc/library/doctest.rst:1108
 msgid ""
 "Optional arguments *setUp*, *tearDown*, and *optionflags* are the same as "
 "for function :func:`DocFileSuite` above."
@@ -1687,11 +2069,11 @@ msgstr ""
 "Los argumentos opcionales *setUp*, *tearDown*, y *optionflags* son lo mismo "
 "con respecto a la función :func:`DocFileSuite` arriba."
 
-#: ../Doc/library/doctest.rst:1081
+#: ../Doc/library/doctest.rst:1111
 msgid "This function uses the same search technique as :func:`testmod`."
 msgstr "Esta función usa la misma técnica de búsqueda que :func:`testmod`."
 
-#: ../Doc/library/doctest.rst:1083
+#: ../Doc/library/doctest.rst:1113
 msgid ""
 ":func:`DocTestSuite` returns an empty :class:`unittest.TestSuite` if "
 "*module* contains no docstrings instead of raising :exc:`ValueError`."
@@ -1699,11 +2081,20 @@ msgstr ""
 ":func:`DocTestSuite` retorna un :class:`unittest.TestSuite` vacío si "
 "*module* no contiene ningún docstring en vez de lanzar  un :exc:`ValueError`."
 
-#: ../Doc/library/doctest.rst:1088
+#: ../Doc/library/doctest.rst:1119
+msgid ""
+"When doctests which have been converted to unit tests by :func:"
+"`DocFileSuite` or :func:`DocTestSuite` fail, this exception is raised "
+"showing the name of the file containing the test and a (sometimes "
+"approximate) line number."
+msgstr ""
+
+#: ../Doc/library/doctest.rst:1123
+#, fuzzy
 msgid ""
 "Under the covers, :func:`DocTestSuite` creates a :class:`unittest.TestSuite` "
-"out of :class:`doctest.DocTestCase` instances, and :class:`DocTestCase` is a "
-"subclass of :class:`unittest.TestCase`. :class:`DocTestCase` isn't "
+"out of :class:`!doctest.DocTestCase` instances, and :class:`!DocTestCase` is "
+"a subclass of :class:`unittest.TestCase`. :class:`!DocTestCase` isn't "
 "documented here (it's an internal detail), but studying its code can answer "
 "questions about the exact details of :mod:`unittest` integration."
 msgstr ""
@@ -1714,20 +2105,22 @@ msgstr ""
 "responder preguntas sobre los detalles exactos de la integración de :mod:"
 "`unittest`."
 
-#: ../Doc/library/doctest.rst:1094
+#: ../Doc/library/doctest.rst:1129
+#, fuzzy
 msgid ""
 "Similarly, :func:`DocFileSuite` creates a :class:`unittest.TestSuite` out "
-"of :class:`doctest.DocFileCase` instances, and :class:`DocFileCase` is a "
-"subclass of :class:`DocTestCase`."
+"of :class:`!doctest.DocFileCase` instances, and :class:`!DocFileCase` is a "
+"subclass of :class:`!DocTestCase`."
 msgstr ""
 "De manera similar, :func:`DocFileSuite` crea un  :class:`unittest.TestSuite` "
 "de las instancias de :class:`doctest.DocFileCase`, y :class:`DocFileCase` es "
 "una subclase de  :class:`DocTestCase`."
 
-#: ../Doc/library/doctest.rst:1098
+#: ../Doc/library/doctest.rst:1133
+#, fuzzy
 msgid ""
 "So both ways of creating a :class:`unittest.TestSuite` run instances of :"
-"class:`DocTestCase`.  This is important for a subtle reason: when you run :"
+"class:`!DocTestCase`.  This is important for a subtle reason: when you run :"
 "mod:`doctest` functions yourself, you can control the :mod:`doctest` options "
 "in use directly, by passing option flags to :mod:`doctest` functions.  "
 "However, if you're writing a :mod:`unittest` framework, :mod:`unittest` "
@@ -1748,7 +2141,7 @@ msgstr ""
 "comandos), pero no hay forma de pasar opciones a través de :mod:`unittest` "
 "al probador de ejecución (*test runner*) de :mod:`doctest`."
 
-#: ../Doc/library/doctest.rst:1108
+#: ../Doc/library/doctest.rst:1143
 msgid ""
 "For this reason, :mod:`doctest` also supports a notion of :mod:`doctest` "
 "reporting flags specific to :mod:`unittest` support, via this function:"
@@ -1757,11 +2150,11 @@ msgstr ""
 "informe de :mod:`doctest` específicas para la compatibilidad con :mod:"
 "`unittest`, a través de esta función:"
 
-#: ../Doc/library/doctest.rst:1114
+#: ../Doc/library/doctest.rst:1149
 msgid "Set the :mod:`doctest` reporting flags to use."
 msgstr "Establece las banderas de informe de :mod:`doctest` a usar."
 
-#: ../Doc/library/doctest.rst:1116
+#: ../Doc/library/doctest.rst:1151
 msgid ""
 "Argument *flags* takes the :ref:`bitwise OR <bitwise>` of option flags.  See "
 "section :ref:`doctest-options`.  Only \"reporting flags\" can be used."
@@ -1770,18 +2163,19 @@ msgstr ""
 "de las banderas de opciones. Véase la sección :ref:`doctest-options`. Sólo "
 "se pueden usar las \"banderas de informe\"."
 
-#: ../Doc/library/doctest.rst:1119
+#: ../Doc/library/doctest.rst:1154
+#, fuzzy
 msgid ""
 "This is a module-global setting, and affects all future doctests run by "
-"module :mod:`unittest`:  the :meth:`runTest` method of :class:`DocTestCase` "
-"looks at the option flags specified for the test case when the :class:"
-"`DocTestCase` instance was constructed.  If no reporting flags were "
-"specified (which is the typical and expected case), :mod:`doctest`'s :mod:"
+"module :mod:`unittest`:  the :meth:`!runTest` method of :class:`!"
+"DocTestCase` looks at the option flags specified for the test case when the :"
+"class:`!DocTestCase` instance was constructed.  If no reporting flags were "
+"specified (which is the typical and expected case), :mod:`!doctest`'s :mod:"
 "`unittest` reporting flags are :ref:`bitwise ORed <bitwise>` into the option "
 "flags, and the option flags so augmented are passed to the :class:"
 "`DocTestRunner` instance created to run the doctest.  If any reporting flags "
-"were specified when the :class:`DocTestCase` instance was constructed, :mod:"
-"`doctest`'s :mod:`unittest` reporting flags are ignored."
+"were specified when the :class:`!DocTestCase` instance was constructed, :mod:"
+"`!doctest`'s :mod:`unittest` reporting flags are ignored."
 msgstr ""
 "Esta es una configuración global del módulo, y afecta a todos los doctests "
 "futuros a ejecutar por :mod:`unittest`: el método :meth:`runTest` de :class:"
@@ -1796,7 +2190,7 @@ msgstr ""
 "ignoran las banderas de informe -pertenecientes a :mod:`doctest`- de :mod:"
 "`unittest`."
 
-#: ../Doc/library/doctest.rst:1130
+#: ../Doc/library/doctest.rst:1165
 msgid ""
 "The value of the :mod:`unittest` reporting flags in effect before the "
 "function was called is returned by the function."
@@ -1804,11 +2198,11 @@ msgstr ""
 "La función retorna el valor de las banderas de informe de :mod:`unittest` en "
 "efecto antes de que la función fuera invocada."
 
-#: ../Doc/library/doctest.rst:1137
+#: ../Doc/library/doctest.rst:1172
 msgid "Advanced API"
 msgstr "API avanzada"
 
-#: ../Doc/library/doctest.rst:1139
+#: ../Doc/library/doctest.rst:1174
 msgid ""
 "The basic API is a simple wrapper that's intended to make doctest easy to "
 "use. It is fairly flexible, and should meet most users' needs; however, if "
@@ -1821,7 +2215,7 @@ msgstr ""
 "o deseas extender las capacidades de doctest, entonces debes usar la API "
 "avanzada."
 
-#: ../Doc/library/doctest.rst:1144
+#: ../Doc/library/doctest.rst:1179
 msgid ""
 "The advanced API revolves around two container classes, which are used to "
 "store the interactive examples extracted from doctest cases:"
@@ -1829,7 +2223,7 @@ msgstr ""
 "La API avanzada gira en torno a dos clases contenedoras, que se usan para "
 "guardar los ejemplos interactivos extraídos de los casos doctest:"
 
-#: ../Doc/library/doctest.rst:1147
+#: ../Doc/library/doctest.rst:1182
 msgid ""
 ":class:`Example`: A single Python :term:`statement`, paired with its "
 "expected output."
@@ -1837,7 +2231,7 @@ msgstr ""
 ":class:`Example`: Un :term:`statement` de Python, emparejado con su salida "
 "esperada."
 
-#: ../Doc/library/doctest.rst:1150
+#: ../Doc/library/doctest.rst:1185
 msgid ""
 ":class:`DocTest`: A collection of :class:`Example`\\ s, typically extracted "
 "from a single docstring or text file."
@@ -1845,7 +2239,7 @@ msgstr ""
 ":class:`DocTest`: Una colección de clases :class:`Example`, típicamente "
 "extraídos de un sólo docstring o archivo de texto."
 
-#: ../Doc/library/doctest.rst:1153
+#: ../Doc/library/doctest.rst:1188
 msgid ""
 "Additional processing classes are defined to find, parse, and run, and check "
 "doctest examples:"
@@ -1853,7 +2247,7 @@ msgstr ""
 "Se definen clases de procesamiento adicionales para encontrar, analizar "
 "sintácticamente, y ejecutar, y comprobar ejemplos de doctest:"
 
-#: ../Doc/library/doctest.rst:1156
+#: ../Doc/library/doctest.rst:1191
 msgid ""
 ":class:`DocTestFinder`: Finds all docstrings in a given module, and uses a :"
 "class:`DocTestParser` to create a :class:`DocTest` from every docstring that "
@@ -1863,7 +2257,7 @@ msgstr ""
 "usa un :class:`DocTestParser` para crear un :class:`DocTest` de cada "
 "docstring que contiene ejemplos interactivos."
 
-#: ../Doc/library/doctest.rst:1160
+#: ../Doc/library/doctest.rst:1195
 msgid ""
 ":class:`DocTestParser`: Creates a :class:`DocTest` object from a string "
 "(such as an object's docstring)."
@@ -1871,7 +2265,7 @@ msgstr ""
 ":class:`DocTestParser`: Crea un objeto :class:`DocTest` de una cadena de "
 "caracteres (tal como un docstring de un objeto)."
 
-#: ../Doc/library/doctest.rst:1163
+#: ../Doc/library/doctest.rst:1198
 msgid ""
 ":class:`DocTestRunner`: Executes the examples in a :class:`DocTest`, and "
 "uses an :class:`OutputChecker` to verify their output."
@@ -1879,7 +2273,7 @@ msgstr ""
 ":class:`DocTestRunner`: Ejecuta los ejemplos en un :class:`DocTest`, y usa "
 "un :class:`OutputChecker` para verificar su salida."
 
-#: ../Doc/library/doctest.rst:1166
+#: ../Doc/library/doctest.rst:1201
 msgid ""
 ":class:`OutputChecker`: Compares the actual output from a doctest example "
 "with the expected output, and decides whether they match."
@@ -1887,7 +2281,7 @@ msgstr ""
 ":class:`OutputChecker`: Compara la salida real de un ejemplo de doctest con "
 "la salida esperada, y decide si coinciden."
 
-#: ../Doc/library/doctest.rst:1169
+#: ../Doc/library/doctest.rst:1204
 msgid ""
 "The relationships among these processing classes are summarized in the "
 "following diagram::"
@@ -1895,11 +2289,23 @@ msgstr ""
 "Las relaciones entre estas clases de procesamiento se resumen en el "
 "siguiente diagrama::"
 
-#: ../Doc/library/doctest.rst:1185
+#: ../Doc/library/doctest.rst:1207
+msgid ""
+"                            list of:\n"
+"+------+                   +---------+\n"
+"|module| --DocTestFinder-> | DocTest | --DocTestRunner-> results\n"
+"+------+    |        ^     +---------+     |       ^    (printed)\n"
+"            |        |     | Example |     |       |\n"
+"            v        |     |   ...   |     v       |\n"
+"           DocTestParser   | Example |   OutputChecker\n"
+"                           +---------+"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:1220
 msgid "DocTest Objects"
 msgstr "Objetos DocTest"
 
-#: ../Doc/library/doctest.rst:1190
+#: ../Doc/library/doctest.rst:1225
 msgid ""
 "A collection of doctest examples that should be run in a single namespace.  "
 "The constructor arguments are used to initialize the attributes of the same "
@@ -1909,7 +2315,7 @@ msgstr ""
 "de espacios. Se usan los argumentos del constructor para inicializar los "
 "atributos de los mismos nombres."
 
-#: ../Doc/library/doctest.rst:1194
+#: ../Doc/library/doctest.rst:1229
 msgid ""
 ":class:`DocTest` defines the following attributes.  They are initialized by "
 "the constructor, and should not be modified directly."
@@ -1917,7 +2323,7 @@ msgstr ""
 ":class:`DocTest` define los siguientes atributos. Son inicializados por el "
 "constructor, y no deben ser modificados directamente."
 
-#: ../Doc/library/doctest.rst:1200
+#: ../Doc/library/doctest.rst:1235
 msgid ""
 "A list of :class:`Example` objects encoding the individual interactive "
 "Python examples that should be run by this test."
@@ -1925,7 +2331,7 @@ msgstr ""
 "Una lista de objetos :class:`Example` codificando los ejemplos interactivos "
 "de Python individuales que esta prueba debe ejecutar."
 
-#: ../Doc/library/doctest.rst:1206
+#: ../Doc/library/doctest.rst:1241
 msgid ""
 "The namespace (aka globals) that the examples should be run in. This is a "
 "dictionary mapping names to values.  Any changes to the namespace made by "
@@ -1937,7 +2343,7 @@ msgstr ""
 "cambio al nombre de espacios hecho por los ejemplos (tal como juntar nuevas "
 "variables) se reflejará en :attr:`globs` después de que se ejecute la prueba."
 
-#: ../Doc/library/doctest.rst:1214
+#: ../Doc/library/doctest.rst:1249
 msgid ""
 "A string name identifying the :class:`DocTest`.  Typically, this is the name "
 "of the object or file that the test was extracted from."
@@ -1946,7 +2352,7 @@ msgstr ""
 "Normalmente, este es el nombre del objeto o archivo del que se extrajo la "
 "prueba."
 
-#: ../Doc/library/doctest.rst:1220
+#: ../Doc/library/doctest.rst:1255
 msgid ""
 "The name of the file that this :class:`DocTest` was extracted from; or "
 "``None`` if the filename is unknown, or if the :class:`DocTest` was not "
@@ -1956,7 +2362,7 @@ msgstr ""
 "si el nombre del archivo se desconoce, o si :class:`DocTest` no se extrajo "
 "de un archivo."
 
-#: ../Doc/library/doctest.rst:1227
+#: ../Doc/library/doctest.rst:1262
 msgid ""
 "The line number within :attr:`filename` where this :class:`DocTest` begins, "
 "or ``None`` if the line number is unavailable.  This line number is zero-"
@@ -1966,7 +2372,7 @@ msgstr ""
 "comienza, o ``None`` si el número de línea no está disponible. Este número "
 "de línea es comienza en 0 con respecto al comienzo del archivo."
 
-#: ../Doc/library/doctest.rst:1234
+#: ../Doc/library/doctest.rst:1269
 msgid ""
 "The string that the test was extracted from, or ``None`` if the string is "
 "unavailable, or if the test was not extracted from a string."
@@ -1975,12 +2381,13 @@ msgstr ""
 "cadena no está disponible, o si la prueba no se extrajo de una cadena de "
 "caracteres."
 
-# Estoy poniendo Example sin traducir porque hace referencia a la clase :class:`Example` que envuelve los ejemplos interactivos.
-#: ../Doc/library/doctest.rst:1241
+# Estoy poniendo Example sin traducir porque hace referencia a la clase
+# :class:`Example` que envuelve los ejemplos interactivos.
+#: ../Doc/library/doctest.rst:1276
 msgid "Example Objects"
 msgstr "Objetos *Example*"
 
-#: ../Doc/library/doctest.rst:1246
+#: ../Doc/library/doctest.rst:1281
 msgid ""
 "A single interactive example, consisting of a Python statement and its "
 "expected output.  The constructor arguments are used to initialize the "
@@ -1990,7 +2397,7 @@ msgstr ""
 "salida esperada. Los argumentos del constructor se usan para inicializar los "
 "atributos del mismo nombre."
 
-#: ../Doc/library/doctest.rst:1251
+#: ../Doc/library/doctest.rst:1286
 msgid ""
 ":class:`Example` defines the following attributes.  They are initialized by "
 "the constructor, and should not be modified directly."
@@ -1998,7 +2405,7 @@ msgstr ""
 "La clase :class:`Example` define los siguientes atributos. Son inicializados "
 "por el constructor, y no deben ser modificados directamente."
 
-#: ../Doc/library/doctest.rst:1257
+#: ../Doc/library/doctest.rst:1292
 msgid ""
 "A string containing the example's source code.  This source code consists of "
 "a single Python statement, and always ends with a newline; the constructor "
@@ -2008,7 +2415,7 @@ msgstr ""
 "código fuente consiste de una sola sentencia Python, y siempre termina en "
 "una nueva línea; el constructor añade una nueva línea cuando sea necesario."
 
-#: ../Doc/library/doctest.rst:1264
+#: ../Doc/library/doctest.rst:1299
 msgid ""
 "The expected output from running the example's source code (either from "
 "stdout, or a traceback in case of exception).  :attr:`want` ends with a "
@@ -2021,7 +2428,7 @@ msgstr ""
 "caso es una cadena vacía. El constructor añade una nueva línea cuando sea "
 "necesario."
 
-#: ../Doc/library/doctest.rst:1272
+#: ../Doc/library/doctest.rst:1307
 msgid ""
 "The exception message generated by the example, if the example is expected "
 "to generate an exception; or ``None`` if it is not expected to generate an "
@@ -2036,7 +2443,7 @@ msgstr ""
 "línea a menos que sea ``None``.  El constructor añade una nueva línea si se "
 "necesita."
 
-#: ../Doc/library/doctest.rst:1281
+#: ../Doc/library/doctest.rst:1316
 msgid ""
 "The line number within the string containing this example where the example "
 "begins.  This line number is zero-based with respect to the beginning of the "
@@ -2046,7 +2453,7 @@ msgstr ""
 "ejemplo donde el ejemplo comienza. Este número de línea comienza en 0 con "
 "respecto al comienzo de la cadena que lo contiene."
 
-#: ../Doc/library/doctest.rst:1288
+#: ../Doc/library/doctest.rst:1323
 msgid ""
 "The example's indentation in the containing string, i.e., the number of "
 "space characters that precede the example's first prompt."
@@ -2054,13 +2461,14 @@ msgstr ""
 "La sangría del ejemplo en la cadena que lo contiene; i.e., el número de "
 "caracteres de espacio que preceden la primera entrada del ejemplo."
 
-#: ../Doc/library/doctest.rst:1294
+#: ../Doc/library/doctest.rst:1329
+#, fuzzy
 msgid ""
 "A dictionary mapping from option flags to ``True`` or ``False``, which is "
 "used to override default options for this example.  Any option flags not "
 "contained in this dictionary are left at their default value (as specified "
-"by the :class:`DocTestRunner`'s :attr:`optionflags`). By default, no options "
-"are set."
+"by the :class:`DocTestRunner`'s :ref:`optionflags <doctest-options>`). By "
+"default, no options are set."
 msgstr ""
 "Un diccionario que mapea de las banderas de opciones a ``True`` o ``False``, "
 "que se usa para anular las opciones por defecto para este ejemplo. Cualquier "
@@ -2068,11 +2476,11 @@ msgstr ""
 "defecto (como se especifica por los :attr:`optionflags` de :class:"
 "`DocTestRunner`). Por defecto, no se establece ninguna opción."
 
-#: ../Doc/library/doctest.rst:1303
+#: ../Doc/library/doctest.rst:1339
 msgid "DocTestFinder objects"
 msgstr "Objetos *DocTestFinder*"
 
-#: ../Doc/library/doctest.rst:1308
+#: ../Doc/library/doctest.rst:1344
 msgid ""
 "A processing class used to extract the :class:`DocTest`\\ s that are "
 "relevant to a given object, from its docstring and the docstrings of its "
@@ -2085,7 +2493,7 @@ msgstr ""
 "módulos, clases, funciones, métodos, métodos estáticos, métodos de clase, y "
 "propiedades."
 
-#: ../Doc/library/doctest.rst:1313
+#: ../Doc/library/doctest.rst:1349
 msgid ""
 "The optional argument *verbose* can be used to display the objects searched "
 "by the finder.  It defaults to ``False`` (no output)."
@@ -2093,7 +2501,7 @@ msgstr ""
 "Se puede usar el argumento opcional *verbose* para mostrar los objetos "
 "buscados por *finder*. Su valor por defecto es ``False`` (ninguna salida)."
 
-#: ../Doc/library/doctest.rst:1316
+#: ../Doc/library/doctest.rst:1352
 msgid ""
 "The optional argument *parser* specifies the :class:`DocTestParser` object "
 "(or a drop-in replacement) that is used to extract doctests from docstrings."
@@ -2101,7 +2509,7 @@ msgstr ""
 "El argumento opcional *parser* especifica el objeto :class:`DocTestParser` "
 "(o un reemplazo directo) que se usa para extraer doctests desde docstrings."
 
-#: ../Doc/library/doctest.rst:1319
+#: ../Doc/library/doctest.rst:1355
 msgid ""
 "If the optional argument *recurse* is false, then :meth:`DocTestFinder.find` "
 "will only examine the given object, and not any contained objects."
@@ -2110,7 +2518,7 @@ msgstr ""
 "`DocTestFinder.find` sólo examinará el objeto dado, y no cualquier objeto "
 "contenido."
 
-#: ../Doc/library/doctest.rst:1322
+#: ../Doc/library/doctest.rst:1358
 msgid ""
 "If the optional argument *exclude_empty* is false, then :meth:`DocTestFinder."
 "find` will include tests for objects with empty docstrings."
@@ -2118,11 +2526,11 @@ msgstr ""
 "Si el argumento opcional *exclude_empty* es falso, entonces :meth:"
 "`DocTestFinder.find` incluirá pruebas para objetos con docstrings vacíos."
 
-#: ../Doc/library/doctest.rst:1326
+#: ../Doc/library/doctest.rst:1362
 msgid ":class:`DocTestFinder` defines the following method:"
 msgstr ":class:`DocTestFinder` define los siguientes métodos:"
 
-#: ../Doc/library/doctest.rst:1331
+#: ../Doc/library/doctest.rst:1367
 msgid ""
 "Return a list of the :class:`DocTest`\\ s that are defined by *obj*'s "
 "docstring, or by any of its contained objects' docstrings."
@@ -2130,7 +2538,7 @@ msgstr ""
 "Retorna una lista de los :class:`Doctest` que se definen por el docstring de "
 "*obj*, o por cualquiera de los docstring de sus objetos contenidos."
 
-#: ../Doc/library/doctest.rst:1334
+#: ../Doc/library/doctest.rst:1370
 msgid ""
 "The optional argument *name* specifies the object's name; this name will be "
 "used to construct names for the returned :class:`DocTest`\\ s.  If *name* is "
@@ -2140,7 +2548,7 @@ msgstr ""
 "será usado para construir los nombres de los :class:`DocTest` retornados. Si "
 "*name* no se especifica, entonces se usa ``obj.__name__``."
 
-#: ../Doc/library/doctest.rst:1338
+#: ../Doc/library/doctest.rst:1374
 msgid ""
 "The optional parameter *module* is the module that contains the given "
 "object. If the module is not specified or is ``None``, then the test finder "
@@ -2152,11 +2560,11 @@ msgstr ""
 "tratará de determinar automáticamente el módulo correcto. Se usa el módulo "
 "del objeto:"
 
-#: ../Doc/library/doctest.rst:1342
+#: ../Doc/library/doctest.rst:1378
 msgid "As a default namespace, if *globs* is not specified."
 msgstr "Como un espacio de nombres por defecto, si no se especifica *globs*."
 
-#: ../Doc/library/doctest.rst:1344
+#: ../Doc/library/doctest.rst:1380
 msgid ""
 "To prevent the DocTestFinder from extracting DocTests from objects that are "
 "imported from other modules.  (Contained objects with modules other than "
@@ -2166,16 +2574,16 @@ msgstr ""
 "importan desde otros módulos. (Se ignoran objetos contenidos con módulos "
 "aparte de *module*.)"
 
-#: ../Doc/library/doctest.rst:1348
+#: ../Doc/library/doctest.rst:1384
 msgid "To find the name of the file containing the object."
 msgstr "Para encontrar el nombre del archivo conteniendo el objeto."
 
-#: ../Doc/library/doctest.rst:1350
+#: ../Doc/library/doctest.rst:1386
 msgid "To help find the line number of the object within its file."
 msgstr ""
 "Para ayudar a encontrar el número de línea del objeto dentro de su archivo."
 
-#: ../Doc/library/doctest.rst:1352
+#: ../Doc/library/doctest.rst:1388
 msgid ""
 "If *module* is ``False``, no attempt to find the module will be made.  This "
 "is obscure, of use mostly in testing doctest itself: if *module* is "
@@ -2190,7 +2598,7 @@ msgstr ""
 "(inexistente), por lo que todos los objetos contenidos se buscarán "
 "(recursivamente) por doctests."
 
-#: ../Doc/library/doctest.rst:1358
+#: ../Doc/library/doctest.rst:1394
 msgid ""
 "The globals for each :class:`DocTest` is formed by combining *globs* and "
 "*extraglobs* (bindings in *extraglobs* override bindings in *globs*).  A new "
@@ -2206,11 +2614,11 @@ msgstr ""
 "es el *__dict__* del módulo, si se especifica, o es ``{}`` de lo contrario, "
 "si *extraglobs* no se especifica, entonces su valor por defecto es ``{}``."
 
-#: ../Doc/library/doctest.rst:1369
+#: ../Doc/library/doctest.rst:1405
 msgid "DocTestParser objects"
 msgstr "Objetos *DocTestParser*"
 
-#: ../Doc/library/doctest.rst:1374
+#: ../Doc/library/doctest.rst:1410
 msgid ""
 "A processing class used to extract interactive examples from a string, and "
 "use them to create a :class:`DocTest` object."
@@ -2218,11 +2626,11 @@ msgstr ""
 "Un clase de procesamiento usada para extraer ejemplos interactivos de una "
 "cadena de caracteres, y usarlos para crear un objeto :class:`DocTest`."
 
-#: ../Doc/library/doctest.rst:1378 ../Doc/library/doctest.rst:1446
+#: ../Doc/library/doctest.rst:1414
 msgid ":class:`DocTestParser` defines the following methods:"
 msgstr ":class:`DocTestParser` define los siguientes métodos:"
 
-#: ../Doc/library/doctest.rst:1383
+#: ../Doc/library/doctest.rst:1419
 msgid ""
 "Extract all doctest examples from the given string, and collect them into a :"
 "class:`DocTest` object."
@@ -2230,7 +2638,7 @@ msgstr ""
 "Extrae todos los ejemplos de *doctest* de una cadena dada, y los recolecta "
 "en un objeto :class:`DocTest`."
 
-#: ../Doc/library/doctest.rst:1386
+#: ../Doc/library/doctest.rst:1422
 msgid ""
 "*globs*, *name*, *filename*, and *lineno* are attributes for the new :class:"
 "`DocTest` object.  See the documentation for :class:`DocTest` for more "
@@ -2240,7 +2648,7 @@ msgstr ""
 "class:`DocTest`. Véase la documentación de :class:`DocTest` para más "
 "información."
 
-#: ../Doc/library/doctest.rst:1393
+#: ../Doc/library/doctest.rst:1429
 msgid ""
 "Extract all doctest examples from the given string, and return them as a "
 "list of :class:`Example` objects.  Line numbers are 0-based.  The optional "
@@ -2252,7 +2660,7 @@ msgstr ""
 "0. El argumento opcional *name* es una nombre identificando esta cadena, y "
 "sólo es usada para mensajes de errores."
 
-#: ../Doc/library/doctest.rst:1400
+#: ../Doc/library/doctest.rst:1436
 msgid ""
 "Divide the given string into examples and intervening text, and return them "
 "as a list of alternating :class:`Example`\\ s and strings. Line numbers for "
@@ -2265,11 +2673,28 @@ msgstr ""
 "argumento opcional *name* es un nombre identificando esta cadena, y sólo se "
 "usa en mensajes de error."
 
-#: ../Doc/library/doctest.rst:1409
+#: ../Doc/library/doctest.rst:1443
+#, fuzzy
+msgid "TestResults objects"
+msgstr "Objetos DocTest"
+
+#: ../Doc/library/doctest.rst:1450
+msgid "Number of failed tests."
+msgstr ""
+
+#: ../Doc/library/doctest.rst:1454
+msgid "Number of attempted tests."
+msgstr ""
+
+#: ../Doc/library/doctest.rst:1458
+msgid "Number of skipped tests."
+msgstr ""
+
+#: ../Doc/library/doctest.rst:1466
 msgid "DocTestRunner objects"
 msgstr "Objetos *DocTestRunner*"
 
-#: ../Doc/library/doctest.rst:1414
+#: ../Doc/library/doctest.rst:1471
 msgid ""
 "A processing class used to execute and verify the interactive examples in a :"
 "class:`DocTest`."
@@ -2277,7 +2702,7 @@ msgstr ""
 "Una clase de procesamiento usada para ejecutar y verificar los ejemplos "
 "interactivos en un :class:`DocTest`."
 
-#: ../Doc/library/doctest.rst:1417
+#: ../Doc/library/doctest.rst:1474
 msgid ""
 "The comparison between expected outputs and actual outputs is done by an :"
 "class:`OutputChecker`.  This comparison may be customized with a number of "
@@ -2293,14 +2718,15 @@ msgstr ""
 "comparación también puede ser personalizada al pasar una subclase de :class:"
 "`OutputChecker` al constructor."
 
-#: ../Doc/library/doctest.rst:1423
+#: ../Doc/library/doctest.rst:1480
+#, fuzzy
 msgid ""
 "The test runner's display output can be controlled in two ways. First, an "
-"output function can be passed to :meth:`TestRunner.run`; this function will "
-"be called with strings that should be displayed.  It defaults to ``sys."
-"stdout.write``.  If capturing the output is not sufficient, then the display "
-"output can be also customized by subclassing DocTestRunner, and overriding "
-"the methods :meth:`report_start`, :meth:`report_success`, :meth:"
+"output function can be passed to :meth:`run`; this function will be called "
+"with strings that should be displayed.  It defaults to ``sys.stdout."
+"write``.  If capturing the output is not sufficient, then the display output "
+"can be also customized by subclassing DocTestRunner, and overriding the "
+"methods :meth:`report_start`, :meth:`report_success`, :meth:"
 "`report_unexpected_exception`, and :meth:`report_failure`."
 msgstr ""
 "La salida de la pantalla del *test runner* se puede controlar de dos "
@@ -2312,7 +2738,7 @@ msgstr ""
 "`report_success`, :meth:`report_unexpected_exception`, y :meth:"
 "`report_failure`."
 
-#: ../Doc/library/doctest.rst:1431
+#: ../Doc/library/doctest.rst:1488
 msgid ""
 "The optional keyword argument *checker* specifies the :class:`OutputChecker` "
 "object (or drop-in replacement) that should be used to compare the expected "
@@ -2323,7 +2749,7 @@ msgstr ""
 "comparar las salidas esperadas con las salidas reales de los ejemplos de "
 "doctest."
 
-#: ../Doc/library/doctest.rst:1435
+#: ../Doc/library/doctest.rst:1492
 msgid ""
 "The optional keyword argument *verbose* controls the :class:"
 "`DocTestRunner`'s verbosity.  If *verbose* is ``True``, then information is "
@@ -2336,9 +2762,9 @@ msgstr ""
 "cada ejemplo se imprime , mientras se ejecuta. Si *verbose* es ``False``, "
 "entonces sólo las fallas se imprimen. Si *verbose* no se especifica, o es "
 "``None``, entonces la salida verbosa se usa si y sólo se usa el modificador "
-"de la línea de comandos``-v``."
+"de la línea de comandos ``-v``."
 
-#: ../Doc/library/doctest.rst:1441
+#: ../Doc/library/doctest.rst:1498
 msgid ""
 "The optional keyword argument *optionflags* can be used to control how the "
 "test runner compares expected output to actual output, and how it displays "
@@ -2349,7 +2775,20 @@ msgstr ""
 "real, y cómo muestra las fallas. Para más información, véase la sección :ref:"
 "`doctest-options`."
 
-#: ../Doc/library/doctest.rst:1451
+#: ../Doc/library/doctest.rst:1502
+msgid ""
+"The test runner accumulates statistics. The aggregated number of attempted, "
+"failed and skipped examples is also available via the :attr:`tries`, :attr:"
+"`failures` and :attr:`skips` attributes. The :meth:`run` and :meth:"
+"`summarize` methods return a :class:`TestResults` instance."
+msgstr ""
+
+#: ../Doc/library/doctest.rst:1507
+#, fuzzy
+msgid ":class:`DocTestRunner` defines the following methods:"
+msgstr ":class:`DocTestParser` define los siguientes métodos:"
+
+#: ../Doc/library/doctest.rst:1512
 msgid ""
 "Report that the test runner is about to process the given example. This "
 "method is provided to allow subclasses of :class:`DocTestRunner` to "
@@ -2359,7 +2798,7 @@ msgstr ""
 "método es proporcionado para permitir que clases heredadas de :class:"
 "`DocTestRunner` personalicen su salida; no debe ser invocado directamente."
 
-#: ../Doc/library/doctest.rst:1455
+#: ../Doc/library/doctest.rst:1516
 msgid ""
 "*example* is the example about to be processed.  *test* is the test "
 "*containing example*.  *out* is the output function that was passed to :meth:"
@@ -2369,7 +2808,7 @@ msgstr ""
 "contiene a *example*. *out* es la función de salida que se pasó a :meth:"
 "`DocTestRunner.run`."
 
-#: ../Doc/library/doctest.rst:1462
+#: ../Doc/library/doctest.rst:1523
 msgid ""
 "Report that the given example ran successfully.  This method is provided to "
 "allow subclasses of :class:`DocTestRunner` to customize their output; it "
@@ -2379,7 +2818,7 @@ msgstr ""
 "proporcionado para permitir que las clases heredadas de :class:"
 "`DocTestRunner` personalicen su salida; no debe ser invocado directamente."
 
-#: ../Doc/library/doctest.rst:1466 ../Doc/library/doctest.rst:1477
+#: ../Doc/library/doctest.rst:1527 ../Doc/library/doctest.rst:1538
 msgid ""
 "*example* is the example about to be processed.  *got* is the actual output "
 "from the example.  *test* is the test containing *example*.  *out* is the "
@@ -2389,7 +2828,7 @@ msgstr ""
 "del ejemplo. *test* es la prueba conteniendo *example*. *out* es la función "
 "de salida que se pasa a :meth:`DocTestRunner.run`."
 
-#: ../Doc/library/doctest.rst:1473
+#: ../Doc/library/doctest.rst:1534
 msgid ""
 "Report that the given example failed.  This method is provided to allow "
 "subclasses of :class:`DocTestRunner` to customize their output; it should "
@@ -2399,7 +2838,7 @@ msgstr ""
 "permitir que clases heredadas de :class:`DocTestRunner` personalicen su "
 "salida; no debe ser invocado directamente."
 
-#: ../Doc/library/doctest.rst:1484
+#: ../Doc/library/doctest.rst:1545
 msgid ""
 "Report that the given example raised an unexpected exception. This method is "
 "provided to allow subclasses of :class:`DocTestRunner` to customize their "
@@ -2409,7 +2848,7 @@ msgstr ""
 "proporcionado para permitir que las clases heredadas de :class:"
 "`DocTestRunner` personalicen su salida; no debe ser invocado directamente."
 
-#: ../Doc/library/doctest.rst:1488
+#: ../Doc/library/doctest.rst:1549
 msgid ""
 "*example* is the example about to be processed. *exc_info* is a tuple "
 "containing information about the unexpected exception (as returned by :func:"
@@ -2421,15 +2860,17 @@ msgstr ""
 "func:`sys.exc_info`). *test* es la prueba conteniendo *example*. *out* es la "
 "función de salida que debe ser pasada a :meth:`DocTestRunner.run`."
 
-#: ../Doc/library/doctest.rst:1496
+#: ../Doc/library/doctest.rst:1557
+#, fuzzy
 msgid ""
 "Run the examples in *test* (a :class:`DocTest` object), and display the "
-"results using the writer function *out*."
+"results using the writer function *out*. Return a :class:`TestResults` "
+"instance."
 msgstr ""
 "Ejecuta los ejemplos en *test* (un objeto :class:`DocTest`), y muestra los "
 "resultados usando función de escritura *out*."
 
-#: ../Doc/library/doctest.rst:1499
+#: ../Doc/library/doctest.rst:1561
 msgid ""
 "The examples are run in the namespace ``test.globs``.  If *clear_globs* is "
 "true (the default), then this namespace will be cleared after the test runs, "
@@ -2442,7 +2883,7 @@ msgstr ""
 "colección de basura. Si quisieras examinar el espacio de nombres después de "
 "que la prueba se complete, entonces use *clear_globs=False*."
 
-#: ../Doc/library/doctest.rst:1504
+#: ../Doc/library/doctest.rst:1566
 msgid ""
 "*compileflags* gives the set of flags that should be used by the Python "
 "compiler when running the examples.  If not specified, then it will default "
@@ -2453,27 +2894,28 @@ msgstr ""
 "entonces su valor por defecto será el conjunto de banderas de *future-"
 "import* que aplican a *globs*."
 
-#: ../Doc/library/doctest.rst:1508
+#: ../Doc/library/doctest.rst:1570
+#, fuzzy
 msgid ""
 "The output of each example is checked using the :class:`DocTestRunner`'s "
-"output checker, and the results are formatted by the :meth:`DocTestRunner."
+"output checker, and the results are formatted by the :meth:`!DocTestRunner."
 "report_\\*` methods."
 msgstr ""
 "La salida de cada ejemplo es revisada usando el *output checker* del :class:"
 "`DocTestRunner`, y los resultados se formatean por los métodos de :meth:"
 "`DocTestRunner.report_\\*`."
 
-#: ../Doc/library/doctest.rst:1515
+#: ../Doc/library/doctest.rst:1577
+#, fuzzy
 msgid ""
 "Print a summary of all the test cases that have been run by this "
-"DocTestRunner, and return a :term:`named tuple` ``TestResults(failed, "
-"attempted)``."
+"DocTestRunner, and return a :class:`TestResults` instance."
 msgstr ""
 "Imprime un resumen de todos los casos de prueba que han sido ejecutados por "
 "este *DocTestRunner*, y retorna un :term:`named tuple` ``TestResults(failed, "
 "attempted)``."
 
-#: ../Doc/library/doctest.rst:1518
+#: ../Doc/library/doctest.rst:1580
 msgid ""
 "The optional *verbose* argument controls how detailed the summary is.  If "
 "the verbosity is not specified, then the :class:`DocTestRunner`'s verbosity "
@@ -2483,11 +2925,28 @@ msgstr ""
 "no se especifica la verbosidad, entonces se usa la verbosidad de :class:"
 "`DocTestRunner`."
 
-#: ../Doc/library/doctest.rst:1525
+#: ../Doc/library/doctest.rst:1584
+#, fuzzy
+msgid ":class:`DocTestParser` has the following attributes:"
+msgstr ":exc:`DocTestFailure` define los siguientes atributos:"
+
+#: ../Doc/library/doctest.rst:1588
+msgid "Number of attempted examples."
+msgstr ""
+
+#: ../Doc/library/doctest.rst:1592
+msgid "Number of failed examples."
+msgstr ""
+
+#: ../Doc/library/doctest.rst:1596
+msgid "Number of skipped examples."
+msgstr ""
+
+#: ../Doc/library/doctest.rst:1604
 msgid "OutputChecker objects"
 msgstr "Objetos *OutputChecker*"
 
-#: ../Doc/library/doctest.rst:1530
+#: ../Doc/library/doctest.rst:1609
 msgid ""
 "A class used to check the whether the actual output from a doctest example "
 "matches the expected output.  :class:`OutputChecker` defines two methods: :"
@@ -2501,11 +2960,11 @@ msgstr ""
 "retorna ``True`` si coinciden; y :meth:`output_difference`, que retorna una "
 "cadena que describe las diferencias entre las dos salidas."
 
-#: ../Doc/library/doctest.rst:1537
+#: ../Doc/library/doctest.rst:1616
 msgid ":class:`OutputChecker` defines the following methods:"
 msgstr ":class:`OutputChecker` define los siguientes métodos:"
 
-#: ../Doc/library/doctest.rst:1541
+#: ../Doc/library/doctest.rst:1620
 msgid ""
 "Return ``True`` iff the actual output from an example (*got*) matches the "
 "expected output (*want*).  These strings are always considered to match if "
@@ -2520,7 +2979,7 @@ msgstr ""
 "Véase la sección :ref:`doctest-options` para más información sobre las "
 "banderas de opción."
 
-#: ../Doc/library/doctest.rst:1550
+#: ../Doc/library/doctest.rst:1629
 msgid ""
 "Return a string describing the differences between the expected output for a "
 "given example (*example*) and the actual output (*got*).  *optionflags* is "
@@ -2530,16 +2989,16 @@ msgstr ""
 "para un ejemplo dado (*example*) y la salida real (*got*). *optionflags* es "
 "el conjunto de banderas de opción usado para comparar *want* y *got*."
 
-#: ../Doc/library/doctest.rst:1558
+#: ../Doc/library/doctest.rst:1637
 msgid "Debugging"
 msgstr "Depuración"
 
-#: ../Doc/library/doctest.rst:1560
+#: ../Doc/library/doctest.rst:1639
 msgid "Doctest provides several mechanisms for debugging doctest examples:"
 msgstr ""
 "Doctest proporciona varios mecanismos para depurar los ejemplos de doctest:"
 
-#: ../Doc/library/doctest.rst:1562
+#: ../Doc/library/doctest.rst:1641
 msgid ""
 "Several functions convert doctests to executable Python programs, which can "
 "be run under the Python debugger, :mod:`pdb`."
@@ -2547,7 +3006,7 @@ msgstr ""
 "Varias funciones convierten los doctest en programas de Python ejecutables, "
 "que pueden ser ejecutadas bajo el depurador de Python, :mod:`pdb`."
 
-#: ../Doc/library/doctest.rst:1565
+#: ../Doc/library/doctest.rst:1644
 msgid ""
 "The :class:`DebugRunner` class is a subclass of :class:`DocTestRunner` that "
 "raises an exception for the first failing example, containing information "
@@ -2559,7 +3018,7 @@ msgstr ""
 "sobre ese ejemplo. Esta información se puede usar para realizar depuración a "
 "posteriori en el ejemplo."
 
-#: ../Doc/library/doctest.rst:1570
+#: ../Doc/library/doctest.rst:1649
 msgid ""
 "The :mod:`unittest` cases generated by :func:`DocTestSuite` support the :"
 "meth:`debug` method defined by :class:`unittest.TestCase`."
@@ -2567,7 +3026,7 @@ msgstr ""
 "Los casos de :mod:`unittest` generados por :func:`DocTestSuite` admiten el "
 "método :meth:`debug` definido por :class:`unittest.TestCase`."
 
-#: ../Doc/library/doctest.rst:1573
+#: ../Doc/library/doctest.rst:1652
 msgid ""
 "You can add a call to :func:`pdb.set_trace` in a doctest example, and you'll "
 "drop into the Python debugger when that line is executed.  Then you can "
@@ -2579,11 +3038,57 @@ msgstr ""
 "puedes inspeccionar los valores de las variables, y demás. Por ejemplo, "
 "supongamos que :file:`a.py` contiene sólo este docstring de módulo::"
 
-#: ../Doc/library/doctest.rst:1588
+#: ../Doc/library/doctest.rst:1657
+msgid ""
+"\"\"\"\n"
+">>> def f(x):\n"
+"...     g(x*2)\n"
+">>> def g(x):\n"
+"...     print(x+3)\n"
+"...     import pdb; pdb.set_trace()\n"
+">>> f(3)\n"
+"9\n"
+"\"\"\""
+msgstr ""
+
+#: ../Doc/library/doctest.rst:1667
 msgid "Then an interactive Python session may look like this::"
 msgstr "Entonces una sesión interactiva puede lucir como esta::"
 
-#: ../Doc/library/doctest.rst:1621
+#: ../Doc/library/doctest.rst:1669
+msgid ""
+">>> import a, doctest\n"
+">>> doctest.testmod(a)\n"
+"--Return--\n"
+"> <doctest a[1]>(3)g()->None\n"
+"-> import pdb; pdb.set_trace()\n"
+"(Pdb) list\n"
+"  1     def g(x):\n"
+"  2         print(x+3)\n"
+"  3  ->     import pdb; pdb.set_trace()\n"
+"[EOF]\n"
+"(Pdb) p x\n"
+"6\n"
+"(Pdb) step\n"
+"--Return--\n"
+"> <doctest a[0]>(2)f()->None\n"
+"-> g(x*2)\n"
+"(Pdb) list\n"
+"  1     def f(x):\n"
+"  2  ->     g(x*2)\n"
+"[EOF]\n"
+"(Pdb) p x\n"
+"3\n"
+"(Pdb) step\n"
+"--Return--\n"
+"> <doctest a[2]>(1)?()->None\n"
+"-> f(3)\n"
+"(Pdb) cont\n"
+"(0, 3)\n"
+">>>"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:1700
 msgid ""
 "Functions that convert doctests to Python code, and possibly run the "
 "synthesized code under the debugger:"
@@ -2591,11 +3096,11 @@ msgstr ""
 "Funciones que convierten los doctest a código de Python, y posiblemente "
 "ejecuten el código sintetizado debajo del depurador:"
 
-#: ../Doc/library/doctest.rst:1627
+#: ../Doc/library/doctest.rst:1706
 msgid "Convert text with examples to a script."
 msgstr "Convierte texto con ejemplos a un script."
 
-#: ../Doc/library/doctest.rst:1629
+#: ../Doc/library/doctest.rst:1708
 msgid ""
 "Argument *s* is a string containing doctest examples.  The string is "
 "converted to a Python script, where doctest examples in *s* are converted to "
@@ -2605,14 +3110,38 @@ msgstr ""
 "El argumento *s* es una cadena que contiene los ejemplos de doctest. La "
 "cadena se convierte a un script de Python, donde los ejemplos de doctest en "
 "*s* se convierten en código regular, y todo lo demás se convierte en "
-"comentarios de Python. El script generado se retorna como una cadena: Por "
+"comentarios de Python. El script generado se retorna como una cadena, Por "
 "ejemplo, ::"
 
-#: ../Doc/library/doctest.rst:1644
+#: ../Doc/library/doctest.rst:1713
+msgid ""
+"import doctest\n"
+"print(doctest.script_from_examples(r\"\"\"\n"
+"    Set x and y to 1 and 2.\n"
+"    >>> x, y = 1, 2\n"
+"\n"
+"    Print their sum:\n"
+"    >>> print(x+y)\n"
+"    3\n"
+"\"\"\"))"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:1723
 msgid "displays::"
 msgstr "muestra::"
 
-#: ../Doc/library/doctest.rst:1654
+#: ../Doc/library/doctest.rst:1725
+msgid ""
+"# Set x and y to 1 and 2.\n"
+"x, y = 1, 2\n"
+"#\n"
+"# Print their sum:\n"
+"print(x+y)\n"
+"# Expected:\n"
+"## 3"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:1733
 msgid ""
 "This function is used internally by other functions (see below), but can "
 "also be useful when you want to transform an interactive Python session into "
@@ -2622,18 +3151,19 @@ msgstr ""
 "también pueden ser útiles cuando quieres transformar una sesión de Python "
 "interactiva en un script de Python."
 
-#: ../Doc/library/doctest.rst:1661
+#: ../Doc/library/doctest.rst:1740
 msgid "Convert the doctest for an object to a script."
 msgstr "Convierte el doctest para un objeto en un script."
 
-#: ../Doc/library/doctest.rst:1663
+#: ../Doc/library/doctest.rst:1742
+#, fuzzy
 msgid ""
 "Argument *module* is a module object, or dotted name of a module, containing "
 "the object whose doctests are of interest.  Argument *name* is the name "
 "(within the module) of the object with the doctests of interest.  The result "
 "is a string, containing the object's docstring converted to a Python script, "
 "as described for :func:`script_from_examples` above.  For example, if "
-"module :file:`a.py` contains a top-level function :func:`f`, then ::"
+"module :file:`a.py` contains a top-level function :func:`!f`, then ::"
 msgstr ""
 "El argumento *module* es un objeto módulo, o un nombre por puntos de un "
 "módulo, que contiene el objeto cuyos doctest son de interés. El argumento "
@@ -2643,19 +3173,26 @@ msgstr ""
 "`script_from_examples` arriba. Por ejemplo, si el módulo :file:`a.py` "
 "contiene un función de alto nivel :func:`f`, entonces ::"
 
-#: ../Doc/library/doctest.rst:1673
+#: ../Doc/library/doctest.rst:1749
 msgid ""
-"prints a script version of function :func:`f`'s docstring, with doctests "
+"import a, doctest\n"
+"print(doctest.testsource(a, \"a.f\"))"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:1752
+#, fuzzy
+msgid ""
+"prints a script version of function :func:`!f`'s docstring, with doctests "
 "converted to code, and the rest placed in comments."
 msgstr ""
 "imprime una versión de script del docstring de la función :func:`f`, con los "
 "doctest convertidos en código, y el resto puesto en comentarios."
 
-#: ../Doc/library/doctest.rst:1679
+#: ../Doc/library/doctest.rst:1758
 msgid "Debug the doctests for an object."
 msgstr "Depura los doctest para un objeto."
 
-#: ../Doc/library/doctest.rst:1681
+#: ../Doc/library/doctest.rst:1760
 msgid ""
 "The *module* and *name* arguments are the same as for function :func:"
 "`testsource` above.  The synthesized Python script for the named object's "
@@ -2667,7 +3204,7 @@ msgstr ""
 "objeto nombrado es escrito en un archivo temporal, y entonces ese archivo es "
 "ejecutado bajo el control del depurador de PYthon, :mod:`pdb`."
 
-#: ../Doc/library/doctest.rst:1686
+#: ../Doc/library/doctest.rst:1765
 msgid ""
 "A shallow copy of ``module.__dict__`` is used for both local and global "
 "execution context."
@@ -2675,7 +3212,7 @@ msgstr ""
 "Se usa una copia superficial de ``module.__dict__`` para el contexto de "
 "ejecución local y global."
 
-#: ../Doc/library/doctest.rst:1689
+#: ../Doc/library/doctest.rst:1768
 msgid ""
 "Optional argument *pm* controls whether post-mortem debugging is used.  If "
 "*pm* has a true value, the script file is run directly, and the debugger "
@@ -2695,11 +3232,11 @@ msgstr ""
 "si es falso, el script se ejecuta bajo el depurador desde el inicio, a "
 "través de una llamada de :func:`exec` apropiada a :func:`pdb.run`."
 
-#: ../Doc/library/doctest.rst:1700
+#: ../Doc/library/doctest.rst:1779
 msgid "Debug the doctests in a string."
 msgstr "Depura los doctest en una cadena de caracteres."
 
-#: ../Doc/library/doctest.rst:1702
+#: ../Doc/library/doctest.rst:1781
 msgid ""
 "This is like function :func:`debug` above, except that a string containing "
 "doctest examples is specified directly, via the *src* argument."
@@ -2708,7 +3245,7 @@ msgstr ""
 "caracteres que contiene los ejemplos de doctest se especifica directamente, "
 "a través del argumento *src*."
 
-#: ../Doc/library/doctest.rst:1705
+#: ../Doc/library/doctest.rst:1784
 msgid ""
 "Optional argument *pm* has the same meaning as in function :func:`debug` "
 "above."
@@ -2716,7 +3253,7 @@ msgstr ""
 "El argumento opcional *pm* tiene el mismo significado como en la función :"
 "func:`debug` arriba."
 
-#: ../Doc/library/doctest.rst:1707
+#: ../Doc/library/doctest.rst:1786
 msgid ""
 "Optional argument *globs* gives a dictionary to use as both local and global "
 "execution context.  If not specified, or ``None``, an empty dictionary is "
@@ -2727,7 +3264,7 @@ msgstr ""
 "usa un diccionario vacío. Si se especifica, se usa una copia superficial del "
 "diccionario."
 
-#: ../Doc/library/doctest.rst:1712
+#: ../Doc/library/doctest.rst:1791
 msgid ""
 "The :class:`DebugRunner` class, and the special exceptions it may raise, are "
 "of most interest to testing framework authors, and will only be sketched "
@@ -2739,7 +3276,7 @@ msgstr ""
 "serán descritos brevemente aquí. Véase el código fuente, y especialmente el "
 "docstring de :class:`DebugRunner` (¡que es un doctest!) para más detalles:"
 
-#: ../Doc/library/doctest.rst:1720
+#: ../Doc/library/doctest.rst:1799
 msgid ""
 "A subclass of :class:`DocTestRunner` that raises an exception as soon as a "
 "failure is encountered.  If an unexpected exception occurs, an :exc:"
@@ -2755,7 +3292,7 @@ msgstr ""
 "excepción :exc:`DocTestFailure`, conteniendo la prueba, el ejemplo, y la "
 "salida real."
 
-#: ../Doc/library/doctest.rst:1727
+#: ../Doc/library/doctest.rst:1806
 msgid ""
 "For information about the constructor parameters and methods, see the "
 "documentation for :class:`DocTestRunner` in section :ref:`doctest-advanced-"
@@ -2765,7 +3302,7 @@ msgstr ""
 "la documentación para :class:`DocTestRunner` en la sección :ref:`doctest-"
 "advanced-api`."
 
-#: ../Doc/library/doctest.rst:1730
+#: ../Doc/library/doctest.rst:1809
 msgid ""
 "There are two exceptions that may be raised by :class:`DebugRunner` "
 "instances:"
@@ -2773,7 +3310,7 @@ msgstr ""
 "Hay dos excepciones que se pueden lanzar por instancias de :class:"
 "`DebugRunner`:"
 
-#: ../Doc/library/doctest.rst:1735
+#: ../Doc/library/doctest.rst:1814
 msgid ""
 "An exception raised by :class:`DocTestRunner` to signal that a doctest "
 "example's actual output did not match its expected output. The constructor "
@@ -2784,25 +3321,25 @@ msgstr ""
 "argumentos del constructor se usan para inicializar los atributos del mismo "
 "nombre."
 
-#: ../Doc/library/doctest.rst:1739
+#: ../Doc/library/doctest.rst:1818
 msgid ":exc:`DocTestFailure` defines the following attributes:"
 msgstr ":exc:`DocTestFailure` define los siguientes atributos:"
 
-#: ../Doc/library/doctest.rst:1744 ../Doc/library/doctest.rst:1768
+#: ../Doc/library/doctest.rst:1823 ../Doc/library/doctest.rst:1847
 msgid "The :class:`DocTest` object that was being run when the example failed."
 msgstr ""
 "El objeto :class:`DocTest` que estaba siendo ejecutado cuando el ejemplo "
 "falló."
 
-#: ../Doc/library/doctest.rst:1749 ../Doc/library/doctest.rst:1773
+#: ../Doc/library/doctest.rst:1828 ../Doc/library/doctest.rst:1852
 msgid "The :class:`Example` that failed."
 msgstr "El objeto :class:`Example` que falló."
 
-#: ../Doc/library/doctest.rst:1754
+#: ../Doc/library/doctest.rst:1833
 msgid "The example's actual output."
 msgstr "La salida real del ejemplo."
 
-#: ../Doc/library/doctest.rst:1759
+#: ../Doc/library/doctest.rst:1838
 msgid ""
 "An exception raised by :class:`DocTestRunner` to signal that a doctest "
 "example raised an unexpected exception.  The constructor arguments are used "
@@ -2812,11 +3349,11 @@ msgstr ""
 "de doctest lanzó una excepción inesperada. Los argumentos del constructor se "
 "usan para inicializar los atributos del mismo nombre."
 
-#: ../Doc/library/doctest.rst:1763
+#: ../Doc/library/doctest.rst:1842
 msgid ":exc:`UnexpectedException` defines the following attributes:"
 msgstr ":exc:`UnexpectedException` define los siguientes atributos:"
 
-#: ../Doc/library/doctest.rst:1778
+#: ../Doc/library/doctest.rst:1857
 msgid ""
 "A tuple containing information about the unexpected exception, as returned "
 "by :func:`sys.exc_info`."
@@ -2824,11 +3361,11 @@ msgstr ""
 "Una tupla que contiene información sobre la excepción inesperada, como es "
 "retornado por :func:`sys.exc_info`."
 
-#: ../Doc/library/doctest.rst:1785
+#: ../Doc/library/doctest.rst:1864
 msgid "Soapbox"
 msgstr "Plataforma improvisada"
 
-#: ../Doc/library/doctest.rst:1787
+#: ../Doc/library/doctest.rst:1866
 msgid ""
 "As mentioned in the introduction, :mod:`doctest` has grown to have three "
 "primary uses:"
@@ -2836,19 +3373,19 @@ msgstr ""
 "Como se menciona en la introducción, :mod:`doctest` ha crecido para tener "
 "tres usos primarios:"
 
-#: ../Doc/library/doctest.rst:1790
+#: ../Doc/library/doctest.rst:1869
 msgid "Checking examples in docstrings."
 msgstr "Verificar los ejemplos en los docstring."
 
-#: ../Doc/library/doctest.rst:1792
+#: ../Doc/library/doctest.rst:1871
 msgid "Regression testing."
 msgstr "Pruebas de regresión."
 
-#: ../Doc/library/doctest.rst:1794
+#: ../Doc/library/doctest.rst:1873
 msgid "Executable documentation / literate testing."
 msgstr "Documentación ejecutable / pruebas literarias."
 
-#: ../Doc/library/doctest.rst:1796
+#: ../Doc/library/doctest.rst:1875
 msgid ""
 "These uses have different requirements, and it is important to distinguish "
 "them. In particular, filling your docstrings with obscure test cases makes "
@@ -2858,7 +3395,7 @@ msgstr ""
 "En particular, llenar tus docstring con casos de prueba desconocidos conduce "
 "a mala documentación."
 
-#: ../Doc/library/doctest.rst:1800
+#: ../Doc/library/doctest.rst:1879
 msgid ""
 "When writing a docstring, choose docstring examples with care. There's an "
 "art to this that needs to be learned---it may not be natural at first.  "
@@ -2878,7 +3415,7 @@ msgstr ""
 "cambian. Todavía estoy sorprendido de qué tan frecuente uno de mis ejemplos "
 "de :mod:`doctest` paran de funcionar después de un cambio \"inofensivo\"."
 
-#: ../Doc/library/doctest.rst:1808
+#: ../Doc/library/doctest.rst:1887
 msgid ""
 "Doctest also makes an excellent tool for regression testing, especially if "
 "you don't skimp on explanatory text.  By interleaving prose and examples, it "
@@ -2917,7 +3454,7 @@ msgstr ""
 "produce resultados diferentes, difuminando la distinción entre probar y "
 "explicar."
 
-#: ../Doc/library/doctest.rst:1826
+#: ../Doc/library/doctest.rst:1905
 msgid ""
 "Regression testing is best confined to dedicated objects or files.  There "
 "are several options for organizing tests:"
@@ -2925,7 +3462,7 @@ msgstr ""
 "Pruebas de regresión se limitan mejor a objetos o archivos dedicados. Hay "
 "varias opciones para organizar pruebas:"
 
-#: ../Doc/library/doctest.rst:1829
+#: ../Doc/library/doctest.rst:1908
 msgid ""
 "Write text files containing test cases as interactive examples, and test the "
 "files using :func:`testfile` or :func:`DocFileSuite`.  This is recommended, "
@@ -2937,7 +3474,7 @@ msgstr ""
 "`DocFileSuite`. Esto es lo recomendado, aunque es más fácil hacerlo para "
 "nuevos proyectos, diseñados desde el comienzo para usar doctest."
 
-#: ../Doc/library/doctest.rst:1834
+#: ../Doc/library/doctest.rst:1913
 msgid ""
 "Define functions named ``_regrtest_topic`` that consist of single "
 "docstrings, containing test cases for the named topics.  These functions can "
@@ -2949,7 +3486,7 @@ msgstr ""
 "funciones se pueden incluir en el mismo archivo que el módulo, o separadas "
 "en un archivo de prueba separado."
 
-#: ../Doc/library/doctest.rst:1838
+#: ../Doc/library/doctest.rst:1917
 msgid ""
 "Define a ``__test__`` dictionary mapping from regression test topics to "
 "docstrings containing test cases."
@@ -2957,7 +3494,7 @@ msgstr ""
 "Define un diccionario ``__test__`` que asigna desde temas de prueba de "
 "integración a los docstring que contienen casos de prueba."
 
-#: ../Doc/library/doctest.rst:1841
+#: ../Doc/library/doctest.rst:1920
 msgid ""
 "When you have placed your tests in a module, the module can itself be the "
 "test runner.  When a test fails, you can arrange for your test runner to re-"
@@ -2969,11 +3506,29 @@ msgstr ""
 "vuelva a ejecutar sólo los doctest fallidos mientras que tu depuras el "
 "problema. Aquí hay un ejemplo mínimo de tal *test runner*::"
 
-#: ../Doc/library/doctest.rst:1863
+#: ../Doc/library/doctest.rst:1925
+msgid ""
+"if __name__ == '__main__':\n"
+"    import doctest\n"
+"    flags = doctest.REPORT_NDIFF|doctest.FAIL_FAST\n"
+"    if len(sys.argv) > 1:\n"
+"        name = sys.argv[1]\n"
+"        if name in globals():\n"
+"            obj = globals()[name]\n"
+"        else:\n"
+"            obj = __test__[name]\n"
+"        doctest.run_docstring_examples(obj, globals(), name=name,\n"
+"                                       optionflags=flags)\n"
+"    else:\n"
+"        fail, total = doctest.testmod(optionflags=flags)\n"
+"        print(f\"{fail} failures out of {total} tests\")"
+msgstr ""
+
+#: ../Doc/library/doctest.rst:1942
 msgid "Footnotes"
 msgstr "Notas al pie de página"
 
-#: ../Doc/library/doctest.rst:1864
+#: ../Doc/library/doctest.rst:1943
 msgid ""
 "Examples containing both expected output and an exception are not supported. "
 "Trying to guess where one ends and the other begins is too error-prone, and "
@@ -2982,3 +3537,43 @@ msgstr ""
 "No se admiten los ejemplos que contienen una salida esperada y una "
 "excepción. Intentar adivinar dónde una termina y la otra empieza es muy "
 "propenso a errores, y da lugar a una prueba confusa."
+
+#: ../Doc/library/doctest.rst:339
+msgid ">>>"
+msgstr ">>>"
+
+#: ../Doc/library/doctest.rst:339
+msgid "interpreter prompt"
+msgstr "interpreter prompt"
+
+#: ../Doc/library/doctest.rst:339 ../Doc/library/doctest.rst:577
+msgid "..."
+msgstr "..."
+
+#: ../Doc/library/doctest.rst:505
+msgid "^ (caret)"
+msgstr "^ (caret)"
+
+#: ../Doc/library/doctest.rst:505
+msgid "marker"
+msgstr "marker"
+
+#: ../Doc/library/doctest.rst:557
+msgid "<BLANKLINE>"
+msgstr "<BLANKLINE>"
+
+#: ../Doc/library/doctest.rst:577 ../Doc/library/doctest.rst:707
+msgid "in doctests"
+msgstr "in doctests"
+
+#: ../Doc/library/doctest.rst:707
+msgid "# (hash)"
+msgstr "# (hash)"
+
+#: ../Doc/library/doctest.rst:707
+msgid "+ (plus)"
+msgstr "+ (plus)"
+
+#: ../Doc/library/doctest.rst:707
+msgid "- (minus)"
+msgstr "- (minus)"

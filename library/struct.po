@@ -10,63 +10,66 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-19 11:16+0100\n"
-"PO-Revision-Date: 2021-11-08 20:11-0600\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2024-11-21 16:38-0300\n"
+"PO-Revision-Date: 2023-10-16 00:53-0600\n"
+"Last-Translator: José Luis Salgado Banda\n"
 "Language: es_ES\n"
 "Language-Team: python-doc-es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
-"X-Generator: Poedit 3.0\n"
+"Generated-By: Babel 2.16.0\n"
 
 #: ../Doc/library/struct.rst:2
-msgid ":mod:`struct` --- Interpret bytes as packed binary data"
+#, fuzzy
+msgid ":mod:`!struct` --- Interpret bytes as packed binary data"
 msgstr ":mod:`struct` --- Interpreta bytes como paquetes de datos binarios"
 
-#: ../Doc/library/struct.rst:7
+#: ../Doc/library/struct.rst:11
 msgid "**Source code:** :source:`Lib/struct.py`"
 msgstr "**Código fuente:** :source:`Lib/struct.py`"
 
-#: ../Doc/library/struct.rst:15
+#: ../Doc/library/struct.rst:19
 msgid ""
-"This module performs conversions between Python values and C structs "
-"represented as Python :class:`bytes` objects.  This can be used in handling "
-"binary data stored in files or from network connections, among other "
-"sources.  It uses :ref:`struct-format-strings` as compact descriptions of "
-"the layout of the C structs and the intended conversion to/from Python "
-"values."
+"This module converts between Python values and C structs represented as "
+"Python :class:`bytes` objects.  Compact :ref:`format strings <struct-format-"
+"strings>` describe the intended conversions to/from Python values. The "
+"module's functions and objects can be used for two largely distinct "
+"applications, data exchange with external sources (files or network "
+"connections), or data transfer between the Python application and the C "
+"layer."
 msgstr ""
-"Este módulo realiza conversiones entre valores de Python y estructuras C "
-"representadas como objetos :class:`bytes` de Python.  Se puede utilizar para "
-"el tratamiento de datos binarios almacenados en archivos o desde conexiones "
-"de red, entre otras fuentes.  Utiliza :ref:`struct-format-strings` como "
-"descripciones compactas del diseño de las estructuras C y la conversión "
-"prevista a/desde valores de Python."
+"Este módulo convierte entre valores de Python y estructuras de C "
+"representadas como objetos de Python :class:`bytes`. Las :ref:`cadenas de "
+"formato <struct-format-strings>` compacto describen las conversiones "
+"previstas hacia/desde valores de Python. Las funciones y objetos del módulo "
+"se pueden utilizar para dos aplicaciones en gran medida distintas, el "
+"intercambio de datos con fuentes externas (archivos o conexiones de red) o "
+"la transferencia de datos entre la aplicación de Python y la capa de C."
 
-#: ../Doc/library/struct.rst:23
+#: ../Doc/library/struct.rst:29
 msgid ""
-"By default, the result of packing a given C struct includes pad bytes in "
-"order to maintain proper alignment for the C types involved; similarly, "
-"alignment is taken into account when unpacking.  This behavior is chosen so "
-"that the bytes of a packed struct correspond exactly to the layout in memory "
-"of the corresponding C struct.  To handle platform-independent data formats "
-"or omit implicit pad bytes, use ``standard`` size and alignment instead of "
-"``native`` size and alignment: see :ref:`struct-alignment` for details."
+"When no prefix character is given, native mode is the default. It packs or "
+"unpacks data based on the platform and compiler on which the Python "
+"interpreter was built. The result of packing a given C struct includes pad "
+"bytes which maintain proper alignment for the C types involved; similarly, "
+"alignment is taken into account when unpacking.  In contrast, when "
+"communicating data between external sources, the programmer is responsible "
+"for defining byte ordering and padding between elements. See :ref:`struct-"
+"alignment` for details."
 msgstr ""
-"Por defecto, el resultado de empaquetar una estructura C determinada incluye "
-"bytes de relleno para mantener la alineación adecuada para los tipos "
-"correspondientes en C; del mismo modo, la alineación se tiene en cuenta al "
-"desempaquetar.  Este comportamiento se elige para que los bytes de una "
-"estructura empaquetada se correspondan exactamente con el diseño en memoria "
-"de la estructura C correspondiente.  Para tratar formatos de datos que sean "
-"independientes de la plataforma u omitir bytes de relleno implícitos, "
-"utiliza el tamaño y la alineación ``estándar`` en lugar del ``nativo``: ver :"
-"ref:`struct-alignment` para obtener más información."
+"Cuando no se proporciona ningún carácter de prefijo, el modo nativo es el "
+"predeterminado. Empaqueta o desempaqueta datos según la plataforma y el "
+"compilador en el que se creó el intérprete de Python. El resultado de "
+"empaquetar una estructura C determinada incluye bytes de relleno que "
+"mantienen la alineación adecuada para los tipos C involucrados; asimismo, se "
+"tiene en cuenta la alineación al desempaquetar. Por el contrario, cuando se "
+"comunican datos entre fuentes externas, el programador es responsable de "
+"definir el orden de bytes y el relleno entre elementos. Ver :ref:`struct-"
+"alignment` para más detalles."
 
-#: ../Doc/library/struct.rst:31
+#: ../Doc/library/struct.rst:39
 msgid ""
 "Several :mod:`struct` functions (and methods of :class:`Struct`) take a "
 "*buffer* argument.  This refers to objects that implement the :ref:"
@@ -84,15 +87,15 @@ msgstr ""
 "de bytes implementan el protocolo de búfer, para que se puedan leer/rellenar "
 "sin necesidad de copiar a partir de un objeto :class:`bytes`."
 
-#: ../Doc/library/struct.rst:40
+#: ../Doc/library/struct.rst:48
 msgid "Functions and Exceptions"
-msgstr "Funciones y Excepciones"
+msgstr "Funciones y excepciones"
 
-#: ../Doc/library/struct.rst:42
+#: ../Doc/library/struct.rst:50
 msgid "The module defines the following exception and functions:"
 msgstr "El módulo define la siguiente excepción y funciones:"
 
-#: ../Doc/library/struct.rst:47
+#: ../Doc/library/struct.rst:55
 msgid ""
 "Exception raised on various occasions; argument is a string describing what "
 "is wrong."
@@ -100,7 +103,7 @@ msgstr ""
 "Excepción lanzada en varias ocasiones; el argumento es una *string* que "
 "describe lo que está mal."
 
-#: ../Doc/library/struct.rst:53
+#: ../Doc/library/struct.rst:61
 msgid ""
 "Return a bytes object containing the values *v1*, *v2*, ... packed according "
 "to the format string *format*.  The arguments must match the values required "
@@ -110,7 +113,7 @@ msgstr ""
 "de acuerdo con la cadena de formato *format*.  Los argumentos deben "
 "coincidir exactamente con los valores requeridos por el formato."
 
-#: ../Doc/library/struct.rst:60
+#: ../Doc/library/struct.rst:68
 msgid ""
 "Pack the values *v1*, *v2*, ... according to the format string *format* and "
 "write the packed bytes into the writable buffer *buffer* starting at "
@@ -121,7 +124,7 @@ msgstr ""
 "comenzando en la posición *offset*.  Nota: *offset* es un argumento "
 "obligatorio."
 
-#: ../Doc/library/struct.rst:67
+#: ../Doc/library/struct.rst:75
 msgid ""
 "Unpack from the buffer *buffer* (presumably packed by ``pack(format, ...)``) "
 "according to the format string *format*.  The result is a tuple even if it "
@@ -134,7 +137,7 @@ msgstr ""
 "bytes debe coincidir con el tamaño requerido por el formato, como se refleja "
 "en :func:`calcsize`."
 
-#: ../Doc/library/struct.rst:75
+#: ../Doc/library/struct.rst:83
 msgid ""
 "Unpack from *buffer* starting at position *offset*, according to the format "
 "string *format*.  The result is a tuple even if it contains exactly one "
@@ -147,27 +150,27 @@ msgstr ""
 "*offset*, debe tener al menos el tamaño requerido por el formato, como se "
 "refleja en :func:`calcsize`."
 
-#: ../Doc/library/struct.rst:83
+#: ../Doc/library/struct.rst:91
 msgid ""
 "Iteratively unpack from the buffer *buffer* according to the format string "
-"*format*.  This function returns an iterator which will read equally-sized "
+"*format*.  This function returns an iterator which will read equally sized "
 "chunks from the buffer until all its contents have been consumed.  The "
 "buffer's size in bytes must be a multiple of the size required by the "
 "format, as reflected by :func:`calcsize`."
 msgstr ""
 "Desempaqueta de manera iterativa desde el búfer *buffer* según la cadena de "
 "formato *format*.  Esta función retorna un iterador que leerá fragmentos de "
-"igual tamaño desde el búfer hasta que se haya consumido todo su contenido.  "
+"igual tamaño desde el búfer hasta que se haya consumido todo su contenido. "
 "El tamaño del búfer en bytes debe ser un múltiplo del tamaño requerido por "
 "el formato, como se refleja en :func:`calcsize`."
 
-#: ../Doc/library/struct.rst:89
+#: ../Doc/library/struct.rst:97
 msgid "Each iteration yields a tuple as specified by the format string."
 msgstr ""
 "Cada iteración produce una tupla según lo especificado por la cadena de "
 "formato."
 
-#: ../Doc/library/struct.rst:96
+#: ../Doc/library/struct.rst:104
 msgid ""
 "Return the size of the struct (and hence of the bytes object produced by "
 "``pack(format, ...)``) corresponding to the format string *format*."
@@ -176,39 +179,51 @@ msgstr ""
 "generado por ``pack(format, ...)``) correspondiente a la cadena de formato "
 "*format*."
 
-#: ../Doc/library/struct.rst:103
+#: ../Doc/library/struct.rst:111
 msgid "Format Strings"
-msgstr "Cadenas de Formato"
+msgstr "Cadenas de formato"
 
-#: ../Doc/library/struct.rst:105
+#: ../Doc/library/struct.rst:113
 msgid ""
-"Format strings are the mechanism used to specify the expected layout when "
-"packing and unpacking data.  They are built up from :ref:`format-"
-"characters`, which specify the type of data being packed/unpacked.  In "
-"addition, there are special characters for controlling the :ref:`struct-"
-"alignment`."
+"Format strings describe the data layout when packing and unpacking data.  "
+"They are built up from :ref:`format characters<format-characters>`, which "
+"specify the type of data being packed/unpacked.  In addition, special "
+"characters control the :ref:`byte order, size and alignment<struct-"
+"alignment>`. Each format string consists of an optional prefix character "
+"which describes the overall properties of the data and one or more format "
+"characters which describe the actual data values and padding."
 msgstr ""
-"Las cadenas de formato son el mecanismo utilizado para especificar el diseño "
-"esperado al empaquetar y desempaquetar datos.  Se crean a partir de :ref:"
-"`format-characters`, que especifican el tipo de datos que se empaquetan/"
-"desempaquetan.  Además, hay caracteres especiales para controlar :ref:"
-"`struct-alignment`."
+"Las cadenas de formato describen el diseño de los datos cuando empaquetan y "
+"desempaquetan datos. Se construyen a partir :ref:`caracteres de "
+"formato<format-characters>`, que especifican el tipo de datos que se "
+"empaquetan/desempaquetan. Además, los caracteres especiales controlan el :"
+"ref:`orden de bytes, tamaño y alineación<struct-alignment>`. Cada cadena de "
+"formato consta de un carácter de prefijo opcional que describe las "
+"propiedades generales de los datos y uno o más caracteres de formato que "
+"describen los valores de datos actuales y el relleno."
 
-#: ../Doc/library/struct.rst:114
+#: ../Doc/library/struct.rst:125
 msgid "Byte Order, Size, and Alignment"
-msgstr "Orden de Bytes, Tamaño y Alineación"
+msgstr "Orden de bytes, tamaño y alineación"
 
-#: ../Doc/library/struct.rst:116
+#: ../Doc/library/struct.rst:127
 msgid ""
 "By default, C types are represented in the machine's native format and byte "
 "order, and properly aligned by skipping pad bytes if necessary (according to "
-"the rules used by the C compiler)."
+"the rules used by the C compiler). This behavior is chosen so that the bytes "
+"of a packed struct correspond exactly to the memory layout of the "
+"corresponding C struct. Whether to use native byte ordering and padding or "
+"standard formats depends on the application."
 msgstr ""
 "Por defecto, los tipos C se representan en el formato nativo y el orden de "
-"bytes de la máquina, y se alinean correctamente omitiendo bytes de relleno "
-"si es necesario (según las reglas utilizadas por el compilador de C)."
+"bytes de la máquina, y se alinean correctamente omitiendo *bytes* de relleno "
+"si es necesario (según las reglas utilizadas por el compilador de C). Se "
+"elige este comportamiento para que los bytes de una estructura empaquetada "
+"correspondan correctamente al diseño de memoria de la estructura C "
+"correspondiente. El uso de ordenamiento y relleno de bytes nativos o "
+"formatos estándar depende de la aplicación."
 
-#: ../Doc/library/struct.rst:127
+#: ../Doc/library/struct.rst:143
 msgid ""
 "Alternatively, the first character of the format string can be used to "
 "indicate the byte order, size and alignment of the packed data, according to "
@@ -218,87 +233,106 @@ msgstr ""
 "utilizar para indicar el orden de bytes, el tamaño y la alineación de los "
 "datos empaquetados, según la tabla siguiente:"
 
-#: ../Doc/library/struct.rst:132
+#: ../Doc/library/struct.rst:148
 msgid "Character"
 msgstr "Carácter"
 
-#: ../Doc/library/struct.rst:132
+#: ../Doc/library/struct.rst:148
 msgid "Byte order"
-msgstr "Orden de Bytes"
+msgstr "Orden de bytes"
 
-#: ../Doc/library/struct.rst:132
+#: ../Doc/library/struct.rst:148
 msgid "Size"
 msgstr "Tamaño"
 
-#: ../Doc/library/struct.rst:132
+#: ../Doc/library/struct.rst:148
 msgid "Alignment"
 msgstr "Alineamiento"
 
-#: ../Doc/library/struct.rst:134
+#: ../Doc/library/struct.rst:150
 msgid "``@``"
 msgstr "``@``"
 
-#: ../Doc/library/struct.rst:134 ../Doc/library/struct.rst:136
+#: ../Doc/library/struct.rst:150 ../Doc/library/struct.rst:152
 msgid "native"
 msgstr "nativo"
 
-#: ../Doc/library/struct.rst:136
+#: ../Doc/library/struct.rst:152
 msgid "``=``"
 msgstr "``=``"
 
-#: ../Doc/library/struct.rst:136 ../Doc/library/struct.rst:138
-#: ../Doc/library/struct.rst:140 ../Doc/library/struct.rst:142
+#: ../Doc/library/struct.rst:152 ../Doc/library/struct.rst:154
+#: ../Doc/library/struct.rst:156 ../Doc/library/struct.rst:158
 msgid "standard"
 msgstr "standard"
 
-#: ../Doc/library/struct.rst:136 ../Doc/library/struct.rst:138
-#: ../Doc/library/struct.rst:140 ../Doc/library/struct.rst:142
+#: ../Doc/library/struct.rst:152 ../Doc/library/struct.rst:154
+#: ../Doc/library/struct.rst:156 ../Doc/library/struct.rst:158
 msgid "none"
 msgstr "none"
 
-#: ../Doc/library/struct.rst:138
+#: ../Doc/library/struct.rst:154
 msgid "``<``"
 msgstr "``<``"
 
-#: ../Doc/library/struct.rst:138
+#: ../Doc/library/struct.rst:154
 msgid "little-endian"
 msgstr "little-endian"
 
-#: ../Doc/library/struct.rst:140
+#: ../Doc/library/struct.rst:156
 msgid "``>``"
 msgstr "``>``"
 
-#: ../Doc/library/struct.rst:140
+#: ../Doc/library/struct.rst:156
 msgid "big-endian"
 msgstr "big-endian"
 
-#: ../Doc/library/struct.rst:142
+#: ../Doc/library/struct.rst:158
 msgid "``!``"
 msgstr "``!``"
 
-#: ../Doc/library/struct.rst:142
+#: ../Doc/library/struct.rst:158
 msgid "network (= big-endian)"
 msgstr "red (= big-endian)"
 
-#: ../Doc/library/struct.rst:145
+#: ../Doc/library/struct.rst:161
 msgid "If the first character is not one of these, ``'@'`` is assumed."
 msgstr "Si el primer carácter no es uno de estos, se asume ``'@'``."
 
-#: ../Doc/library/struct.rst:147
+#: ../Doc/library/struct.rst:165
+msgid ""
+"The number 1023 (``0x3ff`` in hexadecimal) has the following byte "
+"representations:"
+msgstr ""
+
+#: ../Doc/library/struct.rst:167
+msgid "``03 ff`` in big-endian (``>``)"
+msgstr ""
+
+#: ../Doc/library/struct.rst:168
+msgid "``ff 03`` in little-endian (``<``)"
+msgstr ""
+
+#: ../Doc/library/struct.rst:170
+#, fuzzy
+msgid "Python example:"
+msgstr "Tipo Python"
+
+#: ../Doc/library/struct.rst:178
 msgid ""
 "Native byte order is big-endian or little-endian, depending on the host "
-"system. For example, Intel x86 and AMD64 (x86-64) are little-endian; "
-"Motorola 68000 and PowerPC G5 are big-endian; ARM and Intel Itanium feature "
-"switchable endianness (bi-endian). Use ``sys.byteorder`` to check the "
-"endianness of your system."
+"system. For example, Intel x86, AMD64 (x86-64), and Apple M1 are little-"
+"endian; IBM z and many legacy architectures are big-endian. Use :data:`sys."
+"byteorder` to check the endianness of your system."
 msgstr ""
 "El orden de bytes nativo es big-endian o little-endian, dependiendo del "
-"sistema host. Por ejemplo, Intel x86 y AMD64 (x86-64) son little-endian; "
-"Motorola 68000 y PowerPC G5 son big-endian; ARM e Intel *Itanium* tienen la "
-"propiedad de trabajar con ambos formatos (middle-endian). Utiliza ``sys."
-"byteorder`` para comprobar la *endianness* (\"extremidad\") de su sistema."
+"sistema host. Por ejemplo, Intel x86, AMD64 (x86-64) y Apple M1 son little-"
+"endian; IBM z y muchas arquitecturas heredadas son big-endian; ARM e Intel "
+"*Itanium* tienen la propiedad de trabajar con ambos formatos (middle-"
+"endian). Utiliza :data:`sys.byteorder` para comprobar la endianness "
+"(\"extremidad\") de tu sistema."
 
-#: ../Doc/library/struct.rst:153
+#: ../Doc/library/struct.rst:183
 msgid ""
 "Native size and alignment are determined using the C compiler's ``sizeof`` "
 "expression.  This is always combined with native byte order."
@@ -307,7 +341,7 @@ msgstr ""
 "``sizeof`` del compilador de C.  Esto siempre se combina con el orden de "
 "bytes nativo."
 
-#: ../Doc/library/struct.rst:156
+#: ../Doc/library/struct.rst:186
 msgid ""
 "Standard size depends only on the format character;  see the table in the :"
 "ref:`format-characters` section."
@@ -315,7 +349,7 @@ msgstr ""
 "El tamaño estándar depende únicamente del carácter de formato;  ver la tabla "
 "en la sección :ref:`format-characters`."
 
-#: ../Doc/library/struct.rst:159
+#: ../Doc/library/struct.rst:189
 msgid ""
 "Note the difference between ``'@'`` and ``'='``: both use native byte order, "
 "but the size and alignment of the latter is standardized."
@@ -324,7 +358,7 @@ msgstr ""
 "bytes nativo, pero el tamaño y la alineación de este último está "
 "estandarizado."
 
-#: ../Doc/library/struct.rst:162
+#: ../Doc/library/struct.rst:192
 msgid ""
 "The form ``'!'`` represents the network byte order which is always big-"
 "endian as defined in `IETF RFC 1700 <IETF RFC 1700_>`_."
@@ -332,7 +366,7 @@ msgstr ""
 "La forma ``'!'`` representa el orden de bytes en la red, el cuál siempre es "
 "big-endian tal como se define en `IETF RFC 1700 <IETF RFC 1700_>`_."
 
-#: ../Doc/library/struct.rst:165
+#: ../Doc/library/struct.rst:195
 msgid ""
 "There is no way to indicate non-native byte order (force byte-swapping); use "
 "the appropriate choice of ``'<'`` or ``'>'``."
@@ -340,11 +374,11 @@ msgstr ""
 "No hay manera de indicar el orden de bytes no nativo (forzar el intercambio "
 "de bytes); utiliza la elección adecuada de ``'<'`` o ``'>'``."
 
-#: ../Doc/library/struct.rst:168 ../Doc/library/struct.rst:247
+#: ../Doc/library/struct.rst:198 ../Doc/library/struct.rst:277
 msgid "Notes:"
 msgstr "Notas:"
 
-#: ../Doc/library/struct.rst:170
+#: ../Doc/library/struct.rst:200
 msgid ""
 "Padding is only automatically added between successive structure members. No "
 "padding is added at the beginning or the end of the encoded struct."
@@ -353,7 +387,7 @@ msgstr ""
 "estructura. No se agrega ningún relleno al principio o al final de la "
 "estructura codificada."
 
-#: ../Doc/library/struct.rst:173
+#: ../Doc/library/struct.rst:203
 msgid ""
 "No padding is added when using non-native size and alignment, e.g. with '<', "
 "'>', '=', and '!'."
@@ -361,7 +395,7 @@ msgstr ""
 "No se añade ningún relleno cuando se utiliza el tamaño y la alineación no "
 "nativos, por ejemplo, con '<', '>', '=' y '!'."
 
-#: ../Doc/library/struct.rst:176
+#: ../Doc/library/struct.rst:206
 msgid ""
 "To align the end of a structure to the alignment requirement of a particular "
 "type, end the format with the code for that type with a repeat count of "
@@ -371,11 +405,11 @@ msgstr ""
 "tipo determinado, termina el formato con el código de ese tipo con un conteo "
 "repetido de ceros.  Véase :ref:`struct-examples`."
 
-#: ../Doc/library/struct.rst:184
+#: ../Doc/library/struct.rst:214
 msgid "Format Characters"
 msgstr "Caracteres de formato"
 
-#: ../Doc/library/struct.rst:186
+#: ../Doc/library/struct.rst:216
 msgid ""
 "Format characters have the following meaning; the conversion between C and "
 "Python values should be obvious given their types.  The 'Standard size' "
@@ -391,305 +425,318 @@ msgstr ""
 "comienza con uno de ``'<'``, ``'>'``, ``'!'`` o ``'='``.  Cuando se utiliza "
 "el tamaño nativo, el tamaño del valor empaquetado depende de la plataforma."
 
-#: ../Doc/library/struct.rst:194
+#: ../Doc/library/struct.rst:224
 msgid "Format"
 msgstr "Formato"
 
-#: ../Doc/library/struct.rst:194
+#: ../Doc/library/struct.rst:224
 msgid "C Type"
 msgstr "Tipo C"
 
-#: ../Doc/library/struct.rst:194
+#: ../Doc/library/struct.rst:224
 msgid "Python type"
 msgstr "Tipo Python"
 
-#: ../Doc/library/struct.rst:194
+#: ../Doc/library/struct.rst:224
 msgid "Standard size"
 msgstr "Tamaño estándar"
 
-#: ../Doc/library/struct.rst:194
+#: ../Doc/library/struct.rst:224
 msgid "Notes"
 msgstr "Notas"
 
-#: ../Doc/library/struct.rst:196
+#: ../Doc/library/struct.rst:226
 msgid "``x``"
 msgstr "``x``"
 
-#: ../Doc/library/struct.rst:196
+#: ../Doc/library/struct.rst:226
 msgid "pad byte"
 msgstr "byte de relleno"
 
-#: ../Doc/library/struct.rst:196
+#: ../Doc/library/struct.rst:226
 msgid "no value"
 msgstr "sin valor"
 
-#: ../Doc/library/struct.rst:198
+#: ../Doc/library/struct.rst:226
+msgid "\\(7)"
+msgstr "\\(7)"
+
+#: ../Doc/library/struct.rst:228
 msgid "``c``"
 msgstr "``c``"
 
-#: ../Doc/library/struct.rst:198
-msgid ":c:type:`char`"
-msgstr ":c:type:`char`"
+#: ../Doc/library/struct.rst:228
+msgid ":c:expr:`char`"
+msgstr ":c:expr:`char`"
 
-#: ../Doc/library/struct.rst:198
+#: ../Doc/library/struct.rst:228
 msgid "bytes of length 1"
 msgstr "bytes de longitud 1"
 
-#: ../Doc/library/struct.rst:198 ../Doc/library/struct.rst:200
-#: ../Doc/library/struct.rst:202 ../Doc/library/struct.rst:204
+#: ../Doc/library/struct.rst:228 ../Doc/library/struct.rst:230
+#: ../Doc/library/struct.rst:232 ../Doc/library/struct.rst:234
 msgid "1"
 msgstr "1"
 
-#: ../Doc/library/struct.rst:200
+#: ../Doc/library/struct.rst:230
 msgid "``b``"
 msgstr "``b``"
 
-#: ../Doc/library/struct.rst:200
-msgid ":c:type:`signed char`"
-msgstr ":c:type:`signed char`"
+#: ../Doc/library/struct.rst:230
+msgid ":c:expr:`signed char`"
+msgstr ":c:expr:`signed char`"
 
-#: ../Doc/library/struct.rst:200 ../Doc/library/struct.rst:202
-#: ../Doc/library/struct.rst:206 ../Doc/library/struct.rst:208
-#: ../Doc/library/struct.rst:210 ../Doc/library/struct.rst:212
-#: ../Doc/library/struct.rst:214 ../Doc/library/struct.rst:216
-#: ../Doc/library/struct.rst:218 ../Doc/library/struct.rst:220
-#: ../Doc/library/struct.rst:223 ../Doc/library/struct.rst:225
-#: ../Doc/library/struct.rst:237
+#: ../Doc/library/struct.rst:230 ../Doc/library/struct.rst:232
+#: ../Doc/library/struct.rst:236 ../Doc/library/struct.rst:238
+#: ../Doc/library/struct.rst:240 ../Doc/library/struct.rst:242
+#: ../Doc/library/struct.rst:244 ../Doc/library/struct.rst:246
+#: ../Doc/library/struct.rst:248 ../Doc/library/struct.rst:250
+#: ../Doc/library/struct.rst:253 ../Doc/library/struct.rst:255
+#: ../Doc/library/struct.rst:267
 msgid "integer"
 msgstr "integer"
 
-#: ../Doc/library/struct.rst:200
+#: ../Doc/library/struct.rst:230
 msgid "\\(1), \\(2)"
 msgstr "\\(1), \\(2)"
 
-#: ../Doc/library/struct.rst:202
+#: ../Doc/library/struct.rst:232
 msgid "``B``"
 msgstr "``B``"
 
-#: ../Doc/library/struct.rst:202
-msgid ":c:type:`unsigned char`"
-msgstr ":c:type:`unsigned char`"
+#: ../Doc/library/struct.rst:232
+msgid ":c:expr:`unsigned char`"
+msgstr ":c:expr:`unsigned char`"
 
-#: ../Doc/library/struct.rst:202 ../Doc/library/struct.rst:206
-#: ../Doc/library/struct.rst:208 ../Doc/library/struct.rst:210
-#: ../Doc/library/struct.rst:212 ../Doc/library/struct.rst:214
-#: ../Doc/library/struct.rst:216 ../Doc/library/struct.rst:218
-#: ../Doc/library/struct.rst:220
+#: ../Doc/library/struct.rst:232 ../Doc/library/struct.rst:236
+#: ../Doc/library/struct.rst:238 ../Doc/library/struct.rst:240
+#: ../Doc/library/struct.rst:242 ../Doc/library/struct.rst:244
+#: ../Doc/library/struct.rst:246 ../Doc/library/struct.rst:248
+#: ../Doc/library/struct.rst:250
 msgid "\\(2)"
 msgstr "\\(2)"
 
-#: ../Doc/library/struct.rst:204
+#: ../Doc/library/struct.rst:234
 msgid "``?``"
 msgstr "\\(2)"
 
-#: ../Doc/library/struct.rst:204
-msgid ":c:type:`_Bool`"
-msgstr ":c:type:`_Bool`"
+#: ../Doc/library/struct.rst:234
+msgid ":c:expr:`_Bool`"
+msgstr ":c:expr:`_Bool`"
 
-#: ../Doc/library/struct.rst:204
+#: ../Doc/library/struct.rst:234
 msgid "bool"
 msgstr "bool"
 
-#: ../Doc/library/struct.rst:204
+#: ../Doc/library/struct.rst:234
 msgid "\\(1)"
 msgstr "\\(1)"
 
-#: ../Doc/library/struct.rst:206
+#: ../Doc/library/struct.rst:236
 msgid "``h``"
 msgstr "``h``"
 
-#: ../Doc/library/struct.rst:206
-msgid ":c:type:`short`"
-msgstr ":c:type:`short`"
+#: ../Doc/library/struct.rst:236
+msgid ":c:expr:`short`"
+msgstr ":c:expr:`short`"
 
-#: ../Doc/library/struct.rst:206 ../Doc/library/struct.rst:208
-#: ../Doc/library/struct.rst:227
+#: ../Doc/library/struct.rst:236 ../Doc/library/struct.rst:238
+#: ../Doc/library/struct.rst:257
 msgid "2"
 msgstr "2"
 
-#: ../Doc/library/struct.rst:208
+#: ../Doc/library/struct.rst:238
 msgid "``H``"
 msgstr "``H``"
 
-#: ../Doc/library/struct.rst:208
-msgid ":c:type:`unsigned short`"
-msgstr ":c:type:`unsigned short`"
+#: ../Doc/library/struct.rst:238
+msgid ":c:expr:`unsigned short`"
+msgstr ":c:expr:`unsigned short`"
 
-#: ../Doc/library/struct.rst:210
+#: ../Doc/library/struct.rst:240
 msgid "``i``"
 msgstr "``i``"
 
-#: ../Doc/library/struct.rst:210
-msgid ":c:type:`int`"
-msgstr ":c:type:`int`"
+#: ../Doc/library/struct.rst:240
+msgid ":c:expr:`int`"
+msgstr ":c:expr:`int`"
 
-#: ../Doc/library/struct.rst:210 ../Doc/library/struct.rst:212
-#: ../Doc/library/struct.rst:214 ../Doc/library/struct.rst:216
-#: ../Doc/library/struct.rst:229
+#: ../Doc/library/struct.rst:240 ../Doc/library/struct.rst:242
+#: ../Doc/library/struct.rst:244 ../Doc/library/struct.rst:246
+#: ../Doc/library/struct.rst:259
 msgid "4"
 msgstr "4"
 
-#: ../Doc/library/struct.rst:212
+#: ../Doc/library/struct.rst:242
 msgid "``I``"
 msgstr "``I``"
 
-#: ../Doc/library/struct.rst:212
-msgid ":c:type:`unsigned int`"
-msgstr ":c:type:`unsigned int`"
+#: ../Doc/library/struct.rst:242
+msgid ":c:expr:`unsigned int`"
+msgstr ":c:expr:`unsigned int`"
 
-#: ../Doc/library/struct.rst:214
+#: ../Doc/library/struct.rst:244
 msgid "``l``"
 msgstr "``l``"
 
-#: ../Doc/library/struct.rst:214
-msgid ":c:type:`long`"
-msgstr ":c:type:`long`"
+#: ../Doc/library/struct.rst:244
+msgid ":c:expr:`long`"
+msgstr ":c:expr:`long`"
 
-#: ../Doc/library/struct.rst:216
+#: ../Doc/library/struct.rst:246
 msgid "``L``"
 msgstr "``L``"
 
-#: ../Doc/library/struct.rst:216
-msgid ":c:type:`unsigned long`"
-msgstr ":c:type:`unsigned long`"
+#: ../Doc/library/struct.rst:246
+msgid ":c:expr:`unsigned long`"
+msgstr ":c:expr:`unsigned long`"
 
-#: ../Doc/library/struct.rst:218
+#: ../Doc/library/struct.rst:248
 msgid "``q``"
 msgstr "``q``"
 
-#: ../Doc/library/struct.rst:218
-msgid ":c:type:`long long`"
-msgstr ":c:type:`long long`"
+#: ../Doc/library/struct.rst:248
+msgid ":c:expr:`long long`"
+msgstr ":c:expr:`long long`"
 
-#: ../Doc/library/struct.rst:218 ../Doc/library/struct.rst:220
-#: ../Doc/library/struct.rst:231
+#: ../Doc/library/struct.rst:248 ../Doc/library/struct.rst:250
+#: ../Doc/library/struct.rst:261
 msgid "8"
 msgstr "8"
 
-#: ../Doc/library/struct.rst:220
+#: ../Doc/library/struct.rst:250
 msgid "``Q``"
 msgstr "``Q``"
 
-#: ../Doc/library/struct.rst:220
-msgid ":c:type:`unsigned long long`"
-msgstr ":c:type:`unsigned long long`"
+#: ../Doc/library/struct.rst:250
+msgid ":c:expr:`unsigned long long`"
+msgstr ":c:expr:`unsigned long long`"
 
-#: ../Doc/library/struct.rst:223
+#: ../Doc/library/struct.rst:253
 msgid "``n``"
 msgstr "``n``"
 
-#: ../Doc/library/struct.rst:223
+#: ../Doc/library/struct.rst:253
 msgid ":c:type:`ssize_t`"
 msgstr ":c:type:`ssize_t`"
 
-#: ../Doc/library/struct.rst:223 ../Doc/library/struct.rst:225
+#: ../Doc/library/struct.rst:253 ../Doc/library/struct.rst:255
 msgid "\\(3)"
 msgstr "\\(3)"
 
-#: ../Doc/library/struct.rst:225
+#: ../Doc/library/struct.rst:255
 msgid "``N``"
 msgstr "``N``"
 
-#: ../Doc/library/struct.rst:225
+#: ../Doc/library/struct.rst:255
 msgid ":c:type:`size_t`"
 msgstr ":c:type:`size_t`"
 
-#: ../Doc/library/struct.rst:227
+#: ../Doc/library/struct.rst:257
 msgid "``e``"
 msgstr "``e``"
 
-#: ../Doc/library/struct.rst:227
+#: ../Doc/library/struct.rst:257
 msgid "\\(6)"
 msgstr "\\(6)"
 
-#: ../Doc/library/struct.rst:227 ../Doc/library/struct.rst:229
-#: ../Doc/library/struct.rst:231
+#: ../Doc/library/struct.rst:257 ../Doc/library/struct.rst:259
+#: ../Doc/library/struct.rst:261
 msgid "float"
 msgstr "float"
 
-#: ../Doc/library/struct.rst:227 ../Doc/library/struct.rst:229
-#: ../Doc/library/struct.rst:231
+#: ../Doc/library/struct.rst:257 ../Doc/library/struct.rst:259
+#: ../Doc/library/struct.rst:261
 msgid "\\(4)"
 msgstr "\\(4)"
 
-#: ../Doc/library/struct.rst:229
+#: ../Doc/library/struct.rst:259
 msgid "``f``"
 msgstr "``f``"
 
-#: ../Doc/library/struct.rst:229
-msgid ":c:type:`float`"
-msgstr ":c:type:`float`"
+#: ../Doc/library/struct.rst:259
+msgid ":c:expr:`float`"
+msgstr ":c:expr:`float`"
 
-#: ../Doc/library/struct.rst:231
+#: ../Doc/library/struct.rst:261
 msgid "``d``"
 msgstr "``d``"
 
-#: ../Doc/library/struct.rst:231
-msgid ":c:type:`double`"
-msgstr ":c:type:`double`"
+#: ../Doc/library/struct.rst:261
+msgid ":c:expr:`double`"
+msgstr ":c:expr:`double`"
 
-#: ../Doc/library/struct.rst:233
+#: ../Doc/library/struct.rst:263
 msgid "``s``"
 msgstr "``s``"
 
-#: ../Doc/library/struct.rst:233 ../Doc/library/struct.rst:235
-msgid ":c:type:`char[]`"
-msgstr ":c:type:`char[]`"
+#: ../Doc/library/struct.rst:263 ../Doc/library/struct.rst:265
+msgid ":c:expr:`char[]`"
+msgstr ":c:expr:`char[]`"
 
-#: ../Doc/library/struct.rst:233 ../Doc/library/struct.rst:235
+#: ../Doc/library/struct.rst:263 ../Doc/library/struct.rst:265
 msgid "bytes"
 msgstr "bytes"
 
-#: ../Doc/library/struct.rst:235
+#: ../Doc/library/struct.rst:263
+msgid "\\(9)"
+msgstr "\\(9)"
+
+#: ../Doc/library/struct.rst:265
 msgid "``p``"
 msgstr "``p``"
 
-#: ../Doc/library/struct.rst:237
+#: ../Doc/library/struct.rst:265
+msgid "\\(8)"
+msgstr "\\(8)"
+
+#: ../Doc/library/struct.rst:267
 msgid "``P``"
 msgstr "``P``"
 
-#: ../Doc/library/struct.rst:237
-msgid ":c:type:`void \\*`"
-msgstr ":c:type:`void \\*`"
+#: ../Doc/library/struct.rst:267
+msgid ":c:expr:`void \\*`"
+msgstr ":c:expr:`void \\*`"
 
-#: ../Doc/library/struct.rst:237
+#: ../Doc/library/struct.rst:267
 msgid "\\(5)"
 msgstr "\\(5)"
 
-#: ../Doc/library/struct.rst:240
+#: ../Doc/library/struct.rst:270
 msgid "Added support for the ``'n'`` and ``'N'`` formats."
 msgstr "Soporte añadido para los formatos ``'n'`` y ``'N'``."
 
-#: ../Doc/library/struct.rst:243
+#: ../Doc/library/struct.rst:273
 msgid "Added support for the ``'e'`` format."
 msgstr "Soporte añadido para el formato ``'e'``."
 
-#: ../Doc/library/struct.rst:252
+#: ../Doc/library/struct.rst:282
+#, fuzzy
 msgid ""
-"The ``'?'`` conversion code corresponds to the :c:type:`_Bool` type defined "
-"by C99. If this type is not available, it is simulated using a :c:type:"
-"`char`. In standard mode, it is always represented by one byte."
+"The ``'?'`` conversion code corresponds to the :c:expr:`_Bool` type defined "
+"by C standards since C99.  In standard mode, it is represented by one byte."
 msgstr ""
-"El código de conversión ``'?'`` corresponde al tipo :c:type:`_Bool` definido "
-"por C99. Si este tipo no está disponible, se simula mediante un :c:type:"
+"El código de conversión ``'?'`` corresponde al tipo :c:expr:`_Bool` definido "
+"por C99. Si este tipo no está disponible, se simula mediante un :c:expr:"
 "`char`. En el modo estándar, siempre se representa mediante un byte."
 
-#: ../Doc/library/struct.rst:257
+#: ../Doc/library/struct.rst:287
 msgid ""
 "When attempting to pack a non-integer using any of the integer conversion "
-"codes, if the non-integer has a :meth:`__index__` method then that method is "
-"called to convert the argument to an integer before packing."
+"codes, if the non-integer has a :meth:`~object.__index__` method then that "
+"method is called to convert the argument to an integer before packing."
 msgstr ""
 "Al intentar empaquetar un no entero mediante cualquiera de los códigos de "
-"conversión de enteros, si el no entero tiene un método :meth:`__index__`, se "
-"llama a ese método para convertir el argumento en un entero antes de "
-"empaquetar."
+"conversión de enteros, si el no entero tiene un método :meth:`~object."
+"__index__`, se llama a ese método para convertir el argumento en un entero "
+"antes de empaquetar."
 
-#: ../Doc/library/struct.rst:261
-msgid "Added use of the :meth:`__index__` method for non-integers."
-msgstr "Agregado el uso del método :meth:`__index__` para los no enteros."
+#: ../Doc/library/struct.rst:291
+msgid "Added use of the :meth:`~object.__index__` method for non-integers."
+msgstr ""
+"Agregado el uso del método :meth:`~object.__index__` para los no enteros."
 
-#: ../Doc/library/struct.rst:265
+#: ../Doc/library/struct.rst:295
 msgid ""
 "The ``'n'`` and ``'N'`` conversion codes are only available for the native "
 "size (selected as the default or with the ``'@'`` byte order character). For "
@@ -701,7 +748,7 @@ msgstr ""
 "de bytes ``'@'``). Para el tamaño estándar, puedes usar cualquiera de los "
 "otros formatos enteros que se ajusten a tu aplicación."
 
-#: ../Doc/library/struct.rst:271
+#: ../Doc/library/struct.rst:301
 msgid ""
 "For the ``'f'``, ``'d'`` and ``'e'`` conversion codes, the packed "
 "representation uses the IEEE 754 binary32, binary64 or binary16 format (for "
@@ -713,7 +760,7 @@ msgstr ""
 "``'f'``, ``'d'`` o ``'e'`` respectivamente), independientemente del formato "
 "de punto flotante utilizado por la plataforma."
 
-#: ../Doc/library/struct.rst:277
+#: ../Doc/library/struct.rst:307
 msgid ""
 "The ``'P'`` format character is only available for the native byte ordering "
 "(selected as the default or with the ``'@'`` byte order character). The byte "
@@ -728,7 +775,7 @@ msgstr ""
 "interpreta esto como un orden nativo, por lo que el formato ``'P'`` no está "
 "disponible."
 
-#: ../Doc/library/struct.rst:284
+#: ../Doc/library/struct.rst:314
 msgid ""
 "The IEEE 754 binary16 \"half precision\" type was introduced in the 2008 "
 "revision of the `IEEE 754 standard <ieee 754 standard_>`_. It has a sign "
@@ -750,65 +797,11 @@ msgstr ""
 "flotante de media precisión <half precision format_>`_ para obtener más "
 "información."
 
-#: ../Doc/library/struct.rst:294
-msgid ""
-"A format character may be preceded by an integral repeat count.  For "
-"example, the format string ``'4h'`` means exactly the same as ``'hhhh'``."
-msgstr ""
-"Un carácter de formato puede ir precedido de un número de recuento que "
-"repite tantas veces el carácter.  Por ejemplo, la cadena de formato ``'4h'`` "
-"significa exactamente lo mismo que ``'hhhh'`` ."
+#: ../Doc/library/struct.rst:324
+msgid "When packing, ``'x'`` inserts one NUL byte."
+msgstr "Al empaquetar, ``'x'`` inserta un byte NUL."
 
-#: ../Doc/library/struct.rst:297
-msgid ""
-"Whitespace characters between formats are ignored; a count and its format "
-"must not contain whitespace though."
-msgstr ""
-"Se omiten los caracteres de espacio entre formatos; sin embargo, un recuento "
-"y su formato no deben contener espacios en blanco."
-
-#: ../Doc/library/struct.rst:300
-msgid ""
-"For the ``'s'`` format character, the count is interpreted as the length of "
-"the bytes, not a repeat count like for the other format characters; for "
-"example, ``'10s'`` means a single 10-byte string, while ``'10c'`` means 10 "
-"characters. If a count is not given, it defaults to 1.  For packing, the "
-"string is truncated or padded with null bytes as appropriate to make it fit. "
-"For unpacking, the resulting bytes object always has exactly the specified "
-"number of bytes.  As a special case, ``'0s'`` means a single, empty string "
-"(while ``'0c'`` means 0 characters)."
-msgstr ""
-"Para el carácter de formato ``'s'``, el recuento se interpreta como la "
-"longitud de los bytes, no un recuento de repetición como para los otros "
-"caracteres de formato; por ejemplo, ``'10s'`` significa una sola cadena de "
-"10 bytes, mientras que ``'10c'`` significa 10 caracteres. Si no se da un "
-"recuento, el valor predeterminado es 1.  Para el empaquetado, la cadena es "
-"truncada o rellenada con bytes nulos según corresponda para que se ajuste. "
-"Para desempaquetar, el objeto bytes resultante siempre tiene exactamente el "
-"número especificado de bytes.  Como caso especial, ``'0s'`` significa una "
-"sola cadena vacía (mientras que ``'0c'`` significa 0 caracteres)."
-
-#: ../Doc/library/struct.rst:309
-msgid ""
-"When packing a value ``x`` using one of the integer formats (``'b'``, "
-"``'B'``, ``'h'``, ``'H'``, ``'i'``, ``'I'``, ``'l'``, ``'L'``, ``'q'``, "
-"``'Q'``), if ``x`` is outside the valid range for that format then :exc:"
-"`struct.error` is raised."
-msgstr ""
-"Al empaquetar un valor ``x`` utilizando uno de los formatos enteros "
-"(``'b'``, ``'B'``, ``'h'``, ``'H'``, ``'i'``, ``'I'``, ``'l'``, ``'L'``, "
-"``'q'``, ``'Q'``), si ``x`` está fuera de un rango válido para ese formato, "
-"entonces se lanza la excepción :exc:`struct.error`."
-
-#: ../Doc/library/struct.rst:314
-msgid ""
-"Previously, some of the integer formats wrapped out-of-range values and "
-"raised :exc:`DeprecationWarning` instead of :exc:`struct.error`."
-msgstr ""
-"Anteriormente, algunos de los formatos enteros ajustaban los valores fuera "
-"de rango y lanzaban :exc:`DeprecationWarning` en vez de :exc:`struct.error`."
-
-#: ../Doc/library/struct.rst:318
+#: ../Doc/library/struct.rst:327
 msgid ""
 "The ``'p'`` format character encodes a \"Pascal string\", meaning a short "
 "variable-length string stored in a *fixed number of bytes*, given by the "
@@ -833,7 +826,72 @@ msgstr ""
 "carácter de formato ``'p'`` consume bytes ``count``, pero que la cadena "
 "retornada nunca puede contener más de 255 bytes."
 
-#: ../Doc/library/struct.rst:331
+#: ../Doc/library/struct.rst:339
+msgid ""
+"For the ``'s'`` format character, the count is interpreted as the length of "
+"the bytes, not a repeat count like for the other format characters; for "
+"example, ``'10s'`` means a single 10-byte string mapping to or from a single "
+"Python byte string, while ``'10c'`` means 10 separate one byte character "
+"elements (e.g., ``cccccccccc``) mapping to or from ten different Python byte "
+"objects. (See :ref:`struct-examples` for a concrete demonstration of the "
+"difference.) If a count is not given, it defaults to 1.  For packing, the "
+"string is truncated or padded with null bytes as appropriate to make it fit. "
+"For unpacking, the resulting bytes object always has exactly the specified "
+"number of bytes.  As a special case, ``'0s'`` means a single, empty string "
+"(while ``'0c'`` means 0 characters)."
+msgstr ""
+"Para el carácter de formato ``'s'``, el recuento se interpreta como la "
+"longitud de los bytes, no un recuento de repetición como para los otros "
+"caracteres de formato; por ejemplo, ``'10s'`` significa una sola cadena de "
+"10 bytes asignada hacia o desde una sola cadena de bytes de Python, mientras "
+"que ``'10c'`` significa 10 elementos de caracteres separados de un byte (por "
+"ejemplo, ``cccccccccc``) asignada hacia o desde diez objetos de *bytes* de "
+"Python diferentes. (Ver :ref:`struct-examples` para una demostración "
+"concreta de la diferencia.) Si no se da un recuento, el valor predeterminado "
+"es 1. Para el empaquetado, la cadena es truncada o rellenada con bytes nulos "
+"según corresponda para que se ajuste. Para desempaquetar, el objeto bytes "
+"resultante siempre tiene exactamente el número especificado de bytes. Como "
+"caso especial, ``'0s'`` significa una sola cadena vacía (mientras que "
+"``'0c'`` significa 0 caracteres)."
+
+#: ../Doc/library/struct.rst:352
+msgid ""
+"A format character may be preceded by an integral repeat count.  For "
+"example, the format string ``'4h'`` means exactly the same as ``'hhhh'``."
+msgstr ""
+"Un carácter de formato puede ir precedido de un número de recuento que "
+"repite tantas veces el carácter.  Por ejemplo, la cadena de formato ``'4h'`` "
+"significa exactamente lo mismo que ``'hhhh'`` ."
+
+#: ../Doc/library/struct.rst:355
+msgid ""
+"Whitespace characters between formats are ignored; a count and its format "
+"must not contain whitespace though."
+msgstr ""
+"Se omiten los caracteres de espacio entre formatos; sin embargo, un recuento "
+"y su formato no deben contener espacios en blanco."
+
+#: ../Doc/library/struct.rst:358
+msgid ""
+"When packing a value ``x`` using one of the integer formats (``'b'``, "
+"``'B'``, ``'h'``, ``'H'``, ``'i'``, ``'I'``, ``'l'``, ``'L'``, ``'q'``, "
+"``'Q'``), if ``x`` is outside the valid range for that format then :exc:"
+"`struct.error` is raised."
+msgstr ""
+"Al empaquetar un valor ``x`` utilizando uno de los formatos enteros "
+"(``'b'``, ``'B'``, ``'h'``, ``'H'``, ``'i'``, ``'I'``, ``'l'``, ``'L'``, "
+"``'q'``, ``'Q'``), si ``x`` está fuera de un rango válido para ese formato, "
+"entonces se lanza la excepción :exc:`struct.error`."
+
+#: ../Doc/library/struct.rst:363
+msgid ""
+"Previously, some of the integer formats wrapped out-of-range values and "
+"raised :exc:`DeprecationWarning` instead of :exc:`struct.error`."
+msgstr ""
+"Anteriormente, algunos de los formatos enteros ajustaban los valores fuera "
+"de rango y lanzaban :exc:`DeprecationWarning` en vez de :exc:`struct.error`."
+
+#: ../Doc/library/struct.rst:369
 msgid ""
 "For the ``'?'`` format character, the return value is either :const:`True` "
 "or :const:`False`. When packing, the truth value of the argument object is "
@@ -845,23 +903,68 @@ msgstr ""
 "argumento. Se empaquetará 0 o 1 en la representación *bool* nativa o "
 "estándar, y cualquier valor distinto de cero será ``True`` al desempaquetar."
 
-#: ../Doc/library/struct.rst:341
+#: ../Doc/library/struct.rst:379
 msgid "Examples"
 msgstr "Ejemplos"
 
-#: ../Doc/library/struct.rst:344
+#: ../Doc/library/struct.rst:382
 msgid ""
-"All examples assume a native byte order, size, and alignment with a big-"
-"endian machine."
+"Native byte order examples (designated by the ``'@'`` format prefix or lack "
+"of any prefix character) may not match what the reader's machine produces as "
+"that depends on the platform and compiler."
 msgstr ""
-"Todos los ejemplos asumen un orden de bytes, tamaño y alineación nativos con "
-"una máquina big-endian."
+"Los ejemplos de orden de bytes nativos (designados por el prefijo de formato "
+"``'@'`` o la falta de cualquier carácter de prefijo) pueden no coincidir con "
+"lo que produce la máquina del lector, ya que eso depende de la plataforma y "
+"el compilador."
 
-#: ../Doc/library/struct.rst:347
-msgid "A basic example of packing/unpacking three integers::"
-msgstr "Un ejemplo básico de empaquetado/desempaquetado de tres enteros::"
+#: ../Doc/library/struct.rst:387
+msgid ""
+"Pack and unpack integers of three different sizes, using big endian "
+"ordering::"
+msgstr ""
+"Empaqueta y desempaqueta enteros de tres tamaños diferentes, utilizando el "
+"orden *big endian*::"
 
-#: ../Doc/library/struct.rst:357
+#: ../Doc/library/struct.rst:390
+msgid ""
+">>> from struct import *\n"
+">>> pack(\">bhl\", 1, 2, 3)\n"
+"b'\\x01\\x00\\x02\\x00\\x00\\x00\\x03'\n"
+">>> unpack('>bhl', b'\\x01\\x00\\x02\\x00\\x00\\x00\\x03')\n"
+"(1, 2, 3)\n"
+">>> calcsize('>bhl')\n"
+"7"
+msgstr ""
+
+#: ../Doc/library/struct.rst:398
+msgid "Attempt to pack an integer which is too large for the defined field::"
+msgstr ""
+"Intenta empaquetar un entero que es demasiado grande para el campo definido::"
+
+#: ../Doc/library/struct.rst:400
+msgid ""
+">>> pack(\">h\", 99999)\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 1, in <module>\n"
+"struct.error: 'h' format requires -32768 <= number <= 32767"
+msgstr ""
+
+#: ../Doc/library/struct.rst:405
+msgid ""
+"Demonstrate the difference between ``'s'`` and ``'c'`` format characters::"
+msgstr ""
+"Demuestra la diferencia entre los caracteres de formato ``'s'`` y ``'c'``::"
+
+#: ../Doc/library/struct.rst:408
+msgid ""
+">>> pack(\"@ccc\", b'1', b'2', b'3')\n"
+"b'123'\n"
+">>> pack(\"@3s\", b'123')\n"
+"b'123'"
+msgstr ""
+
+#: ../Doc/library/struct.rst:413
 msgid ""
 "Unpacked fields can be named by assigning them to variables or by wrapping "
 "the result in a named tuple::"
@@ -869,85 +972,282 @@ msgstr ""
 "Los campos desempaquetados se pueden nombrar asignándolos a variables o "
 "ajustando el resultado en una tupla con nombre::"
 
-#: ../Doc/library/struct.rst:368
+#: ../Doc/library/struct.rst:416
 msgid ""
-"The ordering of format characters may have an impact on size since the "
-"padding needed to satisfy alignment requirements is different::"
+">>> record = b'raymond   \\x32\\x12\\x08\\x01\\x08'\n"
+">>> name, serialnum, school, gradelevel = unpack('<10sHHb', record)\n"
+"\n"
+">>> from collections import namedtuple\n"
+">>> Student = namedtuple('Student', 'name serialnum school gradelevel')\n"
+">>> Student._make(unpack('<10sHHb', record))\n"
+"Student(name=b'raymond   ', serialnum=4658, school=264, gradelevel=8)"
 msgstr ""
-"El orden de los caracteres de formato puede tener un impacto en el tamaño ya "
-"que el relleno necesario para satisfacer los requisitos de alineación es "
-"diferente::"
 
-#: ../Doc/library/struct.rst:380
+#: ../Doc/library/struct.rst:424
 msgid ""
-"The following format ``'llh0l'`` specifies two pad bytes at the end, "
-"assuming longs are aligned on 4-byte boundaries::"
+"The ordering of format characters may have an impact on size in native mode "
+"since padding is implicit. In standard mode, the user is responsible for "
+"inserting any desired padding. Note in the first ``pack`` call below that "
+"three NUL bytes were added after the packed ``'#'`` to align the following "
+"integer on a four-byte boundary. In this example, the output was produced on "
+"a little endian machine::"
+msgstr ""
+"El orden de los caracteres de formato puede afectar el tamaño en el modo "
+"nativo, ya que el relleno está implícito. En el modo estándar, el usuario es "
+"responsable de insertar el relleno que desee. Toma en cuenta que en la "
+"primera llamada ``pack`` a continuación se agregaron tres bytes NUL después "
+"del ``'#'`` empaquetado para alinear el siguiente entero en un límite de "
+"cuatro bytes. En este ejemplo, el resultado se produjo en una máquina little "
+"endian::"
+
+#: ../Doc/library/struct.rst:432
+msgid ""
+">>> pack('@ci', b'#', 0x12131415)\n"
+"b'#\\x00\\x00\\x00\\x15\\x14\\x13\\x12'\n"
+">>> pack('@ic', 0x12131415, b'#')\n"
+"b'\\x15\\x14\\x13\\x12#'\n"
+">>> calcsize('@ci')\n"
+"8\n"
+">>> calcsize('@ic')\n"
+"5"
+msgstr ""
+
+#: ../Doc/library/struct.rst:441
+msgid ""
+"The following format ``'llh0l'`` results in two pad bytes being added at the "
+"end, assuming the platform's longs are aligned on 4-byte boundaries::"
 msgstr ""
 "El siguiente formato ``'llh0l'`` especifica dos bytes de relleno al final, "
 "suponiendo que los tipos *longs* están alineados en los límites de 4 bytes::"
 
-#: ../Doc/library/struct.rst:386
+#: ../Doc/library/struct.rst:444
 msgid ""
-"This only works when native size and alignment are in effect; standard size "
-"and alignment does not enforce any alignment."
+">>> pack('@llh0l', 1, 2, 3)\n"
+"b'\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x02\\x00\\x03\\x00\\x00'"
 msgstr ""
-"Esto solo funciona cuando el tamaño y la alineación nativos tienen efecto; "
-"el tamaño estándar y la alineación no imponen ninguna alineación."
 
-#: ../Doc/library/struct.rst:393
+#: ../Doc/library/struct.rst:451
 msgid "Module :mod:`array`"
 msgstr "Módulo :mod:`array`"
 
-#: ../Doc/library/struct.rst:393
+#: ../Doc/library/struct.rst:451
 msgid "Packed binary storage of homogeneous data."
 msgstr "Almacenamiento binario empaquetado de datos homogéneos."
 
-#: ../Doc/library/struct.rst:395
-msgid "Module :mod:`xdrlib`"
-msgstr "Módulo :mod:`xdrlib`"
+#: ../Doc/library/struct.rst:454
+msgid "Module :mod:`json`"
+msgstr "Módulo :mod:`json`"
 
-#: ../Doc/library/struct.rst:396
-msgid "Packing and unpacking of XDR data."
-msgstr "Empaquetar y desempaquetar datos XDR."
+#: ../Doc/library/struct.rst:454
+msgid "JSON encoder and decoder."
+msgstr "Codificador y decodificador JSON."
 
-#: ../Doc/library/struct.rst:402
+#: ../Doc/library/struct.rst:456
+msgid "Module :mod:`pickle`"
+msgstr "Módulo :mod:`pickle`"
+
+#: ../Doc/library/struct.rst:457
+msgid "Python object serialization."
+msgstr "Serialización de objetos Python."
+
+#: ../Doc/library/struct.rst:463
+msgid "Applications"
+msgstr "Aplicaciones"
+
+#: ../Doc/library/struct.rst:465
+msgid ""
+"Two main applications for the :mod:`struct` module exist, data interchange "
+"between Python and C code within an application or another application "
+"compiled using the same compiler (:ref:`native formats<struct-native-"
+"formats>`), and data interchange between applications using agreed upon data "
+"layout (:ref:`standard formats<struct-standard-formats>`).  Generally "
+"speaking, the format strings constructed for these two domains are distinct."
+msgstr ""
+"Existen dos aplicaciones principales para el módulo :mod:`struct`, el "
+"intercambio de datos entre el código Python y C dentro de una aplicación u "
+"otra aplicación compilada usando el mismo compilador (:ref:`formatos "
+"nativos<struct-native-formats>`) y el intercambio de datos entre "
+"aplicaciones usando un diseño de datos acordado (:ref:`formatos estándar "
+"<struct-standard-formats>`). En términos generales, las cadenas de formato "
+"construidas para estos dos dominios son distintas."
+
+#: ../Doc/library/struct.rst:476
+msgid "Native Formats"
+msgstr "Formatos nativos"
+
+#: ../Doc/library/struct.rst:478
+msgid ""
+"When constructing format strings which mimic native layouts, the compiler "
+"and machine architecture determine byte ordering and padding. In such cases, "
+"the ``@`` format character should be used to specify native byte ordering "
+"and data sizes.  Internal pad bytes are normally inserted automatically.  It "
+"is possible that a zero-repeat format code will be needed at the end of a "
+"format string to round up to the correct byte boundary for proper alignment "
+"of consecutive chunks of data."
+msgstr ""
+"Al construir cadenas de formato que imitan diseños nativos, el compilador y "
+"la arquitectura de la máquina determinan el orden y el relleno de los bytes. "
+"En tales casos, se debe utilizar el carácter de formato ``@`` para "
+"especificar el orden de bytes nativo y el tamaño de los datos. Los bytes de "
+"relleno internos normalmente se insertan automáticamente. Es posible que se "
+"necesite un código de formato de repetición cero al final de una cadena de "
+"formato para redondear hasta el límite de bytes correcto para una alineación "
+"adecuada de fragmentos de datos consecutivos."
+
+#: ../Doc/library/struct.rst:486
+msgid ""
+"Consider these two simple examples (on a 64-bit, little-endian machine)::"
+msgstr ""
+"Considera estos dos ejemplos sencillos (en una máquina little-endian de 64 "
+"bits)::"
+
+#: ../Doc/library/struct.rst:489
+msgid ""
+">>> calcsize('@lhl')\n"
+"24\n"
+">>> calcsize('@llh')\n"
+"18"
+msgstr ""
+
+#: ../Doc/library/struct.rst:494
+msgid ""
+"Data is not padded to an 8-byte boundary at the end of the second format "
+"string without the use of extra padding.  A zero-repeat format code solves "
+"that problem::"
+msgstr ""
+"Los datos no se rellenan hasta un límite de 8 bytes al final de la segunda "
+"cadena de formato sin el uso de relleno adicional. Un código de formato de "
+"repetición cero resuelve ese problema::"
+
+#: ../Doc/library/struct.rst:498
+msgid ""
+">>> calcsize('@llh0l')\n"
+"24"
+msgstr ""
+
+#: ../Doc/library/struct.rst:501
+msgid ""
+"The ``'x'`` format code can be used to specify the repeat, but for native "
+"formats it is better to use a zero-repeat format like ``'0l'``."
+msgstr ""
+"El código de formato ``'x'`` se puede utilizar para especificar la "
+"repetición, pero para formatos nativos es mejor utilizar un formato de "
+"repetición cero como ``'0l'``."
+
+#: ../Doc/library/struct.rst:504
+msgid ""
+"By default, native byte ordering and alignment is used, but it is better to "
+"be explicit and use the ``'@'`` prefix character."
+msgstr ""
+"De forma predeterminada, se utiliza el orden y la alineación de bytes "
+"nativos, pero es mejor ser explícito y utilizar el carácter de prefijo "
+"``'@'``."
+
+#: ../Doc/library/struct.rst:511
+msgid "Standard Formats"
+msgstr "Formatos estándar"
+
+#: ../Doc/library/struct.rst:513
+msgid ""
+"When exchanging data beyond your process such as networking or storage, be "
+"precise.  Specify the exact byte order, size, and alignment.  Do not assume "
+"they match the native order of a particular machine. For example, network "
+"byte order is big-endian, while many popular CPUs are little-endian.  By "
+"defining this explicitly, the user need not care about the specifics of the "
+"platform their code is running on. The first character should typically be "
+"``<`` or ``>`` (or ``!``).  Padding is the responsibility of the "
+"programmer.  The zero-repeat format character won't work.  Instead, the user "
+"must explicitly add ``'x'`` pad bytes where needed.  Revisiting the examples "
+"from the previous section, we have::"
+msgstr ""
+"Cuando intercambia datos más allá de su proceso, como redes o "
+"almacenamiento, sé preciso. Especifica el orden de bytes, el tamaño y la "
+"alineación exactos. No asumas que coinciden con el orden nativo de una "
+"máquina en particular. Por ejemplo, el orden de los bytes de la red es big-"
+"endian, mientras que muchas CPU populares son little-endian. Al definir esto "
+"explícitamente, el usuario no necesita preocuparse por las especificaciones "
+"de la plataforma en la que se ejecuta su código. El primer carácter "
+"normalmente debería ser ``<`` o ``>`` (o ``!``). El relleno es "
+"responsabilidad del programador. El carácter de formato de repetición cero "
+"no funcionará. En su lugar, el usuario debe agregar explícitamente ``'x'`` "
+"bytes de relleno donde sea necesario. Revisando los ejemplos de la sección "
+"anterior, tenemos::"
+
+#: ../Doc/library/struct.rst:525
+msgid ""
+">>> calcsize('<qh6xq')\n"
+"24\n"
+">>> pack('<qh6xq', 1, 2, 3) == pack('@lhl', 1, 2, 3)\n"
+"True\n"
+">>> calcsize('@llh')\n"
+"18\n"
+">>> pack('@llh', 1, 2, 3) == pack('<qqh', 1, 2, 3)\n"
+"True\n"
+">>> calcsize('<qqh6x')\n"
+"24\n"
+">>> calcsize('@llh0l')\n"
+"24\n"
+">>> pack('@llh0l', 1, 2, 3) == pack('<qqh6x', 1, 2, 3)\n"
+"True"
+msgstr ""
+
+#: ../Doc/library/struct.rst:540
+msgid ""
+"The above results (executed on a 64-bit machine) aren't guaranteed to match "
+"when executed on different machines.  For example, the examples below were "
+"executed on a 32-bit machine::"
+msgstr ""
+"No se garantiza que los resultados anteriores (ejecutados en una máquina de "
+"64 bits) coincidan cuando se ejecutan en diferentes máquinas. Por ejemplo, "
+"los siguientes ejemplos se ejecutaron en una máquina de 32 bits::"
+
+#: ../Doc/library/struct.rst:544
+msgid ""
+">>> calcsize('<qqh6x')\n"
+"24\n"
+">>> calcsize('@llh0l')\n"
+"12\n"
+">>> pack('@llh0l', 1, 2, 3) == pack('<qqh6x', 1, 2, 3)\n"
+"False"
+msgstr ""
+
+#: ../Doc/library/struct.rst:555
 msgid "Classes"
 msgstr "Clases"
 
-#: ../Doc/library/struct.rst:404
+#: ../Doc/library/struct.rst:557
 msgid "The :mod:`struct` module also defines the following type:"
 msgstr "El módulo :mod:`struct` también define el siguiente tipo:"
 
-#: ../Doc/library/struct.rst:409
+#: ../Doc/library/struct.rst:562
 msgid ""
 "Return a new Struct object which writes and reads binary data according to "
-"the format string *format*.  Creating a Struct object once and calling its "
-"methods is more efficient than calling the :mod:`struct` functions with the "
-"same format since the format string only needs to be compiled once."
+"the format string *format*.  Creating a ``Struct`` object once and calling "
+"its methods is more efficient than calling module-level functions with the "
+"same format since the format string is only compiled once."
 msgstr ""
 "Retorna un nuevo objeto Struct que escribe y lee datos binarios según la "
-"cadena de formato *format*.  Crear un objeto Struct una vez y llamar a sus "
-"métodos es más eficaz que llamar a las funciones :mod:`struct` con el mismo "
-"formato, ya que la cadena de formato solo se compila una vez en ese caso."
+"cadena de formato *format*. Crear un objeto ``Struct`` una vez y llamar a "
+"sus métodos es más eficaz que llamar a las funciones a nivel de módulo con "
+"el mismo formato, ya que la cadena de formato solo se compila una vez."
 
-#: ../Doc/library/struct.rst:416
+#: ../Doc/library/struct.rst:569
 msgid ""
-"The compiled versions of the most recent format strings passed to :class:"
-"`Struct` and the module-level functions are cached, so programs that use "
-"only a few format strings needn't worry about reusing a single :class:"
-"`Struct` instance."
+"The compiled versions of the most recent format strings passed to the module-"
+"level functions are cached, so programs that use only a few format strings "
+"needn't worry about reusing a single :class:`Struct` instance."
 msgstr ""
-"Las versiones compiladas de las cadenas de formato más recientes pasadas a :"
-"class:`Struct` y las funciones de nivel de módulo se almacenan en caché, por "
-"lo que los programas que utilizan solo unas pocas cadenas de formato no "
-"necesitan preocuparse por volver a usar una sola instancia :class:`Struct`."
+"Las versiones compiladas de las cadenas de formato más recientes pasadas a "
+"las funciones de nivel de módulo se almacenan en caché, por lo que los "
+"programas que utilizan solo unas pocas cadenas de formato no necesitan "
+"preocuparse por volver a usar una sola instancia :class:`Struct`."
 
-#: ../Doc/library/struct.rst:421
+#: ../Doc/library/struct.rst:574
 msgid "Compiled Struct objects support the following methods and attributes:"
 msgstr ""
 "Los objetos Struct compilados admiten los siguientes métodos y atributos:"
 
-#: ../Doc/library/struct.rst:425
+#: ../Doc/library/struct.rst:578
 msgid ""
 "Identical to the :func:`pack` function, using the compiled format. "
 "(``len(result)`` will equal :attr:`size`.)"
@@ -955,12 +1255,12 @@ msgstr ""
 "Idéntico a la función :func:`pack`, utilizando el formato compilado. "
 "(``len(result)`` será igual a :attr:`size`.)"
 
-#: ../Doc/library/struct.rst:431
+#: ../Doc/library/struct.rst:584
 msgid "Identical to the :func:`pack_into` function, using the compiled format."
 msgstr ""
 "Idéntico a la función :func:`pack_into`, utilizando el formato compilado."
 
-#: ../Doc/library/struct.rst:436
+#: ../Doc/library/struct.rst:589
 msgid ""
 "Identical to the :func:`unpack` function, using the compiled format. The "
 "buffer's size in bytes must equal :attr:`size`."
@@ -968,7 +1268,7 @@ msgstr ""
 "Idéntico a la función :func:`unpack`, utilizando el formato compilado. El "
 "tamaño del búfer en bytes debe ser igual a :attr:`size`."
 
-#: ../Doc/library/struct.rst:442
+#: ../Doc/library/struct.rst:595
 msgid ""
 "Identical to the :func:`unpack_from` function, using the compiled format. "
 "The buffer's size in bytes, starting at position *offset*, must be at least :"
@@ -978,7 +1278,7 @@ msgstr ""
 "El tamaño del búfer en bytes, comenzando en la posición *offset*, debe ser "
 "al menos :attr:`size`."
 
-#: ../Doc/library/struct.rst:449
+#: ../Doc/library/struct.rst:602
 msgid ""
 "Identical to the :func:`iter_unpack` function, using the compiled format. "
 "The buffer's size in bytes must be a multiple of :attr:`size`."
@@ -986,20 +1286,73 @@ msgstr ""
 "Idéntico a la función :func:`iter_unpack`, utilizando el formato compilado. "
 "El tamaño del búfer en bytes debe ser un múltiplo de :attr:`size`."
 
-#: ../Doc/library/struct.rst:456
+#: ../Doc/library/struct.rst:609
 msgid "The format string used to construct this Struct object."
 msgstr "Cadena de formato utilizada para construir este objeto Struct."
 
-#: ../Doc/library/struct.rst:458
+#: ../Doc/library/struct.rst:611
 msgid "The format string type is now :class:`str` instead of :class:`bytes`."
 msgstr ""
 "El tipo de cadena de formato es ahora :class:`str` en lugar de :class:"
 "`bytes`."
 
-#: ../Doc/library/struct.rst:463
+#: ../Doc/library/struct.rst:616
 msgid ""
 "The calculated size of the struct (and hence of the bytes object produced by "
 "the :meth:`pack` method) corresponding to :attr:`format`."
 msgstr ""
 "El tamaño calculado de la estructura (y, por lo tanto, del objeto bytes "
 "generado por el método :meth:`pack`) correspondiente a :attr:`format`."
+
+#: ../Doc/library/struct.rst:619
+msgid "The *repr()* of structs has changed.  It is now:"
+msgstr ""
+
+#: ../Doc/library/struct.rst:13
+msgid "C"
+msgstr "C"
+
+#: ../Doc/library/struct.rst:13
+msgid "structures"
+msgstr "estructuras"
+
+#: ../Doc/library/struct.rst:13
+msgid "packing"
+msgstr "empaquetado"
+
+#: ../Doc/library/struct.rst:13
+msgid "binary"
+msgstr "binario"
+
+#: ../Doc/library/struct.rst:13
+msgid "data"
+msgstr "datos"
+
+#: ../Doc/library/struct.rst:136
+msgid "@ (at)"
+msgstr "@ (en)"
+
+#: ../Doc/library/struct.rst:136 ../Doc/library/struct.rst:280
+#: ../Doc/library/struct.rst:367
+msgid "in struct format strings"
+msgstr "en cadenas de formato de estructura"
+
+#: ../Doc/library/struct.rst:136
+msgid "= (equals)"
+msgstr "= (igual a)"
+
+#: ../Doc/library/struct.rst:136
+msgid "< (less)"
+msgstr "< (menor que)"
+
+#: ../Doc/library/struct.rst:136
+msgid "> (greater)"
+msgstr "> (mayor que)"
+
+#: ../Doc/library/struct.rst:136
+msgid "! (exclamation)"
+msgstr "! (exclamación)"
+
+#: ../Doc/library/struct.rst:280 ../Doc/library/struct.rst:367
+msgid "? (question mark)"
+msgstr "? (signo de interrogación)"

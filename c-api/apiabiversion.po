@@ -10,17 +10,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-16 21:42+0200\n"
-"PO-Revision-Date: 2021-10-30 21:22-0300\n"
+"POT-Creation-Date: 2023-10-12 19:43+0200\n"
+"PO-Revision-Date: 2024-10-31 01:00-0400\n"
 "Last-Translator: \n"
-"Language: es\n"
 "Language-Team: python-doc-es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
-"X-Generator: Poedit 3.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.13.0\n"
+"X-Generator: Poedit 3.5\n"
 
 #: ../Doc/c-api/apiabiversion.rst:7
 msgid "API and ABI Versioning"
@@ -180,6 +180,29 @@ msgstr ""
 "Así, ``3.4.1a2`` es la hexadecimal ``0x030401a2`` y ``3.10.0`` es la "
 "hexadecimal ``0x030a00f0``."
 
-#: ../Doc/c-api/apiabiversion.rst:62
+#: ../Doc/c-api/apiabiversion.rst:61
+msgid "Use this for numeric comparisons, e.g. ``#if PY_VERSION_HEX >= ...``."
+msgstr ""
+"Use esto para comparaciones numéricas, por ejemplo ``#if PY_VERSION_HEX "
+">= ...``."
+
+#: ../Doc/c-api/apiabiversion.rst:63
+msgid "This version is also available via the symbol :c:var:`Py_Version`."
+msgstr ""
+"Esta versión también está disponible a través del símbolo :c:var:"
+"`Py_Version`."
+
+#: ../Doc/c-api/apiabiversion.rst:67
+msgid ""
+"The Python runtime version number encoded in a single constant integer, with "
+"the same format as the :c:macro:`PY_VERSION_HEX` macro. This contains the "
+"Python version used at run time."
+msgstr ""
+"El número de versión de Python en tiempo de ejecución codificado en un único "
+"entero constante, con el mismo formato que la macro :c:macro:"
+"`PY_VERSION_HEX`. Contiene la versión de Python utilizada en tiempo de "
+"ejecución."
+
+#: ../Doc/c-api/apiabiversion.rst:73
 msgid "All the given macros are defined in :source:`Include/patchlevel.h`."
 msgstr "Todas las macros dadas se definen en :source:`Include/patchlevel.h`."

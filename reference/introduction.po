@@ -1,23 +1,25 @@
 # Copyright (C) 2001-2020, Python Software Foundation
 # This file is distributed under the same license as the Python package.
 # Maintained by the python-doc-es workteam.
-# docs-es@python.org / https://mail.python.org/mailman3/lists/docs-es.python.org/
-# Check https://github.com/python/python-docs-es/blob/3.8/TRANSLATORS to get the list of volunteers
+# docs-es@python.org /
+# https://mail.python.org/mailman3/lists/docs-es.python.org/
+# Check https://github.com/python/python-docs-es/blob/3.8/TRANSLATORS to get
+# the list of volunteers
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-06 11:59-0400\n"
-"PO-Revision-Date: 2020-05-09 18:45+0200\n"
-"Language-Team: python-doc-es\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2024-11-21 16:38-0300\n"
+"PO-Revision-Date: 2024-01-22 13:59-0500\n"
 "Last-Translator: Xavi Francisco <xavi@srxavi.me>\n"
 "Language: es\n"
-"X-Generator: Poedit 2.3\n"
+"Language-Team: python-doc-es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
 
 #: ../Doc/reference/introduction.rst:6
 msgid "Introduction"
@@ -45,17 +47,18 @@ msgid ""
 "like to see a more formal definition of the language, maybe you could "
 "volunteer your time --- or invent a cloning machine :-)."
 msgstr ""
-"Aunque intento ser lo más preciso posible, prefiero usar español en lugar de "
-"especificaciones formales para todo excepto para la sintaxis y el análisis "
-"léxico. Ésto debería hacer el documento más comprensible para el lector "
-"promedio, pero deja espacio para ambigüedades. De esta manera, si vinieras "
-"de Marte e intentases implementar Python utilizando únicamente este "
-"documento, tendrías que deducir cosas y, de hecho, probablemente acabarías "
-"implementando un lenguaje diferente. Por otro lado, si estás usando Python y "
-"te preguntas cuáles son las reglas concretas acerca de un área  específica "
-"del lenguaje, definitivamente las encontrarás aquí. Si te gustaría ver una "
-"definición más formal del lenguaje, tal vez podrías dedicar, "
-"voluntariamente, algo de tu tiempo... O inventar una máquina de clonar :-)."
+"Aunque intento ser lo más preciso posible, he optado por utilizar el Español "
+"(N. de T.: del original en inglés \\\"I chose to use English\\\")\" en lugar "
+"de especificaciones formales para todo, excepto para la sintaxis y el "
+"análisis léxico. Esto debería hacer el documento más comprensible para el "
+"lector medio, pero dejará espacio para ambigüedades. En consecuencia, si "
+"vienes de Marte y tratas de re implementar Python sólo a partir de este "
+"documento, puede que tengas que adivinar cosas y, de hecho, probablemente "
+"acabarías implementando un lenguaje bastante diferente. Por otro lado, si "
+"estás usando Python y te preguntas cuáles son las reglas precisas sobre un "
+"área particular del lenguaje, deberías poder encontrarlas aquí. Si te "
+"gustaría ver una definición más formal del lenguaje, quizás podrías ofrecer "
+"tu tiempo --- o inventar una máquina clonadora :-)."
 
 #: ../Doc/reference/introduction.rst:23
 msgid ""
@@ -129,18 +132,18 @@ msgid ""
 "Python implemented in Java.  This implementation can be used as a scripting "
 "language for Java applications, or can be used to create applications using "
 "the Java class libraries.  It is also often used to create tests for Java "
-"libraries. More information can be found at `the Jython website <http://www."
+"libraries. More information can be found at `the Jython website <https://www."
 "jython.org/>`_."
 msgstr ""
-"Python implementado en Java. Esta implementación se puede usar como lenguaje "
-"de *scripting* para aplicaciones Java o se puede usar para crear "
-"aplicaciones usando las librerías de clases de Java. A menudo se usa para "
-"crear pruebas para librerías de Java. Se puede hallar más información en `el "
-"sitio web de Jython <http://jython.org>`_."
+"Python implementado en Java. Esta implementación puede utilizarse como "
+"lenguaje de scripting para aplicaciones Java, o puede utilizarse para crear "
+"aplicaciones utilizando las bibliotecas de clases Java.  También se utiliza "
+"a menudo para crear pruebas para bibliotecas Java. Puede encontrar más "
+"información en `the Jython website <https://www.jython.org/>`_."
 
 #: ../Doc/reference/introduction.rst:63
 msgid "Python for .NET"
-msgstr "Python for .NET"
+msgstr "Python para .NET"
 
 #: ../Doc/reference/introduction.rst:60
 msgid ""
@@ -163,35 +166,37 @@ msgid ""
 "An alternate Python for .NET.  Unlike Python.NET, this is a complete Python "
 "implementation that generates IL, and compiles Python code directly to .NET "
 "assemblies.  It was created by Jim Hugunin, the original creator of Jython.  "
-"For more information, see `the IronPython website <http://ironpython.net/>`_."
+"For more information, see `the IronPython website <https://ironpython.net/"
+">`_."
 msgstr ""
-"Un Python alternativo para .NET. Al contrario que Python.NET, esta es una "
-"implementación completa de Python que genera lenguaje intermedio (IL) y "
-"compila el código directamente en ensamblados de .NET. Ha sido creado por "
-"Jim Hugunin, el creador original de Jython. Para más información ver `el "
-"sitio web de IronPython <http://ironpython.net/>`_."
+"Una alternativa de Python para .NET.  A diferencia de Python.NET, esta es "
+"una implementación completa de Python que genera IL, y compila código Python "
+"directamente a ensamblados .NET.  Fue creado por Jim Hugunin, el creador "
+"original de Jython. Para más información, consulte `el sitio web de "
+"IronPython <https://ironpython.net/>`_."
 
 #: ../Doc/reference/introduction.rst:77
 msgid "PyPy"
 msgstr "PyPy"
 
 #: ../Doc/reference/introduction.rst:72
+#, fuzzy
 msgid ""
 "An implementation of Python written completely in Python. It supports "
 "several advanced features not found in other implementations like stackless "
 "support and a Just in Time compiler. One of the goals of the project is to "
 "encourage experimentation with the language itself by making it easier to "
 "modify the interpreter (since it is written in Python).  Additional "
-"information is available on `the PyPy project's home page <http://pypy.org/"
+"information is available on `the PyPy project's home page <https://pypy.org/"
 ">`_."
 msgstr ""
 "Una implementación de Python escrita completamente en Python. Soporta varias "
 "características avanzadas que no se encuentran en otras implementaciones "
-"como el soporte *stackless* y un compilador *Just in Time*. Una de las metas "
-"del proyecto es animar a la experimentación con el lenguaje mismo haciendo "
-"más fácil la modificación del intérprete (ya que está escrito en Python). "
-"Hay información adicional disponible en `el sitio web del proyecto PyPy "
-"<http://pypy.org/>`_."
+"como soporte stackless y un compilador Just in Time. Uno de los objetivos "
+"del proyecto es fomentar la experimentación con el propio lenguaje "
+"facilitando la modificación del intérprete (ya que está escrito en Python). "
+"Puede encontrar más información en la página principal del proyecto 'PyPy "
+"<https://www.pypy.org/>_'"
 
 #: ../Doc/reference/introduction.rst:79
 msgid ""
@@ -212,15 +217,17 @@ msgid "Notation"
 msgstr "Notación"
 
 #: ../Doc/reference/introduction.rst:93
+#, fuzzy, python-format
 msgid ""
-"The descriptions of lexical analysis and syntax use a modified BNF grammar "
-"notation.  This uses the following style of definition:"
+"The descriptions of lexical analysis and syntax use a modified `Backus–Naur "
+"form (BNF) <https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form>`_ "
+"grammar notation.  This uses the following style of definition:"
 msgstr ""
 "Las descripciones del análisis léxico y sintáctico usan una notación "
 "gramatical BNF modificada. De tal forma, utilizan el siguiente estilo de "
 "definición:"
 
-#: ../Doc/reference/introduction.rst:100
+#: ../Doc/reference/introduction.rst:101
 msgid ""
 "The first line says that a ``name`` is an ``lc_letter`` followed by a "
 "sequence of zero or more ``lc_letter``\\ s and underscores.  An "
@@ -234,7 +241,7 @@ msgstr ""
 "regla se cumple realmente para los nombres definidos en las reglas léxicas y "
 "gramaticales en este documento.)"
 
-#: ../Doc/reference/introduction.rst:105
+#: ../Doc/reference/introduction.rst:106
 msgid ""
 "Each rule begins with a name (which is the name defined by the rule) and ``::"
 "=``.  A vertical bar (``|``) is used to separate alternatives; it is the "
@@ -262,7 +269,7 @@ msgstr ""
 "alternativa, con una barra vertical con cada línea después del primer "
 "comienzo."
 
-#: ../Doc/reference/introduction.rst:119
+#: ../Doc/reference/introduction.rst:120
 msgid ""
 "In lexical definitions (as the example above), two more conventions are "
 "used: Two literal characters separated by three dots mean a choice of any "
@@ -271,15 +278,15 @@ msgid ""
 "the symbol defined; e.g., this could be used to describe the notion of "
 "'control character' if needed."
 msgstr ""
-"En las definiciones léxicas (como en el ejemplo anterior), se utilizan dos "
-"convenciones más: dos caracteres literales separados por tres puntos "
-"significan la elección de cualquier carácter individual en el rango "
-"(inclusivo) de caracteres ASCII dado. Una frase entre paréntesis angulares "
-"(``<...>``) da una definición informal del símbolo definido; por ejemplo, "
-"ésto se puede usar, si fuera necesario, para describir la noción de "
-"'carácter de control'."
+"En las definiciones léxicas (como el ejemplo anterior), se utilizan dos "
+"convenciones más: Dos caracteres literales separados por tres puntos "
+"significan que se puede elegir cualquier carácter de la gama dada "
+"(inclusiva) de caracteres ASCII. Una frase entre corchetes angulares (``<..."
+">``) ofrece una descripción informal del símbolo definido; por ejemplo, "
+"podría utilizarse para describir la noción de \"carácter de control\" si "
+"fuera necesario."
 
-#: ../Doc/reference/introduction.rst:126
+#: ../Doc/reference/introduction.rst:127
 msgid ""
 "Even though the notation used is almost the same, there is a big difference "
 "between the meaning of lexical and syntactic definitions: a lexical "
@@ -289,10 +296,34 @@ msgid ""
 "are lexical definitions; uses in subsequent chapters are syntactic "
 "definitions."
 msgstr ""
-"Aunque la notación usada es casi la misma, hay una gran diferencia entre el "
-"significado de las definiciones léxicas y sintácticas: una definición léxica "
-"opera en los caracteres individuales de la fuente de entrada mientras que "
-"una definición sintáctica opera en el flujo de tokens generados por el "
-"análisis léxico. Todos los usos de BNF en el siguiente capítulo (\"Análisis "
-"Léxico\") son definiciones léxicas. Usos en capítulos posteriores son "
-"definiciones sintácticas."
+"Aunque la notación utilizada es casi la misma, hay una gran diferencia entre "
+"el significado de las definiciones léxicas y sintácticas: una definición "
+"léxica opera sobre los caracteres individuales de la fuente de entrada, "
+"mientras que una definición sintáctica opera sobre el flujo de tokens "
+"generado por el análisis léxico. Todos los usos de BNF en el próximo "
+"capítulo (\\\"Análisis léxico\\\") son definiciones léxicas; los usos en los "
+"capítulos siguientes son definiciones sintácticas."
+
+#: ../Doc/reference/introduction.rst:91
+msgid "BNF"
+msgstr "BNF"
+
+#: ../Doc/reference/introduction.rst:91
+msgid "grammar"
+msgstr "grammar"
+
+#: ../Doc/reference/introduction.rst:91
+msgid "syntax"
+msgstr "syntax"
+
+#: ../Doc/reference/introduction.rst:91
+msgid "notation"
+msgstr "notation"
+
+#: ../Doc/reference/introduction.rst:118
+msgid "lexical definitions"
+msgstr "lexical definitions"
+
+#: ../Doc/reference/introduction.rst:118
+msgid "ASCII"
+msgstr "ASCII"

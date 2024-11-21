@@ -10,21 +10,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-16 21:42+0200\n"
+"POT-Creation-Date: 2024-11-21 16:38-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Claudia Millan <clmilneb@gmail.com>\n"
-"Language-Team: python-doc-es\n"
 "Language: es\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: python-doc-es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Generated-By: Babel 2.8.0\n"
-"X-Generator: Poedit 3.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
 
 #: ../Doc/whatsnew/3.4.rst:3
 msgid "What's New In Python 3.4"
-msgstr "Novedades de Python 3.4"
+msgstr "Qué hay de nuevo en Python 3.4"
 
 #: ../Doc/whatsnew/3.4.rst
 msgid "Author"
@@ -449,11 +448,13 @@ msgstr ""
 "``py -m pip``."
 
 #: ../Doc/whatsnew/3.4.rst:218
+#, fuzzy
 msgid ""
-"As `discussed in the PEP`__, platform packagers may choose not to install "
-"these commands by default, as long as, when invoked, they provide clear and "
-"simple directions on how to install them on that platform (usually using the "
-"system package manager)."
+"As :pep:`discussed in the PEP <0453#recommendations-for-downstream-"
+"distributors>` platform packagers may choose not to install these commands "
+"by default, as long as, when invoked, they provide clear and simple "
+"directions on how to install them on that platform (usually using the system "
+"package manager)."
 msgstr ""
 "Como se discute en el PEP (`discussed in the PEP`__), los empaquetadores de "
 "plataformas pueden optar por no instalar estos comandos por defecto, siempre "
@@ -461,7 +462,7 @@ msgstr ""
 "sobre cómo instalarlos en esa plataforma (normalmente utilizando el gestor "
 "de paquetes del sistema)."
 
-#: ../Doc/whatsnew/3.4.rst:227
+#: ../Doc/whatsnew/3.4.rst:226
 msgid ""
 "To avoid conflicts between parallel Python 2 and Python 3 installations, "
 "only the versioned ``pip3`` and ``pip3.4`` commands are bootstrapped by "
@@ -481,11 +482,11 @@ msgstr ""
 "invocado a través del interruptor ``-m`` en lugar de directamente para "
 "evitar la ambigüedad en sistemas con múltiples instalaciones de Python."
 
-#: ../Doc/whatsnew/3.4.rst:238
+#: ../Doc/whatsnew/3.4.rst:237
 msgid "Documentation Changes"
 msgstr "Cambios en la documentación"
 
-#: ../Doc/whatsnew/3.4.rst:240
+#: ../Doc/whatsnew/3.4.rst:239
 msgid ""
 "As part of this change, the :ref:`installing-index` and :ref:`distributing-"
 "index` sections of the documentation have been completely redesigned as "
@@ -502,21 +503,22 @@ msgstr ""
 "<https://packaging.python.org>`__ y a la documentación de los proyectos "
 "individuales."
 
-#: ../Doc/whatsnew/3.4.rst:248
+#: ../Doc/whatsnew/3.4.rst:247
+#, fuzzy
 msgid ""
 "However, as this migration is currently still incomplete, the legacy "
 "versions of those guides remaining available as :ref:`install-index` and :"
-"ref:`distutils-index`."
+"ref:`setuptools-index`."
 msgstr ""
 "Sin embargo, como esta migración está aún incompleta, las versiones "
 "anteriores de esas guías siguen disponibles como :ref:`install-index` y :ref:"
 "`distutils-index`."
 
-#: ../Doc/whatsnew/3.4.rst:255
+#: ../Doc/whatsnew/3.4.rst:254
 msgid ":pep:`453` -- Explicit bootstrapping of pip in Python installations"
 msgstr ":pep:`453` -- Arranque explícito de pip en instalaciones de Python"
 
-#: ../Doc/whatsnew/3.4.rst:255
+#: ../Doc/whatsnew/3.4.rst:254
 msgid ""
 "PEP written by Donald Stufft and Nick Coghlan, implemented by Donald Stufft, "
 "Nick Coghlan, Martin von Löwis and Ned Deily."
@@ -524,11 +526,11 @@ msgstr ""
 "PEP escrito por Donald Stufft y Nick Coghlan, implementado por Donald "
 "Stufft, Nick Coghlan, Martin von Löwis y Ned Deily."
 
-#: ../Doc/whatsnew/3.4.rst:262
+#: ../Doc/whatsnew/3.4.rst:261
 msgid "PEP 446: Newly Created File Descriptors Are Non-Inheritable"
 msgstr "PEP 446: Los descriptores de archivos recién creados no son heredables"
 
-#: ../Doc/whatsnew/3.4.rst:264
+#: ../Doc/whatsnew/3.4.rst:263
 msgid ""
 ":pep:`446` makes newly created file descriptors :ref:`non-inheritable "
 "<fd_inheritance>`.  In general, this is the behavior an application will "
@@ -542,7 +544,7 @@ msgstr ""
 "abiertos también en el nuevo proceso puede llevar a todo tipo de errores "
 "difíciles de encontrar, y potencialmente a problemas de seguridad."
 
-#: ../Doc/whatsnew/3.4.rst:270
+#: ../Doc/whatsnew/3.4.rst:269
 msgid ""
 "However, there are occasions when inheritance is desired.  To support these "
 "cases, the following new functions and methods are available:"
@@ -551,35 +553,35 @@ msgstr ""
 "soporte a estos casos, están disponibles las siguientes funciones y métodos "
 "nuevos:"
 
-#: ../Doc/whatsnew/3.4.rst:273
+#: ../Doc/whatsnew/3.4.rst:272
 msgid ":func:`os.get_inheritable`, :func:`os.set_inheritable`"
 msgstr ":func:`os.get_inheritable`, :func:`os.set_inheritable`"
 
-#: ../Doc/whatsnew/3.4.rst:274
+#: ../Doc/whatsnew/3.4.rst:273
 msgid ":func:`os.get_handle_inheritable`, :func:`os.set_handle_inheritable`"
 msgstr ":func:`os.get_handle_inheritable`, :func:`os.set_handle_inheritable`"
 
-#: ../Doc/whatsnew/3.4.rst:275
+#: ../Doc/whatsnew/3.4.rst:274
 msgid ""
 ":meth:`socket.socket.get_inheritable`, :meth:`socket.socket.set_inheritable`"
 msgstr ""
 ":meth:`socket.socket.get_inheritable`, :meth:`socket.socket.set_inheritable`"
 
-#: ../Doc/whatsnew/3.4.rst:279
+#: ../Doc/whatsnew/3.4.rst:278
 msgid ":pep:`446` -- Make newly created file descriptors non-inheritable"
 msgstr ""
 ":pep:`446` -- Hacer que los descriptores de archivo recién creados no sean "
 "heredables"
 
-#: ../Doc/whatsnew/3.4.rst:280 ../Doc/whatsnew/3.4.rst:1812
+#: ../Doc/whatsnew/3.4.rst:279 ../Doc/whatsnew/3.4.rst:1811
 msgid "PEP written and implemented by Victor Stinner."
 msgstr "PEP escrito y aplicado por Victor Stinner."
 
-#: ../Doc/whatsnew/3.4.rst:286
+#: ../Doc/whatsnew/3.4.rst:285
 msgid "Improvements to Codec Handling"
 msgstr "Mejoras en el manejo de códecs"
 
-#: ../Doc/whatsnew/3.4.rst:288
+#: ../Doc/whatsnew/3.4.rst:287
 msgid ""
 "Since it was first introduced, the :mod:`codecs` module has always been "
 "intended to operate as a type-neutral dynamic encoding and decoding system. "
@@ -594,7 +596,7 @@ msgstr ""
 "los tipos :class:`str`, :class:`bytes` y :class:`bytearray`, ha ocultado "
 "históricamente este hecho."
 
-#: ../Doc/whatsnew/3.4.rst:295
+#: ../Doc/whatsnew/3.4.rst:294
 msgid ""
 "As a key step in clarifying the situation, the :meth:`codecs.encode` and :"
 "meth:`codecs.decode` convenience functions are now properly documented in "
@@ -609,7 +611,7 @@ msgstr ""
 "regresión) desde Python 2.4, pero anteriormente sólo se podían descubrir a "
 "través de la introspección en tiempo de ejecución."
 
-#: ../Doc/whatsnew/3.4.rst:301
+#: ../Doc/whatsnew/3.4.rst:300
 msgid ""
 "Unlike the convenience methods on :class:`str`, :class:`bytes` and :class:"
 "`bytearray`, the :mod:`codecs` convenience functions support arbitrary "
@@ -623,7 +625,7 @@ msgstr ""
 "lugar de limitarse a codificaciones de texto Unicode (en Python 3) o a <-"
 ">conversiones de ``basestring`` (en Python 2)."
 
-#: ../Doc/whatsnew/3.4.rst:307
+#: ../Doc/whatsnew/3.4.rst:306
 msgid ""
 "In Python 3.4, the interpreter is able to identify the known non-text "
 "encodings provided in the standard library and direct users towards these "
@@ -634,7 +636,28 @@ msgstr ""
 "usuarios hacia estas funciones de conveniencia de propósito general cuando "
 "sea apropiado::"
 
-#: ../Doc/whatsnew/3.4.rst:326
+#: ../Doc/whatsnew/3.4.rst:310
+msgid ""
+">>> b\"abcdef\".decode(\"hex\")\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 1, in <module>\n"
+"LookupError: 'hex' is not a text encoding; use codecs.decode() to handle "
+"arbitrary codecs\n"
+"\n"
+">>> \"hello\".encode(\"rot13\")\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 1, in <module>\n"
+"LookupError: 'rot13' is not a text encoding; use codecs.encode() to handle "
+"arbitrary codecs\n"
+"\n"
+">>> open(\"foo.txt\", encoding=\"hex\")\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 1, in <module>\n"
+"LookupError: 'hex' is not a text encoding; use codecs.open() to handle "
+"arbitrary codecs"
+msgstr ""
+
+#: ../Doc/whatsnew/3.4.rst:325
 msgid ""
 "In a related change, whenever it is feasible without breaking backwards "
 "compatibility, exceptions raised during encoding and decoding operations are "
@@ -647,7 +670,42 @@ msgstr ""
 "excepción encadenada del mismo tipo que menciona el nombre del códec "
 "responsable de producir el error::"
 
-#: ../Doc/whatsnew/3.4.rst:359
+#: ../Doc/whatsnew/3.4.rst:330
+msgid ""
+">>> import codecs\n"
+"\n"
+">>> codecs.decode(b\"abcdefgh\", \"hex\")\n"
+"Traceback (most recent call last):\n"
+"  File \"/usr/lib/python3.4/encodings/hex_codec.py\", line 20, in "
+"hex_decode\n"
+"    return (binascii.a2b_hex(input), len(input))\n"
+"binascii.Error: Non-hexadecimal digit found\n"
+"\n"
+"The above exception was the direct cause of the following exception:\n"
+"\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 1, in <module>\n"
+"binascii.Error: decoding with 'hex' codec failed (Error: Non-hexadecimal "
+"digit found)\n"
+"\n"
+">>> codecs.encode(\"hello\", \"bz2\")\n"
+"Traceback (most recent call last):\n"
+"  File \"/usr/lib/python3.4/encodings/bz2_codec.py\", line 17, in "
+"bz2_encode\n"
+"    return (bz2.compress(input), len(input))\n"
+"  File \"/usr/lib/python3.4/bz2.py\", line 498, in compress\n"
+"    return comp.compress(data) + comp.flush()\n"
+"TypeError: 'str' does not support the buffer interface\n"
+"\n"
+"The above exception was the direct cause of the following exception:\n"
+"\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 1, in <module>\n"
+"TypeError: encoding with 'bz2' codec failed (TypeError: 'str' does not "
+"support the buffer interface)"
+msgstr ""
+
+#: ../Doc/whatsnew/3.4.rst:358
 msgid ""
 "Finally, as the examples above show, these improvements have permitted the "
 "restoration of the convenience aliases for the non-Unicode codecs that were "
@@ -660,7 +718,16 @@ msgstr ""
 "codificación de datos binarios a y desde su representación hexadecimal (por "
 "ejemplo) puede escribirse ahora como::"
 
-#: ../Doc/whatsnew/3.4.rst:371
+#: ../Doc/whatsnew/3.4.rst:364
+msgid ""
+">>> from codecs import encode, decode\n"
+">>> encode(b\"hello\", \"hex\")\n"
+"b'68656c6c6f'\n"
+">>> decode(b\"68656c6c6f\", \"hex\")\n"
+"b'hello'"
+msgstr ""
+
+#: ../Doc/whatsnew/3.4.rst:370
 msgid ""
 "The binary and text transforms provided in the standard library are detailed "
 "in :ref:`binary-transforms` and :ref:`text-transforms`."
@@ -668,7 +735,7 @@ msgstr ""
 "Las transformaciones binarias y de texto proporcionadas en la biblioteca "
 "estándar se detallan en :ref:`binary-transforms` y :ref:`text-transforms`."
 
-#: ../Doc/whatsnew/3.4.rst:374
+#: ../Doc/whatsnew/3.4.rst:373
 msgid ""
 "(Contributed by Nick Coghlan in :issue:`7475`, :issue:`17827`, :issue:"
 "`17828` and :issue:`19619`.)"
@@ -676,11 +743,11 @@ msgstr ""
 "(Contribución de Nick Coghlan en :issue:`7475`, :issue:`17827`, :issue:"
 "`17828` y :issue:`19619`)"
 
-#: ../Doc/whatsnew/3.4.rst:381
+#: ../Doc/whatsnew/3.4.rst:380
 msgid "PEP 451: A ModuleSpec Type for the Import System"
 msgstr "PEP 451: Un tipo ModuleSpec para el sistema de importación"
 
-#: ../Doc/whatsnew/3.4.rst:383
+#: ../Doc/whatsnew/3.4.rst:382
 msgid ""
 ":pep:`451` provides an encapsulation of the information about a module that "
 "the import machinery will use to load it (that is, a module specification).  "
@@ -695,7 +762,7 @@ msgstr ""
 "importación. El cambio es también un peldaño para `varias mejoras futuras "
 "relacionadas con la importación`__."
 
-#: ../Doc/whatsnew/3.4.rst:391
+#: ../Doc/whatsnew/3.4.rst:390
 msgid ""
 "The public-facing changes from the PEP are entirely backward-compatible. "
 "Furthermore, they should be transparent to everyone but importer authors.  "
@@ -714,21 +781,21 @@ msgstr ""
 "métodos.  Consulte la sección :ref:`deprecated-3.4` para obtener una lista "
 "de los métodos que deben ser reemplazados y sus sustituciones."
 
-#: ../Doc/whatsnew/3.4.rst:401
+#: ../Doc/whatsnew/3.4.rst:400
 msgid "Other Language Changes"
 msgstr "Otros cambios de lenguaje"
 
-#: ../Doc/whatsnew/3.4.rst:403
+#: ../Doc/whatsnew/3.4.rst:402
 msgid "Some smaller changes made to the core Python language are:"
 msgstr ""
 "Algunos de los cambios mas pequeños hechos al núcleo del lenguaje de Python "
 "son:"
 
-#: ../Doc/whatsnew/3.4.rst:405
+#: ../Doc/whatsnew/3.4.rst:404
 msgid "Unicode database updated to UCD version 6.3."
 msgstr "Base de datos Unicode actualizada a la versión 6.3 de UCD."
 
-#: ../Doc/whatsnew/3.4.rst:407
+#: ../Doc/whatsnew/3.4.rst:406
 msgid ""
 ":func:`min` and :func:`max` now accept a *default* keyword-only argument "
 "that can be used to specify the value they return if the iterable they are "
@@ -740,11 +807,12 @@ msgstr ""
 "evaluando no tiene elementos.  (Contribuido por Julian Berman en :issue:"
 "`18111`.)"
 
-#: ../Doc/whatsnew/3.4.rst:412
-msgid "Module objects are now :mod:`weakref`'able."
-msgstr "Los objetos del módulo son ahora :mod:`weakref`'able."
+#: ../Doc/whatsnew/3.4.rst:411
+msgid "Module objects are now :ref:`weakly referenceable <mod-weakref>`."
+msgstr ""
+"Los objetos del módulo ahora son :ref:`weakly referenceable <mod-weakref>`."
 
-#: ../Doc/whatsnew/3.4.rst:414
+#: ../Doc/whatsnew/3.4.rst:413
 msgid ""
 "Module ``__file__`` attributes (and related values) should now always "
 "contain absolute paths by default, with the sole exception of ``__main__."
@@ -756,7 +824,7 @@ msgstr ""
 "de ``main__.__file__`` cuando un script ha sido ejecutado directamente "
 "usando una ruta relativa.  (Contribuido por Brett Cannon en :issue:`18416`.)"
 
-#: ../Doc/whatsnew/3.4.rst:419
+#: ../Doc/whatsnew/3.4.rst:418
 msgid ""
 "All the UTF-\\* codecs (except UTF-7) now reject surrogates during both "
 "encoding and decoding unless the ``surrogatepass`` error handler is used, "
@@ -772,7 +840,7 @@ msgstr ""
 "los produce al codificar caracteres no BMP). (Contribución de Victor "
 "Stinner, Kang-Hao (Kenny) Lu y Serhiy Storchaka en :issue:`12892`)"
 
-#: ../Doc/whatsnew/3.4.rst:426
+#: ../Doc/whatsnew/3.4.rst:425
 msgid ""
 "New German EBCDIC :ref:`codec <standard-encodings>` ``cp273``.  (Contributed "
 "by Michael Bierenfeld and Andrew Kuchling in :issue:`1097797`.)"
@@ -780,7 +848,7 @@ msgstr ""
 "Nuevo EBCDIC alemán :ref:`codec <standard-encodings>` ``cp273``.  "
 "(Contribución de Michael Bierenfeld y Andrew Kuchling en :issue:`1097797`)"
 
-#: ../Doc/whatsnew/3.4.rst:429
+#: ../Doc/whatsnew/3.4.rst:428
 msgid ""
 "New Ukrainian :ref:`codec <standard-encodings>` ``cp1125``.  (Contributed by "
 "Serhiy Storchaka in :issue:`19668`.)"
@@ -788,7 +856,7 @@ msgstr ""
 "Nuevo Ucraniano :ref:`codec <standard-encodings>` ``cp1125`` (Contribuido "
 "por Serhiy Storchaka en :issue:`19668`.)"
 
-#: ../Doc/whatsnew/3.4.rst:432
+#: ../Doc/whatsnew/3.4.rst:431
 msgid ""
 ":class:`bytes`.join() and :class:`bytearray`.join() now accept arbitrary "
 "buffer objects as arguments.  (Contributed by Antoine Pitrou in :issue:"
@@ -798,7 +866,7 @@ msgstr ""
 "buffer arbitrarios como argumentos.  (Contribuido por Antoine Pitrou en :"
 "issue:`15958`.)"
 
-#: ../Doc/whatsnew/3.4.rst:436
+#: ../Doc/whatsnew/3.4.rst:435
 msgid ""
 "The :class:`int` constructor now accepts any object that has an "
 "``__index__`` method for its *base* argument.  (Contributed by Mark "
@@ -808,7 +876,7 @@ msgstr ""
 "método ``index__`` para su argumento *base*.  (Contribuido por Mark "
 "Dickinson en :issue:`16772`.)"
 
-#: ../Doc/whatsnew/3.4.rst:440
+#: ../Doc/whatsnew/3.4.rst:439
 msgid ""
 "Frame objects now have a :func:`~frame.clear` method that clears all "
 "references to local variables from the frame.  (Contributed by Antoine "
@@ -818,7 +886,7 @@ msgstr ""
 "todas las referencias a las variables locales del frame.  (Contribuido por "
 "Antoine Pitrou en :issue:`17934`.)"
 
-#: ../Doc/whatsnew/3.4.rst:444
+#: ../Doc/whatsnew/3.4.rst:443
 msgid ""
 ":class:`memoryview` is now registered as a :class:`Sequence <collections."
 "abc>`, and supports the :func:`reversed` builtin.  (Contributed by Nick "
@@ -828,7 +896,7 @@ msgstr ""
 "abc>`, y soporta el builtin :func:`reversed`.  (Contribución de Nick Coghlan "
 "y Claudiu Popa en :issue:`18690` y :issue:`19078`)"
 
-#: ../Doc/whatsnew/3.4.rst:448
+#: ../Doc/whatsnew/3.4.rst:447
 msgid ""
 "Signatures reported by :func:`help` have been modified and improved in "
 "several cases as a result of the introduction of Argument Clinic and other "
@@ -838,7 +906,7 @@ msgstr ""
 "varios casos como resultado de la introducción de Argument Clinic y otros "
 "cambios en los módulos :mod:`inspect` y :mod:`pydoc`."
 
-#: ../Doc/whatsnew/3.4.rst:452
+#: ../Doc/whatsnew/3.4.rst:451
 msgid ""
 ":meth:`~object.__length_hint__` is now part of the formal language "
 "specification (see :pep:`424`).  (Contributed by Armin Ronacher in :issue:"
@@ -848,15 +916,15 @@ msgstr ""
 "del lenguaje (ver :pep:`424`).  (Contribuido por Armin Ronacher en :issue:"
 "`16148`.)"
 
-#: ../Doc/whatsnew/3.4.rst:458
+#: ../Doc/whatsnew/3.4.rst:457
 msgid "New Modules"
 msgstr "Nuevos Módulos"
 
-#: ../Doc/whatsnew/3.4.rst:464
+#: ../Doc/whatsnew/3.4.rst:463
 msgid "asyncio"
 msgstr "asyncio"
 
-#: ../Doc/whatsnew/3.4.rst:466
+#: ../Doc/whatsnew/3.4.rst:465
 msgid ""
 "The new :mod:`asyncio` module (defined in :pep:`3156`) provides a standard "
 "pluggable event loop model for Python, providing solid asynchronous IO "
@@ -869,23 +937,23 @@ msgstr ""
 "que otras implementaciones de bucle de eventos interoperen con la biblioteca "
 "estándar y entre sí."
 
-#: ../Doc/whatsnew/3.4.rst:471 ../Doc/whatsnew/3.4.rst:534
+#: ../Doc/whatsnew/3.4.rst:470 ../Doc/whatsnew/3.4.rst:533
 msgid "For Python 3.4, this module is considered a :term:`provisional API`."
 msgstr "Para Python 3.4, este módulo se considera un :term:`provisional API`."
 
-#: ../Doc/whatsnew/3.4.rst:475
+#: ../Doc/whatsnew/3.4.rst:474
 msgid ":pep:`3156` -- Asynchronous IO Support Rebooted: the \"asyncio\" Module"
 msgstr ":pep:`3156` -- Soporte de IO asíncrono reiniciado: el módulo \"asyncio"
 
-#: ../Doc/whatsnew/3.4.rst:476
+#: ../Doc/whatsnew/3.4.rst:475
 msgid "PEP written and implementation led by Guido van Rossum."
 msgstr "PEP redactado y ejecutado por Guido van Rossum."
 
-#: ../Doc/whatsnew/3.4.rst:482
+#: ../Doc/whatsnew/3.4.rst:481
 msgid "ensurepip"
 msgstr "ensurepip"
 
-#: ../Doc/whatsnew/3.4.rst:484
+#: ../Doc/whatsnew/3.4.rst:483
 msgid ""
 "The new :mod:`ensurepip` module is the primary infrastructure for the :pep:"
 "`453` implementation.  In the normal course of events end users will not "
@@ -899,7 +967,7 @@ msgstr ""
 "utilizarse para arrancar manualmente ``pip`` si se rechaza el arranque "
 "automático en una instalación o entorno virtual."
 
-#: ../Doc/whatsnew/3.4.rst:490
+#: ../Doc/whatsnew/3.4.rst:489
 msgid ""
 ":mod:`ensurepip` includes a bundled copy of ``pip``, up-to-date as of the "
 "first release candidate of the release of CPython with which it ships (this "
@@ -920,7 +988,7 @@ msgstr ""
 "``pip`` se considera un paquete instalado por separado y no se eliminará si "
 "se desinstala Python)"
 
-#: ../Doc/whatsnew/3.4.rst:499
+#: ../Doc/whatsnew/3.4.rst:498
 msgid ""
 "The module is named *ensure*\\ pip because if called when ``pip`` is already "
 "installed, it does nothing.  It also has an ``--upgrade`` option that will "
@@ -932,11 +1000,11 @@ msgstr ""
 "que se instale la copia incluida de ``pip`` si la versión instalada de "
 "``pip`` es más antigua que la copia incluida."
 
-#: ../Doc/whatsnew/3.4.rst:508
+#: ../Doc/whatsnew/3.4.rst:507
 msgid "enum"
 msgstr "enum"
 
-#: ../Doc/whatsnew/3.4.rst:510
+#: ../Doc/whatsnew/3.4.rst:509
 msgid ""
 "The new :mod:`enum` module (defined in :pep:`435`) provides a standard "
 "implementation of enumeration types, allowing other modules (such as :mod:"
@@ -950,11 +1018,11 @@ msgstr ""
 "y un mejor soporte de depuración al sustituir las constantes enteras opacas "
 "por valores de enumeración compatibles con versiones anteriores."
 
-#: ../Doc/whatsnew/3.4.rst:519
+#: ../Doc/whatsnew/3.4.rst:518
 msgid ":pep:`435` -- Adding an Enum type to the Python standard library"
 msgstr ":pep:`435` -- Añadir un tipo Enum a la biblioteca estándar de Python"
 
-#: ../Doc/whatsnew/3.4.rst:519
+#: ../Doc/whatsnew/3.4.rst:518
 msgid ""
 "PEP written by Barry Warsaw, Eli Bendersky and Ethan Furman, implemented by "
 "Ethan Furman."
@@ -962,11 +1030,11 @@ msgstr ""
 "PEP escrito por Barry Warsaw, Eli Bendersky y Ethan Furman, implementado por "
 "Ethan Furman."
 
-#: ../Doc/whatsnew/3.4.rst:526
+#: ../Doc/whatsnew/3.4.rst:525
 msgid "pathlib"
 msgstr "pathlib"
 
-#: ../Doc/whatsnew/3.4.rst:528
+#: ../Doc/whatsnew/3.4.rst:527
 msgid ""
 "The new :mod:`pathlib` module offers classes representing filesystem paths "
 "with semantics appropriate for different operating systems.  Path classes "
@@ -981,21 +1049,21 @@ msgstr ""
 "concretas*, que heredan de las rutas puras pero también proporcionan "
 "operaciones de E/S."
 
-#: ../Doc/whatsnew/3.4.rst:538
+#: ../Doc/whatsnew/3.4.rst:537
 msgid ":pep:`428` -- The pathlib module -- object-oriented filesystem paths"
 msgstr ""
 ":pep:`428` -- El módulo pathlib -- rutas del sistema de archivos orientadas "
 "a objetos"
 
-#: ../Doc/whatsnew/3.4.rst:539 ../Doc/whatsnew/3.4.rst:1835
+#: ../Doc/whatsnew/3.4.rst:538 ../Doc/whatsnew/3.4.rst:1834
 msgid "PEP written and implemented by Antoine Pitrou."
 msgstr "PEP escrito y aplicado por Antoine Pitrou."
 
-#: ../Doc/whatsnew/3.4.rst:545
+#: ../Doc/whatsnew/3.4.rst:544
 msgid "selectors"
 msgstr "selectores"
 
-#: ../Doc/whatsnew/3.4.rst:547
+#: ../Doc/whatsnew/3.4.rst:546
 msgid ""
 "The new :mod:`selectors` module (created as part of implementing :pep:"
 "`3156`) allows high-level and efficient I/O multiplexing, built upon the :"
@@ -1005,11 +1073,11 @@ msgstr ""
 "pep:`3156`) permite una multiplexación de E/S eficiente y de alto nivel, "
 "construida sobre las primitivas del módulo :mod:`select`."
 
-#: ../Doc/whatsnew/3.4.rst:555
+#: ../Doc/whatsnew/3.4.rst:554
 msgid "statistics"
 msgstr "estadísticas"
 
-#: ../Doc/whatsnew/3.4.rst:557
+#: ../Doc/whatsnew/3.4.rst:556
 msgid ""
 "The new :mod:`statistics` module (defined in :pep:`450`) offers some core "
 "statistics functionality directly in the standard library. This module "
@@ -1021,20 +1089,20 @@ msgstr ""
 "módulo permite calcular la media, la mediana, la moda, la varianza y la "
 "desviación estándar de una serie de datos."
 
-#: ../Doc/whatsnew/3.4.rst:564
+#: ../Doc/whatsnew/3.4.rst:563
 msgid ":pep:`450` -- Adding A Statistics Module To The Standard Library"
 msgstr ""
 ":pep:`450` -- Añadir un módulo de estadísticas a la biblioteca estándar"
 
-#: ../Doc/whatsnew/3.4.rst:565
+#: ../Doc/whatsnew/3.4.rst:564
 msgid "PEP written and implemented by Steven D'Aprano"
 msgstr "PEP escrito y aplicado por Steven D'Aprano"
 
-#: ../Doc/whatsnew/3.4.rst:571
+#: ../Doc/whatsnew/3.4.rst:570
 msgid "tracemalloc"
 msgstr "tracemalloc"
 
-#: ../Doc/whatsnew/3.4.rst:573
+#: ../Doc/whatsnew/3.4.rst:572
 msgid ""
 "The new :mod:`tracemalloc` module (defined in :pep:`454`) is a debug tool to "
 "trace memory blocks allocated by Python. It provides the following "
@@ -1044,11 +1112,11 @@ msgstr ""
 "herramienta de depuración para rastrear los bloques de memoria asignados por "
 "Python. Proporciona la siguiente información:"
 
-#: ../Doc/whatsnew/3.4.rst:576
+#: ../Doc/whatsnew/3.4.rst:575
 msgid "Trace where an object was allocated"
 msgstr "Rastrear dónde se asignó un objeto"
 
-#: ../Doc/whatsnew/3.4.rst:577
+#: ../Doc/whatsnew/3.4.rst:576
 msgid ""
 "Statistics on allocated memory blocks per filename and per line number: "
 "total size, number and average size of allocated memory blocks"
@@ -1057,32 +1125,32 @@ msgstr ""
 "por número de línea: tamaño total, número y tamaño medio de los bloques de "
 "memoria asignados"
 
-#: ../Doc/whatsnew/3.4.rst:579
+#: ../Doc/whatsnew/3.4.rst:578
 msgid "Compute the differences between two snapshots to detect memory leaks"
 msgstr ""
 "Calcular las diferencias entre dos instantáneas para detectar fugas de "
 "memoria"
 
-#: ../Doc/whatsnew/3.4.rst:583
+#: ../Doc/whatsnew/3.4.rst:582
 msgid ""
 ":pep:`454` -- Add a new tracemalloc module to trace Python memory allocations"
 msgstr ""
 ":pep:`454` -- Añade un nuevo módulo tracemalloc para rastrear las "
 "asignaciones de memoria de Python"
 
-#: ../Doc/whatsnew/3.4.rst:584
+#: ../Doc/whatsnew/3.4.rst:583
 msgid "PEP written and implemented by Victor Stinner"
 msgstr "PEP escrito y aplicado por Victor Stinner"
 
-#: ../Doc/whatsnew/3.4.rst:589
+#: ../Doc/whatsnew/3.4.rst:588
 msgid "Improved Modules"
 msgstr "Módulos mejorados"
 
-#: ../Doc/whatsnew/3.4.rst:593
+#: ../Doc/whatsnew/3.4.rst:592
 msgid "abc"
 msgstr "abc"
 
-#: ../Doc/whatsnew/3.4.rst:595
+#: ../Doc/whatsnew/3.4.rst:594
 msgid ""
 "New function :func:`abc.get_cache_token` can be used to know when to "
 "invalidate caches that are affected by changes in the object graph.  "
@@ -1092,7 +1160,7 @@ msgstr ""
 "cuándo invalidar las cachés que se ven afectadas por cambios en el gráfico "
 "de objetos.  (Contribuido por Łukasz Langa en :issue:`16832`.)"
 
-#: ../Doc/whatsnew/3.4.rst:599
+#: ../Doc/whatsnew/3.4.rst:598
 msgid ""
 "New class :class:`~abc.ABC` has :class:`~abc.ABCMeta` as its meta class. "
 "Using ``ABC`` as a base class has essentially the same effect as specifying "
@@ -1104,46 +1172,48 @@ msgstr ""
 "especificar ``metaclass=abc.ABCMeta``, pero es más sencillo de escribir y "
 "más fácil de leer. (Contribuido por Bruno Dupuis en :issue:`16049`.)"
 
-#: ../Doc/whatsnew/3.4.rst:606
+#: ../Doc/whatsnew/3.4.rst:605
 msgid "aifc"
 msgstr "aifc"
 
-#: ../Doc/whatsnew/3.4.rst:608
+#: ../Doc/whatsnew/3.4.rst:607
+#, fuzzy
 msgid ""
-"The :meth:`~aifc.aifc.getparams` method now returns a namedtuple rather than "
-"a plain tuple.  (Contributed by Claudiu Popa in :issue:`17818`.)"
+"The :meth:`!getparams` method now returns a namedtuple rather than a plain "
+"tuple.  (Contributed by Claudiu Popa in :issue:`17818`.)"
 msgstr ""
-"El método :meth:`~aifc.aifc.getparams` devuelve ahora una tupla con nombre "
-"en lugar de una tupla simple.  (Contribuido por Claudiu Popa en :issue:"
-"`17818`.)"
+"El método :meth:`~wave.getparams` ahora devuelve una tupla con nombre en "
+"lugar de una tupla simple.  (Contribuido por Claudiu Popa en :issue:`17487`.)"
 
-#: ../Doc/whatsnew/3.4.rst:611
+#: ../Doc/whatsnew/3.4.rst:610
+#, fuzzy
 msgid ""
-":func:`aifc.open` now supports the context management protocol: when used in "
-"a :keyword:`with` block, the :meth:`~aifc.aifc.close` method of the returned "
-"object will be called automatically at the end of the block.  (Contributed "
-"by Serhiy Storchacha in :issue:`16486`.)"
+":func:`!aifc.open` now supports the context management protocol: when used "
+"in a :keyword:`with` block, the :meth:`!close` method of the returned object "
+"will be called automatically at the end of the block.  (Contributed by "
+"Serhiy Storchacha in :issue:`16486`.)"
 msgstr ""
 ":func:`aifc.open` ahora soporta el protocolo de gestión de contexto: cuando "
 "se utiliza en un bloque :keyword:`with`, el método :meth:`~aifc.aifc.close` "
 "del objeto devuelto será llamado automáticamente al final del bloque.  "
 "(Contribuido por Serhiy Storchacha en :issue:`16486`.)"
 
-#: ../Doc/whatsnew/3.4.rst:616
+#: ../Doc/whatsnew/3.4.rst:615 ../Doc/whatsnew/3.4.rst:1542
+#, fuzzy
 msgid ""
-"The :meth:`~aifc.aifc.writeframesraw` and :meth:`~aifc.aifc.writeframes` "
-"methods now accept any :term:`bytes-like object`.  (Contributed by Serhiy "
-"Storchaka in :issue:`8311`.)"
+"The :meth:`!writeframesraw` and :meth:`!writeframes` methods now accept any :"
+"term:`bytes-like object`.  (Contributed by Serhiy Storchaka in :issue:"
+"`8311`.)"
 msgstr ""
 "Los métodos :meth:`~aifc.aifc.writeframesraw` y :meth:`~aifc.aifc."
 "writeframes` aceptan ahora cualquier :term:`bytes-like object`.  "
 "(Contribuido por Serhiy Storchaka en :issue:`8311`.)"
 
-#: ../Doc/whatsnew/3.4.rst:622
+#: ../Doc/whatsnew/3.4.rst:621
 msgid "argparse"
 msgstr "argparse"
 
-#: ../Doc/whatsnew/3.4.rst:624
+#: ../Doc/whatsnew/3.4.rst:623
 msgid ""
 "The :class:`~argparse.FileType` class now accepts *encoding* and *errors* "
 "arguments, which are passed through to :func:`open`.  (Contributed by Lucas "
@@ -1153,30 +1223,33 @@ msgstr ""
 "y *errors*, que se pasan a :func:`open`.  (Contribuido por Lucas Maystre en :"
 "issue:`11175`.)"
 
-#: ../Doc/whatsnew/3.4.rst:630
+#: ../Doc/whatsnew/3.4.rst:629
 msgid "audioop"
 msgstr "audioop"
 
-#: ../Doc/whatsnew/3.4.rst:632
+#: ../Doc/whatsnew/3.4.rst:631
+#, fuzzy
 msgid ""
-":mod:`audioop` now supports 24-bit samples.  (Contributed by Serhiy "
+":mod:`!audioop` now supports 24-bit samples.  (Contributed by Serhiy "
 "Storchaka in :issue:`12866`.)"
 msgstr ""
 ":mod:`audioop` ahora soporta muestras de 24 bits.  (Contribuido por Serhiy "
 "Storchaka en :issue:`12866`.)"
 
-#: ../Doc/whatsnew/3.4.rst:635
+#: ../Doc/whatsnew/3.4.rst:634
+#, fuzzy
 msgid ""
-"New :func:`~audioop.byteswap` function converts big-endian samples to little-"
-"endian and vice versa.  (Contributed by Serhiy Storchaka in :issue:`19641`.)"
+"New :func:`!byteswap` function converts big-endian samples to little-endian "
+"and vice versa.  (Contributed by Serhiy Storchaka in :issue:`19641`.)"
 msgstr ""
 "La nueva función :func:`~audioop.byteswap` convierte muestras big-endian en "
 "little-endian y viceversa.  (Contribuido por Serhiy Storchaka en :issue:"
 "`19641`.)"
 
-#: ../Doc/whatsnew/3.4.rst:639
+#: ../Doc/whatsnew/3.4.rst:638
+#, fuzzy
 msgid ""
-"All :mod:`audioop` functions now accept any :term:`bytes-like object`.  "
+"All :mod:`!audioop` functions now accept any :term:`bytes-like object`.  "
 "Strings are not accepted: they didn't work before, now they raise an error "
 "right away. (Contributed by Serhiy Storchaka in :issue:`16685`.)"
 msgstr ""
@@ -1184,11 +1257,11 @@ msgstr ""
 "object`.  No se aceptan cadenas: antes no funcionaban, ahora dan un error de "
 "inmediato. (Contribuido por Serhiy Storchaka en :issue:`16685`.)"
 
-#: ../Doc/whatsnew/3.4.rst:645
+#: ../Doc/whatsnew/3.4.rst:644
 msgid "base64"
 msgstr "base64"
 
-#: ../Doc/whatsnew/3.4.rst:647
+#: ../Doc/whatsnew/3.4.rst:646
 msgid ""
 "The encoding and decoding functions in :mod:`base64` now accept any :term:"
 "`bytes-like object` in cases where it previously required a :class:`bytes` "
@@ -1200,7 +1273,7 @@ msgstr ""
 "requería una instancia de :class:`bytes` o :class:`bytearray`.  "
 "(Contribución de Nick Coghlan en :issue:`17839`.)"
 
-#: ../Doc/whatsnew/3.4.rst:652
+#: ../Doc/whatsnew/3.4.rst:651
 msgid ""
 "New functions :func:`~base64.a85encode`, :func:`~base64.a85decode`, :func:"
 "`~base64.b85encode`, and :func:`~base64.b85decode` provide the ability to "
@@ -1219,11 +1292,11 @@ msgstr ""
 "variante de Adobe.  (Contribuido por Martin Morrison, el proyecto Mercurial, "
 "Serhiy Storchaka y Antoine Pitrou en :issue:`17618`)"
 
-#: ../Doc/whatsnew/3.4.rst:662
+#: ../Doc/whatsnew/3.4.rst:661
 msgid "collections"
 msgstr "colecciones"
 
-#: ../Doc/whatsnew/3.4.rst:664
+#: ../Doc/whatsnew/3.4.rst:663
 msgid ""
 "The :meth:`.ChainMap.new_child` method now accepts an *m* argument "
 "specifying the child map to add to the chain.  This allows an existing "
@@ -1235,11 +1308,11 @@ msgstr ""
 "existente y/o un tipo de mapa personalizado para el hijo.  (Contribuido por "
 "Vinay Sajip en :issue:`16613`.)"
 
-#: ../Doc/whatsnew/3.4.rst:671
+#: ../Doc/whatsnew/3.4.rst:670
 msgid "colorsys"
 msgstr "colorsys"
 
-#: ../Doc/whatsnew/3.4.rst:673
+#: ../Doc/whatsnew/3.4.rst:672
 msgid ""
 "The number of digits in the coefficients for the RGB --- YIQ conversions "
 "have been expanded so that they match the FCC NTSC versions.  The change in "
@@ -1252,11 +1325,11 @@ msgstr ""
 "resultados encontrados en otros lugares. (Contribución de Brian Landers y "
 "Serhiy Storchaka en :issue:`14323`.)"
 
-#: ../Doc/whatsnew/3.4.rst:680
+#: ../Doc/whatsnew/3.4.rst:679
 msgid "contextlib"
 msgstr "contextlib"
 
-#: ../Doc/whatsnew/3.4.rst:682
+#: ../Doc/whatsnew/3.4.rst:681
 msgid ""
 "The new :class:`contextlib.suppress` context manager helps to clarify the "
 "intent of code that deliberately suppresses exceptions from a single "
@@ -1268,7 +1341,7 @@ msgstr ""
 "única sentencia.  (Contribuido por Raymond Hettinger en :issue:`15806` y "
 "Zero Piraeus en :issue:`19266`)"
 
-#: ../Doc/whatsnew/3.4.rst:687
+#: ../Doc/whatsnew/3.4.rst:686
 msgid ""
 "The new :func:`contextlib.redirect_stdout` context manager makes it easier "
 "for utility scripts to handle inflexible APIs that write their output to :"
@@ -1291,7 +1364,7 @@ msgstr ""
 "porque afecta al estado global de :data:`sys.stdout`.  (Contribuido por "
 "Raymond Hettinger en :issue:`15805`.)"
 
-#: ../Doc/whatsnew/3.4.rst:698
+#: ../Doc/whatsnew/3.4.rst:697
 msgid ""
 "The :mod:`contextlib` documentation has also been updated to include a :ref:"
 "`discussion <single-use-reusable-and-reentrant-cms>` of the differences "
@@ -1302,11 +1375,11 @@ msgstr ""
 "diferencias entre gestores de contexto de un solo uso, reutilizables y "
 "reentrantes."
 
-#: ../Doc/whatsnew/3.4.rst:704
+#: ../Doc/whatsnew/3.4.rst:703
 msgid "dbm"
 msgstr "dbm"
 
-#: ../Doc/whatsnew/3.4.rst:706
+#: ../Doc/whatsnew/3.4.rst:705
 msgid ""
 ":func:`dbm.open` objects now support the context management protocol.  When "
 "used in a :keyword:`with` statement, the ``close`` method of the database "
@@ -1318,11 +1391,11 @@ msgstr ""
 "``close`` del objeto de base de datos será llamado automáticamente al final "
 "del bloque.  (Contribución de Claudiu Popa y Nick Coghlan en :issue:`19282`)"
 
-#: ../Doc/whatsnew/3.4.rst:713
+#: ../Doc/whatsnew/3.4.rst:712
 msgid "dis"
 msgstr "dis"
 
-#: ../Doc/whatsnew/3.4.rst:715
+#: ../Doc/whatsnew/3.4.rst:714
 msgid ""
 "Functions :func:`~dis.show_code`, :func:`~dis.dis`, :func:`~dis.distb`, and :"
 "func:`~dis.disassemble` now accept a keyword-only *file* argument that "
@@ -1332,7 +1405,7 @@ msgstr ""
 "y :func:`~dis.disassemble` aceptan ahora un argumento de *archivo* que "
 "controla dónde escriben su salida."
 
-#: ../Doc/whatsnew/3.4.rst:719
+#: ../Doc/whatsnew/3.4.rst:718
 msgid ""
 "The :mod:`dis` module is now built around an :class:`~dis.Instruction` class "
 "that provides object oriented access to the details of each individual "
@@ -1342,7 +1415,7 @@ msgstr ""
 "Instruction` que proporciona acceso orientado a objetos a los detalles de "
 "cada operación individual del código de bytes."
 
-#: ../Doc/whatsnew/3.4.rst:723
+#: ../Doc/whatsnew/3.4.rst:722
 msgid ""
 "A new method, :func:`~dis.get_instructions`, provides an iterator that emits "
 "the Instruction stream for a given piece of Python code.  Thus it is now "
@@ -1356,7 +1429,18 @@ msgstr ""
 "objeto de código de bytes de forma diferente a la proporcionada por el "
 "propio módulo :mod:`~dis`.  Por ejemplo::"
 
-#: ../Doc/whatsnew/3.4.rst:737
+#: ../Doc/whatsnew/3.4.rst:728
+msgid ""
+">>> import dis\n"
+">>> for instr in dis.get_instructions(lambda x: x + 1):\n"
+"...     print(instr.opname)\n"
+"LOAD_FAST\n"
+"LOAD_CONST\n"
+"BINARY_ADD\n"
+"RETURN_VALUE"
+msgstr ""
+
+#: ../Doc/whatsnew/3.4.rst:736
 msgid ""
 "The various display tools in the :mod:`dis` module have been rewritten to "
 "use these new components."
@@ -1364,7 +1448,7 @@ msgstr ""
 "Las distintas herramientas de visualización del módulo :mod:`dis` se han "
 "reescrito para utilizar estos nuevos componentes."
 
-#: ../Doc/whatsnew/3.4.rst:740
+#: ../Doc/whatsnew/3.4.rst:739
 msgid ""
 "In addition, a new application-friendly class :class:`~dis.Bytecode` "
 "provides an object-oriented API for inspecting bytecode in both in human-"
@@ -1385,7 +1469,23 @@ msgstr ""
 "dis`, equivalente a llamar a :mod:`~dis.dis` en el argumento del "
 "constructor, pero devuelto como una cadena de varias líneas::"
 
-#: ../Doc/whatsnew/3.4.rst:762
+#: ../Doc/whatsnew/3.4.rst:748
+msgid ""
+">>> bytecode = dis.Bytecode(lambda x: x + 1, current_offset=3)\n"
+">>> for instr in bytecode:\n"
+"...     print('{} ({})'.format(instr.opname, instr.opcode))\n"
+"LOAD_FAST (124)\n"
+"LOAD_CONST (100)\n"
+"BINARY_ADD (23)\n"
+"RETURN_VALUE (83)\n"
+">>> bytecode.dis().splitlines()       \n"
+"['  1           0 LOAD_FAST                0 (x)',\n"
+" '      -->     3 LOAD_CONST               1 (1)',\n"
+" '              6 BINARY_ADD',\n"
+" '              7 RETURN_VALUE']"
+msgstr ""
+
+#: ../Doc/whatsnew/3.4.rst:761
 msgid ""
 ":class:`~dis.Bytecode` also has a class method, :meth:`~dis.Bytecode."
 "from_traceback`, that provides the ability to manipulate a traceback (that "
@@ -1397,7 +1497,7 @@ msgstr ""
 "traceback (es decir, ``print(Bytecode.from_traceback(tb).dis())`` es "
 "equivalente a ``distb(tb)``)."
 
-#: ../Doc/whatsnew/3.4.rst:767
+#: ../Doc/whatsnew/3.4.rst:766
 msgid ""
 "(Contributed by Nick Coghlan, Ryan Kelly and Thomas Kluyver in :issue:"
 "`11816` and Claudiu Popa in :issue:`17916`.)"
@@ -1405,7 +1505,7 @@ msgstr ""
 "(Contribución de Nick Coghlan, Ryan Kelly y Thomas Kluyver en :issue:`11816` "
 "y Claudiu Popa en :issue:`17916`)"
 
-#: ../Doc/whatsnew/3.4.rst:770
+#: ../Doc/whatsnew/3.4.rst:769
 msgid ""
 "New function :func:`~dis.stack_effect` computes the effect on the Python "
 "stack of a given opcode and argument, information that is not otherwise "
@@ -1415,13 +1515,14 @@ msgstr ""
 "Python de un opcode y un argumento dados, información que no está disponible "
 "de otro modo. (Contribuido por Larry Hastings en :issue:`19722`.)"
 
-#: ../Doc/whatsnew/3.4.rst:776
+#: ../Doc/whatsnew/3.4.rst:775
 msgid "doctest"
 msgstr "doctest"
 
-#: ../Doc/whatsnew/3.4.rst:778
+#: ../Doc/whatsnew/3.4.rst:777
+#, fuzzy
 msgid ""
-"A new :ref:`option flag <doctest-options>`, :data:`~doctest.FAIL_FAST`, "
+"A new :ref:`option flag <doctest-options>`, :const:`~doctest.FAIL_FAST`, "
 "halts test running as soon as the first failure is detected.  (Contributed "
 "by R. David Murray and Daniel Urban in :issue:`16522`.)"
 msgstr ""
@@ -1430,7 +1531,7 @@ msgstr ""
 "primer fallo.  (Contribuido por R. David Murray y Daniel Urban en :issue:"
 "`16522`.)"
 
-#: ../Doc/whatsnew/3.4.rst:782
+#: ../Doc/whatsnew/3.4.rst:781
 msgid ""
 "The :mod:`doctest` command line interface now uses :mod:`argparse`, and has "
 "two new options, ``-o`` and ``-f``.  ``-o`` allows :ref:`doctest options "
@@ -1446,7 +1547,7 @@ msgstr ""
 "``- FAIL_FAST`` (en paralelo a la opción similar soportada por el CLI de :"
 "mod:`unittest`).  (Contribuido por R. David Murray en :issue:`11390`.)"
 
-#: ../Doc/whatsnew/3.4.rst:788
+#: ../Doc/whatsnew/3.4.rst:787
 msgid ""
 ":mod:`doctest` will now find doctests in extension module ``__doc__`` "
 "strings. (Contributed by Zachary Ware in :issue:`3158`.)"
@@ -1454,11 +1555,11 @@ msgstr ""
 ":mod:`doctest` ahora encontrará doctests en las cadenas del módulo de "
 "extensión ``doc__``. (Contribuido por Zachary Ware en :issue:`3158`.)"
 
-#: ../Doc/whatsnew/3.4.rst:793
+#: ../Doc/whatsnew/3.4.rst:792
 msgid "email"
 msgstr "email"
 
-#: ../Doc/whatsnew/3.4.rst:795
+#: ../Doc/whatsnew/3.4.rst:794
 msgid ""
 ":meth:`~email.message.Message.as_string` now accepts a *policy* argument to "
 "override the default policy of the message when generating a string "
@@ -1474,7 +1575,7 @@ msgstr ""
 "mod:`~email.generator` para pasar parámetros de formato a su método "
 "``flatten``.  (Contribuido por R. David Murray en :issue:`18600`.)"
 
-#: ../Doc/whatsnew/3.4.rst:802
+#: ../Doc/whatsnew/3.4.rst:801
 msgid ""
 "New method :meth:`~email.message.Message.as_bytes` added to produce a bytes "
 "representation of the message in a fashion similar to how ``as_string`` "
@@ -1494,7 +1595,7 @@ msgstr ""
 "intuitivo: un objeto bytes que contiene el mensaje completamente "
 "formateado.  (Contribuido por R. David Murray en :issue:`18600`.)"
 
-#: ../Doc/whatsnew/3.4.rst:811
+#: ../Doc/whatsnew/3.4.rst:810
 msgid ""
 "The :meth:`.Message.set_param` message now accepts a *replace* keyword "
 "argument. When specified, the associated header will be updated without "
@@ -1508,7 +1609,7 @@ msgstr ""
 "valor por defecto es ``False``.  (Contribuido por R. David Murray en :issue:"
 "`18891`.)"
 
-#: ../Doc/whatsnew/3.4.rst:819
+#: ../Doc/whatsnew/3.4.rst:818
 msgid ""
 "A pair of new subclasses of :class:`~email.message.Message` have been added "
 "(:class:`.EmailMessage` and :class:`.MIMEPart`), along with a new sub-"
@@ -1539,11 +1640,11 @@ msgstr ""
 "(posiblemente con algunos añadidos menores en el área de gestión de "
 "errores).  (Contribuido por R. David Murray en :issue:`18891`.)"
 
-#: ../Doc/whatsnew/3.4.rst:835
+#: ../Doc/whatsnew/3.4.rst:834
 msgid "filecmp"
 msgstr "archivoecmp"
 
-#: ../Doc/whatsnew/3.4.rst:837
+#: ../Doc/whatsnew/3.4.rst:836
 msgid ""
 "A new :func:`~filecmp.clear_cache` function provides the ability to clear "
 "the :mod:`filecmp` comparison cache, which uses :func:`os.stat` information "
@@ -1560,9 +1661,10 @@ msgstr ""
 "de tiempo de modificación de un archivo del sistema de archivos en "
 "particular. (Contribuido por Mark Levitt en :issue:`18149`.)"
 
-#: ../Doc/whatsnew/3.4.rst:844
+#: ../Doc/whatsnew/3.4.rst:843
+#, fuzzy
 msgid ""
-"New module attribute :data:`~filecmp.DEFAULT_IGNORES` provides the list of "
+"New module attribute :const:`~filecmp.DEFAULT_IGNORES` provides the list of "
 "directories that are used as the default value for the *ignore* parameter of "
 "the :func:`~filecmp.dircmp` function.  (Contributed by Eli Bendersky in :"
 "issue:`15442`.)"
@@ -1572,11 +1674,11 @@ msgstr ""
 "parámetro *ignore* de la función :func:`~filecmp.dircmp`.  (Contribuido por "
 "Eli Bendersky en :issue:`15442`.)"
 
-#: ../Doc/whatsnew/3.4.rst:851
+#: ../Doc/whatsnew/3.4.rst:850
 msgid "functools"
 msgstr "functools"
 
-#: ../Doc/whatsnew/3.4.rst:853
+#: ../Doc/whatsnew/3.4.rst:852
 msgid ""
 "The new :func:`~functools.partialmethod` descriptor brings partial argument "
 "application to descriptors, just as :func:`~functools.partial` provides for "
@@ -1593,7 +1695,7 @@ msgstr ""
 "instancia normales cuando se incluyen en la definición de una clase. "
 "(Contribución de Alon Horev y Nick Coghlan en :issue:`4331`)"
 
-#: ../Doc/whatsnew/3.4.rst:862
+#: ../Doc/whatsnew/3.4.rst:861
 msgid ""
 "The new :func:`~functools.singledispatch` decorator brings support for "
 "single-dispatch generic functions to the Python standard library. Where "
@@ -1609,17 +1711,18 @@ msgstr ""
 "función genérica se centra en agrupar múltiples implementaciones de una "
 "operación que le permite trabajar con *diferentes* tipos de datos."
 
-#: ../Doc/whatsnew/3.4.rst:871
+#: ../Doc/whatsnew/3.4.rst:870
 msgid ":pep:`443` -- Single-dispatch generic functions"
 msgstr ":pep:`443` -- Funciones genéricas de despacho único"
 
-#: ../Doc/whatsnew/3.4.rst:872
+#: ../Doc/whatsnew/3.4.rst:871
 msgid "PEP written and implemented by Łukasz Langa."
 msgstr "PEP escrito e implementado por Łukasz Langa."
 
-#: ../Doc/whatsnew/3.4.rst:874
+#: ../Doc/whatsnew/3.4.rst:873
+#, fuzzy
 msgid ""
-":func:`~functools.total_ordering` now supports a return value of :const:"
+":func:`~functools.total_ordering` now supports a return value of :data:"
 "`NotImplemented` from the underlying comparison function.  (Contributed by "
 "Katie Miller in :issue:`10042`.)"
 msgstr ""
@@ -1627,7 +1730,7 @@ msgstr ""
 "const:`NotImplemented` de la función de comparación subyacente.  "
 "(Contribuido por Katie Miller en :issue:`10042`.)"
 
-#: ../Doc/whatsnew/3.4.rst:878
+#: ../Doc/whatsnew/3.4.rst:877
 msgid ""
 "A pure-python version of the :func:`~functools.partial` function is now in "
 "the stdlib; in CPython it is overridden by the C accelerated version, but it "
@@ -1639,11 +1742,11 @@ msgstr ""
 "pero está disponible para que otras implementaciones la usen.  (Contribuido "
 "por Brian Thorne en :issue:`12428`.)"
 
-#: ../Doc/whatsnew/3.4.rst:885
+#: ../Doc/whatsnew/3.4.rst:884
 msgid "gc"
 msgstr "gc"
 
-#: ../Doc/whatsnew/3.4.rst:887
+#: ../Doc/whatsnew/3.4.rst:886
 msgid ""
 "New function :func:`~gc.get_stats` returns a list of three per-generation "
 "dictionaries containing the collections statistics since interpreter "
@@ -1654,11 +1757,11 @@ msgstr ""
 "colecciones desde el inicio del intérprete. (Contribuido por Antoine Pitrou "
 "en :issue:`16351`.)"
 
-#: ../Doc/whatsnew/3.4.rst:893
+#: ../Doc/whatsnew/3.4.rst:892
 msgid "glob"
 msgstr "glob"
 
-#: ../Doc/whatsnew/3.4.rst:895
+#: ../Doc/whatsnew/3.4.rst:894
 msgid ""
 "A new function :func:`~glob.escape` provides a way to escape special "
 "characters in a filename so that they do not become part of the globbing "
@@ -1670,11 +1773,11 @@ msgstr ""
 "expansión globbing sino que se comparen literalmente.  (Contribuido por "
 "Serhiy Storchaka en :issue:`8402`.)"
 
-#: ../Doc/whatsnew/3.4.rst:901
+#: ../Doc/whatsnew/3.4.rst:900
 msgid "hashlib"
 msgstr "hashlib"
 
-#: ../Doc/whatsnew/3.4.rst:903
+#: ../Doc/whatsnew/3.4.rst:902
 msgid ""
 "A new :func:`hashlib.pbkdf2_hmac` function provides the `PKCS#5 password-"
 "based key derivation function 2 <https://en.wikipedia.org/wiki/PBKDF2>`_.  "
@@ -1684,7 +1787,7 @@ msgstr ""
 "derivación de clave basada en contraseña `PKCS#5 2 <https://en.wikipedia.org/"
 "wiki/PBKDF2>`_.  (Contribuido por Christian Heimes en :issue:`18582`.)"
 
-#: ../Doc/whatsnew/3.4.rst:908
+#: ../Doc/whatsnew/3.4.rst:907
 msgid ""
 "The :attr:`~hashlib.hash.name` attribute of :mod:`hashlib` hash objects is "
 "now a formally supported interface.  It has always existed in CPython's :mod:"
@@ -1700,11 +1803,11 @@ msgstr ""
 "otras implementaciones de Python no la han soportado previamente.  "
 "(Contribuido por Jason R. Coombs en :issue:`18532`.)"
 
-#: ../Doc/whatsnew/3.4.rst:917
+#: ../Doc/whatsnew/3.4.rst:916
 msgid "hmac"
 msgstr "hmac"
 
-#: ../Doc/whatsnew/3.4.rst:919
+#: ../Doc/whatsnew/3.4.rst:918
 msgid ""
 ":mod:`hmac` now accepts ``bytearray`` as well as ``bytes`` for the *key* "
 "argument to the :func:`~hmac.new` function, and the *msg* parameter to both "
@@ -1718,7 +1821,7 @@ msgstr ""
 "ahora cualquier tipo soportado por el módulo :mod:`hashlib`.  (Contribuido "
 "por Jonas Borgström en :issue:`18240`.)"
 
-#: ../Doc/whatsnew/3.4.rst:925
+#: ../Doc/whatsnew/3.4.rst:924
 msgid ""
 "The *digestmod* argument to the :func:`hmac.new` function may now be any "
 "hash digest name recognized by :mod:`hashlib`.  In addition, the current "
@@ -1732,7 +1835,7 @@ msgstr ""
 "``MD5`` queda obsoleto: en una futura versión de Python no habrá valor por "
 "defecto.  (Contribuido por Christian Heimes en :issue:`17276`.)"
 
-#: ../Doc/whatsnew/3.4.rst:931
+#: ../Doc/whatsnew/3.4.rst:930
 msgid ""
 "With the addition of :attr:`~hmac.HMAC.block_size` and :attr:`~hmac.HMAC."
 "name` attributes (and the formal documentation of the :attr:`~hmac.HMAC."
@@ -1744,11 +1847,11 @@ msgstr ""
 "digest_size`), el módulo :mod:`hmac` se ajusta ahora plenamente a la API :"
 "pep:`247`. (Contribuido por Christian Heimes en :issue:`18775`.)"
 
-#: ../Doc/whatsnew/3.4.rst:938
+#: ../Doc/whatsnew/3.4.rst:937
 msgid "html"
 msgstr "html"
 
-#: ../Doc/whatsnew/3.4.rst:940
+#: ../Doc/whatsnew/3.4.rst:939
 msgid ""
 "New function :func:`~html.unescape` function converts HTML5 character "
 "references to the corresponding Unicode characters.  (Contributed by Ezio "
@@ -1758,7 +1861,7 @@ msgstr ""
 "caracteres de HTML5 en los correspondientes caracteres Unicode.  "
 "(Contribuido por Ezio Melotti en :issue:`2927`.)"
 
-#: ../Doc/whatsnew/3.4.rst:944
+#: ../Doc/whatsnew/3.4.rst:943
 msgid ""
 ":class:`~html.parser.HTMLParser` accepts a new keyword argument "
 "*convert_charrefs* that, when ``True``, automatically converts all character "
@@ -1774,7 +1877,7 @@ msgstr ""
 "te invitamos a establecerlo explícitamente y actualizar tu código para usar "
 "esta nueva característica.  (Contribuido por Ezio Melotti en :issue:`13633`.)"
 
-#: ../Doc/whatsnew/3.4.rst:951
+#: ../Doc/whatsnew/3.4.rst:950
 msgid ""
 "The *strict* argument of :class:`~html.parser.HTMLParser` is now deprecated. "
 "(Contributed by Ezio Melotti in :issue:`15114`.)"
@@ -1782,11 +1885,11 @@ msgstr ""
 "El argumento *strict* de :class:`~html.parser.HTMLParser` está ahora "
 "obsoleto. (Contribuido por Ezio Melotti en :issue:`15114`.)"
 
-#: ../Doc/whatsnew/3.4.rst:956
+#: ../Doc/whatsnew/3.4.rst:955
 msgid "http"
 msgstr "http"
 
-#: ../Doc/whatsnew/3.4.rst:958
+#: ../Doc/whatsnew/3.4.rst:957
 msgid ""
 ":meth:`~http.server.BaseHTTPRequestHandler.send_error` now accepts an "
 "optional additional *explain* parameter which can be used to provide an "
@@ -1803,7 +1906,7 @@ msgstr ""
 "cuerpo de la respuesta de error.  (Contribuido por Karl Cow en :issue:"
 "`12921`.)"
 
-#: ../Doc/whatsnew/3.4.rst:965
+#: ../Doc/whatsnew/3.4.rst:964
 msgid ""
 "The :mod:`http.server` :ref:`command line interface <http-server-cli>` now "
 "has a ``-b/--bind`` option that causes the server to listen on a specific "
@@ -1813,11 +1916,11 @@ msgstr ""
 "tiene ahora una opción ``-b/--bind`` que hace que el servidor escuche en una "
 "dirección específica. (Contribuido por Malte Swart en :issue:`17764`.)"
 
-#: ../Doc/whatsnew/3.4.rst:971
+#: ../Doc/whatsnew/3.4.rst:970
 msgid "idlelib and IDLE"
 msgstr "idlelib y IDLE"
 
-#: ../Doc/whatsnew/3.4.rst:973
+#: ../Doc/whatsnew/3.4.rst:972
 msgid ""
 "Since idlelib implements the IDLE shell and editor and is not intended for "
 "import by other programs, it gets improvements with every release. See :file:"
@@ -1832,11 +1935,11 @@ msgstr ""
 "Este fichero también está disponible en el diálogo de IDLE :menuselection:"
 "`Ayuda --> Sobre IDLE`."
 
-#: ../Doc/whatsnew/3.4.rst:981
+#: ../Doc/whatsnew/3.4.rst:980
 msgid "importlib"
 msgstr "importlib"
 
-#: ../Doc/whatsnew/3.4.rst:983
+#: ../Doc/whatsnew/3.4.rst:982
 msgid ""
 "The :class:`~importlib.abc.InspectLoader` ABC defines a new method, :meth:"
 "`~importlib.abc.InspectLoader.source_to_code` that accepts source data and a "
@@ -1850,7 +1953,7 @@ msgstr ""
 "defecto es equivalente a ``compile(data, path, 'exec', dont_inherit=True)``. "
 "(Contribuido por Eric Snow y Brett Cannon en :issue:`15627`.)"
 
-#: ../Doc/whatsnew/3.4.rst:989
+#: ../Doc/whatsnew/3.4.rst:988
 msgid ""
 ":class:`~importlib.abc.InspectLoader` also now has a default implementation "
 "for the :meth:`~importlib.abc.InspectLoader.get_code` method.  However, it "
@@ -1863,21 +1966,23 @@ msgstr ""
 "por razones de rendimiento.  (Contribuido por Brett Cannon en :issue:"
 "`18072`.)"
 
-#: ../Doc/whatsnew/3.4.rst:994
+#: ../Doc/whatsnew/3.4.rst:993
+#, fuzzy
 msgid ""
-"The :func:`~importlib.reload` function has been moved from :mod:`imp` to :"
-"mod:`importlib` as part of the :mod:`imp` module deprecation.  (Contributed "
+"The :func:`~importlib.reload` function has been moved from :mod:`!imp` to :"
+"mod:`importlib` as part of the :mod:`!imp` module deprecation.  (Contributed "
 "by Berker Peksag in :issue:`18193`.)"
 msgstr ""
 "La función :func:`~importlib.reload` ha sido trasladada de :mod:`imp` a :mod:"
 "`importlib` como parte de la eliminación del módulo :mod:`imp`.  "
 "(Contribuido por Berker Peksag en :issue:`18193`.)"
 
-#: ../Doc/whatsnew/3.4.rst:998
+#: ../Doc/whatsnew/3.4.rst:997
+#, fuzzy
 msgid ""
 ":mod:`importlib.util` now has a :data:`~importlib.util.MAGIC_NUMBER` "
 "attribute providing access to the bytecode version number.  This replaces "
-"the :func:`~imp.get_magic` function in the deprecated :mod:`imp` module. "
+"the :func:`!get_magic` function in the deprecated :mod:`!imp` module. "
 "(Contributed by Brett Cannon in :issue:`18192`.)"
 msgstr ""
 ":mod:`importlib.util` tiene ahora un atributo :data:`~importlib.util."
@@ -1885,11 +1990,12 @@ msgstr ""
 "bytes.  Esto sustituye a la función :func:`~imp.get_magic` del módulo :mod:"
 "`imp`, ya obsoleto. (Contribuido por Brett Cannon en :issue:`18192`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1003
+#: ../Doc/whatsnew/3.4.rst:1002
+#, fuzzy
 msgid ""
 "New :mod:`importlib.util` functions :func:`~importlib.util."
 "cache_from_source` and :func:`~importlib.util.source_from_cache` replace the "
-"same-named functions in the deprecated :mod:`imp` module.  (Contributed by "
+"same-named functions in the deprecated :mod:`!imp` module.  (Contributed by "
 "Brett Cannon in :issue:`18194`.)"
 msgstr ""
 "Las nuevas funciones :mod:`importlib.util` :func:`~importlib.util."
@@ -1897,7 +2003,7 @@ msgstr ""
 "las funciones con el mismo nombre del módulo :mod:`imp`, ya obsoleto.  "
 "(Contribuido por Brett Cannon en :issue:`18194`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1008
+#: ../Doc/whatsnew/3.4.rst:1007
 msgid ""
 "The :mod:`importlib` bootstrap :class:`.NamespaceLoader` now conforms to "
 "the :class:`.InspectLoader` ABC, which means that ``runpy`` and ``python -"
@@ -1909,7 +2015,7 @@ msgstr ""
 "m`` pueden utilizarse ahora con paquetes de espacios de nombres.  "
 "(Contribuido por Brett Cannon en :issue:`18058`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1013
+#: ../Doc/whatsnew/3.4.rst:1012
 msgid ""
 ":mod:`importlib.util` has a new function :func:`~importlib.util."
 "decode_source` that decodes source from bytes using universal newline "
@@ -1921,7 +2027,7 @@ msgstr ""
 "procesamiento universal de nuevas líneas.  Esto es útil para implementar los "
 "métodos :meth:`.InspectLoader.get_source`."
 
-#: ../Doc/whatsnew/3.4.rst:1017
+#: ../Doc/whatsnew/3.4.rst:1016
 msgid ""
 ":class:`importlib.machinery.ExtensionFileLoader` now has a :meth:`~importlib."
 "machinery.ExtensionFileLoader.get_filename` method.  This was inadvertently "
@@ -1933,11 +2039,11 @@ msgstr ""
 "inadvertidamente en la implementación original.  (Contribuido por Eric Snow "
 "en :issue:`19152`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1024
+#: ../Doc/whatsnew/3.4.rst:1023
 msgid "inspect"
 msgstr "inspeccionar"
 
-#: ../Doc/whatsnew/3.4.rst:1026
+#: ../Doc/whatsnew/3.4.rst:1025
 msgid ""
 "The :mod:`inspect` module now offers a basic :ref:`command line interface "
 "<inspect-module-cli>` to quickly display source code and other information "
@@ -1949,7 +2055,7 @@ msgstr ""
 "fuente y otra información de módulos, clases y funciones.  (Contribución de "
 "Claudiu Popa y Nick Coghlan en :issue:`18626`)"
 
-#: ../Doc/whatsnew/3.4.rst:1031
+#: ../Doc/whatsnew/3.4.rst:1030
 msgid ""
 ":func:`~inspect.unwrap` makes it easy to unravel wrapper function chains "
 "created by :func:`functools.wraps` (and any other API that sets the "
@@ -1961,7 +2067,7 @@ msgstr ""
 "API que establezca el atributo ``__wrapped__`` en una función envolvente).  "
 "(Contribución de Daniel Urban, Aaron Iles y Nick Coghlan en :issue:`13266`)"
 
-#: ../Doc/whatsnew/3.4.rst:1036
+#: ../Doc/whatsnew/3.4.rst:1035
 msgid ""
 "As part of the implementation of the new :mod:`enum` module, the :mod:"
 "`inspect` module now has substantially better support for custom ``__dir__`` "
@@ -1974,7 +2080,7 @@ msgstr ""
 "a través de metaclases.  (Contribuido por Ethan Furman en :issue:`18929` y :"
 "issue:`19030`)"
 
-#: ../Doc/whatsnew/3.4.rst:1042
+#: ../Doc/whatsnew/3.4.rst:1041
 msgid ""
 ":func:`~inspect.getfullargspec` and :func:`~inspect.getargspec` now use the :"
 "func:`~inspect.signature` API. This allows them to support a much broader "
@@ -1997,7 +2103,7 @@ msgstr ""
 "utilizar :func:`~inspect.signature` directamente si se desean esas "
 "características. (Contribuido por Yury Selivanov en :issue:`17481`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1053
+#: ../Doc/whatsnew/3.4.rst:1052
 msgid ""
 ":func:`~inspect.signature` now supports duck types of CPython functions, "
 "which adds support for functions compiled with Cython.  (Contributed by "
@@ -2007,11 +2113,11 @@ msgstr ""
 "CPython, lo que añade soporte para las funciones compiladas con Cython.  "
 "(Contribuido por Stefan Behnel y Yury Selivanov en :issue:`17159`)"
 
-#: ../Doc/whatsnew/3.4.rst:1059
+#: ../Doc/whatsnew/3.4.rst:1058
 msgid "ipaddress"
 msgstr "dirección IP"
 
-#: ../Doc/whatsnew/3.4.rst:1061
+#: ../Doc/whatsnew/3.4.rst:1060
 msgid ""
 ":mod:`ipaddress` was added to the standard library in Python 3.3 as a :term:"
 "`provisional API`. With the release of Python 3.4, this qualification has "
@@ -2024,7 +2130,7 @@ msgstr ""
 "cubierta por los requisitos normales de la biblioteca estándar para mantener "
 "la compatibilidad hacia atrás."
 
-#: ../Doc/whatsnew/3.4.rst:1067
+#: ../Doc/whatsnew/3.4.rst:1066
 msgid ""
 "A new :attr:`~ipaddress.IPv4Address.is_global` property is ``True`` if an "
 "address is globally routeable.  (Contributed by Peter Moody in :issue:"
@@ -2034,13 +2140,13 @@ msgstr ""
 "una dirección es enrutable globalmente.  (Contribuido por Peter Moody en :"
 "issue:`17400`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1073
+#: ../Doc/whatsnew/3.4.rst:1072
 msgid "logging"
 msgstr ""
 "Tres mejoras más pequeñas en el módulo :mod:`logging`, todas implementadas "
 "por Vinay Sajip, son:"
 
-#: ../Doc/whatsnew/3.4.rst:1075
+#: ../Doc/whatsnew/3.4.rst:1074
 msgid ""
 "The :class:`~logging.handlers.TimedRotatingFileHandler` has a new *atTime* "
 "parameter that can be used to specify the time of day when rollover should "
@@ -2051,7 +2157,7 @@ msgstr ""
 "que debe producirse la renovación.  (Contribuido por Ronald Oussoren en :"
 "issue:`9556`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1079
+#: ../Doc/whatsnew/3.4.rst:1078
 msgid ""
 ":class:`~logging.handlers.SocketHandler` and :class:`~logging.handlers."
 "DatagramHandler` now support Unix domain sockets (by setting *port* to "
@@ -2062,7 +2168,7 @@ msgstr ""
 "*puerto* a ``None``).  (Contribuido por Vinay Sajip en el commit "
 "ce46195b56a9.)"
 
-#: ../Doc/whatsnew/3.4.rst:1084
+#: ../Doc/whatsnew/3.4.rst:1083
 msgid ""
 ":func:`~logging.config.fileConfig` now accepts a :class:`configparser."
 "RawConfigParser` subclass instance for the *fname* parameter.  This "
@@ -2079,7 +2185,7 @@ msgstr ""
 "`~logging.config.fileConfig`.  (Contribuido por Vinay Sajip en :issue:"
 "`16110`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1092
+#: ../Doc/whatsnew/3.4.rst:1091
 msgid ""
 "Logging configuration data received from a socket via the :func:`logging."
 "config.listen` function can now be validated before being processed by "
@@ -2092,11 +2198,11 @@ msgstr ""
 "la nueva palabra clave *verify*.  (Contribuido por Vinay Sajip en :issue:"
 "`15452`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1101
+#: ../Doc/whatsnew/3.4.rst:1100
 msgid "marshal"
 msgstr "mariscal"
 
-#: ../Doc/whatsnew/3.4.rst:1103
+#: ../Doc/whatsnew/3.4.rst:1102
 msgid ""
 "The default :mod:`marshal` version has been bumped to 3.  The code "
 "implementing the new version restores the Python2 behavior of recording only "
@@ -2111,31 +2217,31 @@ msgstr ""
 "La versión por defecto de :mod:`marshal` ha sido aumentada a 3. El código "
 "que implementa la nueva versión restablece el comportamiento de Python2 de "
 "registrar sólo una copia de las cadenas internadas y preservar la "
-"internación en la deserialización, y extiende esta capacidad de \"una copia"
-"\" a cualquier tipo de objeto (incluyendo el manejo de referencias "
+"internación en la deserialización, y extiende esta capacidad de \"una "
+"copia\" a cualquier tipo de objeto (incluyendo el manejo de referencias "
 "recursivas).  Esto reduce tanto el tamaño de los archivos ``.pyc`` como la "
 "cantidad de memoria que ocupa un módulo en la memoria cuando se carga desde "
 "un archivo ``.pyc`` (o ``.pyo``).  (Contribuido por Kristján Valur Jónsson "
 "en :issue:`16475`, con mejoras adicionales de velocidad por Antoine Pitrou "
 "en :issue:`19219`)"
 
-#: ../Doc/whatsnew/3.4.rst:1114
+#: ../Doc/whatsnew/3.4.rst:1113
 msgid "mmap"
 msgstr "mmap"
 
-#: ../Doc/whatsnew/3.4.rst:1116
+#: ../Doc/whatsnew/3.4.rst:1115
 msgid ""
-"mmap objects can now be :mod:`weakref`\\ ed.  (Contributed by Valerie "
-"Lambert in :issue:`4885`.)"
+"mmap objects are now :ref:`weakly referenceable <mod-weakref>`. (Contributed "
+"by Valerie Lambert in :issue:`4885`.)"
 msgstr ""
-"los objetos mmap ahora pueden ser :mod:`weakref` ed.  (Contribución de "
-"Valerie Lambert en :issue:`4885`.)"
+"Los objetos mmap ahora son :ref:`weakly referenceable <mod-weakref>`. "
+"(Aportado por Valerie Lambert en :issue:`4885`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1121
+#: ../Doc/whatsnew/3.4.rst:1120
 msgid "multiprocessing"
 msgstr "multiprocesamiento"
 
-#: ../Doc/whatsnew/3.4.rst:1125
+#: ../Doc/whatsnew/3.4.rst:1124
 msgid ""
 "On Unix two new :ref:`start methods <multiprocessing-start-methods>`, "
 "``spawn`` and ``forkserver``, have been added for starting processes using :"
@@ -2158,7 +2264,7 @@ msgstr ""
 "`~multiprocessing.set_start_method` establece el método de inicio.  "
 "(Contribuido por Richard Oudkerk en :issue:`8713`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1135
+#: ../Doc/whatsnew/3.4.rst:1134
 msgid ""
 ":mod:`multiprocessing` also now has the concept of a ``context``, which "
 "determines how child processes are created.  New function :func:"
@@ -2180,7 +2286,7 @@ msgstr ""
 "partes de la misma aplicación utilicen el multiprocesamiento sin interferir "
 "entre sí.  (Contribuido por Richard Oudkerk en :issue:`18999`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1145
+#: ../Doc/whatsnew/3.4.rst:1144
 msgid ""
 "Except when using the old *fork* start method, child processes no longer "
 "inherit unneeded handles/file descriptors from their parents (part of :issue:"
@@ -2190,7 +2296,7 @@ msgstr ""
 "hijos ya no heredan los handles/descriptores de archivo innecesarios de sus "
 "padres (parte de :issue:`8713`)."
 
-#: ../Doc/whatsnew/3.4.rst:1149
+#: ../Doc/whatsnew/3.4.rst:1148
 msgid ""
 ":mod:`multiprocessing` now relies on :mod:`runpy` (which implements the ``-"
 "m`` switch) to initialise ``__main__`` appropriately in child processes when "
@@ -2207,13 +2313,13 @@ msgstr ""
 "y las importaciones relativas explícitas podían causar fallos oscuros en los "
 "procesos hijos.  (Contribuido por Nick Coghlan en :issue:`19946`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1158
+#: ../Doc/whatsnew/3.4.rst:1157
 msgid "operator"
 msgstr ""
 ":ref:`PEP 465 <whatsnew-pep-465>`, un nuevo operador de multiplicación de "
 "matrices: ``a @ b``."
 
-#: ../Doc/whatsnew/3.4.rst:1160
+#: ../Doc/whatsnew/3.4.rst:1159
 msgid ""
 "New function :func:`~operator.length_hint` provides an implementation of the "
 "specification for how the :meth:`~object.__length_hint__` special method "
@@ -2226,7 +2332,7 @@ msgstr ""
 "formal :pep:`424` de esta característica del lenguaje.  (Contribuido por "
 "Armin Ronacher en :issue:`16148`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1165
+#: ../Doc/whatsnew/3.4.rst:1164
 msgid ""
 "There is now a pure-python version of the :mod:`operator` module available "
 "for reference and for use by alternate implementations of Python.  "
@@ -2236,11 +2342,11 @@ msgstr ""
 "como referencia y para ser utilizada por implementaciones alternativas de "
 "Python.  (Contribuido por Zachary Ware en :issue:`16694`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1171
+#: ../Doc/whatsnew/3.4.rst:1170
 msgid "os"
 msgstr "os"
 
-#: ../Doc/whatsnew/3.4.rst:1173
+#: ../Doc/whatsnew/3.4.rst:1172
 msgid ""
 "There are new functions to get and set the :ref:`inheritable flag "
 "<fd_inheritance>` of a file descriptor (:func:`os.get_inheritable`, :func:"
@@ -2252,7 +2358,7 @@ msgstr ""
 "func:`os.set_inheritable`) o de un handle de Windows (:func:`os."
 "get_handle_inheritable`, :func:`os.set_handle_inheritable`)."
 
-#: ../Doc/whatsnew/3.4.rst:1178
+#: ../Doc/whatsnew/3.4.rst:1177
 msgid ""
 "New function :func:`~os.cpu_count` reports the number of CPUs available on "
 "the platform on which Python is running (or ``None`` if the count can't be "
@@ -2268,7 +2374,7 @@ msgstr ""
 "(Contribución de Trent Nelson, Yogesh Chaudhari, Victor Stinner y Charles-"
 "François Natali en :issue:`17914`)"
 
-#: ../Doc/whatsnew/3.4.rst:1184
+#: ../Doc/whatsnew/3.4.rst:1183
 msgid ""
 ":func:`os.path.samestat` is now available on the Windows platform (and the :"
 "func:`os.path.samefile` implementation is now shared between Unix and "
@@ -2278,7 +2384,7 @@ msgstr ""
 "la implementación de :func:`os.path.samefile` es ahora compartida entre Unix "
 "y Windows).  (Contribuido por Brian Curtin en :issue:`11939`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1188
+#: ../Doc/whatsnew/3.4.rst:1187
 msgid ""
 ":func:`os.path.ismount` now recognizes volumes mounted below a drive root on "
 "Windows.  (Contributed by Tim Golden in :issue:`9035`.)"
@@ -2287,13 +2393,15 @@ msgstr ""
 "la raíz de una unidad en Windows.  (Contribuido por Tim Golden en :issue:"
 "`9035`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1191
+#: ../Doc/whatsnew/3.4.rst:1190
+#, fuzzy
 msgid ""
-":func:`os.open` supports two new flags on platforms that provide them, :data:"
-"`~os.O_PATH` (un-opened file descriptor), and :data:`~os.O_TMPFILE` (unnamed "
-"temporary file; as of 3.4.0 release available only on Linux systems with a "
-"kernel version of 3.11 or newer that have uapi headers).  (Contributed by "
-"Christian Heimes in :issue:`18673` and Benjamin Peterson, respectively.)"
+":func:`os.open` supports two new flags on platforms that provide them, :"
+"const:`~os.O_PATH` (un-opened file descriptor), and :const:`~os.O_TMPFILE` "
+"(unnamed temporary file; as of 3.4.0 release available only on Linux systems "
+"with a kernel version of 3.11 or newer that have uapi headers).  "
+"(Contributed by Christian Heimes in :issue:`18673` and Benjamin Peterson, "
+"respectively.)"
 msgstr ""
 ":func:`os.open` soporta dos nuevas banderas en las plataformas que las "
 "proporcionan, :data:`~os.O_PATH` (descriptor de archivo no abierto), y :data:"
@@ -2302,11 +2410,11 @@ msgstr ""
 "reciente que tenga cabeceras uapi).  (Contribuido por Christian Heimes en :"
 "issue:`18673` y Benjamin Peterson, respectivamente)"
 
-#: ../Doc/whatsnew/3.4.rst:1199
+#: ../Doc/whatsnew/3.4.rst:1198
 msgid "pdb"
 msgstr "pdb"
 
-#: ../Doc/whatsnew/3.4.rst:1201
+#: ../Doc/whatsnew/3.4.rst:1200
 msgid ""
 ":mod:`pdb` has been enhanced to handle generators, :keyword:`yield`, and "
 "``yield from`` in a more useful fashion.  This is especially helpful when "
@@ -2318,7 +2426,7 @@ msgstr ""
 "depuran programas basados en :mod:`asyncio`.  (Contribución de Andrew "
 "Svetlov y Xavier de Gaye en :issue:`16596`)"
 
-#: ../Doc/whatsnew/3.4.rst:1206
+#: ../Doc/whatsnew/3.4.rst:1205
 msgid ""
 "The ``print`` command has been removed from :mod:`pdb`, restoring access to "
 "the Python :func:`print` function from the pdb command line.  Python2's "
@@ -2341,11 +2449,11 @@ msgstr ""
 "inaccesible en el prompt de ``pdb``.  (Contribuido por Connor Osborn en :"
 "issue:`18764`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1220
+#: ../Doc/whatsnew/3.4.rst:1219
 msgid "pickle"
 msgstr "pepinillo"
 
-#: ../Doc/whatsnew/3.4.rst:1222
+#: ../Doc/whatsnew/3.4.rst:1221
 msgid ""
 ":mod:`pickle` now supports (but does not use by default) a new pickle "
 "protocol, protocol 4.  This new protocol addresses a number of issues that "
@@ -2361,28 +2469,29 @@ msgstr ""
 "meth:`__new__` toma argumentos de sólo palabras clave.  También proporciona "
 "algunas mejoras de eficiencia."
 
-#: ../Doc/whatsnew/3.4.rst:1230
+#: ../Doc/whatsnew/3.4.rst:1229
 msgid ":pep:`3154` -- Pickle protocol 4"
 msgstr ":pep:`3154` -- Protocolo Pickle 4"
 
-#: ../Doc/whatsnew/3.4.rst:1231
+#: ../Doc/whatsnew/3.4.rst:1230
 msgid "PEP written by Antoine Pitrou and implemented by Alexandre Vassalotti."
 msgstr ""
 "PEP escrito por Antoine Pitrou e implementado por Alexandre Vassalotti."
 
-#: ../Doc/whatsnew/3.4.rst:1235
+#: ../Doc/whatsnew/3.4.rst:1234
 msgid "plistlib"
 msgstr "plistlib"
 
-#: ../Doc/whatsnew/3.4.rst:1237
+#: ../Doc/whatsnew/3.4.rst:1236
+#, fuzzy
 msgid ""
 ":mod:`plistlib` now has an API that is similar to the standard pattern for "
 "stdlib serialization protocols, with new :func:`~plistlib.load`, :func:"
 "`~plistlib.dump`, :func:`~plistlib.loads`, and :func:`~plistlib.dumps` "
 "functions.  (The older API is now deprecated.)  In addition to the already "
-"supported XML plist format (:data:`~plistlib.FMT_XML`), it also now supports "
-"the binary plist format (:data:`~plistlib.FMT_BINARY`).  (Contributed by "
-"Ronald Oussoren and others in :issue:`14455`.)"
+"supported XML plist format (:const:`~plistlib.FMT_XML`), it also now "
+"supports the binary plist format (:const:`~plistlib.FMT_BINARY`).  "
+"(Contributed by Ronald Oussoren and others in :issue:`14455`.)"
 msgstr ""
 ":mod:`plistlib` tiene ahora una API que es similar al patrón estándar de los "
 "protocolos de serialización de stdlib, con nuevas funciones :func:`~plistlib."
@@ -2392,11 +2501,11 @@ msgstr ""
 "data:`~plistlib.FMT_BINARY`).  (Contribuido por Ronald Oussoren y otros en :"
 "issue:`14455`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1247
+#: ../Doc/whatsnew/3.4.rst:1246
 msgid "poplib"
 msgstr "poplib"
 
-#: ../Doc/whatsnew/3.4.rst:1249
+#: ../Doc/whatsnew/3.4.rst:1248
 msgid ""
 "Two new methods have been added to :mod:`poplib`: :meth:`~poplib.POP3.capa`, "
 "which returns the list of capabilities advertised by the POP server, and :"
@@ -2410,11 +2519,11 @@ msgstr ""
 "sesión POP3 cifrada si el servidor POP lo soporta.  (Contribuido por Lorenzo "
 "Catucci en :issue:`4473`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1257
+#: ../Doc/whatsnew/3.4.rst:1256
 msgid "pprint"
 msgstr "pprint"
 
-#: ../Doc/whatsnew/3.4.rst:1259
+#: ../Doc/whatsnew/3.4.rst:1258
 msgid ""
 "The :mod:`pprint` module's :class:`~pprint.PrettyPrinter` class and its :"
 "func:`~pprint.pformat`, and :func:`~pprint.pprint` functions have a new "
@@ -2430,7 +2539,7 @@ msgstr ""
 "con tantos elementos de secuencia como quepan en el *ancho* de cada línea "
 "(indentada). (Contribuido por Serhiy Storchaka en :issue:`19132`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1266
+#: ../Doc/whatsnew/3.4.rst:1265
 msgid ""
 "Long strings are now wrapped using Python's normal line continuation "
 "syntax.  (Contributed by Antoine Pitrou in :issue:`17150`.)"
@@ -2439,11 +2548,11 @@ msgstr ""
 "continuación de línea de Python.  (Contribuido por Antoine Pitrou en :issue:"
 "`17150`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1271
+#: ../Doc/whatsnew/3.4.rst:1270
 msgid "pty"
 msgstr "pty"
 
-#: ../Doc/whatsnew/3.4.rst:1273
+#: ../Doc/whatsnew/3.4.rst:1272
 msgid ""
 ":func:`pty.spawn` now returns the status value from :func:`os.waitpid` on "
 "the child process, instead of ``None``.  (Contributed by Gregory P. Smith.)"
@@ -2451,11 +2560,11 @@ msgstr ""
 ":func:`pty.spawn` ahora devuelve el valor de estado de :func:`os.waitpid` en "
 "el proceso hijo, en lugar de ``None``.  (Contribución de Gregory P. Smith)"
 
-#: ../Doc/whatsnew/3.4.rst:1278
+#: ../Doc/whatsnew/3.4.rst:1277
 msgid "pydoc"
 msgstr "pydoc"
 
-#: ../Doc/whatsnew/3.4.rst:1280
+#: ../Doc/whatsnew/3.4.rst:1279
 msgid ""
 "The :mod:`pydoc` module is now based directly on the :func:`inspect."
 "signature` introspection API, allowing it to provide signature information "
@@ -2470,7 +2579,7 @@ msgstr ""
 "en cuenta al mostrar la información de ayuda. (Contribución de Larry "
 "Hastings en :issue:`19674`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1286
+#: ../Doc/whatsnew/3.4.rst:1285
 msgid ""
 "The :mod:`pydoc` module no longer displays the ``self`` parameter for "
 "already bound methods. Instead, it aims to always display the exact current "
@@ -2482,7 +2591,7 @@ msgstr ""
 "de la llamada suministrada.  (Contribuido por Larry Hastings en :issue:"
 "`20710`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1291
+#: ../Doc/whatsnew/3.4.rst:1290
 msgid ""
 "In addition to the changes that have been made to :mod:`pydoc` directly, its "
 "handling of custom ``__dir__`` methods and various descriptor behaviours has "
@@ -2494,7 +2603,7 @@ msgstr ""
 "del descriptor también se han mejorado sustancialmente por los cambios "
 "subyacentes en el módulo :mod:`inspect`."
 
-#: ../Doc/whatsnew/3.4.rst:1296
+#: ../Doc/whatsnew/3.4.rst:1295
 msgid ""
 "As the :func:`help` builtin is based on :mod:`pydoc`, the above changes also "
 "affect the behaviour of :func:`help`."
@@ -2502,11 +2611,11 @@ msgstr ""
 "Como el builtin :func:`help` está basado en :mod:`pydoc`, los cambios "
 "anteriores también afectan al comportamiento de :func:`help`."
 
-#: ../Doc/whatsnew/3.4.rst:1301
+#: ../Doc/whatsnew/3.4.rst:1300
 msgid "re"
 msgstr "re"
 
-#: ../Doc/whatsnew/3.4.rst:1303
+#: ../Doc/whatsnew/3.4.rst:1302
 msgid ""
 "New :func:`~re.fullmatch` function and :meth:`.regex.fullmatch` method "
 "anchor the pattern at both ends of the string to match.  This provides a way "
@@ -2523,7 +2632,7 @@ msgstr ""
 "a una expresión regular existente.  (Contribuido por Matthew Barnett en :"
 "issue:`16203`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1310
+#: ../Doc/whatsnew/3.4.rst:1309
 msgid ""
 "The repr of :ref:`regex objects <re-objects>` now includes the pattern and "
 "the flags; the repr of :ref:`match objects <match-objects>` now includes the "
@@ -2536,11 +2645,11 @@ msgstr ""
 "(Contribución de Hugo Lopes Tavares y Serhiy Storchaka en :issue:`13592` y :"
 "issue:`17087`)"
 
-#: ../Doc/whatsnew/3.4.rst:1318
+#: ../Doc/whatsnew/3.4.rst:1317
 msgid "resource"
 msgstr "recurso"
 
-#: ../Doc/whatsnew/3.4.rst:1320
+#: ../Doc/whatsnew/3.4.rst:1319
 msgid ""
 "New :func:`~resource.prlimit` function, available on Linux platforms with a "
 "kernel version of 2.6.36 or later and glibc of 2.13 or later, provides the "
@@ -2553,12 +2662,13 @@ msgstr ""
 "para procesos distintos del que realiza la llamada.  (Contribuido por "
 "Christian Heimes en :issue:`16595`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1325
+#: ../Doc/whatsnew/3.4.rst:1324
+#, fuzzy
 msgid ""
 "On Linux kernel version 2.6.36 or later, there are also some new Linux "
-"specific constants: :attr:`~resource.RLIMIT_MSGQUEUE`, :attr:`~resource."
-"RLIMIT_NICE`, :attr:`~resource.RLIMIT_RTPRIO`, :attr:`~resource."
-"RLIMIT_RTTIME`, and :attr:`~resource.RLIMIT_SIGPENDING`. (Contributed by "
+"specific constants: :const:`~resource.RLIMIT_MSGQUEUE`, :const:`~resource."
+"RLIMIT_NICE`, :const:`~resource.RLIMIT_RTPRIO`, :const:`~resource."
+"RLIMIT_RTTIME`, and :const:`~resource.RLIMIT_SIGPENDING`. (Contributed by "
 "Christian Heimes in :issue:`19324`.)"
 msgstr ""
 "En el kernel de Linux versión 2.6.36 o posterior, también hay algunas nuevas "
@@ -2567,10 +2677,11 @@ msgstr ""
 "RLIMIT_RTTIME`, y :attr:`~resource.RLIMIT_SIGPENDING`. (Contribuido por "
 "Christian Heimes en :issue:`19324`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1331
+#: ../Doc/whatsnew/3.4.rst:1330
+#, fuzzy
 msgid ""
 "On FreeBSD version 9 and later, there some new FreeBSD specific constants: :"
-"attr:`~resource.RLIMIT_SBSIZE`, :attr:`~resource.RLIMIT_SWAP`, and :attr:"
+"const:`~resource.RLIMIT_SBSIZE`, :const:`~resource.RLIMIT_SWAP`, and :const:"
 "`~resource.RLIMIT_NPTS`.  (Contributed by Claudiu Popa in :issue:`19343`.)"
 msgstr ""
 "En FreeBSD versión 9 y posteriores, hay algunas nuevas constantes "
@@ -2578,11 +2689,11 @@ msgstr ""
 "RLIMIT_SWAP`, y :attr:`~resource.RLIMIT_NPTS`.  (Contribuido por Claudiu "
 "Popa en :issue:`19343`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1338
+#: ../Doc/whatsnew/3.4.rst:1337
 msgid "select"
 msgstr "seleccionar"
 
-#: ../Doc/whatsnew/3.4.rst:1340
+#: ../Doc/whatsnew/3.4.rst:1339
 msgid ""
 ":class:`~select.epoll` objects now support the context management protocol. "
 "When used in a :keyword:`with` statement, the :meth:`~select.epoll.close` "
@@ -2594,7 +2705,7 @@ msgstr ""
 "meth:`~select.epoll.close` será llamado automáticamente al final del "
 "bloque.  (Contribuido por Serhiy Storchaka en :issue:`16488`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1345
+#: ../Doc/whatsnew/3.4.rst:1344
 msgid ""
 ":class:`~select.devpoll` objects now have :meth:`~select.devpoll.fileno` "
 "and :meth:`~select.devpoll.close` methods, as well as a new attribute :attr:"
@@ -2605,11 +2716,11 @@ msgstr ""
 "attr:`~select.devpoll.closed`.  (Contribuido por Victor Stinner en :issue:"
 "`18794`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1352
+#: ../Doc/whatsnew/3.4.rst:1351
 msgid "shelve"
 msgstr "estante"
 
-#: ../Doc/whatsnew/3.4.rst:1354
+#: ../Doc/whatsnew/3.4.rst:1353
 msgid ""
 ":class:`~shelve.Shelf` instances may now be used in :keyword:`with` "
 "statements, and will be automatically closed at the end of the :keyword:`!"
@@ -2620,11 +2731,11 @@ msgstr ""
 "bloque :keyword:`!with`. (Contribuido por Filip Gruszczyński en :issue:"
 "`13896`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1360
+#: ../Doc/whatsnew/3.4.rst:1359
 msgid "shutil"
 msgstr "shutil"
 
-#: ../Doc/whatsnew/3.4.rst:1362
+#: ../Doc/whatsnew/3.4.rst:1361
 msgid ""
 ":func:`~shutil.copyfile` now raises a specific :exc:`~shutil.Error` "
 "subclass, :exc:`~shutil.SameFileError`, when the source and destination are "
@@ -2638,15 +2749,16 @@ msgstr ""
 "apropiada en este error específico.  (Contribución de Atsuo Ishimoto y Hynek "
 "Schlawack en :issue:`1492704`)"
 
-#: ../Doc/whatsnew/3.4.rst:1370
+#: ../Doc/whatsnew/3.4.rst:1369
 msgid "smtpd"
 msgstr "smtpd"
 
-#: ../Doc/whatsnew/3.4.rst:1372
+#: ../Doc/whatsnew/3.4.rst:1371
+#, fuzzy
 msgid ""
-"The :class:`~smtpd.SMTPServer` and :class:`~smtpd.SMTPChannel` classes now "
-"accept a *map* keyword argument which, if specified, is passed in to :class:"
-"`asynchat.async_chat` as its *map* argument.  This allows an application to "
+"The :class:`!SMTPServer` and :class:`!SMTPChannel` classes now accept a "
+"*map* keyword argument which, if specified, is passed in to :class:`!"
+"asynchat.async_chat` as its *map* argument.  This allows an application to "
 "avoid affecting the global socket map.  (Contributed by Vinay Sajip in :"
 "issue:`11959`.)"
 msgstr ""
@@ -2656,11 +2768,11 @@ msgstr ""
 "aplicación no afecte al mapa global de sockets.  (Contribuido por Vinay "
 "Sajip en :issue:`11959`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1380
+#: ../Doc/whatsnew/3.4.rst:1379
 msgid "smtplib"
 msgstr "smtplib"
 
-#: ../Doc/whatsnew/3.4.rst:1382
+#: ../Doc/whatsnew/3.4.rst:1381
 msgid ""
 ":exc:`~smtplib.SMTPException` is now a subclass of :exc:`OSError`, which "
 "allows both socket level errors and SMTP protocol level errors to be caught "
@@ -2673,20 +2785,21 @@ msgstr ""
 "sólo se preocupa de si se ha producido o no un error. (Contribuido por Ned "
 "Jackson Lovely en :issue:`2118`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1389
+#: ../Doc/whatsnew/3.4.rst:1388
 msgid "socket"
 msgstr "enchufe"
 
-#: ../Doc/whatsnew/3.4.rst:1391
+#: ../Doc/whatsnew/3.4.rst:1390
+#, fuzzy
 msgid ""
-"The socket module now supports the :data:`~socket.CAN_BCM` protocol on "
+"The socket module now supports the :const:`~socket.CAN_BCM` protocol on "
 "platforms that support it.  (Contributed by Brian Thorne in :issue:`15359`.)"
 msgstr ""
 "El módulo socket ahora soporta el protocolo :data:`~socket.CAN_BCM` en las "
 "plataformas que lo soportan.  (Contribuido por Brian Thorne en :issue:"
 "`15359`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1394
+#: ../Doc/whatsnew/3.4.rst:1393
 msgid ""
 "Socket objects have new methods to get or set their :ref:`inheritable flag "
 "<fd_inheritance>`, :meth:`~socket.socket.get_inheritable` and :meth:`~socket."
@@ -2696,23 +2809,24 @@ msgstr ""
 "`bandera heredable <fd_inheritance>`, :meth:`~socket.socket.get_inheritable` "
 "y :meth:`~socket.socket.set_inheritable`."
 
-#: ../Doc/whatsnew/3.4.rst:1398
+#: ../Doc/whatsnew/3.4.rst:1397
 msgid ""
 "The ``socket.AF_*`` and ``socket.SOCK_*`` constants are now enumeration "
 "values using the new :mod:`enum` module.  This allows meaningful names to be "
 "printed during debugging, instead of integer \"magic numbers\"."
 msgstr ""
-"Las constantes ``socket.AF_*` y ``socket.SOCK_*`` son ahora valores de "
+"Las constantes ``socket.AF_*`` y ``socket.SOCK_*`` son ahora valores de "
 "enumeración utilizando el nuevo módulo :mod:`enum`.  Esto permite imprimir "
-"nombres significativos durante la depuración, en lugar de \"números mágicos"
-"\" enteros."
+"nombres significativos durante la depuración, en lugar de \"números "
+"mágicos\" enteros."
 
-#: ../Doc/whatsnew/3.4.rst:1402
-msgid "The :data:`~socket.AF_LINK` constant is now available on BSD and OSX."
+#: ../Doc/whatsnew/3.4.rst:1401
+#, fuzzy
+msgid "The :const:`~socket.AF_LINK` constant is now available on BSD and OSX."
 msgstr ""
 "La constante :data:`~socket.AF_LINK` está ahora disponible en BSD y OSX."
 
-#: ../Doc/whatsnew/3.4.rst:1404
+#: ../Doc/whatsnew/3.4.rst:1403
 msgid ""
 ":func:`~socket.inet_pton` and :func:`~socket.inet_ntop` are now supported on "
 "Windows.  (Contributed by Atsuo Ishimoto in :issue:`7171`.)"
@@ -2720,11 +2834,11 @@ msgstr ""
 ":func:`~socket.inet_pton` y :func:`~socket.inet_ntop` son ahora compatibles "
 "con Windows.  (Contribuido por Atsuo Ishimoto en :issue:`7171`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1409
+#: ../Doc/whatsnew/3.4.rst:1408
 msgid "sqlite3"
 msgstr "sqlite3"
 
-#: ../Doc/whatsnew/3.4.rst:1411
+#: ../Doc/whatsnew/3.4.rst:1410
 msgid ""
 "A new boolean parameter to the :func:`~sqlite3.connect` function, *uri*, can "
 "be used to indicate that the *database* parameter is a ``uri`` (see the "
@@ -2736,11 +2850,11 @@ msgstr ""
 "(véase la documentación `SQLite URI <https://www.sqlite.org/uri.html>`_).  "
 "(Contribuido por poq en :issue:`13773`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1418
+#: ../Doc/whatsnew/3.4.rst:1417
 msgid "ssl"
 msgstr "ssl"
 
-#: ../Doc/whatsnew/3.4.rst:1422
+#: ../Doc/whatsnew/3.4.rst:1421
 msgid ""
 ":data:`~ssl.PROTOCOL_TLSv1_1` and :data:`~ssl.PROTOCOL_TLSv1_2` (TLSv1.1 and "
 "TLSv1.2 support) have been added; support for these protocols is only "
@@ -2752,7 +2866,7 @@ msgstr ""
 "disponible si Python está enlazado con OpenSSL 1.0.1 o posterior.  "
 "(Contribuido por Michele Orrù y Antoine Pitrou en :issue:`16692`)"
 
-#: ../Doc/whatsnew/3.4.rst:1429
+#: ../Doc/whatsnew/3.4.rst:1428
 msgid ""
 "New function :func:`~ssl.create_default_context` provides a standard way to "
 "obtain an :class:`~ssl.SSLContext` whose settings are intended to be a "
@@ -2778,7 +2892,7 @@ msgstr ""
 "la API stdlib apropiada.  (Contribuido por Christian Heimes en :issue:"
 "`19689`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1441
+#: ../Doc/whatsnew/3.4.rst:1440
 msgid ""
 ":class:`~ssl.SSLContext` method :meth:`~ssl.SSLContext."
 "load_verify_locations` accepts a new optional argument *cadata*, which can "
@@ -2791,7 +2905,7 @@ msgstr ""
 "directamente mediante cadenas o bytes, respectivamente. (Contribuido por "
 "Christian Heimes en :issue:`18138`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1446
+#: ../Doc/whatsnew/3.4.rst:1445
 msgid ""
 "New function :func:`~ssl.get_default_verify_paths` returns a named tuple of "
 "the paths and environment variables that the :meth:`~ssl.SSLContext."
@@ -2806,7 +2920,7 @@ msgstr ""
 "problemas de verificación por defecto.  (Contribuido por Christian Heimes "
 "en :issue:`18143`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1453
+#: ../Doc/whatsnew/3.4.rst:1452
 msgid ""
 ":class:`~ssl.SSLContext` has a new method, :meth:`~ssl.SSLContext."
 "cert_store_stats`, that reports the number of loaded ``X.509`` certs, "
@@ -2822,15 +2936,16 @@ msgstr ""
 "devuelve una lista de los certificados ``CA`` cargados.  (Contribuido por "
 "Christian Heimes en :issue:`18147`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1460
+#: ../Doc/whatsnew/3.4.rst:1459
+#, fuzzy
 msgid ""
 "If OpenSSL 0.9.8 or later is available, :class:`~ssl.SSLContext` has a new "
 "attribute :attr:`~ssl.SSLContext.verify_flags` that can be used to control "
 "the certificate verification process by setting it to some combination of "
-"the new constants :data:`~ssl.VERIFY_DEFAULT`, :data:`~ssl."
-"VERIFY_CRL_CHECK_LEAF`, :data:`~ssl.VERIFY_CRL_CHECK_CHAIN`, or :data:`~ssl."
-"VERIFY_X509_STRICT`. OpenSSL does not do any CRL verification by default.  "
-"(Contributed by Christien Heimes in :issue:`8813`.)"
+"the new constants :const:`~ssl.VERIFY_DEFAULT`, :const:`~ssl."
+"VERIFY_CRL_CHECK_LEAF`, :const:`~ssl.VERIFY_CRL_CHECK_CHAIN`, or :const:"
+"`~ssl.VERIFY_X509_STRICT`. OpenSSL does not do any CRL verification by "
+"default.  (Contributed by Christien Heimes in :issue:`8813`.)"
 msgstr ""
 "Si OpenSSL 0.9.8 o posterior está disponible, :class:`~ssl.SSLContext` tiene "
 "un nuevo atributo :attr:`~ssl.SSLContext.verify_flags` que puede utilizarse "
@@ -2840,7 +2955,7 @@ msgstr ""
 "data:`~ssl.VERIFY_X509_STRICT`. OpenSSL no realiza ninguna verificación CRL "
 "por defecto.  (Contribuido por Christien Heimes en :issue:`8813`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1468
+#: ../Doc/whatsnew/3.4.rst:1467
 msgid ""
 "New :class:`~ssl.SSLContext` method :meth:`~ssl.SSLContext."
 "load_default_certs` loads a set of default \"certificate authority\" (CA) "
@@ -2861,7 +2976,7 @@ msgstr ""
 "certificados de clientes (``purpose=``:data:`~ssl.Purpose.CLIENT_AUTH`).  "
 "(Contribuido por Christian Heimes en :issue:`19292`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1479
+#: ../Doc/whatsnew/3.4.rst:1478
 msgid ""
 "Two new windows-only functions, :func:`~ssl.enum_certificates` and :func:"
 "`~ssl.enum_crls` provide the ability to retrieve certificates, certificate "
@@ -2873,7 +2988,7 @@ msgstr ""
 "información de certificados y CRLs del almacén de certificados de Windows.  "
 "(Contribuido por Christian Heimes en :issue:`17134`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1486
+#: ../Doc/whatsnew/3.4.rst:1485
 msgid ""
 "Support for server-side SNI (Server Name Indication) using the new :meth:"
 "`ssl.SSLContext.set_servername_callback` method. (Contributed by Daniel "
@@ -2883,7 +2998,7 @@ msgstr ""
 "el nuevo método :meth:`ssl.SSLContext.set_servername_callback`. (Contribuido "
 "por Daniel Black en :issue:`8109`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1490
+#: ../Doc/whatsnew/3.4.rst:1489
 msgid ""
 "The dictionary returned by :meth:`.SSLSocket.getpeercert` contains "
 "additional ``X509v3`` extension items: ``crlDistributionPoints``, "
@@ -2895,13 +3010,14 @@ msgstr ""
 "``calIssuers``, y ``OCSP`` URIs.  (Contribución de Christian Heimes en :"
 "issue:`18379`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1496
+#: ../Doc/whatsnew/3.4.rst:1495
 msgid "stat"
 msgstr "stat"
 
-#: ../Doc/whatsnew/3.4.rst:1498
+#: ../Doc/whatsnew/3.4.rst:1497
+#, fuzzy
 msgid ""
-"The :mod:`stat` module is now backed by a C implementation in :mod:`_stat`. "
+"The :mod:`stat` module is now backed by a C implementation in :mod:`!_stat`. "
 "A C implementation is required as most of the values aren't standardized and "
 "are platform-dependent.  (Contributed by Christian Heimes in :issue:`11016`.)"
 msgstr ""
@@ -2910,21 +3026,22 @@ msgstr ""
 "valores no están estandarizados y dependen de la plataforma.  (Contribuido "
 "por Christian Heimes en :issue:`11016`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1502
+#: ../Doc/whatsnew/3.4.rst:1501
+#, fuzzy
 msgid ""
 "The module supports new :mod:`~stat.ST_MODE` flags, :mod:`~stat.S_IFDOOR`, :"
-"attr:`~stat.S_IFPORT`, and :attr:`~stat.S_IFWHT`.  (Contributed by Christian "
-"Hiemes in :issue:`11016`.)"
+"const:`~stat.S_IFPORT`, and :const:`~stat.S_IFWHT`.  (Contributed by "
+"Christian Hiemes in :issue:`11016`.)"
 msgstr ""
 "El módulo soporta las nuevas banderas :mod:`~stat.ST_MODE`, :mod:`~stat."
 "S_IFDOOR`, :attr:`~stat.S_IFPORT`, y :attr:`~stat.S_IFWHT`.  (Contribución "
 "de Christian Hiemes en :issue:`11016`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1508
+#: ../Doc/whatsnew/3.4.rst:1507
 msgid "struct"
 msgstr "struct"
 
-#: ../Doc/whatsnew/3.4.rst:1510
+#: ../Doc/whatsnew/3.4.rst:1509
 msgid ""
 "New function :mod:`~struct.iter_unpack` and a new :meth:`struct.Struct."
 "iter_unpack` method on compiled formats provide streamed unpacking of a "
@@ -2936,11 +3053,11 @@ msgstr ""
 "flujo de un buffer que contiene instancias repetidas de un formato de datos "
 "dado. (Contribuido por Antoine Pitrou en :issue:`17804`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1517
+#: ../Doc/whatsnew/3.4.rst:1516
 msgid "subprocess"
 msgstr "subproceso"
 
-#: ../Doc/whatsnew/3.4.rst:1519
+#: ../Doc/whatsnew/3.4.rst:1518
 msgid ""
 ":func:`~subprocess.check_output` now accepts an *input* argument that can be "
 "used to provide the contents of ``stdin`` for the command that is run. "
@@ -2950,7 +3067,7 @@ msgstr ""
 "utilizarse para proporcionar el contenido de ``stdin`` para el comando que "
 "se ejecuta. (Contribuido por Zack Weinberg en :issue:`16624`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1523
+#: ../Doc/whatsnew/3.4.rst:1522
 msgid ""
 ":func:`~subprocess.getstatus` and :func:`~subprocess.getstatusoutput` now "
 "work on Windows.  This change was actually inadvertently made in 3.3.4. "
@@ -2960,21 +3077,23 @@ msgstr ""
 "funcionan en Windows.  Este cambio se realizó inadvertidamente en la versión "
 "3.3.4. (Contribuido por Tim Golden en :issue:`10197`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1529
+#: ../Doc/whatsnew/3.4.rst:1528
 msgid "sunau"
 msgstr "sunau"
 
-#: ../Doc/whatsnew/3.4.rst:1531
+#: ../Doc/whatsnew/3.4.rst:1530
+#, fuzzy
 msgid ""
-"The :meth:`~sunau.getparams` method now returns a namedtuple rather than a "
-"plain tuple.  (Contributed by Claudiu Popa in :issue:`18901`.)"
+"The :meth:`!getparams` method now returns a namedtuple rather than a plain "
+"tuple.  (Contributed by Claudiu Popa in :issue:`18901`.)"
 msgstr ""
 "El método :meth:`~sunau.getparams` ahora devuelve una tupla con nombre en "
 "lugar de una tupla simple.  (Contribuido por Claudiu Popa en :issue:`18901`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1534
+#: ../Doc/whatsnew/3.4.rst:1533
+#, fuzzy
 msgid ""
-":meth:`sunau.open` now supports the context management protocol: when used "
+":meth:`!sunau.open` now supports the context management protocol: when used "
 "in a :keyword:`with` block, the ``close`` method of the returned object will "
 "be called automatically at the end of the block.  (Contributed by Serhiy "
 "Storchaka in :issue:`18878`.)"
@@ -2984,7 +3103,7 @@ msgstr ""
 "devuelto será llamado automáticamente al final del bloque.  (Contribuido por "
 "Serhiy Storchaka en :issue:`18878`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1539
+#: ../Doc/whatsnew/3.4.rst:1538
 msgid ""
 ":meth:`.AU_write.setsampwidth` now supports 24 bit samples, thus adding "
 "support for writing 24 sample using the module.  (Contributed by Serhiy "
@@ -2994,21 +3113,11 @@ msgstr ""
 "así soporte para escribir 24 muestras usando el módulo.  (Contribuido por "
 "Serhiy Storchaka en :issue:`19261`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1543
-msgid ""
-"The :meth:`~sunau.AU_write.writeframesraw` and :meth:`~sunau.AU_write."
-"writeframes` methods now accept any :term:`bytes-like object`.  (Contributed "
-"by Serhiy Storchaka in :issue:`8311`.)"
-msgstr ""
-"Los métodos :meth:`~sunau.AU_write.writeframesraw` y :meth:`~sunau.AU_write."
-"writeframes` aceptan ahora cualquier :term:`bytes-like object`.  "
-"(Contribuido por Serhiy Storchaka en :issue:`8311`.)"
-
-#: ../Doc/whatsnew/3.4.rst:1549
+#: ../Doc/whatsnew/3.4.rst:1548
 msgid "sys"
 msgstr "sys"
 
-#: ../Doc/whatsnew/3.4.rst:1551
+#: ../Doc/whatsnew/3.4.rst:1550
 msgid ""
 "New function :func:`sys.getallocatedblocks` returns the current number of "
 "blocks allocated by the interpreter.  (In CPython with the default ``--with-"
@@ -3024,7 +3133,7 @@ msgstr ""
 "fugas de memoria, especialmente si se automatiza a través de un conjunto de "
 "pruebas.  (Contribuido por Antoine Pitrou en :issue:`13390`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1558
+#: ../Doc/whatsnew/3.4.rst:1557
 msgid ""
 "When the Python interpreter starts in :ref:`interactive mode <tut-"
 "interactive>`, it checks for an :data:`~sys.__interactivehook__` attribute "
@@ -3052,11 +3161,11 @@ msgstr ""
 "borrando este atributo de :mod:`sys` (o poniéndolo en alguna otra llamada).  "
 "(Contribuido por Éric Araujo y Antoine Pitrou en :issue:`5845`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1573
+#: ../Doc/whatsnew/3.4.rst:1572
 msgid "tarfile"
 msgstr "tarfile"
 
-#: ../Doc/whatsnew/3.4.rst:1575
+#: ../Doc/whatsnew/3.4.rst:1574
 msgid ""
 "The :mod:`tarfile` module now supports a simple :ref:`tarfile-commandline` "
 "when called as a script directly or via ``-m``.  This can be used to create "
@@ -3068,11 +3177,11 @@ msgstr ""
 "puede utilizarse para crear y extraer archivos tarfile.  (Contribuido por "
 "Berker Peksag en :issue:`13477`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1581
+#: ../Doc/whatsnew/3.4.rst:1580
 msgid "textwrap"
 msgstr "textwrap"
 
-#: ../Doc/whatsnew/3.4.rst:1583
+#: ../Doc/whatsnew/3.4.rst:1582
 msgid ""
 "The :class:`~textwrap.TextWrapper` class has two new attributes/constructor "
 "arguments: :attr:`~textwrap.TextWrapper.max_lines`, which limits the number "
@@ -3096,11 +3205,11 @@ msgstr ""
 "``[...]``).  (Contribuido por Antoine Pitrou y Serhiy Storchaka en :issue:"
 "`18585` y :issue:`18725`)"
 
-#: ../Doc/whatsnew/3.4.rst:1595
+#: ../Doc/whatsnew/3.4.rst:1594
 msgid "threading"
 msgstr "roscado"
 
-#: ../Doc/whatsnew/3.4.rst:1597
+#: ../Doc/whatsnew/3.4.rst:1596
 msgid ""
 "The :class:`~threading.Thread` object representing the main thread can be "
 "obtained from the new :func:`~threading.main_thread` function.  In normal "
@@ -3112,11 +3221,11 @@ msgstr ""
 "condiciones normales será el hilo desde el que se inició el intérprete de "
 "Python.  (Contribuido por Andrew Svetlov en :issue:`18882`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1604
+#: ../Doc/whatsnew/3.4.rst:1603
 msgid "traceback"
 msgstr "traceback"
 
-#: ../Doc/whatsnew/3.4.rst:1606
+#: ../Doc/whatsnew/3.4.rst:1605
 msgid ""
 "A new :func:`traceback.clear_frames` function takes a traceback object and "
 "clears the local variables in all of the frames it references, reducing the "
@@ -3128,11 +3237,11 @@ msgstr ""
 "reduciendo la cantidad de memoria consumida.  (Contribuido por Andrew "
 "Kuchling en :issue:`1565525`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1613
+#: ../Doc/whatsnew/3.4.rst:1612
 msgid "types"
 msgstr "tipos"
 
-#: ../Doc/whatsnew/3.4.rst:1615
+#: ../Doc/whatsnew/3.4.rst:1614
 msgid ""
 "A new :func:`~types.DynamicClassAttribute` descriptor provides a way to "
 "define an attribute that acts normally when looked up through an instance "
@@ -3149,11 +3258,11 @@ msgstr ""
 "nombre (ver :mod:`Enum` para un ejemplo). (Contribuido por Ethan Furman en :"
 "issue:`19030`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1624
+#: ../Doc/whatsnew/3.4.rst:1623
 msgid "urllib"
 msgstr "urllib"
 
-#: ../Doc/whatsnew/3.4.rst:1626
+#: ../Doc/whatsnew/3.4.rst:1625
 msgid ""
 ":mod:`urllib.request` now supports ``data:`` URLs via the :class:`~urllib."
 "request.DataHandler` class.  (Contributed by Mathias Panzenböck in :issue:"
@@ -3163,7 +3272,7 @@ msgstr ""
 "class:`~urllib.request.DataHandler`.  (Contribuido por Mathias Panzenböck "
 "en :issue:`16423`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1630
+#: ../Doc/whatsnew/3.4.rst:1629
 msgid ""
 "The http method that will be used by a :class:`~urllib.request.Request` "
 "class can now be specified by setting a :class:`~urllib.request.Request."
@@ -3175,7 +3284,7 @@ msgstr ""
 "`~urllib.request.Request.method` en la subclase.  (Contribuido por Jason R "
 "Coombs en :issue:`18978`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1635
+#: ../Doc/whatsnew/3.4.rst:1634
 msgid ""
 ":class:`~urllib.request.Request` objects are now reusable: if the :attr:"
 "`~urllib.request.Request.full_url` or :attr:`~urllib.request.Request.data` "
@@ -3202,7 +3311,7 @@ msgstr ""
 "issue:`16464`, Daniel Wozniak en :issue:`17485`, y Damien Brecht y Senthil "
 "Kumaran en :issue:`17272`)"
 
-#: ../Doc/whatsnew/3.4.rst:1648
+#: ../Doc/whatsnew/3.4.rst:1647
 msgid ""
 ":class:`~urllib.error.HTTPError` objects now have a :attr:`~urllib.error."
 "HTTPError.headers` attribute that provides access to the HTTP response "
@@ -3214,30 +3323,39 @@ msgstr ""
 "respuesta HTTP asociadas al error.  (Contribuido por Berker Peksag en :issue:"
 "`15701`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1655
+#: ../Doc/whatsnew/3.4.rst:1654
 msgid "unittest"
 msgstr "unittest"
 
-#: ../Doc/whatsnew/3.4.rst:1657
+#: ../Doc/whatsnew/3.4.rst:1656
 msgid ""
 "The :class:`~unittest.TestCase` class has a new method, :meth:`~unittest."
 "TestCase.subTest`, that produces a context manager whose :keyword:`with` "
 "block becomes a \"sub-test\".  This context manager allows a test method to "
 "dynamically generate subtests  by, say, calling the ``subTest`` context "
 "manager inside a loop.  A single test method can thereby produce an "
-"indefinite number of separately-identified and separately-counted tests, all "
+"indefinite number of separately identified and separately counted tests, all "
 "of which will run even if one or more of them fail.  For example::"
 msgstr ""
 "La clase :class:`~unittest.TestCase` tiene un nuevo método, :meth:`~unittest."
 "TestCase.subTest`, que produce un gestor de contexto cuyo bloque :keyword:"
-"`with` se convierte en una \"subprueba\".  Este gestor de contexto permite "
-"que un método de prueba genere subpruebas de forma dinámica, por ejemplo, "
-"llamando al gestor de contexto ``subTest`` dentro de un bucle.  De este "
-"modo, un único método de prueba puede generar un número indefinido de "
-"pruebas identificadas y contabilizadas por separado, todas las cuales se "
-"ejecutarán incluso si una o varias de ellas fallan.  Por ejemplo::"
+"`with` se convierte en una \"subprueba\". Este gestor de contexto permite "
+"que un método de prueba genere subpruebas dinámicamente, por ejemplo, "
+"llamando al gestor de contexto ``subTest`` dentro de un bucle. Por lo tanto, "
+"un solo método de prueba puede producir un número indefinido de pruebas "
+"identificadas y contadas por separado, todas las cuales se ejecutarán "
+"incluso si una o más de ellas fallan. Por ejemplo::"
 
-#: ../Doc/whatsnew/3.4.rst:1671
+#: ../Doc/whatsnew/3.4.rst:1664
+msgid ""
+"class NumbersTest(unittest.TestCase):\n"
+"    def test_even(self):\n"
+"        for i in range(6):\n"
+"            with self.subTest(i=i):\n"
+"                self.assertEqual(i % 2, 0)"
+msgstr ""
+
+#: ../Doc/whatsnew/3.4.rst:1670
 msgid ""
 "will result in six subtests, each identified in the unittest verbose output "
 "with a label consisting of the variable name ``i`` and a particular value "
@@ -3250,7 +3368,7 @@ msgstr ""
 "etc).  Consulte la versión completa de este ejemplo en :ref:`subtests`.  "
 "(Contribuido por Antoine Pitrou en :issue:`16997`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1676
+#: ../Doc/whatsnew/3.4.rst:1675
 msgid ""
 ":func:`unittest.main` now accepts an iterable of test names for "
 "*defaultTest*, where previously it only accepted a single test name as a "
@@ -3260,7 +3378,7 @@ msgstr ""
 "*defaultTest*, donde antes sólo aceptaba un único nombre de prueba como "
 "cadena.  (Contribuido por Jyrki Pulliainen en :issue:`15132`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1680
+#: ../Doc/whatsnew/3.4.rst:1679
 msgid ""
 "If :class:`~unittest.SkipTest` is raised during test discovery (that is, at "
 "the module level in the test file), it is now reported as a skip instead of "
@@ -3271,7 +3389,7 @@ msgstr ""
 "reporta como un salto en lugar de un error.  (Contribuido por Zach Ware en :"
 "issue:`16935`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1684
+#: ../Doc/whatsnew/3.4.rst:1683
 msgid ""
 ":meth:`~unittest.TestLoader.discover` now sorts the discovered files to "
 "provide consistent test ordering.  (Contributed by Martin Melin and Jeff "
@@ -3281,7 +3399,7 @@ msgstr ""
 "para proporcionar un orden de pruebas consistente.  (Contribuido por Martin "
 "Melin y Jeff Ramnani en :issue:`16709`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1688
+#: ../Doc/whatsnew/3.4.rst:1687
 msgid ""
 ":class:`~unittest.TestSuite` now drops references to tests as soon as the "
 "test has been run, if the test is successful.  On Python interpreters that "
@@ -3300,7 +3418,7 @@ msgstr ""
 "``_removeTestAtIndex``.  (Contribución de Tom Wardill, Matt McClure y Andrew "
 "Svetlov en :issue:`11798`)"
 
-#: ../Doc/whatsnew/3.4.rst:1696
+#: ../Doc/whatsnew/3.4.rst:1695
 msgid ""
 "A new test assertion context-manager, :meth:`~unittest.TestCase.assertLogs`, "
 "will ensure that a given block of code emits a log message using the :mod:"
@@ -3321,7 +3439,7 @@ msgstr ""
 "class:`~logging.LogRecord` s y/o formateados que fueron registrados.  "
 "(Contribuido por Antoine Pitrou en :issue:`18937`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1705
+#: ../Doc/whatsnew/3.4.rst:1704
 msgid ""
 "Test discovery now works with namespace packages (Contributed by Claudiu "
 "Popa in :issue:`17457`.)"
@@ -3329,7 +3447,7 @@ msgstr ""
 "El descubrimiento de pruebas ahora funciona con paquetes de espacios de "
 "nombres (Contribuido por Claudiu Popa en :issue:`17457`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1708
+#: ../Doc/whatsnew/3.4.rst:1707
 msgid ""
 ":mod:`unittest.mock` objects now inspect their specification signatures when "
 "matching calls, which means an argument can now be matched by either "
@@ -3341,7 +3459,7 @@ msgstr ""
 "argumento ahora puede coincidir por posición o por nombre, en lugar de sólo "
 "por posición.  (Contribuido por Antoine Pitrou en :issue:`17015`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1713
+#: ../Doc/whatsnew/3.4.rst:1712
 msgid ""
 ":func:`~mock.mock_open` objects now have ``readline`` and ``readlines`` "
 "methods.  (Contributed by Toshio Kuratomi in :issue:`17467`.)"
@@ -3349,11 +3467,11 @@ msgstr ""
 "Los objetos :func:`~mock.mock_open` tienen ahora métodos ``readline`` y "
 "``readlines``.  (Contribuido por Toshio Kuratomi en :issue:`17467`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1718
+#: ../Doc/whatsnew/3.4.rst:1717
 msgid "venv"
 msgstr "venv"
 
-#: ../Doc/whatsnew/3.4.rst:1720
+#: ../Doc/whatsnew/3.4.rst:1719
 msgid ""
 ":mod:`venv` now includes activation scripts for the ``csh`` and ``fish`` "
 "shells.  (Contributed by Andrew Svetlov in :issue:`15417`.)"
@@ -3361,7 +3479,7 @@ msgstr ""
 ":mod:`venv` incluye ahora scripts de activación para los shells ``csh`` y "
 "``fish``.  (Contribuido por Andrew Svetlov en :issue:`15417`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1723
+#: ../Doc/whatsnew/3.4.rst:1722
 msgid ""
 ":class:`~venv.EnvBuilder` and the :func:`~venv.create` convenience function "
 "take a new keyword argument *with_pip*, which defaults to ``False``, that "
@@ -3375,11 +3493,11 @@ msgstr ""
 "está instalado en el entorno virtual.  (Contribuido por Nick Coghlan en :"
 "issue:`19552` como parte de la implementación de :pep:`453`)"
 
-#: ../Doc/whatsnew/3.4.rst:1731
+#: ../Doc/whatsnew/3.4.rst:1730
 msgid "wave"
 msgstr "onda"
 
-#: ../Doc/whatsnew/3.4.rst:1733
+#: ../Doc/whatsnew/3.4.rst:1732
 msgid ""
 "The :meth:`~wave.getparams` method now returns a namedtuple rather than a "
 "plain tuple.  (Contributed by Claudiu Popa in :issue:`17487`.)"
@@ -3387,7 +3505,7 @@ msgstr ""
 "El método :meth:`~wave.getparams` ahora devuelve una tupla con nombre en "
 "lugar de una tupla simple.  (Contribuido por Claudiu Popa en :issue:`17487`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1736
+#: ../Doc/whatsnew/3.4.rst:1735
 msgid ""
 ":meth:`wave.open` now supports the context management protocol.  "
 "(Contributed by Claudiu Popa in :issue:`17616`.)"
@@ -3395,7 +3513,7 @@ msgstr ""
 ":meth:`wave.open` ahora soporta el protocolo de gestión de contexto.  "
 "(Contribuido por Claudiu Popa en :issue:`17616`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1739
+#: ../Doc/whatsnew/3.4.rst:1738
 msgid ""
 ":mod:`wave` can now :ref:`write output to unseekable files <wave-write-"
 "objects>`.  (Contributed by David Jones, Guilherme Polo, and Serhiy "
@@ -3405,7 +3523,7 @@ msgstr ""
 "<wave-write-objects>`.  (Contribución de David Jones, Guilherme Polo y "
 "Serhiy Storchaka en :issue:`5202`)"
 
-#: ../Doc/whatsnew/3.4.rst:1743
+#: ../Doc/whatsnew/3.4.rst:1742
 msgid ""
 "The :meth:`~wave.Wave_write.writeframesraw` and :meth:`~wave.Wave_write."
 "writeframes` methods now accept any :term:`bytes-like object`.  (Contributed "
@@ -3415,11 +3533,11 @@ msgstr ""
 "Wave_write.writeframes` aceptan ahora cualquier :term:`bytes-like object`.  "
 "(Contribuido por Serhiy Storchaka en :issue:`8311`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1749
+#: ../Doc/whatsnew/3.4.rst:1748
 msgid "weakref"
 msgstr "weakref"
 
-#: ../Doc/whatsnew/3.4.rst:1751
+#: ../Doc/whatsnew/3.4.rst:1750
 msgid ""
 "New :class:`~weakref.WeakMethod` class simulates weak references to bound "
 "methods.  (Contributed by Antoine Pitrou in :issue:`14631`.)"
@@ -3427,7 +3545,7 @@ msgstr ""
 "La nueva clase :class:`~weakref.WeakMethod` simula las referencias débiles a "
 "los métodos vinculados.  (Contribuido por Antoine Pitrou en :issue:`14631`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1754
+#: ../Doc/whatsnew/3.4.rst:1753
 msgid ""
 "New :class:`~weakref.finalize` class makes it possible to register a "
 "callback to be invoked when an object is garbage collected, without needing "
@@ -3439,7 +3557,7 @@ msgstr ""
 "necesidad de gestionar cuidadosamente el ciclo de vida de la propia "
 "referencia débil.  (Contribuido por Richard Oudkerk en :issue:`15528`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1759
+#: ../Doc/whatsnew/3.4.rst:1758
 msgid ""
 "The callback, if any, associated with a :class:`~weakref.ref` is now exposed "
 "via the :attr:`~weakref.ref.__callback__` attribute.  (Contributed by Mark "
@@ -3449,11 +3567,11 @@ msgstr ""
 "expone ahora a través del atributo :attr:`~weakref.ref.__callback__`.  "
 "(Contribuido por Mark Dickinson en :issue:`17643`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1765
+#: ../Doc/whatsnew/3.4.rst:1764
 msgid "xml.etree"
 msgstr "xml.etree"
 
-#: ../Doc/whatsnew/3.4.rst:1767
+#: ../Doc/whatsnew/3.4.rst:1766
 msgid ""
 "A new parser, :class:`~xml.etree.ElementTree.XMLPullParser`, allows a non-"
 "blocking applications to parse XML documents.  An example can be seen at :"
@@ -3465,7 +3583,7 @@ msgstr ""
 "XML.  Un ejemplo puede verse en :ref:`elementtree-pull-parsing`.  "
 "(Contribuido por Antoine Pitrou en :issue:`17741`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1772
+#: ../Doc/whatsnew/3.4.rst:1771
 msgid ""
 "The :mod:`xml.etree.ElementTree` :func:`~xml.etree.ElementTree.tostring` "
 "and :func:`~xml.etree.ElementTree.tostringlist` functions, and the :class:"
@@ -3484,11 +3602,11 @@ msgstr ""
 "contenido se escriben de forma abreviada (``<tag />``) o expandida (``<tag></"
 "tag>``).  (Contribución de Ariel Poliak y Serhiy Storchaka en :issue:`14377`)"
 
-#: ../Doc/whatsnew/3.4.rst:1783
+#: ../Doc/whatsnew/3.4.rst:1782
 msgid "zipfile"
 msgstr "archivo zip"
 
-#: ../Doc/whatsnew/3.4.rst:1785
+#: ../Doc/whatsnew/3.4.rst:1784
 msgid ""
 "The :meth:`~zipfile.PyZipFile.writepy` method of the :class:`~zipfile."
 "PyZipFile` class has a new *filterfunc* option that can be used to control "
@@ -3502,7 +3620,7 @@ msgstr ""
 "esto puede ser usado para excluir archivos de prueba del archivo. "
 "(Contribuido por Christian Tismer en :issue:`19274`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1791
+#: ../Doc/whatsnew/3.4.rst:1790
 msgid ""
 "The *allowZip64* parameter to :class:`~zipfile.ZipFile` and :class:`~zipfile."
 "PyZipfile` is now ``True`` by default.  (Contributed by William Mallard in :"
@@ -3512,15 +3630,15 @@ msgstr ""
 "PyZipfile` es ahora ``True`` por defecto.  (Contribuido por William Mallard "
 "en :issue:`17201`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1798
+#: ../Doc/whatsnew/3.4.rst:1797
 msgid "CPython Implementation Changes"
 msgstr "Cambios en la implementación de CPython"
 
-#: ../Doc/whatsnew/3.4.rst:1804
+#: ../Doc/whatsnew/3.4.rst:1803
 msgid "PEP 445: Customization of CPython Memory Allocators"
 msgstr "PEP 445: Personalización de los Asignadores de Memoria de CPython"
 
-#: ../Doc/whatsnew/3.4.rst:1806
+#: ../Doc/whatsnew/3.4.rst:1805
 msgid ""
 ":pep:`445` adds new C level interfaces to customize memory allocation in the "
 "CPython interpreter."
@@ -3528,17 +3646,17 @@ msgstr ""
 ":pep:`445` añade nuevas interfaces de nivel C para personalizar la "
 "asignación de memoria en el intérprete de CPython."
 
-#: ../Doc/whatsnew/3.4.rst:1811
+#: ../Doc/whatsnew/3.4.rst:1810
 msgid ":pep:`445` -- Add new APIs to customize Python memory allocators"
 msgstr ""
 ":pep:`445` -- Añadir nuevas APIs para personalizar los asignadores de "
 "memoria de Python"
 
-#: ../Doc/whatsnew/3.4.rst:1818
+#: ../Doc/whatsnew/3.4.rst:1817
 msgid "PEP 442: Safe Object Finalization"
 msgstr "PEP 442: Finalización segura de objetos"
 
-#: ../Doc/whatsnew/3.4.rst:1820
+#: ../Doc/whatsnew/3.4.rst:1819
 msgid ""
 ":pep:`442` removes the current limitations and quirks of object finalization "
 "in CPython. With it, objects with :meth:`__del__` methods, as well as "
@@ -3550,7 +3668,7 @@ msgstr ""
 "`__del__`, así como los generadores con cláusulas :keyword:`finally`, pueden "
 "ser finalizados cuando forman parte de un ciclo de referencia."
 
-#: ../Doc/whatsnew/3.4.rst:1825
+#: ../Doc/whatsnew/3.4.rst:1824
 msgid ""
 "As part of this change, module globals are no longer forcibly set to :const:"
 "`None` during interpreter shutdown in most cases, instead relying on the "
@@ -3565,15 +3683,15 @@ msgstr ""
 "del intérprete, normalmente relacionados con los métodos ``del__``, que han "
 "afectado a Python desde que se introdujo el GC cíclico."
 
-#: ../Doc/whatsnew/3.4.rst:1834
+#: ../Doc/whatsnew/3.4.rst:1833
 msgid ":pep:`442` -- Safe object finalization"
 msgstr ":pep:`442` -- Finalización segura del objeto"
 
-#: ../Doc/whatsnew/3.4.rst:1841
+#: ../Doc/whatsnew/3.4.rst:1840
 msgid "PEP 456: Secure and Interchangeable Hash Algorithm"
 msgstr "PEP 456: Algoritmo Hash seguro e intercambiable"
 
-#: ../Doc/whatsnew/3.4.rst:1843
+#: ../Doc/whatsnew/3.4.rst:1842
 msgid ""
 ":pep:`456` follows up on earlier security fix work done on Python's hash "
 "algorithm to address certain DOS attacks to which public facing APIs backed "
@@ -3594,9 +3712,10 @@ msgstr ""
 "bits.  Cualquier diferencia de rendimiento en comparación con el antiguo "
 "algoritmo FNV es trivial."
 
-#: ../Doc/whatsnew/3.4.rst:1852
+#: ../Doc/whatsnew/3.4.rst:1851
+#, fuzzy
 msgid ""
-"The PEP adds additional fields to the :attr:`sys.hash_info` named tuple to "
+"The PEP adds additional fields to the :data:`sys.hash_info` named tuple to "
 "describe the hash algorithm in use by the currently executing binary.  "
 "Otherwise, the PEP does not alter any existing CPython APIs."
 msgstr ""
@@ -3605,11 +3724,11 @@ msgstr ""
 "ejecutando.  Por lo demás, el PEP no altera ninguna de las APIs existentes "
 "de CPython."
 
-#: ../Doc/whatsnew/3.4.rst:1860
+#: ../Doc/whatsnew/3.4.rst:1859
 msgid "PEP 436: Argument Clinic"
 msgstr "PEP 436: Clínica de Argumentación"
 
-#: ../Doc/whatsnew/3.4.rst:1862
+#: ../Doc/whatsnew/3.4.rst:1861
 msgid ""
 "\"Argument Clinic\" (:pep:`436`) is now part of the CPython build process "
 "and can be used to simplify the process of defining and maintaining accurate "
@@ -3621,7 +3740,7 @@ msgstr ""
 "mantenimiento de firmas precisas para builtins y módulos de extensión de la "
 "biblioteca estándar implementados en C."
 
-#: ../Doc/whatsnew/3.4.rst:1867
+#: ../Doc/whatsnew/3.4.rst:1866
 msgid ""
 "Some standard library extension modules have been converted to use Argument "
 "Clinic in Python 3.4, and :mod:`pydoc` and :mod:`inspect` have been updated "
@@ -3631,7 +3750,7 @@ msgstr ""
 "para utilizar Argument Clinic en Python 3.4, y :mod:`pydoc` y :mod:`inspect` "
 "han sido actualizados en consecuencia."
 
-#: ../Doc/whatsnew/3.4.rst:1871
+#: ../Doc/whatsnew/3.4.rst:1870
 msgid ""
 "It is expected that signature metadata for programmatic introspection will "
 "be added to additional callables implemented in C as part of Python 3.4 "
@@ -3641,7 +3760,7 @@ msgstr ""
 "añadan a los callables adicionales implementados en C como parte de las "
 "versiones de mantenimiento de Python 3.4."
 
-#: ../Doc/whatsnew/3.4.rst:1876
+#: ../Doc/whatsnew/3.4.rst:1875
 msgid ""
 "The Argument Clinic PEP is not fully up to date with the state of the "
 "implementation. This has been deemed acceptable by the release manager and "
@@ -3654,19 +3773,19 @@ msgstr ""
 "Clinic no estará disponible como una API pública para el uso de terceros en "
 "Python 3.4."
 
-#: ../Doc/whatsnew/3.4.rst:1883
+#: ../Doc/whatsnew/3.4.rst:1882
 msgid ":pep:`436` -- The Argument Clinic DSL"
 msgstr ":pep:`436` -- La clínica de argumentos DSL"
 
-#: ../Doc/whatsnew/3.4.rst:1884
+#: ../Doc/whatsnew/3.4.rst:1883
 msgid "PEP written and implemented by Larry Hastings."
 msgstr "PEP escrito y aplicado por Larry Hastings."
 
-#: ../Doc/whatsnew/3.4.rst:1888
+#: ../Doc/whatsnew/3.4.rst:1887
 msgid "Other Build and C API Changes"
 msgstr "Otros cambios en la API de construcción y C"
 
-#: ../Doc/whatsnew/3.4.rst:1890
+#: ../Doc/whatsnew/3.4.rst:1889
 msgid ""
 "The new :c:func:`PyType_GetSlot` function has been added to the stable ABI, "
 "allowing retrieval of function pointers from named type slots when using the "
@@ -3677,10 +3796,11 @@ msgstr ""
 "con nombre cuando se utiliza la API limitada.  (Contribuido por Martin von "
 "Löwis en :issue:`17162`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1894
+#: ../Doc/whatsnew/3.4.rst:1893
+#, fuzzy
 msgid ""
-"The new :c:func:`Py_SetStandardStreamEncoding` pre-initialization API allows "
-"applications embedding the CPython interpreter to reliably force a "
+"The new :c:func:`!Py_SetStandardStreamEncoding` pre-initialization API "
+"allows applications embedding the CPython interpreter to reliably force a "
 "particular encoding and error handler for the standard streams. (Contributed "
 "by Bastien Montagne and Nick Coghlan in :issue:`16129`.)"
 msgstr ""
@@ -3690,7 +3810,7 @@ msgstr ""
 "flujos estándar. (Contribuido por Bastien Montagne y Nick Coghlan en :issue:"
 "`16129`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1899
+#: ../Doc/whatsnew/3.4.rst:1898
 msgid ""
 "Most Python C APIs that don't mutate string arguments are now correctly "
 "marked as accepting ``const char *`` rather than ``char *``.  (Contributed "
@@ -3700,7 +3820,7 @@ msgstr ""
 "están ahora correctamente marcadas como aceptando ``const char *`` en lugar "
 "de ``char *``.  (Contribuido por Serhiy Storchaka en :issue:`1772673`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1903
+#: ../Doc/whatsnew/3.4.rst:1902
 msgid ""
 "A new shell version of ``python-config`` can be used even when a python "
 "interpreter is not available (for example, in cross compilation scenarios)."
@@ -3709,7 +3829,8 @@ msgstr ""
 "cuando un intérprete de python no está disponible (por ejemplo, en "
 "escenarios de compilación cruzada)."
 
-#: ../Doc/whatsnew/3.4.rst:1906
+#: ../Doc/whatsnew/3.4.rst:1905
+#, python-format
 msgid ""
 ":c:func:`PyUnicode_FromFormat` now supports width and precision "
 "specifications for ``%s``, ``%A``, ``%U``, ``%V``, ``%S``, and ``%R``. "
@@ -3719,7 +3840,7 @@ msgstr ""
 "precisión para ``%s``, ``%A``, ``%U``, ``%V``, ``%S`` y ``%R``. "
 "(Contribución de Ysj Ray y Victor Stinner en :issue:`7330`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1910
+#: ../Doc/whatsnew/3.4.rst:1909
 msgid ""
 "New function :c:func:`PyStructSequence_InitType2` supplements the existing :"
 "c:func:`PyStructSequence_InitType` function.  The difference is that it "
@@ -3729,7 +3850,7 @@ msgstr ""
 "existente :c:func:`PyStructSequence_InitType`.  La diferencia es que "
 "devuelve ``0`` en caso de éxito y ``-1`` en caso de fallo."
 
-#: ../Doc/whatsnew/3.4.rst:1914
+#: ../Doc/whatsnew/3.4.rst:1913
 msgid ""
 "The CPython source can now be compiled using the address sanity checking "
 "features of recent versions of GCC and clang:  the false alarms in the small "
@@ -3742,7 +3863,7 @@ msgstr ""
 "pequeños han sido silenciadas.  (Contribuido por Dhiru Kholia en :issue:"
 "`18596`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1919
+#: ../Doc/whatsnew/3.4.rst:1918
 msgid ""
 "The Windows build now uses `Address Space Layout Randomization <https://en."
 "wikipedia.org/wiki/Address_space_layout_randomization>`_ and `Data Execution "
@@ -3755,7 +3876,7 @@ msgstr ""
 "Data_Execution_Prevention>`_.  (Contribuido por Christian Heimes en :issue:"
 "`16632`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1924
+#: ../Doc/whatsnew/3.4.rst:1923
 msgid ""
 "New function :c:func:`PyObject_LengthHint` is the C API equivalent of :func:"
 "`operator.length_hint`.  (Contributed by Armin Ronacher in :issue:`16148`.)"
@@ -3764,16 +3885,17 @@ msgstr ""
 "de C de :func:`operator.length_hint`.  (Contribuido por Armin Ronacher en :"
 "issue:`16148`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1932
+#: ../Doc/whatsnew/3.4.rst:1931
 msgid "Other Improvements"
 msgstr "Otras mejoras"
 
-#: ../Doc/whatsnew/3.4.rst:1936
+#: ../Doc/whatsnew/3.4.rst:1935
+#, fuzzy
 msgid ""
 "The :ref:`python <using-on-cmdline>` command has a new :ref:`option <using-"
 "on-misc-options>`, ``-I``, which causes it to run in \"isolated mode\", "
 "which means that :data:`sys.path` contains neither the script's directory "
-"nor the user's ``site-packages`` directory, and all :envvar:`PYTHON*` "
+"nor the user's ``site-packages`` directory, and all :envvar:`!PYTHON*` "
 "environment variables are ignored (it implies both ``-s`` and ``-E``).  "
 "Other restrictions may also be applied in the future, with the goal being to "
 "isolate the execution of a script from the user's environment.  This is "
@@ -3793,7 +3915,7 @@ msgstr ""
 "de los scripts del sistema.  (Contribuido por Christian Heimes en :issue:"
 "`16499`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1947
+#: ../Doc/whatsnew/3.4.rst:1946
 msgid ""
 "Tab-completion is now enabled by default in the interactive interpreter on "
 "systems that support :mod:`readline`.  History is also enabled by default, "
@@ -3806,7 +3928,7 @@ msgstr ""
 "archivo :file:`~/.python-history`. (Contribuido por Antoine Pitrou y Éric "
 "Araujo en :issue:`5845`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1952
+#: ../Doc/whatsnew/3.4.rst:1951
 msgid ""
 "Invoking the Python interpreter with ``--version`` now outputs the version "
 "to standard output instead of standard error (:issue:`18338`). Similar "
@@ -3819,7 +3941,7 @@ msgstr ""
 "`18920`) y en otros módulos que tienen capacidades de invocación tipo script "
 "(:issue:`18922`)."
 
-#: ../Doc/whatsnew/3.4.rst:1957
+#: ../Doc/whatsnew/3.4.rst:1956
 msgid ""
 "The CPython Windows installer now adds ``.py`` to the :envvar:`PATHEXT` "
 "variable when extensions are registered, allowing users to run a python "
@@ -3832,35 +3954,37 @@ msgstr ""
 "con sólo escribir su nombre sin la extensión ``.py``.  (Contribuido por Paul "
 "Moore en :issue:`18569`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1962
+#: ../Doc/whatsnew/3.4.rst:1961
+#, fuzzy
 msgid ""
 "A new ``make`` target `coverage-report <https://devguide.python.org/coverage/"
 "#measuring-coverage-of-c-code-with-gcov-and-lcov>`_ will build python, run "
 "the test suite, and generate an HTML coverage report for the C codebase "
-"using ``gcov`` and `lcov <http://ltp.sourceforge.net/coverage/lcov.php>`_."
+"using ``gcov`` and `lcov <https://github.com/linux-test-project/lcov>`_."
 msgstr ""
-"Un nuevo objetivo ``make`` `coverage-report <https://devguide.python.org/"
-"coverage/#measuring-coverage-of-c-code-with-gcov-and-lcov>`_ construirá "
-"python, ejecutará el conjunto de pruebas, y generará un informe de cobertura "
-"HTML para el código base C utilizando ``gcov`` y `lcov <http://ltp."
+"Un nuevo objetivo ``make``, `coverage-report <https://devguide.python.org/"
+"coverage/#measuring-coverage-of-c-code-with-gcov-and-lcov>`_, compilará "
+"Python, ejecutará el conjunto de pruebas y generará un informe de cobertura "
+"HTML para el código base C utilizando ``gcov`` y `lcov <https://ltp."
 "sourceforge.net/coverage/lcov.php>`_."
 
-#: ../Doc/whatsnew/3.4.rst:1968
+#: ../Doc/whatsnew/3.4.rst:1967
+#, fuzzy
 msgid ""
 "The ``-R`` option to the :ref:`python regression test suite <regrtest>` now "
 "also checks for memory allocation leaks, using :func:`sys."
-"getallocatedblocks()`.  (Contributed by Antoine Pitrou in :issue:`13390`.)"
+"getallocatedblocks`.  (Contributed by Antoine Pitrou in :issue:`13390`.)"
 msgstr ""
 "La opción ``-R`` del :ref:`conjunto de pruebas de regresión de python "
 "<regrtest>` ahora también comprueba las fugas de asignación de memoria, "
 "utilizando :func:`sys.getallocatedblocks()`. (Contribuido por Antoine Pitrou "
 "en :issue:`13390`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1973
+#: ../Doc/whatsnew/3.4.rst:1972
 msgid "``python -m`` now works with namespace packages."
 msgstr "``python -m`` ahora funciona con paquetes de espacios de nombres."
 
-#: ../Doc/whatsnew/3.4.rst:1975
+#: ../Doc/whatsnew/3.4.rst:1974
 msgid ""
 "The :mod:`stat` module is now implemented in C, which means it gets the "
 "values for its constants from the C header files, instead of having the "
@@ -3871,7 +3995,7 @@ msgstr ""
 "lugar de tener los valores codificados en el módulo de python como ocurría "
 "anteriormente."
 
-#: ../Doc/whatsnew/3.4.rst:1979
+#: ../Doc/whatsnew/3.4.rst:1978
 msgid ""
 "Loading multiple python modules from a single OS module (``.so``, ``.dll``) "
 "now works correctly (previously it silently returned the first python module "
@@ -3882,7 +4006,7 @@ msgstr ""
 "silenciosamente el primer módulo de python del archivo).  (Contribuido por "
 "Václav Šmilauer en :issue:`16421`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1983
+#: ../Doc/whatsnew/3.4.rst:1982
 msgid ""
 "A new opcode, :opcode:`LOAD_CLASSDEREF`, has been added to fix a bug in the "
 "loading of free variables in class bodies that could be triggered by certain "
@@ -3894,7 +4018,7 @@ msgstr ""
 "ser provocado por ciertos usos de :ref:`__prepare__ <prepare>`.  "
 "(Contribuido por Benjamin Peterson en :issue:`17853`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1988
+#: ../Doc/whatsnew/3.4.rst:1987
 msgid ""
 "A number of MemoryError-related crashes were identified and fixed by Victor "
 "Stinner using his :pep:`445`-based ``pyfailmalloc`` tool (:issue:`18408`, :"
@@ -3904,7 +4028,7 @@ msgstr ""
 "MemoryError utilizando su herramienta ``pyfailmalloc`` basada en :pep:`445` "
 "(:issue:`18408`, :issue:`18520`)."
 
-#: ../Doc/whatsnew/3.4.rst:1992
+#: ../Doc/whatsnew/3.4.rst:1991
 msgid ""
 "The ``pyvenv`` command now accepts a ``--copies`` option to use copies "
 "rather than symlinks even on systems where symlinks are the default.  "
@@ -3915,7 +4039,7 @@ msgstr ""
 "enlaces simbólicos son los predeterminados.  (Contribuido por Vinay Sajip "
 "en :issue:`18807`.)"
 
-#: ../Doc/whatsnew/3.4.rst:1996
+#: ../Doc/whatsnew/3.4.rst:1995
 msgid ""
 "The ``pyvenv`` command also accepts a ``--without-pip`` option to suppress "
 "the otherwise-automatic bootstrapping of pip into the virtual environment.  "
@@ -3927,7 +4051,7 @@ msgstr ""
 "por Nick Coghlan en :issue:`19552` como parte de la implementación de :pep:"
 "`453`)"
 
-#: ../Doc/whatsnew/3.4.rst:2001
+#: ../Doc/whatsnew/3.4.rst:2000
 msgid ""
 "The encoding name is now optional in the value set for the :envvar:"
 "`PYTHONIOENCODING` environment variable.  This makes it possible to set just "
@@ -3939,7 +4063,7 @@ msgstr ""
 "establecer sólo el manejador de errores, sin cambiar la codificación por "
 "defecto. (Contribuido por Serhiy Storchaka en :issue:`18818`.)"
 
-#: ../Doc/whatsnew/3.4.rst:2006
+#: ../Doc/whatsnew/3.4.rst:2005
 msgid ""
 "The :mod:`bz2`, :mod:`lzma`, and :mod:`gzip` module ``open`` functions now "
 "support ``x`` (exclusive creation) mode.  (Contributed by Tim Heaney and "
@@ -3949,11 +4073,11 @@ msgstr ""
 "soportan el modo ``x`` (creación exclusiva).  (Contribución de Tim Heaney y "
 "Vajrasky Kok en :issue:`19201`, :issue:`19222` y :issue:`19223`)"
 
-#: ../Doc/whatsnew/3.4.rst:2012
+#: ../Doc/whatsnew/3.4.rst:2011
 msgid "Significant Optimizations"
 msgstr "Optimizaciones significativas"
 
-#: ../Doc/whatsnew/3.4.rst:2014
+#: ../Doc/whatsnew/3.4.rst:2013
 msgid ""
 "The UTF-32 decoder is now 3x to 4x faster.  (Contributed by Serhiy Storchaka "
 "in :issue:`14625`.)"
@@ -3961,7 +4085,7 @@ msgstr ""
 "El decodificador de UTF-32 es ahora entre 3 y 4 veces más rápido.  "
 "(Contribuido por Serhiy Storchaka en :issue:`14625`.)"
 
-#: ../Doc/whatsnew/3.4.rst:2017
+#: ../Doc/whatsnew/3.4.rst:2016
 msgid ""
 "The cost of hash collisions for sets is now reduced.  Each hash table probe "
 "now checks a series of consecutive, adjacent key/hash pairs before "
@@ -3985,7 +4109,8 @@ msgstr ""
 "desactivar completamente el sondeo lineal.  (Contribuido por Raymond "
 "Hettinger en :issue:`18771`.)"
 
-#: ../Doc/whatsnew/3.4.rst:2028
+#: ../Doc/whatsnew/3.4.rst:2027
+#, python-format
 msgid ""
 "The interpreter starts about 30% faster. A couple of measures lead to the "
 "speedup. The interpreter loads fewer modules on startup, e.g. the :mod:"
@@ -4003,7 +4128,7 @@ msgstr ""
 "Pitrou, Christian Heimes y Victor Stinner en :issue:`19219`, :issue:"
 "`19218`, :issue:`19209`, :issue:`19205` y :issue:`9548`)"
 
-#: ../Doc/whatsnew/3.4.rst:2036
+#: ../Doc/whatsnew/3.4.rst:2035
 msgid ""
 ":class:`bz2.BZ2File` is now as fast or faster than the Python2 version for "
 "most cases.  :class:`lzma.LZMAFile` has also been optimized.  (Contributed "
@@ -4013,7 +4138,8 @@ msgstr ""
 "la mayoría de los casos. :class:`lzma.LZMAFile` también ha sido optimizado.  "
 "(Contribuido por Serhiy Storchaka y Nadeem Vawda en :issue:`16034`)"
 
-#: ../Doc/whatsnew/3.4.rst:2040
+#: ../Doc/whatsnew/3.4.rst:2039
+#, python-format
 msgid ""
 ":func:`random.getrandbits` is 20%-40% faster for small integers (the most "
 "common use case).  (Contributed by Serhiy Storchaka in :issue:`16674`.)"
@@ -4022,7 +4148,7 @@ msgstr ""
 "(el caso de uso más común).  (Contribuido por Serhiy Storchaka en :issue:"
 "`16674`.)"
 
-#: ../Doc/whatsnew/3.4.rst:2043
+#: ../Doc/whatsnew/3.4.rst:2042
 msgid ""
 "By taking advantage of the new storage format for strings, pickling of "
 "strings is now significantly faster.  (Contributed by Victor Stinner and "
@@ -4032,7 +4158,7 @@ msgstr ""
 "de las cadenas es ahora significativamente más rápido.  (Contribución de "
 "Victor Stinner y Antoine Pitrou en :issue:`15596`.)"
 
-#: ../Doc/whatsnew/3.4.rst:2047
+#: ../Doc/whatsnew/3.4.rst:2046
 msgid ""
 "A performance issue in :meth:`io.FileIO.readall` has been solved.  This "
 "particularly affects Windows, and significantly speeds up the case of piping "
@@ -4044,7 +4170,7 @@ msgstr ""
 "de canalizar cantidades significativas de datos a través de :mod:"
 "`subprocess`.  (Contribuido por Richard Oudkerk en :issue:`15758`.)"
 
-#: ../Doc/whatsnew/3.4.rst:2052
+#: ../Doc/whatsnew/3.4.rst:2051
 msgid ""
 ":func:`html.escape` is now 10x faster.  (Contributed by Matt Bryant in :"
 "issue:`18020`.)"
@@ -4052,7 +4178,7 @@ msgstr ""
 ":func:`html.escape` es ahora 10 veces más rápido.  (Contribuido por Matt "
 "Bryant en :issue:`18020`.)"
 
-#: ../Doc/whatsnew/3.4.rst:2055
+#: ../Doc/whatsnew/3.4.rst:2054
 msgid ""
 "On Windows, the native ``VirtualAlloc`` is now used instead of the CRT "
 "``malloc`` in ``obmalloc``.  Artificial benchmarks show about a 3% memory "
@@ -4062,22 +4188,22 @@ msgstr ""
 "``malloc`` de CRT en ``obmalloc``.  Los benchmarks artificiales muestran un "
 "ahorro de memoria de alrededor del 3%."
 
-#: ../Doc/whatsnew/3.4.rst:2059
+#: ../Doc/whatsnew/3.4.rst:2058
 msgid ""
-":func:`os.urandom` now uses a lazily-opened persistent file descriptor so as "
+":func:`os.urandom` now uses a lazily opened persistent file descriptor so as "
 "to avoid using many file descriptors when run in parallel from multiple "
 "threads.  (Contributed by Antoine Pitrou in :issue:`18756`.)"
 msgstr ""
-":func:`os.urandom` ahora utiliza un descriptor de archivo persistente "
-"abierto perezosamente para evitar el uso de muchos descriptores de archivo "
-"cuando se ejecuta en paralelo desde múltiples hilos.  (Contribuido por "
-"Antoine Pitrou en :issue:`18756`.)"
+":func:`os.urandom` ahora usa un descriptor de archivo persistente abierto de "
+"forma diferida para evitar el uso de muchos descriptores de archivo cuando "
+"se ejecuta en paralelo desde varios subprocesos. (Aportado por Antoine "
+"Pitrou en :issue:`18756`.)"
 
-#: ../Doc/whatsnew/3.4.rst:2067
+#: ../Doc/whatsnew/3.4.rst:2066
 msgid "Deprecated"
 msgstr "Obsoleto"
 
-#: ../Doc/whatsnew/3.4.rst:2069
+#: ../Doc/whatsnew/3.4.rst:2068
 msgid ""
 "This section covers various APIs and other features that have been "
 "deprecated in Python 3.4, and will be removed in Python 3.5 or later.  In "
@@ -4092,31 +4218,32 @@ msgstr ""
 "se ejecute con las advertencias de obturación activadas (por ejemplo, usando "
 "``-Wd``)."
 
-#: ../Doc/whatsnew/3.4.rst:2077
+#: ../Doc/whatsnew/3.4.rst:2076
 msgid "Deprecations in the Python API"
 msgstr "Desapariciones en la API de Python"
 
-#: ../Doc/whatsnew/3.4.rst:2079
+#: ../Doc/whatsnew/3.4.rst:2078
+#, fuzzy
 msgid ""
 "As mentioned in :ref:`whatsnew-pep-451`, a number of :mod:`importlib` "
-"methods and functions are deprecated: :meth:`importlib.find_loader` is "
-"replaced by :func:`importlib.util.find_spec`; :meth:`importlib.machinery."
+"methods and functions are deprecated: :meth:`!importlib.find_loader` is "
+"replaced by :func:`importlib.util.find_spec`; :meth:`!importlib.machinery."
 "PathFinder.find_module` is replaced by :meth:`importlib.machinery.PathFinder."
-"find_spec`; :meth:`importlib.abc.MetaPathFinder.find_module` is replaced by :"
-"meth:`importlib.abc.MetaPathFinder.find_spec`; :meth:`importlib.abc."
-"PathEntryFinder.find_loader` and :meth:`~importlib.abc.PathEntryFinder."
-"find_module` are replaced by :meth:`importlib.abc.PathEntryFinder."
-"find_spec`; all of the ``xxxLoader`` ABC ``load_module`` methods (:meth:"
-"`importlib.abc.Loader.load_module`, :meth:`importlib.abc.InspectLoader."
-"load_module`, :meth:`importlib.abc.FileLoader.load_module`, :meth:`importlib."
-"abc.SourceLoader.load_module`) should no longer be implemented, instead "
-"loaders should implement an ``exec_module`` method (:meth:`importlib.abc."
-"Loader.exec_module`, :meth:`importlib.abc.InspectLoader.exec_module` :meth:"
-"`importlib.abc.SourceLoader.exec_module`) and let the import system take "
-"care of the rest; and :meth:`importlib.abc.Loader.module_repr`, :meth:"
-"`importlib.util.module_for_loader`, :meth:`importlib.util.set_loader`, and :"
-"meth:`importlib.util.set_package` are no longer needed because their "
-"functions are now handled automatically by the import system."
+"find_spec`; :meth:`!importlib.abc.MetaPathFinder.find_module` is replaced "
+"by :meth:`importlib.abc.MetaPathFinder.find_spec`; :meth:`!importlib.abc."
+"PathEntryFinder.find_loader` and :meth:`!find_module` are replaced by :meth:"
+"`importlib.abc.PathEntryFinder.find_spec`; all of the :samp:`{xxx}Loader` "
+"ABC ``load_module`` methods (:meth:`!importlib.abc.Loader.load_module`, :"
+"meth:`!importlib.abc.InspectLoader.load_module`, :meth:`!importlib.abc."
+"FileLoader.load_module`, :meth:`!importlib.abc.SourceLoader.load_module`) "
+"should no longer be implemented, instead loaders should implement an "
+"``exec_module`` method (:meth:`importlib.abc.Loader.exec_module`, :meth:"
+"`importlib.abc.InspectLoader.exec_module` :meth:`importlib.abc.SourceLoader."
+"exec_module`) and let the import system take care of the rest; and :meth:`!"
+"importlib.abc.Loader.module_repr`, :meth:`!importlib.util."
+"module_for_loader`, :meth:`!importlib.util.set_loader`, and :meth:`!"
+"importlib.util.set_package` are no longer needed because their functions are "
+"now handled automatically by the import system."
 msgstr ""
 "Como se menciona en :ref:`whatsnew-pep-451`, varios métodos y funciones de :"
 "mod:`importlib` están obsoletos: :meth:`importlib.find_loader` se sustituye "
@@ -4139,16 +4266,17 @@ msgstr ""
 "porque sus funciones son ahora manejadas automáticamente por el sistema de "
 "importación."
 
-#: ../Doc/whatsnew/3.4.rst:2104
+#: ../Doc/whatsnew/3.4.rst:2103
+#, fuzzy
 msgid ""
-"The :mod:`imp` module is pending deprecation. To keep compatibility with "
+"The :mod:`!imp` module is pending deprecation. To keep compatibility with "
 "Python 2/3 code bases, the module's removal is currently not scheduled."
 msgstr ""
 "El módulo :mod:`imp` está pendiente de ser eliminado. Para mantener la "
 "compatibilidad con las bases de código de Python 2/3, la eliminación del "
 "módulo no está programada actualmente."
 
-#: ../Doc/whatsnew/3.4.rst:2107
+#: ../Doc/whatsnew/3.4.rst:2106
 msgid ""
 "The :mod:`formatter` module is pending deprecation and is slated for removal "
 "in Python 3.6."
@@ -4156,7 +4284,7 @@ msgstr ""
 "El módulo :mod:`formatter` está pendiente de desaprobación y está previsto "
 "que se elimine en Python 3.6."
 
-#: ../Doc/whatsnew/3.4.rst:2110
+#: ../Doc/whatsnew/3.4.rst:2109
 msgid ""
 "``MD5`` as the default *digestmod* for the :func:`hmac.new` function is "
 "deprecated.  Python 3.6 will require an explicit digest name or constructor "
@@ -4166,7 +4294,7 @@ msgstr ""
 "en desuso.  Python 3.6 requerirá un nombre de compendio o constructor "
 "explícito como argumento *digestmod*."
 
-#: ../Doc/whatsnew/3.4.rst:2114
+#: ../Doc/whatsnew/3.4.rst:2113
 msgid ""
 "The internal ``Netrc`` class in the :mod:`ftplib` module has been documented "
 "as deprecated in its docstring for quite some time.  It now emits a :exc:"
@@ -4176,7 +4304,7 @@ msgstr ""
 "como obsoleta en su docstring durante bastante tiempo.  Ahora emite un :exc:"
 "`DeprecationWarning` y se eliminará por completo en Python 3.5."
 
-#: ../Doc/whatsnew/3.4.rst:2118
+#: ../Doc/whatsnew/3.4.rst:2117
 msgid ""
 "The undocumented *endtime* argument to :meth:`subprocess.Popen.wait` should "
 "not have been exposed and is hopefully not in use; it is deprecated and will "
@@ -4186,13 +4314,13 @@ msgstr ""
 "debería haber sido expuesto y es de esperar que no esté en uso; es obsoleto "
 "y muy probablemente será eliminado en Python 3.5."
 
-#: ../Doc/whatsnew/3.4.rst:2122
+#: ../Doc/whatsnew/3.4.rst:2121
 msgid ""
 "The *strict* argument of :class:`~html.parser.HTMLParser` is deprecated."
 msgstr ""
 "El argumento *strict* de :class:`~html.parser.HTMLParser` está obsoleto."
 
-#: ../Doc/whatsnew/3.4.rst:2124
+#: ../Doc/whatsnew/3.4.rst:2123
 msgid ""
 "The :mod:`plistlib` :func:`~plistlib.readPlist`, :func:`~plistlib."
 "writePlist`, :func:`~plistlib.readPlistFromBytes`, and :func:`~plistlib."
@@ -4208,7 +4336,7 @@ msgstr ""
 "loads`, y :func:`~plistlib.dumps`. :func:`~plistlib.Data` queda obsoleta en "
 "favor de la utilización del constructor :class:`bytes`."
 
-#: ../Doc/whatsnew/3.4.rst:2131
+#: ../Doc/whatsnew/3.4.rst:2130
 msgid ""
 "The :mod:`sysconfig` key ``SO`` is deprecated, it has been replaced by "
 "``EXT_SUFFIX``."
@@ -4216,7 +4344,7 @@ msgstr ""
 "La clave :mod:`sysconfig` ``SO`` está obsoleta, ha sido sustituida por "
 "``EXT_SUFFIX``."
 
-#: ../Doc/whatsnew/3.4.rst:2134
+#: ../Doc/whatsnew/3.4.rst:2133
 msgid ""
 "The ``U`` mode accepted by various ``open`` functions is deprecated. In "
 "Python3 it does not do anything useful, and should be replaced by "
@@ -4227,7 +4355,7 @@ msgstr ""
 "Python3 no hace nada útil, y debe ser reemplazado por usos apropiados de :"
 "class:`io.TextIOWrapper` (si es necesario) y su argumento *newline*."
 
-#: ../Doc/whatsnew/3.4.rst:2139
+#: ../Doc/whatsnew/3.4.rst:2138
 msgid ""
 "The *parser* argument of :func:`xml.etree.ElementTree.iterparse` has been "
 "deprecated, as has the *html* argument of :func:`~xml.etree.ElementTree."
@@ -4239,11 +4367,11 @@ msgstr ""
 "XMLParser`.  Para prepararse para la eliminación de este último, todos los "
 "argumentos de ``XMLParser`` deben pasarse por palabra clave."
 
-#: ../Doc/whatsnew/3.4.rst:2146
+#: ../Doc/whatsnew/3.4.rst:2145
 msgid "Deprecated Features"
 msgstr "Funciones obsoletas"
 
-#: ../Doc/whatsnew/3.4.rst:2148
+#: ../Doc/whatsnew/3.4.rst:2147
 msgid ""
 "Running :ref:`idle` with the ``-n`` flag (no subprocess) is deprecated. "
 "However, the feature will not be removed until :issue:`18823` is resolved."
@@ -4252,7 +4380,7 @@ msgstr ""
 "obsoleta. Sin embargo, la función no se eliminará hasta que se resuelva el "
 "problema :issue:`18823`."
 
-#: ../Doc/whatsnew/3.4.rst:2151
+#: ../Doc/whatsnew/3.4.rst:2150
 msgid ""
 "The site module adding a \"site-python\" directory to sys.path, if it "
 "exists, is deprecated (:issue:`19375`)."
@@ -4260,15 +4388,15 @@ msgstr ""
 "El módulo site que añade un directorio \"site-python\" a sys.path, si "
 "existe, está obsoleto (:issue:`19375`)."
 
-#: ../Doc/whatsnew/3.4.rst:2157
+#: ../Doc/whatsnew/3.4.rst:2156
 msgid "Removed"
 msgstr "Removido"
 
-#: ../Doc/whatsnew/3.4.rst:2161
+#: ../Doc/whatsnew/3.4.rst:2160
 msgid "Operating Systems No Longer Supported"
 msgstr "Sistemas operativos que ya no son compatibles"
 
-#: ../Doc/whatsnew/3.4.rst:2163
+#: ../Doc/whatsnew/3.4.rst:2162
 msgid ""
 "Support for the following operating systems has been removed from the source "
 "and build tools:"
@@ -4276,29 +4404,29 @@ msgstr ""
 "Se ha eliminado la compatibilidad con los siguientes sistemas operativos en "
 "las herramientas de origen y de compilación:"
 
-#: ../Doc/whatsnew/3.4.rst:2166
+#: ../Doc/whatsnew/3.4.rst:2165
 msgid "OS/2 (:issue:`16135`)."
 msgstr "OS/2 (:issue:`16135`)."
 
-#: ../Doc/whatsnew/3.4.rst:2167
+#: ../Doc/whatsnew/3.4.rst:2166
 msgid "Windows 2000 (changeset e52df05b496a)."
 msgstr "Windows 2000 (changeset e52df05b496a)."
 
-#: ../Doc/whatsnew/3.4.rst:2168
+#: ../Doc/whatsnew/3.4.rst:2167
 msgid ""
 "Windows systems where ``COMSPEC`` points to ``command.com`` (:issue:`14470`)."
 msgstr ""
 "Sistemas Windows donde ``COMSPEC`` apunta a ``command.com`` (:issue:`14470`)."
 
-#: ../Doc/whatsnew/3.4.rst:2169
+#: ../Doc/whatsnew/3.4.rst:2168
 msgid "VMS (:issue:`16136`)."
 msgstr "VMS (:issue:`16136`)."
 
-#: ../Doc/whatsnew/3.4.rst:2173
+#: ../Doc/whatsnew/3.4.rst:2172
 msgid "API and Feature Removals"
 msgstr "Eliminación de la API y de las funciones"
 
-#: ../Doc/whatsnew/3.4.rst:2175
+#: ../Doc/whatsnew/3.4.rst:2174
 msgid ""
 "The following obsolete and previously deprecated APIs and features have been "
 "removed:"
@@ -4306,7 +4434,7 @@ msgstr ""
 "Se han eliminado las siguientes APIs y características obsoletas y "
 "previamente obsoletas:"
 
-#: ../Doc/whatsnew/3.4.rst:2178
+#: ../Doc/whatsnew/3.4.rst:2177
 msgid ""
 "The unmaintained ``Misc/TextMate`` and ``Misc/vim`` directories have been "
 "removed (see the `devguide <https://devguide.python.org>`_ for suggestions "
@@ -4316,7 +4444,7 @@ msgstr ""
 "eliminados (ver la `devguide <https://devguide.python.org>`_ para "
 "sugerencias sobre qué usar en su lugar)."
 
-#: ../Doc/whatsnew/3.4.rst:2182
+#: ../Doc/whatsnew/3.4.rst:2181
 msgid ""
 "The ``SO`` makefile macro is removed (it was replaced by the "
 "``SHLIB_SUFFIX`` and ``EXT_SUFFIX`` macros) (:issue:`16754`)."
@@ -4324,7 +4452,7 @@ msgstr ""
 "Se ha eliminado la macro makefile ``SO`` (se ha sustituido por las macros "
 "``SHLIB_SUFFIX`` y ``EXT_SUFFIX``) (:issue:`16754`)."
 
-#: ../Doc/whatsnew/3.4.rst:2185
+#: ../Doc/whatsnew/3.4.rst:2184
 msgid ""
 "The ``PyThreadState.tick_counter`` field has been removed; its value has "
 "been meaningless since Python 3.2, when the \"new GIL\" was introduced (:"
@@ -4334,7 +4462,7 @@ msgstr ""
 "sentido desde Python 3.2, cuando se introdujo el \"nuevo GIL\" (:issue:"
 "`19199`)."
 
-#: ../Doc/whatsnew/3.4.rst:2189
+#: ../Doc/whatsnew/3.4.rst:2188
 msgid ""
 "``PyLoader`` and ``PyPycLoader`` have been removed from :mod:`importlib`. "
 "(Contributed by Taras Lyapun in :issue:`15641`.)"
@@ -4342,7 +4470,7 @@ msgstr ""
 "``PyLoader`` y ``PyPycLoader`` han sido eliminados de :mod:`importlib`. "
 "(Contribuido por Taras Lyapun en :issue:`15641`.)"
 
-#: ../Doc/whatsnew/3.4.rst:2192
+#: ../Doc/whatsnew/3.4.rst:2191
 msgid ""
 "The *strict* argument to :class:`~http.client.HTTPConnection` and :class:"
 "`~http.client.HTTPSConnection` has been removed.  HTTP 0.9-style \"Simple "
@@ -4352,7 +4480,7 @@ msgstr ""
 "HTTPConnection` y :class:`~http.client.HTTPSConnection`.  Ya no se admiten "
 "las \"respuestas simples\" del estilo de HTTP 0.9."
 
-#: ../Doc/whatsnew/3.4.rst:2196
+#: ../Doc/whatsnew/3.4.rst:2195
 msgid ""
 "The deprecated :mod:`urllib.request.Request` getter and setter methods "
 "``add_data``, ``has_data``, ``get_data``, ``get_type``, ``get_host``, "
@@ -4364,7 +4492,7 @@ msgstr ""
 "``set_proxy``, ``get_origin_req_host``, y ``is_unverifiable`` han sido "
 "eliminados (utilice en su lugar el acceso directo a atributos)."
 
-#: ../Doc/whatsnew/3.4.rst:2201
+#: ../Doc/whatsnew/3.4.rst:2200
 msgid ""
 "Support for loading the deprecated ``TYPE_INT64`` has been removed from :mod:"
 "`marshal`.  (Contributed by Dan Riti in :issue:`15480`.)"
@@ -4372,7 +4500,7 @@ msgstr ""
 "Se ha eliminado el soporte para cargar el obsoleto ``TYPE_INT64`` de :mod:"
 "`marshal`.  (Contribuido por Dan Riti en :issue:`15480`.)"
 
-#: ../Doc/whatsnew/3.4.rst:2204
+#: ../Doc/whatsnew/3.4.rst:2203
 msgid ""
 ":class:`inspect.Signature`: positional-only parameters are now required to "
 "have a valid name."
@@ -4380,7 +4508,7 @@ msgstr ""
 ":class:`inspect.Signature`: ahora se requiere que los parámetros sólo "
 "posicionales tengan un nombre válido."
 
-#: ../Doc/whatsnew/3.4.rst:2207
+#: ../Doc/whatsnew/3.4.rst:2206
 msgid ""
 ":meth:`object.__format__` no longer accepts non-empty format strings, it now "
 "raises a :exc:`TypeError` instead.  Using a non-empty string has been "
@@ -4400,7 +4528,7 @@ msgstr ""
 "código de formato ``s`` con objetos que no tienen un método __format__ que "
 "lo maneje.  Véase :issue:`7994` para más información."
 
-#: ../Doc/whatsnew/3.4.rst:2216
+#: ../Doc/whatsnew/3.4.rst:2215
 msgid ""
 ":meth:`difflib.SequenceMatcher.isbjunk` and :meth:`difflib.SequenceMatcher."
 "isbpopular` were deprecated in 3.2, and have now been removed: use ``x in sm."
@@ -4412,11 +4540,11 @@ msgstr ""
 "en sm.bjunk`` y ``x en sm.bpopular``, donde *sm* es un objeto :class:"
 "`~difflib.SequenceMatcher` (:issue:`13248`)."
 
-#: ../Doc/whatsnew/3.4.rst:2224
+#: ../Doc/whatsnew/3.4.rst:2223
 msgid "Code Cleanups"
 msgstr "Limpieza del código"
 
-#: ../Doc/whatsnew/3.4.rst:2226
+#: ../Doc/whatsnew/3.4.rst:2225
 msgid ""
 "The unused and undocumented internal ``Scanner`` class has been removed from "
 "the :mod:`pydoc` module."
@@ -4424,7 +4552,7 @@ msgstr ""
 "Se ha eliminado la clase interna ``Scanner`` no utilizada y no documentada "
 "del módulo :mod:`pydoc`."
 
-#: ../Doc/whatsnew/3.4.rst:2229
+#: ../Doc/whatsnew/3.4.rst:2228
 msgid ""
 "The private and effectively unused ``_gestalt`` module has been removed, "
 "along with the private :mod:`platform` functions ``_mac_ver_lookup``, "
@@ -4436,7 +4564,7 @@ msgstr ""
 "``_mac_ver_gstalt``, y ``_bcd2str``, que sólo habrían sido llamadas en "
 "sistemas OSX muy estropeados (ver :issue:`18393`)."
 
-#: ../Doc/whatsnew/3.4.rst:2234
+#: ../Doc/whatsnew/3.4.rst:2233
 msgid ""
 "The hardcoded copies of certain :mod:`stat` constants that were included in "
 "the :mod:`tarfile` module namespace have been removed."
@@ -4444,11 +4572,11 @@ msgstr ""
 "Se han eliminado las copias codificadas de ciertas constantes :mod:`stat` "
 "que se incluían en el espacio de nombres del módulo :mod:`tarfile`."
 
-#: ../Doc/whatsnew/3.4.rst:2240
+#: ../Doc/whatsnew/3.4.rst:2239
 msgid "Porting to Python 3.4"
 msgstr "Adaptación a Python 3.4"
 
-#: ../Doc/whatsnew/3.4.rst:2242
+#: ../Doc/whatsnew/3.4.rst:2241
 msgid ""
 "This section lists previously described changes and other bugfixes that may "
 "require changes to your code."
@@ -4456,11 +4584,11 @@ msgstr ""
 "Esta sección enumera los cambios descritos anteriormente y otras "
 "correcciones de errores que pueden requerir cambios en su código."
 
-#: ../Doc/whatsnew/3.4.rst:2247
+#: ../Doc/whatsnew/3.4.rst:2246
 msgid "Changes in 'python' Command Behavior"
 msgstr "Cambios en el comportamiento del comando 'python'"
 
-#: ../Doc/whatsnew/3.4.rst:2249
+#: ../Doc/whatsnew/3.4.rst:2248
 msgid ""
 "In a posix shell, setting the :envvar:`PATH` environment variable to an "
 "empty value is equivalent to not setting it at all.  However, setting :"
@@ -4478,7 +4606,7 @@ msgstr ""
 "razona por analogía con el funcionamiento de :envvar:`PATH`.  El "
 "comportamiento ahora se ajusta a la convención posix para :envvar:`PATH`."
 
-#: ../Doc/whatsnew/3.4.rst:2257
+#: ../Doc/whatsnew/3.4.rst:2256
 msgid ""
 "The [X refs, Y blocks] output of a debug (``--with-pydebug``) build of the "
 "CPython interpreter is now off by default.  It can be re-enabled using the "
@@ -4489,7 +4617,7 @@ msgstr ""
 "puede volver a activar usando la opción ``-X showrefcount``.  (Contribuido "
 "por Ezio Melotti en :issue:`17323`.)"
 
-#: ../Doc/whatsnew/3.4.rst:2261
+#: ../Doc/whatsnew/3.4.rst:2260
 msgid ""
 "The python command and most stdlib scripts (as well as :mod:`argparse`) now "
 "output ``--version`` information to ``stdout`` instead of ``stderr`` (for "
@@ -4500,11 +4628,11 @@ msgstr ""
 "lugar de a ``stderr`` (para la lista de problemas, véase :ref:`other-"
 "improvements-3.4` más arriba)."
 
-#: ../Doc/whatsnew/3.4.rst:2267
+#: ../Doc/whatsnew/3.4.rst:2266
 msgid "Changes in the Python API"
 msgstr "Cambios en la API de Python"
 
-#: ../Doc/whatsnew/3.4.rst:2269
+#: ../Doc/whatsnew/3.4.rst:2268
 msgid ""
 "The ABCs defined in :mod:`importlib.abc` now either raise the appropriate "
 "exception or return a default value instead of raising :exc:"
@@ -4518,7 +4646,7 @@ msgstr ""
 "func:`super` y que llegue hasta el ABC. Por compatibilidad, capture tanto :"
 "exc:`NotImplementedError` como la excepción apropiada según sea necesario."
 
-#: ../Doc/whatsnew/3.4.rst:2275
+#: ../Doc/whatsnew/3.4.rst:2274
 msgid ""
 "The module type now initializes the :attr:`__package__` and :attr:"
 "`__loader__` attributes to ``None`` by default. To determine if these "
@@ -4530,9 +4658,10 @@ msgstr ""
 "establecieron de forma retrocompatible, utilice, por ejemplo, "
 "``getattr(module, '__loader__', None) is not None``.  (:issue:`17115`.)"
 
-#: ../Doc/whatsnew/3.4.rst:2280
+#: ../Doc/whatsnew/3.4.rst:2279
+#, fuzzy
 msgid ""
-":meth:`importlib.util.module_for_loader` now sets ``__loader__`` and "
+":meth:`!importlib.util.module_for_loader` now sets ``__loader__`` and "
 "``__package__`` unconditionally to properly support reloading. If this is "
 "not desired then you will need to set these attributes manually. You can "
 "use :func:`importlib.util.module_to_load` for module management."
@@ -4542,7 +4671,7 @@ msgstr ""
 "Si no lo desea, tendrá que establecer estos atributos manualmente. Puede "
 "utilizar :func:`importlib.util.module_to_load` para la gestión de módulos."
 
-#: ../Doc/whatsnew/3.4.rst:2285
+#: ../Doc/whatsnew/3.4.rst:2284
 msgid ""
 "Import now resets relevant attributes (e.g. ``__name__``, ``__loader__``, "
 "``__package__``, ``__file__``, ``__cached__``) unconditionally when "
@@ -4555,7 +4684,7 @@ msgstr ""
 "comportamiento anterior a la versión 3.3 en el sentido de que un módulo se "
 "vuelve a encontrar cuando se recarga (:issue:`19413`)."
 
-#: ../Doc/whatsnew/3.4.rst:2290
+#: ../Doc/whatsnew/3.4.rst:2289
 msgid ""
 "Frozen packages no longer set ``__path__`` to a list containing the package "
 "name, they now set it to an empty list.  The previous behavior could cause "
@@ -4572,7 +4701,8 @@ msgstr ""
 "de determinar si un módulo es un paquete o no es utilizar ``hasattr(module, "
 "'__path__')`` (:issue:`18065`)."
 
-#: ../Doc/whatsnew/3.4.rst:2297
+#: ../Doc/whatsnew/3.4.rst:2296
+#, fuzzy
 msgid ""
 "Frozen modules no longer define a ``__file__`` attribute. It's semantically "
 "incorrect for frozen modules to set the attribute as they are not loaded "
@@ -4580,7 +4710,7 @@ msgid ""
 "code then you can see if the module's ``__spec__.location`` is set to "
 "``'frozen'``, check if the loader is a subclass of :class:`importlib."
 "machinery.FrozenImporter`, or if Python 2 compatibility is necessary you can "
-"use :func:`imp.is_frozen`."
+"use :func:`!imp.is_frozen`."
 msgstr ""
 "Los módulos congelados ya no definen el atributo ``file__``. Es "
 "semánticamente incorrecto que los módulos congelados definan el atributo, ya "
@@ -4591,7 +4721,7 @@ msgstr ""
 "si la compatibilidad con Python 2 es necesaria, puedes utilizar :func:`imp."
 "is_frozen`."
 
-#: ../Doc/whatsnew/3.4.rst:2305
+#: ../Doc/whatsnew/3.4.rst:2304
 msgid ""
 ":func:`py_compile.compile` now raises :exc:`FileExistsError` if the file "
 "path it would write to is a symlink or a non-regular file. This is to act as "
@@ -4604,7 +4734,7 @@ msgstr ""
 "esos archivos con un archivo regular sin importar el tipo de ruta de archivo "
 "que eran originalmente."
 
-#: ../Doc/whatsnew/3.4.rst:2310
+#: ../Doc/whatsnew/3.4.rst:2309
 msgid ""
 ":meth:`importlib.abc.SourceLoader.get_source` no longer raises :exc:"
 "`ImportError` when the source code being loaded triggers a :exc:"
@@ -4624,7 +4754,7 @@ msgstr ""
 "atrapando ImportError antes y desea continuar ignorando los problemas de "
 "sintaxis o decodificación, atrape las tres excepciones ahora."
 
-#: ../Doc/whatsnew/3.4.rst:2319
+#: ../Doc/whatsnew/3.4.rst:2318
 msgid ""
 ":func:`functools.update_wrapper` and :func:`functools.wraps` now correctly "
 "set the ``__wrapped__`` attribute to the function being wrapped, even if "
@@ -4645,7 +4775,7 @@ msgstr ""
 "intencionado pueden utilizar :func:`inspect.unwrap` para acceder a la "
 "primera función de la cadena que no tenga el atributo ``__wrapped__``."
 
-#: ../Doc/whatsnew/3.4.rst:2329
+#: ../Doc/whatsnew/3.4.rst:2328
 msgid ""
 ":func:`inspect.getfullargspec` has been reimplemented on top of :func:"
 "`inspect.signature` and hence handles a much wider variety of callable "
@@ -4662,7 +4792,7 @@ msgstr ""
 "fallará en las llamadas que no son de Python puede necesitar ser ajustado en "
 "consecuencia."
 
-#: ../Doc/whatsnew/3.4.rst:2337
+#: ../Doc/whatsnew/3.4.rst:2336
 msgid ""
 ":class:`importlib.machinery.PathFinder` now passes on the current working "
 "directory to objects in :data:`sys.path_hooks` for the empty string. This "
@@ -4679,14 +4809,14 @@ msgstr ""
 "actual a los objetos en :data:`sys.path_hooks` para la cadena vacía. Esto "
 "hace que :data:`sys.path_importer_cache` nunca contenga ``''``, por lo que "
 "iterar a través de :data:`sys.path_importer_cache` basándose en :data:`sys."
-"path` no encontrará todas las claves. El ``archivo__` de un módulo cuando se "
+"path` no encontrará todas las claves. El ``__file__`` de un módulo cuando se "
 "importa en el directorio de trabajo actual también tendrá ahora una ruta "
 "absoluta, incluso cuando se utiliza ``-m`` con el intérprete (excepto para "
 "``__main__.__file__`` cuando un script se ha ejecutado directamente "
 "utilizando una ruta relativa) (Contribuido por Brett Cannon en :issue:"
 "`18416`). se especifica en la línea de comandos) (:issue:`18416`)."
 
-#: ../Doc/whatsnew/3.4.rst:2348
+#: ../Doc/whatsnew/3.4.rst:2347
 msgid ""
 "The removal of the *strict* argument to :class:`~http.client.HTTPConnection` "
 "and :class:`~http.client.HTTPSConnection` changes the meaning of the "
@@ -4701,7 +4831,7 @@ msgstr ""
 "desaprobación, su código ya debería especificar los argumentos adicionales "
 "mediante palabras clave."
 
-#: ../Doc/whatsnew/3.4.rst:2354
+#: ../Doc/whatsnew/3.4.rst:2353
 msgid ""
 "Strings between ``from __future__ import ...`` statements now *always* raise "
 "a :exc:`SyntaxError`.  Previously if there was no leading docstring, an "
@@ -4715,7 +4845,7 @@ msgstr ""
 "que CPython cumpla con la especificación del lenguaje; Jython y PyPy ya lo "
 "hacían. (:issue:`17434`)."
 
-#: ../Doc/whatsnew/3.4.rst:2360
+#: ../Doc/whatsnew/3.4.rst:2359
 msgid ""
 ":meth:`ssl.SSLSocket.getpeercert` and :meth:`ssl.SSLSocket.do_handshake` now "
 "raise an :exc:`OSError` with ``ENOTCONN`` when the ``SSLSocket`` is not "
@@ -4729,13 +4859,13 @@ msgstr ""
 "`AttributeError`.  Además, :meth:`~ssl.SSLSocket.getpeercert` lanzará un :"
 "exc:`ValueError` si el handshake aún no se ha realizado."
 
-#: ../Doc/whatsnew/3.4.rst:2366
+#: ../Doc/whatsnew/3.4.rst:2365
 msgid ""
 ":func:`base64.b32decode` now raises a :exc:`binascii.Error` when the input "
 "string contains non-b32-alphabet characters, instead of a :exc:`TypeError`.  "
-"This particular :exc:`TypeError` was missed when the other :exc:`TypeError`"
-"\\ s were converted.  (Contributed by Serhiy Storchaka in :issue:`18011`.)  "
-"Note: this change was also inadvertently applied in Python 3.3.3."
+"This particular :exc:`TypeError` was missed when the other :exc:"
+"`TypeError`\\ s were converted.  (Contributed by Serhiy Storchaka in :issue:"
+"`18011`.)  Note: this change was also inadvertently applied in Python 3.3.3."
 msgstr ""
 ":func:`base64.b32decode` ahora genera un :exc:`binascii.Error` cuando la "
 "cadena de entrada contiene caracteres que no son de tipo b32, en lugar de "
@@ -4744,15 +4874,15 @@ msgstr ""
 "Storchaka en :issue:`18011`.) Nota: este cambio también se aplicó "
 "inadvertidamente en Python 3.3.3."
 
-#: ../Doc/whatsnew/3.4.rst:2373
+#: ../Doc/whatsnew/3.4.rst:2372
+#, fuzzy
 msgid ""
-"The :attr:`~cgi.FieldStorage.file` attribute is now automatically closed "
-"when the creating :class:`cgi.FieldStorage` instance is garbage collected. "
-"If you were pulling the file object out separately from the :class:`cgi."
-"FieldStorage` instance and not keeping the instance alive, then you should "
-"either store the entire :class:`cgi.FieldStorage` instance or read the "
-"contents of the file before the :class:`cgi.FieldStorage` instance is "
-"garbage collected."
+"The :attr:`!file` attribute is now automatically closed when the creating :"
+"class:`!cgi.FieldStorage` instance is garbage collected. If you were pulling "
+"the file object out separately from the :class:`!cgi.FieldStorage` instance "
+"and not keeping the instance alive, then you should either store the entire :"
+"class:`!cgi.FieldStorage` instance or read the contents of the file before "
+"the :class:`!cgi.FieldStorage` instance is garbage collected."
 msgstr ""
 "El atributo :attr:`~cgi.FieldStorage.file` ahora se cierra automáticamente "
 "cuando la instancia :class:`cgi.FieldStorage` creada se recoge de la basura. "
@@ -4762,7 +4892,7 @@ msgstr ""
 "antes de que la instancia :class:`cgi.FieldStorage` sea recogida de la "
 "basura."
 
-#: ../Doc/whatsnew/3.4.rst:2380
+#: ../Doc/whatsnew/3.4.rst:2379
 msgid ""
 "Calling ``read`` or ``write`` on a closed SSL socket now raises an "
 "informative :exc:`ValueError` rather than the previous more mysterious :exc:"
@@ -4772,7 +4902,7 @@ msgstr ""
 "un informativo :exc:`ValueError` en lugar del anterior y más misterioso :exc:"
 "`AttributeError` (:issue:`9177`)."
 
-#: ../Doc/whatsnew/3.4.rst:2384
+#: ../Doc/whatsnew/3.4.rst:2383
 msgid ""
 ":meth:`slice.indices` no longer produces an :exc:`OverflowError` for huge "
 "values.  As a consequence of this fix, :meth:`slice.indices` now raises a :"
@@ -4784,7 +4914,7 @@ msgstr ""
 "produce un :exc:`ValueError` si se le da una longitud negativa; antes "
 "devolvía valores sin sentido (:issue:`14794`)."
 
-#: ../Doc/whatsnew/3.4.rst:2389
+#: ../Doc/whatsnew/3.4.rst:2388
 msgid ""
 "The :class:`complex` constructor, unlike the :mod:`cmath` functions, was "
 "incorrectly accepting :class:`float` values if an object's ``__complex__`` "
@@ -4796,7 +4926,7 @@ msgstr ""
 "``__complex__`` de un objeto devolvía uno.  Ahora se produce un error :exc:"
 "`TypeError`. (:issue:`16290`.)"
 
-#: ../Doc/whatsnew/3.4.rst:2394
+#: ../Doc/whatsnew/3.4.rst:2393
 msgid ""
 "The :class:`int` constructor in 3.2 and 3.3 erroneously accepts :class:"
 "`float` values for the *base* parameter.  It is unlikely anyone was doing "
@@ -4807,7 +4937,7 @@ msgstr ""
 "alguien esté haciendo esto, pero si es así, ahora lanzará un :exc:"
 "`TypeError` (:issue:`16772`)."
 
-#: ../Doc/whatsnew/3.4.rst:2398
+#: ../Doc/whatsnew/3.4.rst:2397
 msgid ""
 "Defaults for keyword-only arguments are now evaluated *after* defaults for "
 "regular keyword arguments, instead of before.  Hopefully no one wrote any "
@@ -4818,7 +4948,7 @@ msgstr ""
 "normales, en lugar de antes.  Esperemos que nadie haya escrito ningún código "
 "que dependa del comportamiento erróneo anterior (:issue:`16967`)."
 
-#: ../Doc/whatsnew/3.4.rst:2402
+#: ../Doc/whatsnew/3.4.rst:2401
 msgid ""
 "Stale thread states are now cleared after :func:`~os.fork`.  This may cause "
 "some system resources to be released that previously were incorrectly kept "
@@ -4831,17 +4961,18 @@ msgstr ""
 "la base de datos mantenidas en el almacenamiento local del hilo).  (:issue:"
 "`17094`.)"
 
-#: ../Doc/whatsnew/3.4.rst:2407
+#: ../Doc/whatsnew/3.4.rst:2406
+#, fuzzy
 msgid ""
 "Parameter names in ``__annotations__`` dicts are now mangled properly, "
-"similarly to ``__kwdefaults__``.  (Contributed by Yury Selivanov in :issue:"
-"`20625`.)"
+"similarly to :attr:`~function.__kwdefaults__`. (Contributed by Yury "
+"Selivanov in :issue:`20625`.)"
 msgstr ""
-"Los nombres de los parámetros en los dicts de ``anotaciones__` ahora se "
+"Los nombres de los parámetros en los dicts de ``__annotations__`` ahora se "
 "manipulan correctamente, de forma similar a ``__kwdefaults__``.  "
 "(Contribuido por Yury Selivanov en :issue:`20625`.)"
 
-#: ../Doc/whatsnew/3.4.rst:2411
+#: ../Doc/whatsnew/3.4.rst:2410
 msgid ""
 ":attr:`hashlib.hash.name` now always returns the identifier in lower case. "
 "Previously some builtin hashes had uppercase names, but now that it is a "
@@ -4852,10 +4983,11 @@ msgstr ""
 "mayúsculas, pero ahora que se trata de una interfaz pública formal, la "
 "denominación se ha hecho consistente (:issue:`18532`)."
 
-#: ../Doc/whatsnew/3.4.rst:2415
+#: ../Doc/whatsnew/3.4.rst:2414
+#, fuzzy
 msgid ""
 "Because :mod:`unittest.TestSuite` now drops references to tests after they "
-"are run, test harnesses that re-use a :class:`~unittest.TestSuite` to re-run "
+"are run, test harnesses that reuse a :class:`~unittest.TestSuite` to re-run "
 "a set of tests may fail.   Test suites should not be re-used in this fashion "
 "since it means state is retained between test runs, breaking the test "
 "isolation that :mod:`unittest` is designed to provide.  However, if the lack "
@@ -4876,7 +5008,7 @@ msgstr ""
 "método ``_removeTestAtIndex`` que no haga nada (ver :meth:`.TestSuite."
 "__iter__`) (:issue:`11798`)."
 
-#: ../Doc/whatsnew/3.4.rst:2425
+#: ../Doc/whatsnew/3.4.rst:2424
 msgid ""
 ":mod:`unittest` now uses :mod:`argparse` for command line parsing.  There "
 "are certain invalid command forms that used to work that are no longer "
@@ -4890,7 +5022,7 @@ msgstr ""
 "compatibilidad con versiones anteriores, ya que las formas de comando no "
 "permitidas no tenían ningún sentido y es poco probable que estén en uso."
 
-#: ../Doc/whatsnew/3.4.rst:2430
+#: ../Doc/whatsnew/3.4.rst:2429
 msgid ""
 "The :func:`re.split`, :func:`re.findall`, and :func:`re.sub` functions, and "
 "the :meth:`~re.match.group` and :meth:`~re.match.groups` methods of "
@@ -4907,16 +5039,17 @@ msgstr ""
 "valor de retorno fuera, por ejemplo, un ``bytearray``, tendrá que cambiar su "
 "código."
 
-#: ../Doc/whatsnew/3.4.rst:2437
+#: ../Doc/whatsnew/3.4.rst:2436
+#, fuzzy
 msgid ""
-":mod:`audioop` functions now raise an error immediately if passed string "
+":mod:`!audioop` functions now raise an error immediately if passed string "
 "input, instead of failing randomly later on (:issue:`16685`)."
 msgstr ""
 "Las funciones de :mod:`audioop` ahora lanzan un error inmediatamente si se "
 "les pasa una cadena de entrada, en lugar de fallar aleatoriamente más tarde "
 "(:issue:`16685`)."
 
-#: ../Doc/whatsnew/3.4.rst:2440
+#: ../Doc/whatsnew/3.4.rst:2439
 msgid ""
 "The new *convert_charrefs* argument to :class:`~html.parser.HTMLParser` "
 "currently defaults to ``False`` for backward compatibility, but will "
@@ -4930,7 +5063,7 @@ msgstr ""
 "esta palabra clave, con el valor apropiado, a cualquier llamada de :class:"
 "`~html.parser.HTMLParser` en su código (:issue:`13633`)."
 
-#: ../Doc/whatsnew/3.4.rst:2446
+#: ../Doc/whatsnew/3.4.rst:2445
 msgid ""
 "Since the *digestmod* argument to the :func:`hmac.new` function will in the "
 "future have no default, all calls to :func:`hmac.new` should be changed to "
@@ -4941,7 +5074,7 @@ msgstr ""
 "deben cambiarse para especificar explícitamente un *digestmod* (:issue:"
 "`17276`)."
 
-#: ../Doc/whatsnew/3.4.rst:2450
+#: ../Doc/whatsnew/3.4.rst:2449
 msgid ""
 "Calling :func:`sysconfig.get_config_var` with the ``SO`` key, or looking "
 "``SO`` up in the results of a call to :func:`sysconfig.get_config_vars` is "
@@ -4953,7 +5086,7 @@ msgstr ""
 "está obsoleto.  Esta clave debería ser reemplazada por ``EXT_SUFFIX`` o "
 "``SHLIB_SUFFIX``, dependiendo del contexto (:issue:`19555`)."
 
-#: ../Doc/whatsnew/3.4.rst:2455
+#: ../Doc/whatsnew/3.4.rst:2454
 msgid ""
 "Any calls to ``open`` functions that specify ``U`` should be modified. ``U`` "
 "is ineffective in Python3 and will eventually raise an error if used. "
@@ -4969,7 +5102,7 @@ msgstr ""
 "si es necesario envolviendo el flujo en :mod:`~io.TextIOWrapper` para usar "
 "su argumento *newline* (:issue:`15204`)."
 
-#: ../Doc/whatsnew/3.4.rst:2462
+#: ../Doc/whatsnew/3.4.rst:2461
 msgid ""
 "If you use ``pyvenv`` in a script and desire that pip *not* be installed, "
 "you must add ``--without-pip`` to your command invocation."
@@ -4977,7 +5110,7 @@ msgstr ""
 "Si utilizas ``pyvenv`` en un script y deseas que pip *no* se instale, debes "
 "añadir ``--without-pip`` a tu invocación del comando."
 
-#: ../Doc/whatsnew/3.4.rst:2466
+#: ../Doc/whatsnew/3.4.rst:2465
 msgid ""
 "The default behavior of :func:`json.dump` and :func:`json.dumps` when an "
 "indent is specified has changed: it no longer produces trailing spaces after "
@@ -4991,7 +5124,7 @@ msgstr ""
 "importará si tiene pruebas que hacen comparaciones sensibles a los espacios "
 "en blanco de dicha salida (:issue:`16333`)."
 
-#: ../Doc/whatsnew/3.4.rst:2472
+#: ../Doc/whatsnew/3.4.rst:2471
 msgid ""
 ":mod:`doctest` now looks for doctests in extension module ``__doc__`` "
 "strings, so if your doctest test discovery includes extension modules that "
@@ -5004,7 +5137,7 @@ msgstr ""
 "ver fallos de prueba que nunca ha visto antes al ejecutar sus pruebas (:"
 "issue:`3158`)."
 
-#: ../Doc/whatsnew/3.4.rst:2477
+#: ../Doc/whatsnew/3.4.rst:2476
 msgid ""
 "The :mod:`collections.abc` module has been slightly refactored as part of "
 "the Python startup improvements.  As a consequence of this, it is no longer "
@@ -5020,11 +5153,11 @@ msgstr ""
 "importación implícita (no documentada), tendrá que añadir un ``importar "
 "colecciones.abc`` explícitamente (:issue:`20784`)."
 
-#: ../Doc/whatsnew/3.4.rst:2486
+#: ../Doc/whatsnew/3.4.rst:2485
 msgid "Changes in the C API"
 msgstr "Cambios en la API de C"
 
-#: ../Doc/whatsnew/3.4.rst:2488
+#: ../Doc/whatsnew/3.4.rst:2487
 msgid ""
 ":c:func:`PyEval_EvalFrameEx`, :c:func:`PyObject_Repr`, and :c:func:"
 "`PyObject_Str`, along with some other internal C APIs, now include a "
@@ -5049,7 +5182,7 @@ msgstr ""
 "indirectamente) y se ejecuten contra una versión de Python que esté "
 "compilada con las aserciones activadas."
 
-#: ../Doc/whatsnew/3.4.rst:2500
+#: ../Doc/whatsnew/3.4.rst:2499
 msgid ""
 ":c:func:`PyErr_SetImportError` now sets :exc:`TypeError` when its **msg** "
 "argument is not set. Previously only ``NULL`` was returned with no exception "
@@ -5059,7 +5192,7 @@ msgstr ""
 "argumento **msg** no está establecido. Anteriormente sólo se devolvía "
 "``NULL`` sin establecer ninguna excepción."
 
-#: ../Doc/whatsnew/3.4.rst:2504
+#: ../Doc/whatsnew/3.4.rst:2503
 msgid ""
 "The result of the :c:data:`PyOS_ReadlineFunctionPointer` callback must now "
 "be a string allocated by :c:func:`PyMem_RawMalloc` or :c:func:"
@@ -5073,7 +5206,7 @@ msgstr ""
 "producido un error, en lugar de una cadena asignada por :c:func:"
 "`PyMem_Malloc` o :c:func:`PyMem_Realloc` (:issue:`16742`)"
 
-#: ../Doc/whatsnew/3.4.rst:2510
+#: ../Doc/whatsnew/3.4.rst:2509
 msgid ""
 ":c:func:`PyThread_set_key_value` now always set the value. In Python 3.3, "
 "the function did nothing if the key already exists (if the current value is "
@@ -5083,7 +5216,7 @@ msgstr ""
 "3.3, la función no hacía nada si la clave ya existía (si el valor actual es "
 "un puntero no ``NULL``)."
 
-#: ../Doc/whatsnew/3.4.rst:2514
+#: ../Doc/whatsnew/3.4.rst:2513
 msgid ""
 "The ``f_tstate`` (thread state) field of the :c:type:`PyFrameObject` "
 "structure has been removed to fix a bug: see :issue:`14432` for the "
@@ -5093,18 +5226,18 @@ msgstr ""
 "type:`PyFrameObject` para corregir un error: véase :issue:`14432` para "
 "conocer los motivos."
 
-#: ../Doc/whatsnew/3.4.rst:2519
+#: ../Doc/whatsnew/3.4.rst:2518
 msgid "Changed in 3.4.3"
 msgstr "Cambiado en 3.4.3"
 
-#: ../Doc/whatsnew/3.4.rst:2524
+#: ../Doc/whatsnew/3.4.rst:2523
 msgid ""
 "PEP 476: Enabling certificate verification by default for stdlib http clients"
 msgstr ""
 "PEP 476: Habilitar la verificación de certificados por defecto para los "
 "clientes http stdlib"
 
-#: ../Doc/whatsnew/3.4.rst:2526
+#: ../Doc/whatsnew/3.4.rst:2525
 msgid ""
 ":mod:`http.client` and modules which use it, such as :mod:`urllib.request` "
 "and :mod:`xmlrpc.client`, will now verify that the server presents a "
@@ -5119,10 +5252,25 @@ msgstr ""
 "solicita por defecto, mejorando significativamente la seguridad de muchas "
 "aplicaciones."
 
-#: ../Doc/whatsnew/3.4.rst:2532
+#: ../Doc/whatsnew/3.4.rst:2531
 msgid ""
 "For applications which require the old previous behavior, they can pass an "
 "alternate context::"
 msgstr ""
 "Para las aplicaciones que requieren el antiguo comportamiento anterior, "
 "pueden pasar un contexto alternativo::"
+
+#: ../Doc/whatsnew/3.4.rst:2534
+msgid ""
+"import urllib.request\n"
+"import ssl\n"
+"\n"
+"# This disables all verification\n"
+"context = ssl._create_unverified_context()\n"
+"\n"
+"# This allows using a specific certificate for the host, which doesn't need\n"
+"# to be in the trust store\n"
+"context = ssl.create_default_context(cafile=\"/path/to/file.crt\")\n"
+"\n"
+"urllib.request.urlopen(\"https://invalid-cert\", context=context)"
+msgstr ""

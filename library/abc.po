@@ -10,19 +10,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-16 21:42+0200\n"
-"PO-Revision-Date: 2021-08-07 10:37+0200\n"
-"Last-Translator: Cristián Maureira-Fredes <cmaureirafredes@gmail.com>\n"
-"Language-Team: python-doc-es\n"
+"POT-Creation-Date: 2024-11-21 16:38-0300\n"
+"PO-Revision-Date: 2023-11-02 09:22+0100\n"
+"Last-Translator: Marcos Medrano <marcosmedrano0@gmail.com>\n"
 "Language: es\n"
+"Language-Team: python-doc-es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.16.0\n"
 
 #: ../Doc/library/abc.rst:2
-msgid ":mod:`abc` --- Abstract Base Classes"
+#, fuzzy
+msgid ":mod:`!abc` --- Abstract Base Classes"
 msgstr ":mod:`abc` --- Clases de Base Abstracta"
 
 #: ../Doc/library/abc.rst:11
@@ -43,18 +44,19 @@ msgstr ""
 "de tipos para números basados en CBAs.)"
 
 #: ../Doc/library/abc.rst:20
+#, fuzzy
 msgid ""
 "The :mod:`collections` module has some concrete classes that derive from "
 "ABCs; these can, of course, be further derived. In addition, the :mod:"
 "`collections.abc` submodule has some ABCs that can be used to test whether a "
-"class or instance provides a particular interface, for example, if it is "
-"hashable or if it is a mapping."
+"class or instance provides a particular interface, for example, if it is :"
+"term:`hashable` or if it is a :term:`mapping`."
 msgstr ""
 "El módulo :mod:`collections` tiene algunas clases concretas que se derivan "
 "de ABC; estos, por supuesto, pueden derivarse más. Además, el submódulo :mod:"
 "`collections.abc` tiene algunos ABC que se pueden usar para probar si una "
-"clase o instancia proporciona una interfaz en particular, por ejemplo, si es "
-"hash o si es un mapeo."
+"clase o instancia proporciona una interfaz en particular, por ejemplo, si "
+"es :term:`hashable` o si es un mapeo."
 
 #: ../Doc/library/abc.rst:27
 msgid ""
@@ -66,9 +68,10 @@ msgstr ""
 "herencia:"
 
 #: ../Doc/library/abc.rst:32
+#, fuzzy
 msgid ""
 "A helper class that has :class:`ABCMeta` as its metaclass.  With this class, "
-"an abstract base class can be created by simply deriving from :class:`ABC` "
+"an abstract base class can be created by simply deriving from :class:`!ABC` "
 "avoiding sometimes confusing metaclass usage, for example::"
 msgstr ""
 "Una clase auxiliar que tiene una :class:`ABCMeta` como su metaclase.  Con "
@@ -76,13 +79,22 @@ msgstr ""
 "derivándola desde :class:`ABC` evitando el uso de metaclases algunas veces "
 "confusos, por ejemplo::"
 
-#: ../Doc/library/abc.rst:41
+#: ../Doc/library/abc.rst:36
 msgid ""
-"Note that the type of :class:`ABC` is still :class:`ABCMeta`, therefore "
-"inheriting from :class:`ABC` requires the usual precautions regarding "
+"from abc import ABC\n"
+"\n"
+"class MyABC(ABC):\n"
+"    pass"
+msgstr ""
+
+#: ../Doc/library/abc.rst:41
+#, fuzzy
+msgid ""
+"Note that the type of :class:`!ABC` is still :class:`ABCMeta`, therefore "
+"inheriting from :class:`!ABC` requires the usual precautions regarding "
 "metaclass usage, as multiple inheritance may lead to metaclass conflicts. "
 "One may also define an abstract base class by passing the metaclass keyword "
-"and using :class:`ABCMeta` directly, for example::"
+"and using :class:`!ABCMeta` directly, for example::"
 msgstr ""
 "Tenga en cuenta que el tipo de :class:`ABC` sigue siendo :class:`ABCMeta`, "
 "por lo tanto, heredar de :class:`ABC` requiere las precauciones habituales "
@@ -90,6 +102,14 @@ msgstr ""
 "lugar a conflictos de metaclases. También se puede definir una clase base "
 "abstracta pasando la palabra clave metaclase y usando :class:`ABCMeta` "
 "directamente, por ejemplo::"
+
+#: ../Doc/library/abc.rst:47
+msgid ""
+"from abc import ABCMeta\n"
+"\n"
+"class MyABC(metaclass=ABCMeta):\n"
+"    pass"
+msgstr ""
 
 #: ../Doc/library/abc.rst:57
 msgid "Metaclass for defining Abstract Base Classes (ABCs)."
@@ -116,8 +136,9 @@ msgstr ""
 "CBA registrada serán invocables (ni siquiera a través de :func:`super`). [#]_"
 
 #: ../Doc/library/abc.rst:68
+#, fuzzy
 msgid ""
-"Classes created with a metaclass of :class:`ABCMeta` have the following "
+"Classes created with a metaclass of :class:`!ABCMeta` have the following "
 "method:"
 msgstr ""
 "Las clases creadas con una metaclase de :class:`ABCMeta` tienen el siguiente "
@@ -130,15 +151,29 @@ msgstr ""
 "Registre la *subclase* como una \"subclase virtual\" de esta CBA. Por "
 "ejemplo::"
 
+#: ../Doc/library/abc.rst:75
+msgid ""
+"from abc import ABC\n"
+"\n"
+"class MyABC(ABC):\n"
+"    pass\n"
+"\n"
+"MyABC.register(tuple)\n"
+"\n"
+"assert issubclass(tuple, MyABC)\n"
+"assert isinstance((), MyABC)"
+msgstr ""
+
 #: ../Doc/library/abc.rst:85
 msgid "Returns the registered subclass, to allow usage as a class decorator."
 msgstr ""
 "Retorna la subclase registrada, para permitir su uso como decorador de clase."
 
 #: ../Doc/library/abc.rst:88
+#, fuzzy
 msgid ""
-"To detect calls to :meth:`register`, you can use the :func:`get_cache_token` "
-"function."
+"To detect calls to :meth:`!register`, you can use the :func:"
+"`get_cache_token` function."
 msgstr ""
 "Para detectar llamadas a :meth:`register`, se puede usar la función :func:"
 "`get_cache_token`."
@@ -152,12 +187,13 @@ msgid "(Must be defined as a class method.)"
 msgstr "(Debe ser definido como un método de clase.)"
 
 #: ../Doc/library/abc.rst:98
+#, fuzzy
 msgid ""
 "Check whether *subclass* is considered a subclass of this ABC.  This means "
-"that you can customize the behavior of ``issubclass`` further without the "
-"need to call :meth:`register` on every class you want to consider a subclass "
-"of the ABC.  (This class method is called from the :meth:`__subclasscheck__` "
-"method of the ABC.)"
+"that you can customize the behavior of :func:`issubclass` further without "
+"the need to call :meth:`register` on every class you want to consider a "
+"subclass of the ABC.  (This class method is called from the :meth:`~type."
+"__subclasscheck__` method of the ABC.)"
 msgstr ""
 "Compruebe si la *subclase* se considera una subclase de esta CBA.  Esto "
 "significa que puede personalizar aún más el comportamiento de ``issubclass`` "
@@ -166,12 +202,13 @@ msgstr ""
 "el método :meth:`__subclasscheck__` del CBA.)"
 
 #: ../Doc/library/abc.rst:104
+#, fuzzy
 msgid ""
-"This method should return ``True``, ``False`` or ``NotImplemented``.  If it "
-"returns ``True``, the *subclass* is considered a subclass of this ABC. If it "
-"returns ``False``, the *subclass* is not considered a subclass of this ABC, "
-"even if it would normally be one.  If it returns ``NotImplemented``, the "
-"subclass check is continued with the usual mechanism."
+"This method should return ``True``, ``False`` or :data:`NotImplemented`.  If "
+"it returns ``True``, the *subclass* is considered a subclass of this ABC. If "
+"it returns ``False``, the *subclass* is not considered a subclass of this "
+"ABC, even if it would normally be one.  If it returns :data:`!"
+"NotImplemented`, the subclass check is continued with the usual mechanism."
 msgstr ""
 "Este método debe retornar ``True``, ``False`` o ``NotImplemented``.  Si "
 "retorna ``True``, la *subclase* se considera una subclase de esta CBA. Si "
@@ -186,11 +223,42 @@ msgstr ""
 "Para una demostración de estos conceptos, vea este ejemplo de la definición "
 "CBA::"
 
+#: ../Doc/library/abc.rst:116
+msgid ""
+"class Foo:\n"
+"    def __getitem__(self, index):\n"
+"        ...\n"
+"    def __len__(self):\n"
+"        ...\n"
+"    def get_iterator(self):\n"
+"        return iter(self)\n"
+"\n"
+"class MyIterable(ABC):\n"
+"\n"
+"    @abstractmethod\n"
+"    def __iter__(self):\n"
+"        while False:\n"
+"            yield None\n"
+"\n"
+"    def get_iterator(self):\n"
+"        return self.__iter__()\n"
+"\n"
+"    @classmethod\n"
+"    def __subclasshook__(cls, C):\n"
+"        if cls is MyIterable:\n"
+"            if any(\"__iter__\" in B.__dict__ for B in C.__mro__):\n"
+"                return True\n"
+"        return NotImplemented\n"
+"\n"
+"MyIterable.register(Foo)"
+msgstr ""
+
 #: ../Doc/library/abc.rst:143
+#, fuzzy
 msgid ""
 "The ABC ``MyIterable`` defines the standard iterable method, :meth:"
 "`~iterator.__iter__`, as an abstract method.  The implementation given here "
-"can still be called from subclasses.  The :meth:`get_iterator` method is "
+"can still be called from subclasses.  The :meth:`!get_iterator` method is "
 "also part of the ``MyIterable`` abstract base class, but it does not have to "
 "be overridden in non-abstract derived classes."
 msgstr ""
@@ -201,11 +269,12 @@ msgstr ""
 "reemplazado en clases derivadas no abstractas."
 
 #: ../Doc/library/abc.rst:149
+#, fuzzy
 msgid ""
 "The :meth:`__subclasshook__` class method defined here says that any class "
 "that has an :meth:`~iterator.__iter__` method in its :attr:`~object."
 "__dict__` (or in that of one of its base classes, accessed via the :attr:"
-"`~class.__mro__` list) is considered a ``MyIterable`` too."
+"`~type.__mro__` list) is considered a ``MyIterable`` too."
 msgstr ""
 "El método de la clase :meth:`__subclasshook__` definido aquí dice que "
 "cualquier clase que tenga un método :meth:`~iterator.__iter__` en su :attr:"
@@ -214,12 +283,14 @@ msgstr ""
 "``MyIterable``."
 
 #: ../Doc/library/abc.rst:154
+#, fuzzy
 msgid ""
 "Finally, the last line makes ``Foo`` a virtual subclass of ``MyIterable``, "
 "even though it does not define an :meth:`~iterator.__iter__` method (it uses "
-"the old-style iterable protocol, defined in terms of :meth:`__len__` and :"
-"meth:`__getitem__`).  Note that this will not make ``get_iterator`` "
-"available as a method of ``Foo``, so it is provided separately."
+"the old-style iterable protocol, defined in terms of :meth:`~object.__len__` "
+"and :meth:`~object.__getitem__`).  Note that this will not make "
+"``get_iterator`` available as a method of ``Foo``, so it is provided "
+"separately."
 msgstr ""
 "Por último, la última línea convierte ``Foo`` en una subclase virtual de "
 "``MyIterable``, aunque no define un método :meth:`~iterator.__iter__` "
@@ -229,7 +300,8 @@ msgstr ""
 "proporcionado por separado."
 
 #: ../Doc/library/abc.rst:163
-msgid "The :mod:`abc` module also provides the following decorator:"
+#, fuzzy
+msgid "The :mod:`!abc` module also provides the following decorator:"
 msgstr "El módulo :mod:`abc` también proporciona el siguiente decorador:"
 
 #: ../Doc/library/abc.rst:167
@@ -237,12 +309,13 @@ msgid "A decorator indicating abstract methods."
 msgstr "Un decorador que indica métodos abstractos."
 
 #: ../Doc/library/abc.rst:169
+#, fuzzy
 msgid ""
 "Using this decorator requires that the class's metaclass is :class:`ABCMeta` "
-"or is derived from it.  A class that has a metaclass derived from :class:"
-"`ABCMeta` cannot be instantiated unless all of its abstract methods and "
+"or is derived from it.  A class that has a metaclass derived from :class:`!"
+"ABCMeta` cannot be instantiated unless all of its abstract methods and "
 "properties are overridden.  The abstract methods can be called using any of "
-"the normal 'super' call mechanisms.  :func:`abstractmethod` may be used to "
+"the normal 'super' call mechanisms.  :func:`!abstractmethod` may be used to "
 "declare abstract methods for properties and descriptors."
 msgstr ""
 "El uso de este decorador requiere que la metaclase de la clase sea :class:"
@@ -254,13 +327,14 @@ msgstr ""
 "abstractos para propiedades y descriptores."
 
 #: ../Doc/library/abc.rst:176
+#, fuzzy
 msgid ""
 "Dynamically adding abstract methods to a class, or attempting to modify the "
 "abstraction status of a method or class once it is created, are only "
-"supported using the :func:`update_abstractmethods` function.  The :func:"
-"`abstractmethod` only affects subclasses derived using regular inheritance; "
-"\"virtual subclasses\" registered with the ABC's :meth:`register` method are "
-"not affected."
+"supported using the :func:`update_abstractmethods` function.  The :func:`!"
+"abstractmethod` only affects subclasses derived using regular inheritance; "
+"\"virtual subclasses\" registered with the ABC's :meth:`~ABCMeta.register` "
+"method are not affected."
 msgstr ""
 "La adición dinámica de métodos abstractos a una clase, o el intento de "
 "modificar el estado de abstracción de un método o clase una vez creado, solo "
@@ -270,8 +344,9 @@ msgstr ""
 "`register` de ABC no se ven afectadas."
 
 #: ../Doc/library/abc.rst:183
+#, fuzzy
 msgid ""
-"When :func:`abstractmethod` is applied in combination with other method "
+"When :func:`!abstractmethod` is applied in combination with other method "
 "descriptors, it should be applied as the innermost decorator, as shown in "
 "the following usage examples::"
 msgstr ""
@@ -279,11 +354,45 @@ msgstr ""
 "descriptores de método, se debe aplicar como el decorador más interno, como "
 "se muestra en los siguientes ejemplos de uso::"
 
+#: ../Doc/library/abc.rst:187
+msgid ""
+"class C(ABC):\n"
+"    @abstractmethod\n"
+"    def my_abstract_method(self, arg1):\n"
+"        ...\n"
+"    @classmethod\n"
+"    @abstractmethod\n"
+"    def my_abstract_classmethod(cls, arg2):\n"
+"        ...\n"
+"    @staticmethod\n"
+"    @abstractmethod\n"
+"    def my_abstract_staticmethod(arg3):\n"
+"        ...\n"
+"\n"
+"    @property\n"
+"    @abstractmethod\n"
+"    def my_abstract_property(self):\n"
+"        ...\n"
+"    @my_abstract_property.setter\n"
+"    @abstractmethod\n"
+"    def my_abstract_property(self, val):\n"
+"        ...\n"
+"\n"
+"    @abstractmethod\n"
+"    def _get_x(self):\n"
+"        ...\n"
+"    @abstractmethod\n"
+"    def _set_x(self, val):\n"
+"        ...\n"
+"    x = property(_get_x, _set_x)"
+msgstr ""
+
 #: ../Doc/library/abc.rst:217
+#, fuzzy
 msgid ""
 "In order to correctly interoperate with the abstract base class machinery, "
-"the descriptor must identify itself as abstract using :attr:"
-"`__isabstractmethod__`. In general, this attribute should be ``True`` if any "
+"the descriptor must identify itself as abstract using :attr:`!"
+"__isabstractmethod__`. In general, this attribute should be ``True`` if any "
 "of the methods used to compose the descriptor are abstract. For example, "
 "Python's built-in :class:`property` does the equivalent of::"
 msgstr ""
@@ -293,6 +402,16 @@ msgstr ""
 "alguno de los métodos utilizados para componer el descriptor es abstracto. "
 "Por ejemplo, la clase de propiedad integrada de Python :class:`property` "
 "hace el equivalente de::"
+
+#: ../Doc/library/abc.rst:223
+msgid ""
+"class Descriptor:\n"
+"    ...\n"
+"    @property\n"
+"    def __isabstractmethod__(self):\n"
+"        return any(getattr(f, '__isabstractmethod__', False) for\n"
+"                   f in (self._fget, self._fset, self._fdel))"
+msgstr ""
 
 #: ../Doc/library/abc.rst:232
 msgid ""
@@ -309,7 +428,8 @@ msgstr ""
 "use herencia múltiple cooperativa."
 
 #: ../Doc/library/abc.rst:239
-msgid "The :mod:`abc` module also supports the following legacy decorators:"
+#, fuzzy
+msgid "The :mod:`!abc` module also supports the following legacy decorators:"
 msgstr ""
 "El módulo :mod:`abc` también es compatible con los siguientes decoradores "
 "heredados:"
@@ -339,6 +459,15 @@ msgstr ""
 "ahora es identificado correctamente como abstracto cuando se aplica a un "
 "método abstracto:"
 
+#: ../Doc/library/abc.rst:255
+msgid ""
+"class C(ABC):\n"
+"    @classmethod\n"
+"    @abstractmethod\n"
+"    def my_abstract_classmethod(cls, arg):\n"
+"        ..."
+msgstr ""
+
 #: ../Doc/library/abc.rst:265
 msgid ""
 "It is now possible to use :class:`staticmethod` with :func:`abstractmethod`, "
@@ -363,6 +492,15 @@ msgstr ""
 "Este caso especial está obsoleto, ya que el decorador :func:`staticmethod` "
 "ahora es identificado correctamente como abstracto cuando se aplica a un "
 "método abstracto:"
+
+#: ../Doc/library/abc.rst:276
+msgid ""
+"class C(ABC):\n"
+"    @staticmethod\n"
+"    @abstractmethod\n"
+"    def my_abstract_staticmethod(arg):\n"
+"        ..."
+msgstr ""
 
 #: ../Doc/library/abc.rst:285
 msgid ""
@@ -390,6 +528,15 @@ msgstr ""
 "es identificado correctamente como abstracto cuando es aplicado a un método "
 "abstracto::"
 
+#: ../Doc/library/abc.rst:297
+msgid ""
+"class C(ABC):\n"
+"    @property\n"
+"    @abstractmethod\n"
+"    def my_abstract_property(self):\n"
+"        ..."
+msgstr ""
+
 #: ../Doc/library/abc.rst:303
 msgid ""
 "The above example defines a read-only property; you can also define a read-"
@@ -400,6 +547,19 @@ msgstr ""
 "puede definir una propiedad abstracta de lectura y escritura marcando "
 "adecuadamente uno o varios de los métodos subyacentes como abstractos::"
 
+#: ../Doc/library/abc.rst:307
+msgid ""
+"class C(ABC):\n"
+"    @property\n"
+"    def x(self):\n"
+"        ...\n"
+"\n"
+"    @x.setter\n"
+"    @abstractmethod\n"
+"    def x(self, val):\n"
+"        ..."
+msgstr ""
+
 #: ../Doc/library/abc.rst:317
 msgid ""
 "If only some components are abstract, only those components need to be "
@@ -408,8 +568,17 @@ msgstr ""
 "Si solo algunos componentes son abstractos, solo estos componentes necesitan "
 "ser actualizados para crear una propiedad concreta en una subclase::"
 
+#: ../Doc/library/abc.rst:320
+msgid ""
+"class D(C):\n"
+"    @C.x.setter\n"
+"    def x(self, val):\n"
+"        ..."
+msgstr ""
+
 #: ../Doc/library/abc.rst:326
-msgid "The :mod:`abc` module also provides the following functions:"
+#, fuzzy
+msgid "The :mod:`!abc` module also provides the following functions:"
 msgstr "El módulo :mod:`abc` también proporciona las siguientes funciones:"
 
 #: ../Doc/library/abc.rst:330

@@ -10,19 +10,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-16 21:42+0200\n"
+"POT-Creation-Date: 2024-11-21 16:38-0300\n"
 "PO-Revision-Date: 2021-08-04 21:46+0200\n"
 "Last-Translator: Cristián Maureira-Fredes <cmaureirafredes@gmail.com>\n"
-"Language-Team: python-doc-es\n"
 "Language: es\n"
+"Language-Team: python-doc-es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.16.0\n"
 
 #: ../Doc/library/plistlib.rst:2
-msgid ":mod:`plistlib` --- Generate and parse Apple ``.plist`` files"
+#, fuzzy
+msgid ":mod:`!plistlib` --- Generate and parse Apple ``.plist`` files"
 msgstr ":mod:`plistlib` --- Genera y analiza archivos ``.plist`` de Apple"
 
 #: ../Doc/library/plistlib.rst:11
@@ -31,8 +32,8 @@ msgstr "**Código fuente:** :source:`Lib/plistlib.py`"
 
 #: ../Doc/library/plistlib.rst:19
 msgid ""
-"This module provides an interface for reading and writing the \"property list"
-"\" files used by Apple, primarily on macOS and iOS. This module supports "
+"This module provides an interface for reading and writing the \"property "
+"list\" files used by Apple, primarily on macOS and iOS. This module supports "
 "both binary and XML plist files."
 msgstr ""
 "Este módulo proporciona una interfaz para leer y escribir los archivos de "
@@ -58,9 +59,10 @@ msgstr ""
 "func:`load`."
 
 #: ../Doc/library/plistlib.rst:30
+#, fuzzy
 msgid ""
-"To work with plist data in bytes objects, use :func:`dumps` and :func:"
-"`loads`."
+"To work with plist data in bytes or string objects, use :func:`dumps` and :"
+"func:`loads`."
 msgstr ""
 "Para trabajar con datos plist en objetos de bytes usa :func:`dumps` y :func:"
 "`loads`."
@@ -94,8 +96,9 @@ msgid "Old API removed."
 msgstr "API antigua eliminada."
 
 #: ../Doc/library/plistlib.rst:49
+#, fuzzy
 msgid ""
-"`PList manual page <https://developer.apple.com/library/content/"
+"`PList manual page <https://developer.apple.com/library/archive/"
 "documentation/Cocoa/Conceptual/PropertyLists/>`_"
 msgstr ""
 "`Página del manual PList <https://developer.apple.com/library/content/"
@@ -145,6 +148,13 @@ msgstr ""
 
 #: ../Doc/library/plistlib.rst:72
 msgid ""
+"When *aware_datetime* is true, fields with type ``datetime.datetime`` will "
+"be created as :ref:`aware object <datetime-naive-aware>`, with :attr:`!"
+"tzinfo` as :attr:`datetime.UTC`."
+msgstr ""
+
+#: ../Doc/library/plistlib.rst:76
+msgid ""
 "XML data for the :data:`FMT_XML` format is parsed using the Expat parser "
 "from :mod:`xml.parsers.expat` -- see its documentation for possible "
 "exceptions on ill-formed XML.  Unknown elements will simply be ignored by "
@@ -155,7 +165,7 @@ msgstr ""
 "para conocer las posibles excepciones en XML mal formado. Elementos "
 "desconocidos serán simplemente ignorados por el analizador plist."
 
-#: ../Doc/library/plistlib.rst:77
+#: ../Doc/library/plistlib.rst:81
 msgid ""
 "The parser for the binary format raises :exc:`InvalidFileException` when the "
 "file cannot be parsed."
@@ -163,22 +173,31 @@ msgstr ""
 "El analizar para el formato binario lanza :exc:`InvalidFileException` cuando "
 "el archivo no puede ser analizado."
 
-#: ../Doc/library/plistlib.rst:85
+#: ../Doc/library/plistlib.rst:86 ../Doc/library/plistlib.rst:131
+msgid "The keyword-only parameter *aware_datetime* has been added."
+msgstr ""
+
+#: ../Doc/library/plistlib.rst:92
+#, fuzzy
 msgid ""
-"Load a plist from a bytes object. See :func:`load` for an explanation of the "
-"keyword arguments."
+"Load a plist from a bytes or string object. See :func:`load` for an "
+"explanation of the keyword arguments."
 msgstr ""
 "Carga un plist desde un objeto de bytes. Consulte :func:`load` para una "
 "explicación de los argumentos de palabra clave."
 
-#: ../Doc/library/plistlib.rst:93
+#: ../Doc/library/plistlib.rst:97
+msgid "*data* can be a string when *fmt* equals :data:`FMT_XML`."
+msgstr ""
+
+#: ../Doc/library/plistlib.rst:102
 msgid ""
 "Write *value* to a plist file. *Fp* should be a writable, binary file object."
 msgstr ""
 "Escribe *value* a un archivo plist. *Fp* debe ser un objeto de archivo "
 "binario escribible."
 
-#: ../Doc/library/plistlib.rst:96
+#: ../Doc/library/plistlib.rst:105
 msgid ""
 "The *fmt* argument specifies the format of the plist file and can be one of "
 "the following values:"
@@ -186,15 +205,15 @@ msgstr ""
 "El argumento *fmt* especifica el formato del archivo plist y puede ser uno "
 "de los siguientes valores:"
 
-#: ../Doc/library/plistlib.rst:99
+#: ../Doc/library/plistlib.rst:108
 msgid ":data:`FMT_XML`: XML formatted plist file"
 msgstr ":data:`FMT_XML`: Archivo plist con formato XML"
 
-#: ../Doc/library/plistlib.rst:101
+#: ../Doc/library/plistlib.rst:110
 msgid ":data:`FMT_BINARY`: Binary formatted plist file"
 msgstr ":data:`FMT_BINARY`: Archivo plist con formato binario"
 
-#: ../Doc/library/plistlib.rst:103
+#: ../Doc/library/plistlib.rst:112
 msgid ""
 "When *sort_keys* is true (the default) the keys for dictionaries will be "
 "written to the plist in sorted order, otherwise they will be written in the "
@@ -204,7 +223,7 @@ msgstr ""
 "diccionarios serán escritas al plist ordenadamente, si no serán escritas en "
 "el orden de iteración del diccionario."
 
-#: ../Doc/library/plistlib.rst:107
+#: ../Doc/library/plistlib.rst:116
 msgid ""
 "When *skipkeys* is false (the default) the function raises :exc:`TypeError` "
 "when a key of a dictionary is not a string, otherwise such keys are skipped."
@@ -213,7 +232,14 @@ msgstr ""
 "`TypeError` cuando una clave del diccionario no es una cadena de caracteres, "
 "si no tales claves serán omitidas."
 
-#: ../Doc/library/plistlib.rst:110
+#: ../Doc/library/plistlib.rst:119
+msgid ""
+"When *aware_datetime* is true and any field with type ``datetime.datetime`` "
+"is set as an :ref:`aware object <datetime-naive-aware>`, it will convert to "
+"UTC timezone before writing it."
+msgstr ""
+
+#: ../Doc/library/plistlib.rst:123
 msgid ""
 "A :exc:`TypeError` will be raised if the object is of an unsupported type or "
 "a container that contains objects of unsupported types."
@@ -221,7 +247,7 @@ msgstr ""
 "Una excepción :exc:`TypeError` será levantada si el objeto es un tipo no "
 "admitido o el contenedor que contiene tipos no admitidos."
 
-#: ../Doc/library/plistlib.rst:113
+#: ../Doc/library/plistlib.rst:126
 msgid ""
 "An :exc:`OverflowError` will be raised for integer values that cannot be "
 "represented in (binary) plist files."
@@ -229,7 +255,7 @@ msgstr ""
 "Una excepción :exc:`OverflowError` será levantada para valores enteros que "
 "no pueden ser representados en archivos plist (binarios)."
 
-#: ../Doc/library/plistlib.rst:121
+#: ../Doc/library/plistlib.rst:137
 msgid ""
 "Return *value* as a plist-formatted bytes object. See the documentation for :"
 "func:`dump` for an explanation of the keyword arguments of this function."
@@ -238,11 +264,11 @@ msgstr ""
 "documentación de :func:`dump` para una explicación de los argumentos de "
 "palabra clave de esta función."
 
-#: ../Doc/library/plistlib.rst:128
+#: ../Doc/library/plistlib.rst:144
 msgid "The following classes are available:"
 msgstr "Las siguientes clases están disponibles:"
 
-#: ../Doc/library/plistlib.rst:132
+#: ../Doc/library/plistlib.rst:148
 msgid ""
 "Wraps an :class:`int`.  This is used when reading or writing NSKeyedArchiver "
 "encoded data, which contains UID (see PList manual)."
@@ -250,7 +276,7 @@ msgstr ""
 "Envuelve un :class:`int`. Este es usado leyendo o escribiendo datos "
 "codificados NSKeyedArchiver, los cuales contienen UID (ver manual PList)."
 
-#: ../Doc/library/plistlib.rst:135
+#: ../Doc/library/plistlib.rst:151
 msgid ""
 "It has one attribute, :attr:`data`, which can be used to retrieve the int "
 "value of the UID.  :attr:`data` must be in the range ``0 <= data < 2**64``."
@@ -258,26 +284,75 @@ msgstr ""
 "Tiene un atributo, :attr:`data`, que se puede utilizar para recuperar el "
 "valor int del UID. :attr:`data` debe estar en el rango ``0 <= data < 2**64``."
 
-#: ../Doc/library/plistlib.rst:141
+#: ../Doc/library/plistlib.rst:157
 msgid "The following constants are available:"
 msgstr "Las siguientes constantes están disponibles:"
 
-#: ../Doc/library/plistlib.rst:145
+#: ../Doc/library/plistlib.rst:161
 msgid "The XML format for plist files."
 msgstr "El formato XML para archivos plist."
 
-#: ../Doc/library/plistlib.rst:152
+#: ../Doc/library/plistlib.rst:168
 msgid "The binary format for plist files"
 msgstr "El formato binario para archivos plist"
 
-#: ../Doc/library/plistlib.rst:158
+#: ../Doc/library/plistlib.rst:174
 msgid "Examples"
 msgstr "Ejemplos"
 
-#: ../Doc/library/plistlib.rst:160
+#: ../Doc/library/plistlib.rst:176
 msgid "Generating a plist::"
 msgstr "Generar un plist::"
 
-#: ../Doc/library/plistlib.rst:180
+#: ../Doc/library/plistlib.rst:178
+msgid ""
+"import datetime\n"
+"import plistlib\n"
+"\n"
+"pl = dict(\n"
+"    aString = \"Doodah\",\n"
+"    aList = [\"A\", \"B\", 12, 32.1, [1, 2, 3]],\n"
+"    aFloat = 0.1,\n"
+"    anInt = 728,\n"
+"    aDict = dict(\n"
+"        anotherString = \"<hello & hi there!>\",\n"
+"        aThirdString = \"M\\xe4ssig, Ma\\xdf\",\n"
+"        aTrueValue = True,\n"
+"        aFalseValue = False,\n"
+"    ),\n"
+"    someData = b\"<binary gunk>\",\n"
+"    someMoreData = b\"<lots of binary gunk>\" * 10,\n"
+"    aDate = datetime.datetime.now()\n"
+")\n"
+"print(plistlib.dumps(pl).decode())"
+msgstr ""
+
+#: ../Doc/library/plistlib.rst:198
 msgid "Parsing a plist::"
 msgstr "Analizar un plist::"
+
+#: ../Doc/library/plistlib.rst:200
+msgid ""
+"import plistlib\n"
+"\n"
+"plist = b\"\"\"<plist version=\"1.0\">\n"
+"<dict>\n"
+"    <key>foo</key>\n"
+"    <string>bar</string>\n"
+"</dict>\n"
+"</plist>\"\"\"\n"
+"pl = plistlib.loads(plist)\n"
+"print(pl[\"foo\"])"
+msgstr ""
+
+#: ../Doc/library/plistlib.rst:13
+msgid "plist"
+msgstr ""
+
+#: ../Doc/library/plistlib.rst:13
+msgid "file"
+msgstr ""
+
+#: ../Doc/library/plistlib.rst:13
+msgid "property list"
+msgstr ""
